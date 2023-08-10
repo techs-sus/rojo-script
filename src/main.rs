@@ -1,6 +1,6 @@
 use anyhow::Context as _;
 use clap::{Parser, ValueEnum};
-use rbx_dom_weak::types::Variant;
+use rbx_dom_weak::types::{Ref, Variant};
 use rbx_dom_weak::{Instance, WeakDom};
 use std::path::PathBuf;
 use std::{fs::File, io::BufReader};
@@ -27,7 +27,7 @@ struct Args {
 	runtime: Runtime,
 }
 
-fn variant_to_lua(value: &Variant, instance: &Instance) -> String {
+fn variant_to_lua(value: &Variant, instance: &Ref) -> String {
 	match value {
 		Variant::String(string) => format!("[===[ {string} ]===]"),
 		Variant::Bool(bool) => format!("{bool}"),
@@ -111,7 +111,7 @@ fn variant_to_lua(value: &Variant, instance: &Instance) -> String {
 				.map(|attribute| {
 					format!(
 						"_{}:SetAttribute({}, {})",
-						instance.referent(),
+						instance,
 						attribute.0,
 						variant_to_lua(attribute.1, instance)
 					)
@@ -119,7 +119,7 @@ fn variant_to_lua(value: &Variant, instance: &Instance) -> String {
 				.collect::<Vec<String>>();
 			format!(
 				"-- attributes for ref {} with length {}\n{}",
-				instance.referent(),
+				instance,
 				attributes.len(),
 				&attributes.join("\n")
 			)
@@ -127,11 +127,11 @@ fn variant_to_lua(value: &Variant, instance: &Instance) -> String {
 		Variant::Tags(tags) => {
 			let tags = &tags
 				.iter()
-				.map(|tag| format!("_{}:AddTag(\"{tag}\")", instance.referent()))
+				.map(|tag| format!("_{}:AddTag(\"{tag}\")", instance))
 				.collect::<Vec<String>>();
 			format!(
 				"-- tags for ref {} with length {}\n{}",
-				instance.referent(),
+				instance,
 				tags.len(),
 				tags.join("\n")
 			)
@@ -150,6 +150,14 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 	let parent = dom.get_by_ref(instance.parent());
 	let is_root_instance = parent.is_none();
 	if is_root_instance && runtime == &Runtime::LuaSandbox {
+		match *runtime {
+			Runtime::LuaSandbox => {
+				source.push_str("-- rojo-script runtime 'lua-sandbox'\n");
+			}
+			Runtime::Studio => {
+				source.push_str("-- rojo-script runtime 'studio'\n");
+			}
+		}
 		source.push_str("local sourceMap = {}\n");
 	}
 
@@ -160,7 +168,7 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 	// properties
 	source.push_str(&format!("{instance_ref}.Name = \"{}\"\n", instance.name));
 	for (property, value) in &instance.properties {
-		let lua_value = variant_to_lua(value, instance);
+		let lua_value = variant_to_lua(value, &instance.referent());
 
 		match property.as_str() {
 			"Attributes" => source.push_str(&lua_value),
@@ -171,6 +179,8 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 			| "ModelMeshData"
 			| "ModelMeshCFrame"
 			| "WorldPivotData" => {}
+			// plugin / studio only / robloxsecurity
+			"RunContext" | "SourceAssetId" => {}
 			"Source" => {
 				if runtime == &Runtime::LuaSandbox {
 					source.push_str(&format!("sourceMap[{instance_ref}] = {lua_value}\n"))

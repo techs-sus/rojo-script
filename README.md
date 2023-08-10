@@ -21,3 +21,10 @@ cargo run -- -f input.rbxm -o output.lua
 ### Syntax error?
 
 If the output script doesn't run, it is my fault. Most likely, it means your model contains a unreasonably hard to implement data type. However, please create a github issue with the problem, as it is the only way I can fix it.
+
+#### TODO list
+
+Lua sandbox runtime:
+
+- add modules to NLS (use fione + yueliang (possibly even a luau bytecode runner))
+- add module security (as of now, its secure, but can be vulnerable to bad actors)
