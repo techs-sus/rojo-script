@@ -78,8 +78,10 @@ end
 local safeContainer = Instance.new("Script")
 safeContainer.Name = "Script"
 root.Parent = safeContainer
+safeContainer.Parent = workspace
 
-for _, instance in root:GetChildren() do
+-- getchildren is impossible for rojo projects
+for _, instance in root:GetDescendants() do
 	if instance:IsA("Script") and not instance.Disabled then
 		runScript(instance)
 	end
