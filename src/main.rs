@@ -171,8 +171,7 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 		let lua_value = variant_to_lua(value, &instance.referent());
 
 		match property.as_str() {
-			"Attributes" => source.push_str(&lua_value),
-			"Tags" => source.push_str(&lua_value),
+			"Attributes" | "Tags" => source.push_str(&lua_value),
 			// unwritable (no documentation too!)
 			"ModelMeshSize"
 			| "NeedsPivotMigration"
@@ -199,6 +198,7 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 	let children_source: Vec<String> = instance
 		.children()
 		.iter()
+		// this will NOT panic (as it is guranteed to be non-null)
 		.map(|x| dom.get_by_ref(*x).unwrap())
 		.map(|child| generate_lua(child, dom, runtime))
 		.collect();
@@ -219,9 +219,10 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 
 fn main() -> Result<(), anyhow::Error> {
 	let args = Args::parse();
-	let file = BufReader::new(File::open(&args.file).context("Failed opening file")?);
-	let extension = args
-		.file
+
+	let path = std::fs::canonicalize(args.file)?;
+	let file = BufReader::new(File::open(&path).context("Failed opening file")?);
+	let extension = path
 		.extension()
 		.context("Invalid file")?
 		.to_str()

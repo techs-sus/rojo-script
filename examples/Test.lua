@@ -1,22 +1,22 @@
 -- rojo-script runtime 'lua-sandbox'
 local sourceMap = {}
-local _d711a28e484f17b03cf7f550bd72f2ea = Instance.new("Model")
-_d711a28e484f17b03cf7f550bd72f2ea.Name = "DataModel"
-local _76b18cb24d44e07e40a87b4d4328ff53 = Instance.new("Script")
-_76b18cb24d44e07e40a87b4d4328ff53.Name = "FireEmoji"
-_76b18cb24d44e07e40a87b4d4328ff53.Disabled = false
--- attributes for ref 76b18cb24d44e07e40a87b4d4328ff53 with length 0
-sourceMap[_76b18cb24d44e07e40a87b4d4328ff53] = [===[ local list = require(script.EmojiList)
+local _b70ba8da441fb1e6998bd359cf5dab28 = Instance.new("Model")
+_b70ba8da441fb1e6998bd359cf5dab28.Name = "DataModel"
+local _f3f889bd60de5ce939e0e841a342d2f2 = Instance.new("Script")
+_f3f889bd60de5ce939e0e841a342d2f2.Name = "FireEmoji"
+sourceMap[_f3f889bd60de5ce939e0e841a342d2f2] = [===[ local list = require(script.EmojiList)
 print(list.fire)
 print(list.water) ]===]
-_76b18cb24d44e07e40a87b4d4328ff53.LinkedSource = ""
--- tags for ref 76b18cb24d44e07e40a87b4d4328ff53 with length 0
-_76b18cb24d44e07e40a87b4d4328ff53.Parent = _d711a28e484f17b03cf7f550bd72f2ea
-local _183774eb4dbe110c74512976d0f6fc04 = Instance.new("ModuleScript")
-_183774eb4dbe110c74512976d0f6fc04.Name = "EmojiList"
--- attributes for ref 183774eb4dbe110c74512976d0f6fc04 with length 0
--- tags for ref 183774eb4dbe110c74512976d0f6fc04 with length 0
-sourceMap[_183774eb4dbe110c74512976d0f6fc04] = [===[ local module = {
+_f3f889bd60de5ce939e0e841a342d2f2.LinkedSource = ""
+-- tags for ref f3f889bd60de5ce939e0e841a342d2f2 with length 0
+_f3f889bd60de5ce939e0e841a342d2f2.Disabled = false
+-- attributes for ref f3f889bd60de5ce939e0e841a342d2f2 with length 0
+_f3f889bd60de5ce939e0e841a342d2f2.Parent = _b70ba8da441fb1e6998bd359cf5dab28
+local _1c1251080cbbad2da4a7828eefaab5b6 = Instance.new("ModuleScript")
+_1c1251080cbbad2da4a7828eefaab5b6.Name = "EmojiList"
+_1c1251080cbbad2da4a7828eefaab5b6.LinkedSource = ""
+-- attributes for ref 1c1251080cbbad2da4a7828eefaab5b6 with length 0
+sourceMap[_1c1251080cbbad2da4a7828eefaab5b6] = [===[ local module = {
 	fire = "🔥",
 	water = "💧"
 }
@@ -27,21 +27,21 @@ require(script.Test)
 
 return module
  ]===]
-_183774eb4dbe110c74512976d0f6fc04.LinkedSource = ""
-_183774eb4dbe110c74512976d0f6fc04.Parent = _76b18cb24d44e07e40a87b4d4328ff53
-local _437739da83c68047bf2bbe27851c88cf = Instance.new("ModuleScript")
-_437739da83c68047bf2bbe27851c88cf.Name = "Test"
--- attributes for ref 437739da83c68047bf2bbe27851c88cf with length 0
-sourceMap[_437739da83c68047bf2bbe27851c88cf] = [===[ print("Hi from test module ")
+-- tags for ref 1c1251080cbbad2da4a7828eefaab5b6 with length 0
+_1c1251080cbbad2da4a7828eefaab5b6.Parent = _f3f889bd60de5ce939e0e841a342d2f2
+local _ed9e6e32cdc006f51f4e66ff3c91efd4 = Instance.new("ModuleScript")
+_ed9e6e32cdc006f51f4e66ff3c91efd4.Name = "Test"
+sourceMap[_ed9e6e32cdc006f51f4e66ff3c91efd4] = [===[ print("Hi from test module ")
 
 local module = {}
 
 return module
  ]===]
--- tags for ref 437739da83c68047bf2bbe27851c88cf with length 0
-_437739da83c68047bf2bbe27851c88cf.LinkedSource = ""
-_437739da83c68047bf2bbe27851c88cf.Parent = _183774eb4dbe110c74512976d0f6fc04
-local root = _d711a28e484f17b03cf7f550bd72f2ea
+-- attributes for ref ed9e6e32cdc006f51f4e66ff3c91efd4 with length 0
+-- tags for ref ed9e6e32cdc006f51f4e66ff3c91efd4 with length 0
+_ed9e6e32cdc006f51f4e66ff3c91efd4.LinkedSource = ""
+_ed9e6e32cdc006f51f4e66ff3c91efd4.Parent = _1c1251080cbbad2da4a7828eefaab5b6
+local root = _b70ba8da441fb1e6998bd359cf5dab28
 local loadedModules = {}
 local fakeRequire
 
