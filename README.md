@@ -17,3 +17,7 @@ cd rojo-script
 # and replace output.lua with whatever you want the output to be
 cargo run -- -f input.rbxm -o output.lua
 ```
+
+### Syntax error?
+
+If the output script doesn't run, it is my fault. Most likely, it means your model contains a unreasonably hard to implement data type. However, please create a github issue with the problem, as it is the only way I can fix it.
