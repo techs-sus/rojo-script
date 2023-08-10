@@ -27,10 +27,14 @@ struct Args {
 	runtime: Runtime,
 }
 
-fn variant_to_lua(value: &Variant) -> String {
+fn variant_to_lua(value: &Variant, instance: &Instance) -> String {
 	match value {
-		Variant::String(t) => format!("[===[ {t} ]===]"),
+		Variant::String(string) => format!("[===[ {string} ]===]"),
 		Variant::Bool(bool) => format!("{bool}"),
+		Variant::Float32(float) => format!("{float}"),
+		Variant::Float64(float) => format!("{float}"),
+		Variant::Int32(int) => format!("{int}"),
+		Variant::Int64(int) => format!("{int}"),
 		Variant::BrickColor(color) => color.to_string(),
 		Variant::CFrame(cframe) => {
 			let position = cframe.position;
@@ -64,19 +68,24 @@ fn variant_to_lua(value: &Variant) -> String {
 					format!(
 						"ColorSequenceKeypoint.new({}, {})",
 						point.time,
-						variant_to_lua(&Variant::Color3(point.color))
+						variant_to_lua(&Variant::Color3(point.color), instance)
 					)
 				})
 				.collect();
 			format!("ColorSequence.new({{ {} }})", sequence.join(","))
 		}
-		Variant::Content(content) => content.clone().into_string(),
+		Variant::Content(content) => format!("\"{}\"", content.clone().into_string()),
 		Variant::Enum(e) => e.to_u32().to_string(),
-		Variant::Ref(referent) => format!("_{referent}"),
+		Variant::Ref(referent) => {
+			if referent.is_none() {
+				"nil".to_string()
+			} else {
+				format!("_{referent}")
+			}
+		}
 		Variant::Rect(rect) => format!(
-			"Rect.new({}, {})",
-			variant_to_lua(&Variant::Vector2(rect.min)),
-			variant_to_lua(&Variant::Vector2(rect.max)),
+			"Rect.new({}, {}, {}, {})",
+			rect.min.x, rect.min.y, rect.max.x, rect.max.y,
 		),
 		Variant::UDim(udim) => format!("UDim.new({}, {})", udim.scale, udim.offset),
 		Variant::UDim2(udim) => format!(
@@ -95,7 +104,39 @@ fn variant_to_lua(value: &Variant) -> String {
 			font.weight.as_u16(),
 			font.style.as_u8()
 		),
-		_ => "!! UNIMPLEMENTED MODEL TYPE !!".to_string(),
+		// for some reason, studio exports with a property called "Attributes" and "Tags"
+		Variant::Attributes(attributes) => {
+			let attributes = &attributes
+				.iter()
+				.map(|attribute| {
+					format!(
+						"_{}:SetAttribute({}, {})",
+						instance.referent(),
+						attribute.0,
+						variant_to_lua(attribute.1, instance)
+					)
+				})
+				.collect::<Vec<String>>();
+			format!(
+				"-- attributes for ref {} with length {}\n{}",
+				instance.referent(),
+				attributes.len(),
+				&attributes.join("\n")
+			)
+		}
+		Variant::Tags(tags) => {
+			let tags = &tags
+				.iter()
+				.map(|tag| format!("_{}:AddTag(\"{tag}\")", instance.referent()))
+				.collect::<Vec<String>>();
+			format!(
+				"-- tags for ref {} with length {}\n{}",
+				instance.referent(),
+				tags.len(),
+				tags.join("\n")
+			)
+		}
+		_x => format!("'UNIMPLEMENTED MODEL TYPE of \\'{:?}\\' !!'", _x),
 	}
 }
 
@@ -119,12 +160,25 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 	// properties
 	source.push_str(&format!("{instance_ref}.Name = \"{}\"\n", instance.name));
 	for (property, value) in &instance.properties {
-		let lua_value = variant_to_lua(value);
+		let lua_value = variant_to_lua(value, instance);
 
-		if property == "Source" && runtime == &Runtime::LuaSandbox {
-			source.push_str(&format!("sourceMap[{instance_ref}] = {lua_value}\n"))
-		} else {
-			source.push_str(&format!("{instance_ref}.{property} = {lua_value}\n"))
+		match property.as_str() {
+			"Attributes" => source.push_str(&lua_value),
+			"Tags" => source.push_str(&lua_value),
+			// unwritable (no documentation too!)
+			"ModelMeshSize"
+			| "NeedsPivotMigration"
+			| "ModelMeshData"
+			| "ModelMeshCFrame"
+			| "WorldPivotData" => {}
+			"Source" => {
+				if runtime == &Runtime::LuaSandbox {
+					source.push_str(&format!("sourceMap[{instance_ref}] = {lua_value}\n"))
+				} else {
+					source.push_str(&format!("{instance_ref}.{property} = {lua_value}\n"))
+				}
+			}
+			_ => source.push_str(&format!("{instance_ref}.{property} = {lua_value}\n")),
 		}
 	}
 
@@ -142,12 +196,12 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 	source.push_str(children_source.join("\n").as_str());
 
 	if is_root_instance {
-		match runtime {
-			&Runtime::LuaSandbox => source.push_str(&format!(
+		match *runtime {
+			Runtime::LuaSandbox => source.push_str(&format!(
 				"local root = {instance_ref}\n{}",
 				include_str!("../runtime/lua_sandbox.lua")
 			)),
-			&Runtime::Studio => source.push_str(&format!("return {instance_ref} -- root model instance")),
+			Runtime::Studio => source.push_str(&format!("return {instance_ref} -- root model instance")),
 		}
 	}
 	source

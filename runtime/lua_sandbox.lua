@@ -16,6 +16,7 @@ fakeRequire = function(script)
 		require = fakeRequire,
 	}, {
 		__index = getfenv(0),
+		__metatable = "The metatable is locked",
 	})
 	local fn, e = loadstring(source)
 	if not fn then
@@ -38,6 +39,7 @@ local function runScript(script: LuaSourceContainer)
 		require = fakeRequire,
 	}, {
 		__index = getfenv(0),
+		__metatable = "The metatable is locked",
 	})
 	if not fn then
 		error("Error running script, loadstring failed", e)
