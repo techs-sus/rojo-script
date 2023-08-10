@@ -1,0 +1,13 @@
+[package]
+name = "rojo-script"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.72"
+clap = { version = "4.3.21", features = ["derive"] }
+rbx_binary = "0.7.1"
+rbx_dom_weak = "2.5.0"
+rbx_xml = "0.13.1"
