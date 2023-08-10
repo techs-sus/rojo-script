@@ -99,7 +99,7 @@ fn variant_to_lua(value: &Variant, instance: &Ref) -> String {
 			format!("Vector3int16.new({}, {}, {})", vector.x, vector.y, vector.z)
 		}
 		Variant::Font(font) => format!(
-			"FontFace.new({}, {}, {})",
+			"Font.new(\"{}\", {}, {})",
 			font.family,
 			font.weight.as_u16(),
 			font.style.as_u8()
