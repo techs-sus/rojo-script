@@ -35,7 +35,6 @@ fn variant_to_lua(value: &Variant, instance: &Ref) -> String {
 		Variant::Float64(float) => format!("{float}"),
 		Variant::Int32(int) => format!("{int}"),
 		Variant::Int64(int) => format!("{int}"),
-		Variant::BrickColor(color) => color.to_string(),
 		Variant::CFrame(cframe) => {
 			let position = cframe.position;
 			let orientation = cframe.orientation;
@@ -56,6 +55,7 @@ fn variant_to_lua(value: &Variant, instance: &Ref) -> String {
 				orientation.z.z
 			)
 		}
+		Variant::BrickColor(color) => format!("BrickColor.new(\"{color}\")"),
 		Variant::Color3(color) => format!("Color3.new({}, {}, {})", color.r, color.g, color.b),
 		Variant::Color3uint8(color) => {
 			format!("Color3uint8.new({}, {}, {})", color.r, color.g, color.b)
