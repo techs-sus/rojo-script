@@ -1,9 +1,15 @@
 use anyhow::Context as _;
-use clap::Parser;
+use clap::{Parser, ValueEnum};
 use rbx_dom_weak::types::Variant;
 use rbx_dom_weak::{Instance, WeakDom};
 use std::path::PathBuf;
 use std::{fs::File, io::BufReader};
+
+#[derive(Clone, ValueEnum, PartialEq)]
+enum Runtime {
+	Studio,
+	LuaSandbox,
+}
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
@@ -12,8 +18,13 @@ struct Args {
 	#[arg(short, long)]
 	file: PathBuf,
 
+	/// Output lua file
 	#[arg(short, long)]
 	output: PathBuf,
+
+	/// Which runtime should be used
+	#[arg(short, long)]
+	runtime: Runtime,
 }
 
 fn variant_to_lua(value: &Variant) -> String {
@@ -88,7 +99,7 @@ fn variant_to_lua(value: &Variant) -> String {
 	}
 }
 
-fn generate_lua(instance: &Instance, dom: &WeakDom) -> String {
+fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String {
 	let class = match instance.class.as_str() {
 		"DataModel" => "Model",
 		_ => &instance.class,
@@ -97,6 +108,10 @@ fn generate_lua(instance: &Instance, dom: &WeakDom) -> String {
 	let mut source = String::new();
 	let parent = dom.get_by_ref(instance.parent());
 	let is_root_instance = parent.is_none();
+	if is_root_instance && runtime == &Runtime::LuaSandbox {
+		source.push_str("local sourceMap = {}\n");
+	}
+
 	source.push_str(&format!(
 		"local {instance_ref} = Instance.new(\"{class}\")\n"
 	));
@@ -105,7 +120,12 @@ fn generate_lua(instance: &Instance, dom: &WeakDom) -> String {
 	source.push_str(&format!("{instance_ref}.Name = \"{}\"\n", instance.name));
 	for (property, value) in &instance.properties {
 		let lua_value = variant_to_lua(value);
-		source.push_str(&format!("{instance_ref}.{property} = {lua_value}\n"))
+
+		if property == "Source" && runtime == &Runtime::LuaSandbox {
+			source.push_str(&format!("sourceMap[{instance_ref}] = {lua_value}\n"))
+		} else {
+			source.push_str(&format!("{instance_ref}.{property} = {lua_value}\n"))
+		}
 	}
 
 	if let Some(x) = parent {
@@ -116,14 +136,19 @@ fn generate_lua(instance: &Instance, dom: &WeakDom) -> String {
 		.children()
 		.iter()
 		.map(|x| dom.get_by_ref(*x).unwrap())
-		.map(|child| generate_lua(child, dom))
+		.map(|child| generate_lua(child, dom, runtime))
 		.collect();
 
 	source.push_str(children_source.join("\n").as_str());
 
 	if is_root_instance {
-		// source is done generating, so we should return the root
-		source.push_str(&format!("return {instance_ref} -- root model instance"))
+		match runtime {
+			&Runtime::LuaSandbox => source.push_str(&format!(
+				"local root = {instance_ref}\n{}",
+				include_str!("../runtime/lua_sandbox.lua")
+			)),
+			&Runtime::Studio => source.push_str(&format!("return {instance_ref} -- root model instance")),
+		}
 	}
 	source
 }
@@ -144,7 +169,10 @@ fn main() -> Result<(), anyhow::Error> {
 		_ => panic!("invalid file extension"),
 	};
 
-	std::fs::write(args.output, generate_lua(model.root(), &model))?;
+	std::fs::write(
+		args.output,
+		generate_lua(model.root(), &model, &args.runtime),
+	)?;
 
 	Ok(())
 }
