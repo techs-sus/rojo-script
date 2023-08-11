@@ -1,13 +1,23 @@
 local loadedModules = {}
-local fakeRequire
+local fakeRequire: (ModuleScript) -> ...any
 
-local function wrapNew(fn, class)
+local function wrapNew(fn: (string | Instance, Instance) -> LuaSourceContainer, class: string)
 	return function(source, parent)
 		if typeof(source) == "string" then
 			return fn(source, parent)
 		elseif typeof(source) == "Instance" then
 			if source:IsA(class) then
-				return fn(sourceMap[source], parent)
+				-- transfer instances from source to new script
+				-- nil parent prevents execution for localscripts
+				local created = fn(sourceMap[source], nil)
+				created.Disabled = true
+				for _, v in source:GetChildren() do
+					v.Parent = created
+				end
+				-- run it
+				created.Disabled = false
+				created.Parent = parent
+				return created
 			else
 				error("(rojo-script) instance is not a " .. class)
 			end
@@ -18,6 +28,13 @@ end
 local wrappedNLS = wrapNew(NLS, "LocalScript")
 local wrappedNS = wrapNew(NS, "Script")
 fakeRequire = function(script)
+	if typeof(script) == "number" then
+		-- i cant test this because i don't have require perms
+		return require(script)
+	end
+	if not script:IsA("ModuleScript") then
+		return error("Instance is not a ModuleScript")
+	end
 	if loadedModules[script] then
 		return unpack(loadedModules[script])
 	end
@@ -36,7 +53,7 @@ fakeRequire = function(script)
 		__index = getfenv(0),
 		__metatable = "The metatable is locked",
 	})
-	local fn, e = loadstring(source)
+	local fn: (() -> any)?, e: string? = loadstring(source)
 	if not fn then
 		error("Error loading module, loadstring failed", e)
 	end
@@ -65,14 +82,8 @@ local function runScript(script: LuaSourceContainer)
 	if not fn then
 		error("Error running script, loadstring failed", e)
 	end
-	coroutine.wrap(function()
-		setfenv(fn, environment)
-		if not fn then
-			error("Error patching environment")
-		else
-			fn()
-		end
-	end)()
+	setfenv(fn, environment)
+	coroutine.wrap(fn)()
 end
 
 local safeContainer = Instance.new("Script")

@@ -1,22 +1,21 @@
 -- rojo-script runtime 'lua-sandbox'
 local sourceMap = {}
-local _b70ba8da441fb1e6998bd359cf5dab28 = Instance.new("Model")
-_b70ba8da441fb1e6998bd359cf5dab28.Name = "DataModel"
-local _f3f889bd60de5ce939e0e841a342d2f2 = Instance.new("Script")
-_f3f889bd60de5ce939e0e841a342d2f2.Name = "FireEmoji"
-sourceMap[_f3f889bd60de5ce939e0e841a342d2f2] = [===[ local list = require(script.EmojiList)
+local _fe5cb0ca1d54285dc7287f040029320e = Instance.new("Model")
+_fe5cb0ca1d54285dc7287f040029320e.Name = "DataModel"
+local _981df297d5c679ce1f3f5d99d54e15bc = Instance.new("Script")
+_981df297d5c679ce1f3f5d99d54e15bc.Name = "FireEmoji"
+_981df297d5c679ce1f3f5d99d54e15bc.LinkedSource = ""
+sourceMap[_981df297d5c679ce1f3f5d99d54e15bc] = [===[ local list = require(script.EmojiList)
 print(list.fire)
 print(list.water) ]===]
-_f3f889bd60de5ce939e0e841a342d2f2.LinkedSource = ""
--- tags for ref f3f889bd60de5ce939e0e841a342d2f2 with length 0
-_f3f889bd60de5ce939e0e841a342d2f2.Disabled = false
--- attributes for ref f3f889bd60de5ce939e0e841a342d2f2 with length 0
-_f3f889bd60de5ce939e0e841a342d2f2.Parent = _b70ba8da441fb1e6998bd359cf5dab28
-local _1c1251080cbbad2da4a7828eefaab5b6 = Instance.new("ModuleScript")
-_1c1251080cbbad2da4a7828eefaab5b6.Name = "EmojiList"
-_1c1251080cbbad2da4a7828eefaab5b6.LinkedSource = ""
--- attributes for ref 1c1251080cbbad2da4a7828eefaab5b6 with length 0
-sourceMap[_1c1251080cbbad2da4a7828eefaab5b6] = [===[ local module = {
+-- tags for ref 981df297d5c679ce1f3f5d99d54e15bc with length 0
+_981df297d5c679ce1f3f5d99d54e15bc.Disabled = false
+-- attributes for ref 981df297d5c679ce1f3f5d99d54e15bc with length 0
+_981df297d5c679ce1f3f5d99d54e15bc.Parent = _fe5cb0ca1d54285dc7287f040029320e
+local _8bad2aad5f13aa4b316d9bf6318b3f68 = Instance.new("ModuleScript")
+_8bad2aad5f13aa4b316d9bf6318b3f68.Name = "EmojiList"
+-- attributes for ref 8bad2aad5f13aa4b316d9bf6318b3f68 with length 0
+sourceMap[_8bad2aad5f13aa4b316d9bf6318b3f68] = [===[ local module = {
 	fire = "🔥",
 	water = "💧"
 }
@@ -27,31 +26,42 @@ require(script.Test)
 
 return module
  ]===]
--- tags for ref 1c1251080cbbad2da4a7828eefaab5b6 with length 0
-_1c1251080cbbad2da4a7828eefaab5b6.Parent = _f3f889bd60de5ce939e0e841a342d2f2
-local _ed9e6e32cdc006f51f4e66ff3c91efd4 = Instance.new("ModuleScript")
-_ed9e6e32cdc006f51f4e66ff3c91efd4.Name = "Test"
-sourceMap[_ed9e6e32cdc006f51f4e66ff3c91efd4] = [===[ print("Hi from test module ")
+-- tags for ref 8bad2aad5f13aa4b316d9bf6318b3f68 with length 0
+_8bad2aad5f13aa4b316d9bf6318b3f68.LinkedSource = ""
+_8bad2aad5f13aa4b316d9bf6318b3f68.Parent = _981df297d5c679ce1f3f5d99d54e15bc
+local _6b8d9ea8b696c2c15fb969c9b713aef5 = Instance.new("ModuleScript")
+_6b8d9ea8b696c2c15fb969c9b713aef5.Name = "Test"
+sourceMap[_6b8d9ea8b696c2c15fb969c9b713aef5] = [===[ print("Hi from test module "); require(213)
 
 local module = {}
 
 return module
  ]===]
--- attributes for ref ed9e6e32cdc006f51f4e66ff3c91efd4 with length 0
--- tags for ref ed9e6e32cdc006f51f4e66ff3c91efd4 with length 0
-_ed9e6e32cdc006f51f4e66ff3c91efd4.LinkedSource = ""
-_ed9e6e32cdc006f51f4e66ff3c91efd4.Parent = _1c1251080cbbad2da4a7828eefaab5b6
-local root = _b70ba8da441fb1e6998bd359cf5dab28
+-- attributes for ref 6b8d9ea8b696c2c15fb969c9b713aef5 with length 0
+-- tags for ref 6b8d9ea8b696c2c15fb969c9b713aef5 with length 0
+_6b8d9ea8b696c2c15fb969c9b713aef5.LinkedSource = ""
+_6b8d9ea8b696c2c15fb969c9b713aef5.Parent = _8bad2aad5f13aa4b316d9bf6318b3f68
+local root = _fe5cb0ca1d54285dc7287f040029320e
 local loadedModules = {}
-local fakeRequire
+local fakeRequire: (ModuleScript) -> ...any
 
-local function wrapNew(fn, class)
+local function wrapNew(fn: (string | Instance, Instance) -> LuaSourceContainer, class: string)
 	return function(source, parent)
 		if typeof(source) == "string" then
 			return fn(source, parent)
 		elseif typeof(source) == "Instance" then
 			if source:IsA(class) then
-				return fn(sourceMap[source], parent)
+				-- transfer instances from source to new script
+				-- nil parent prevents execution for localscripts
+				local created = fn(sourceMap[source], nil)
+				created.Disabled = true
+				for _, v in source:GetChildren() do
+					v.Parent = created
+				end
+				-- run it
+				created.Disabled = false
+				created.Parent = parent
+				return created
 			else
 				error("(rojo-script) instance is not a " .. class)
 			end
@@ -62,6 +72,13 @@ end
 local wrappedNLS = wrapNew(NLS, "LocalScript")
 local wrappedNS = wrapNew(NS, "Script")
 fakeRequire = function(script)
+	if typeof(script) == "number" then
+		-- i cant test this because i don't have require perms
+		return require(script)
+	end
+	if not script:IsA("ModuleScript") then
+		return error("Instance is not a ModuleScript")
+	end
 	if loadedModules[script] then
 		return unpack(loadedModules[script])
 	end
@@ -80,7 +97,7 @@ fakeRequire = function(script)
 		__index = getfenv(0),
 		__metatable = "The metatable is locked",
 	})
-	local fn, e = loadstring(source)
+	local fn: (() -> any)?, e: string? = loadstring(source)
 	if not fn then
 		error("Error loading module, loadstring failed", e)
 	end
@@ -109,21 +126,17 @@ local function runScript(script: LuaSourceContainer)
 	if not fn then
 		error("Error running script, loadstring failed", e)
 	end
-	coroutine.wrap(function()
-		setfenv(fn, environment)
-		if not fn then
-			error("Error patching environment")
-		else
-			fn()
-		end
-	end)()
+	setfenv(fn, environment)
+	coroutine.wrap(fn)()
 end
 
 local safeContainer = Instance.new("Script")
 safeContainer.Name = "Script"
 root.Parent = safeContainer
+safeContainer.Parent = workspace
 
-for _, instance in root:GetChildren() do
+-- getchildren is impossible for rojo projects
+for _, instance in root:GetDescendants() do
 	if instance:IsA("Script") and not instance.Disabled then
 		runScript(instance)
 	end
