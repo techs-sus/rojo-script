@@ -208,7 +208,7 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 	if is_root_instance {
 		match *runtime {
 			Runtime::LuaSandbox => source.push_str(&format!(
-				"local root = {instance_ref}\n{}",
+				"getfenv(0).root = {instance_ref}\n{}",
 				include_str!("../runtime/lua_sandbox.lua")
 			)),
 			Runtime::Studio => source.push_str(&format!("return {instance_ref} -- root model instance")),
