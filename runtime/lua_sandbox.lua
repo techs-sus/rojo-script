@@ -1,43 +1,118 @@
-local runtime
+type Runtime = {
+	getPatchedEnvironment: (script: LuaSourceContainer) -> (),
+	loadedModules: {
+		[string]: { any },
+	},
+	main: () -> (),
+	require: (script: ModuleScript) -> ...any,
+	runScript: (script: LuaSourceContainer) -> (),
+}
+
+local runtime: Runtime = {} :: any
 if getfenv().__runtime then
 	runtime = getfenv().__runtime
 else
-	runtime = {
-		loadedModules = {},
-		bindable = Instance.new("BindableFunction"),
-	}
+	local HttpService = game:GetService("HttpService")
+	local root: Model = getfenv(0).root
+	local sourceMap = getfenv(0).sourceMap
+	runtime.loadedModules = {}
 	local nilParentedInstance = Instance.new("Script")
 	nilParentedInstance.Name = "<nil>"
 	nilParentedInstance.Parent = nil
 
-	local function wrapNew(fn: (string | Instance, Instance) -> LuaSourceContainer, class: string)
-		return function(source, parent)
-			if typeof(source) == "string" then
-				return fn(source, parent)
-			elseif typeof(source) == "Instance" then
-				if source:IsA(class) then
-					-- transfer instances from source to new script
-					-- nil parent prevents execution for localscripts
-					local created = fn(sourceMap[source], nilParentedInstance)
-					created.Disabled = true
-					for _, v in source:GetChildren() do
-						v.Parent = created
-					end
-					-- run it
-					created.Disabled = false
-					created.Parent = parent
-					return created
-				else
-					error("expected class " .. class .. " but got " .. source.ClassName)
+	local function wrappedNS(source: Script | string, parent: Instance)
+		if typeof(source) == "string" then
+			return getfenv().NS(source, parent)
+		elseif typeof(source) == "Instance" then
+			if source:IsA("Script") then
+				-- prevent tampering
+				local accessToken = HttpService:GenerateGUID(false)
+				local sourcePatch = string.format(
+					[[
+						--- rojo-script environment tampering ---
+						(function()
+							repeat task.wait() until script.Parent:IsA("Actor")
+							local communication = script.Parent
+							local token = "%s"
+							local c
+							c = communication:BindToMessage(token .. "| runtime::getPatchedEnvironment<return>", function(environment)
+								setfenv(0, environment);
+								c:Disconnect()
+							end)
+							communication:SendMessage(token .. "| runtime::getPatchedEnvironment", script)
+						end)()
+
+					]],
+					accessToken
+				)
+				-- transfer instances from source to new script
+				-- nil parent prevents execution for localscripts
+
+				local created = getfenv().NLS(sourcePatch .. sourceMap[source], nilParentedInstance)
+				local connection
+				local communication = Instance.new("Actor")
+				created.Disabled = true
+				-- TODO: Make adding instances to the source safe.
+				for _, v in source:GetChildren() do
+					v.Parent = created
 				end
+				-- run it
+				created.Disabled = false
+				connection = communication:BindToMessage(
+					accessToken .. "| runtime::getPatchedEnvironment",
+					function(script)
+						if script ~= created then
+							return
+						end
+						communication:SendMessage(
+							accessToken .. "| runtime::getPatchedEnvironment<return>",
+							runtime.getPatchedEnvironment(script)
+						)
+						created.Parent = parent
+						connection:Disconnect()
+					end
+				)
+				-- take 20 cycles to ensure script has been ran
+				local amplify = table.create(20, task.defer)
+				created.Parent = parent
+				pcall(amplify, function()
+					created.Parent = communication
+				end)
+				return created
 			else
-				error("expected type string | " .. class .. " but got " .. typeof(source))
+				error("expected class Script" .. " but got " .. source.ClassName)
 			end
+		else
+			error("expected type string | Script" .. " but got " .. typeof(source))
 		end
 	end
 
-	local wrappedNLS = wrapNew(getfenv().NLS, "LocalScript")
-	local wrappedNS = wrapNew(getfenv().NS, "Script")
+	local function wrappedNLS(source: LocalScript | string, parent: Instance)
+		if typeof(source) == "string" then
+			return getfenv().NLS(source, parent)
+		elseif typeof(source) == "Instance" then
+			if source:IsA("LocalScript") then
+				-- transfer instances from source to new script
+				-- nil parent prevents execution for localscripts
+
+				local created = getfenv().NLS(sourceMap[source], nilParentedInstance)
+				created.Disabled = true
+				-- TODO: Make adding instances to the source safe.
+				for _, v in source:GetChildren() do
+					v.Parent = created
+				end
+				-- run it
+				created.Disabled = false
+				created.Parent = parent
+				return created
+			else
+				error("expected class LocalScript" .. " but got " .. source.ClassName)
+			end
+		else
+			error("expected type string | LocalScript" .. " but got " .. typeof(source))
+		end
+	end
+
 	function runtime.getPatchedEnvironment(script)
 		local e
 		e = setmetatable({
@@ -55,14 +130,9 @@ else
 			__metatable = "The metatable is locked",
 		})
 	end
-	-- this will be used in another commit :)
-	runtime.bindable.OnInvoke = function(script)
-		return runtime.getPatchedEnvironment(script)
-	end
 
 	runtime.require = function(script): ...any
 		if typeof(script) == "number" then
-			-- i cant test this because i don't have require perms
 			return require(script)
 		end
 		if not script:IsA("ModuleScript") then

@@ -158,7 +158,7 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 				source.push_str("-- rojo-script runtime 'studio'\n");
 			}
 		}
-		source.push_str("local sourceMap = {}\n");
+		source.push_str("getfenv(0).sourceMap = {}\n");
 	}
 
 	source.push_str(&format!(
