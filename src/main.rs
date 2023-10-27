@@ -118,7 +118,7 @@ fn variant_to_lua(value: &Variant, instance: &Ref) -> String {
 				})
 				.collect::<Vec<String>>();
 			format!(
-				"-- attributes for ref {} with length {}\n{}",
+				"-- Variant::Attributes on ref {} [length: {}]\n{}",
 				instance,
 				attributes.len(),
 				&attributes.join("\n")
@@ -130,13 +130,13 @@ fn variant_to_lua(value: &Variant, instance: &Ref) -> String {
 				.map(|tag| format!("_{}:AddTag(\"{tag}\")", instance))
 				.collect::<Vec<String>>();
 			format!(
-				"-- tags for ref {} with length {}\n{}",
+				"-- Variant::Tags on ref {} [length: {}]\n{}",
 				instance,
 				tags.len(),
 				tags.join("\n")
 			)
 		}
-		_x => format!("'UNIMPLEMENTED MODEL TYPE of \\'{:?}\\' !!'", _x),
+		_x => format!("-- Unimplemented type \\'{:?}\\' for _{instance}", _x),
 	}
 }
 
@@ -158,7 +158,7 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 				source.push_str("-- rojo-script runtime 'studio'\n");
 			}
 		}
-		source.push_str("getfenv(0).sourceMap = {}\n");
+		source.push_str("local sourceMap = {}; getfenv(0).sourceMap = sourceMap\n");
 	}
 
 	source.push_str(&format!(
