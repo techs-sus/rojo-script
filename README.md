@@ -18,7 +18,13 @@ cd rojo-script
 cargo run -- -f input.rbxm -o output.lua
 ```
 
-### TODO list
+### Notes for end users
+
+- NS will completely seperate the instanced script and that script will not be able to access it's parents.
+- NLS does the same and does not have runtime
+
+#### TODO list
 
 lua-sandbox runtime:
+
 - add modules to NLS (use fione + yueliang (possibly even a luau bytecode runner))

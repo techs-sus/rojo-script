@@ -1,10 +1,13 @@
 -- rojo-script runtime 'lua-sandbox'
-getfenv(0).sourceMap = {}
-local _9fe5bc7bebcb7bfda2a009cbe5e8bc76 = Instance.new("Model")
-_9fe5bc7bebcb7bfda2a009cbe5e8bc76.Name = "DataModel"
-local _95577a94600768cc9b1a63ce3bd71a19 = Instance.new("ModuleScript")
-_95577a94600768cc9b1a63ce3bd71a19.Name = "Roact"
-sourceMap[_95577a94600768cc9b1a63ce3bd71a19] = [===[ --~strict
+script:Destroy();script=nil
+local referentMap={};getfenv(0).referentMap=referentMap
+local _c611e9ce53464c1578d74c59e45df702 = { ClassName = "Model", Children = {}, Properties = {} }
+referentMap["_c611e9ce53464c1578d74c59e45df702"] = _c611e9ce53464c1578d74c59e45df702
+_c611e9ce53464c1578d74c59e45df702.Name = "DataModel"
+local _5cd65233edc8204aa0652e301bed6886 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_5cd65233edc8204aa0652e301bed6886"] = _5cd65233edc8204aa0652e301bed6886
+_5cd65233edc8204aa0652e301bed6886.Name = "Roact"
+_5cd65233edc8204aa0652e301bed6886.Properties.Source = [===[ --~strict
 --[[
 	Packages up the internals of Roact and exposes a public API for it.
 ]]
@@ -54,10 +57,11 @@ local Roact = strict({
 
 return Roact
  ]===]
-_95577a94600768cc9b1a63ce3bd71a19.Parent = _9fe5bc7bebcb7bfda2a009cbe5e8bc76
-local _905cf21a755c69e73fff9c2bf5c464da = Instance.new("ModuleScript")
-_905cf21a755c69e73fff9c2bf5c464da.Name = "strict.spec"
-sourceMap[_905cf21a755c69e73fff9c2bf5c464da] = [===[ return function()
+_c611e9ce53464c1578d74c59e45df702.Children["_5cd65233edc8204aa0652e301bed6886"] = _5cd65233edc8204aa0652e301bed6886
+local _bc63b23c2712400670d31a6cdf658baf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_bc63b23c2712400670d31a6cdf658baf"] = _bc63b23c2712400670d31a6cdf658baf
+_bc63b23c2712400670d31a6cdf658baf.Name = "strict.spec"
+_bc63b23c2712400670d31a6cdf658baf.Properties.Source = [===[ return function()
 	local strict = require(script.Parent.strict)
 
 	it("should error when getting a nonexistent key", function()
@@ -83,11 +87,12 @@ sourceMap[_905cf21a755c69e73fff9c2bf5c464da] = [===[ return function()
 	end)
 end
  ]===]
-_905cf21a755c69e73fff9c2bf5c464da.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_bc63b23c2712400670d31a6cdf658baf"] = _bc63b23c2712400670d31a6cdf658baf
 
-local _144ce54be31788b4309f2077e72d5e57 = Instance.new("ModuleScript")
-_144ce54be31788b4309f2077e72d5e57.Name = "strict"
-sourceMap[_144ce54be31788b4309f2077e72d5e57] = [===[ --!strict
+local _dc830b0518d6d5f550a4537ab596d869 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_dc830b0518d6d5f550a4537ab596d869"] = _dc830b0518d6d5f550a4537ab596d869
+_dc830b0518d6d5f550a4537ab596d869.Name = "strict"
+_dc830b0518d6d5f550a4537ab596d869.Properties.Source = [===[ --!strict
 local function strict(t: { [any]: any }, name: string?)
 	-- FIXME Luau: Need to define a new variable since reassigning `name = ...`
 	-- doesn't narrow the type
@@ -110,11 +115,12 @@ end
 
 return strict
  ]===]
-_144ce54be31788b4309f2077e72d5e57.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_dc830b0518d6d5f550a4537ab596d869"] = _dc830b0518d6d5f550a4537ab596d869
 
-local _bf7fd2686720df62c0a884c579f224ff = Instance.new("ModuleScript")
-_bf7fd2686720df62c0a884c579f224ff.Name = "oneChild.spec"
-sourceMap[_bf7fd2686720df62c0a884c579f224ff] = [===[ return function()
+local _89dd73c9bf6f650dd1b91e5f75ae1183 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_89dd73c9bf6f650dd1b91e5f75ae1183"] = _89dd73c9bf6f650dd1b91e5f75ae1183
+_89dd73c9bf6f650dd1b91e5f75ae1183.Name = "oneChild.spec"
+_89dd73c9bf6f650dd1b91e5f75ae1183.Properties.Source = [===[ return function()
 	local createElement = require(script.Parent.createElement)
 
 	local oneChild = require(script.Parent.oneChild)
@@ -150,11 +156,12 @@ sourceMap[_bf7fd2686720df62c0a884c579f224ff] = [===[ return function()
 	end)
 end
  ]===]
-_bf7fd2686720df62c0a884c579f224ff.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_89dd73c9bf6f650dd1b91e5f75ae1183"] = _89dd73c9bf6f650dd1b91e5f75ae1183
 
-local _40801440ab5b3c0b13ff3ef71d490540 = Instance.new("ModuleScript")
-_40801440ab5b3c0b13ff3ef71d490540.Name = "oneChild"
-sourceMap[_40801440ab5b3c0b13ff3ef71d490540] = [===[ --[[
+local _7c9c4730ce709f0bd2339ac2efa50076 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_7c9c4730ce709f0bd2339ac2efa50076"] = _7c9c4730ce709f0bd2339ac2efa50076
+_7c9c4730ce709f0bd2339ac2efa50076.Name = "oneChild"
+_7c9c4730ce709f0bd2339ac2efa50076.Properties.Source = [===[ --[[
 	Retrieves at most one child from the children passed to a component.
 
 	If passed nil or an empty table, will return nil.
@@ -183,11 +190,12 @@ end
 
 return oneChild
  ]===]
-_40801440ab5b3c0b13ff3ef71d490540.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_7c9c4730ce709f0bd2339ac2efa50076"] = _7c9c4730ce709f0bd2339ac2efa50076
 
-local _1451ab04105a217adab7f214b8b6b7cc = Instance.new("ModuleScript")
-_1451ab04105a217adab7f214b8b6b7cc.Name = "invalidSetStateMessages"
-sourceMap[_1451ab04105a217adab7f214b8b6b7cc] = [===[ --[[
+local _59a9885f1eabd4ac115b6d378f6f37cf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_59a9885f1eabd4ac115b6d378f6f37cf"] = _59a9885f1eabd4ac115b6d378f6f37cf
+_59a9885f1eabd4ac115b6d378f6f37cf.Name = "invalidSetStateMessages"
+_59a9885f1eabd4ac115b6d378f6f37cf.Properties.Source = [===[ --[[
 	These messages are used by Component to help users diagnose when they're
 	calling setState in inappropriate places.
 
@@ -226,11 +234,12 @@ It was triggered by the component %q.
 
 return invalidSetStateMessages
  ]===]
-_1451ab04105a217adab7f214b8b6b7cc.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_59a9885f1eabd4ac115b6d378f6f37cf"] = _59a9885f1eabd4ac115b6d378f6f37cf
 
-local _778a4609e973040e417447e61f310c8e = Instance.new("ModuleScript")
-_778a4609e973040e417447e61f310c8e.Name = "internalAssert"
-sourceMap[_778a4609e973040e417447e61f310c8e] = [===[ local function internalAssert(condition, message)
+local _8a3c0dc577281f42ac17b2a38b6cabdc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_8a3c0dc577281f42ac17b2a38b6cabdc"] = _8a3c0dc577281f42ac17b2a38b6cabdc
+_8a3c0dc577281f42ac17b2a38b6cabdc.Name = "internalAssert"
+_8a3c0dc577281f42ac17b2a38b6cabdc.Properties.Source = [===[ local function internalAssert(condition, message)
 	if not condition then
 		error(message .. " (This is probably a bug in Roact!)", 3)
 	end
@@ -238,11 +247,12 @@ end
 
 return internalAssert
  ]===]
-_778a4609e973040e417447e61f310c8e.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_8a3c0dc577281f42ac17b2a38b6cabdc"] = _8a3c0dc577281f42ac17b2a38b6cabdc
 
-local _f0fd84417fc1c6716124f60c78777c78 = Instance.new("ModuleScript")
-_f0fd84417fc1c6716124f60c78777c78.Name = "init.spec"
-sourceMap[_f0fd84417fc1c6716124f60c78777c78] = [===[ return function()
+local _edddbd2c0de2a55b8330764e47a3dadf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_edddbd2c0de2a55b8330764e47a3dadf"] = _edddbd2c0de2a55b8330764e47a3dadf
+_edddbd2c0de2a55b8330764e47a3dadf.Name = "init.spec"
+_edddbd2c0de2a55b8330764e47a3dadf.Properties.Source = [===[ return function()
 	local Roact = require(script.Parent)
 
 	it("should load with all public APIs", function()
@@ -308,11 +318,12 @@ sourceMap[_f0fd84417fc1c6716124f60c78777c78] = [===[ return function()
 	end)
 end
  ]===]
-_f0fd84417fc1c6716124f60c78777c78.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_edddbd2c0de2a55b8330764e47a3dadf"] = _edddbd2c0de2a55b8330764e47a3dadf
 
-local _d1518a0edb106fc016639986197f5dc1 = Instance.new("ModuleScript")
-_d1518a0edb106fc016639986197f5dc1.Name = "getDefaultInstanceProperty.spec"
-sourceMap[_d1518a0edb106fc016639986197f5dc1] = [===[ return function()
+local _709577614691abc7a7ad907673014555 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_709577614691abc7a7ad907673014555"] = _709577614691abc7a7ad907673014555
+_709577614691abc7a7ad907673014555.Name = "getDefaultInstanceProperty.spec"
+_709577614691abc7a7ad907673014555.Properties.Source = [===[ return function()
 	local getDefaultInstanceProperty = require(script.Parent.getDefaultInstanceProperty)
 
 	it("should get default name string values", function()
@@ -346,11 +357,12 @@ sourceMap[_d1518a0edb106fc016639986197f5dc1] = [===[ return function()
 	end)
 end
  ]===]
-_d1518a0edb106fc016639986197f5dc1.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_709577614691abc7a7ad907673014555"] = _709577614691abc7a7ad907673014555
 
-local _0152776c45dad3d757d89df338ae2e38 = Instance.new("ModuleScript")
-_0152776c45dad3d757d89df338ae2e38.Name = "getDefaultInstanceProperty"
-sourceMap[_0152776c45dad3d757d89df338ae2e38] = [===[ --[[
+local _3e54f7f6566997dfb3d9594625e33ce9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_3e54f7f6566997dfb3d9594625e33ce9"] = _3e54f7f6566997dfb3d9594625e33ce9
+_3e54f7f6566997dfb3d9594625e33ce9.Name = "getDefaultInstanceProperty"
+_3e54f7f6566997dfb3d9594625e33ce9.Properties.Source = [===[ --[[
 	Attempts to get the default value of a given property on a Roblox instance.
 
 	This is used by the reconciler in cases where a prop was previously set on a
@@ -405,11 +417,12 @@ end
 
 return getDefaultInstanceProperty
  ]===]
-_0152776c45dad3d757d89df338ae2e38.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_3e54f7f6566997dfb3d9594625e33ce9"] = _3e54f7f6566997dfb3d9594625e33ce9
 
-local _e94cb3e5506ef3207ec75126b2625a6a = Instance.new("ModuleScript")
-_e94cb3e5506ef3207ec75126b2625a6a.Name = "forwardRef.spec"
-sourceMap[_e94cb3e5506ef3207ec75126b2625a6a] = [===[ -- Tests loosely adapted from those found at:
+local _c76a9073c458cea4c65c92bb057e3df2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_c76a9073c458cea4c65c92bb057e3df2"] = _c76a9073c458cea4c65c92bb057e3df2
+_c76a9073c458cea4c65c92bb057e3df2.Name = "forwardRef.spec"
+_c76a9073c458cea4c65c92bb057e3df2.Properties.Source = [===[ -- Tests loosely adapted from those found at:
 -- * https://github.com/facebook/react/blob/v17.0.1/packages/react/src/__tests__/forwardRef-test.js
 -- * https://github.com/facebook/react/blob/v17.0.1/packages/react/src/__tests__/forwardRef-test.internal.js
 return function()
@@ -754,11 +767,12 @@ return function()
 	end)
 end
  ]===]
-_e94cb3e5506ef3207ec75126b2625a6a.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_c76a9073c458cea4c65c92bb057e3df2"] = _c76a9073c458cea4c65c92bb057e3df2
 
-local _3d361a9986f2890c2f180e8faa074f69 = Instance.new("ModuleScript")
-_3d361a9986f2890c2f180e8faa074f69.Name = "forwardRef"
-sourceMap[_3d361a9986f2890c2f180e8faa074f69] = [===[ local assign = require(script.Parent.assign)
+local _453e5f2800568744f1230b2a7b2b42f5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_453e5f2800568744f1230b2a7b2b42f5"] = _453e5f2800568744f1230b2a7b2b42f5
+_453e5f2800568744f1230b2a7b2b42f5.Name = "forwardRef"
+_453e5f2800568744f1230b2a7b2b42f5.Properties.Source = [===[ local assign = require(script.Parent.assign)
 local None = require(script.Parent.None)
 local Ref = require(script.Parent.PropMarkers.Ref)
 
@@ -787,11 +801,12 @@ end
 
 return forwardRef
  ]===]
-_3d361a9986f2890c2f180e8faa074f69.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_453e5f2800568744f1230b2a7b2b42f5"] = _453e5f2800568744f1230b2a7b2b42f5
 
-local _96f943902215e61208ee554891164330 = Instance.new("ModuleScript")
-_96f943902215e61208ee554891164330.Name = "createSpy.spec"
-sourceMap[_96f943902215e61208ee554891164330] = [===[ return function()
+local _e942cf25e7fd97636ea090f5e185e9c1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_e942cf25e7fd97636ea090f5e185e9c1"] = _e942cf25e7fd97636ea090f5e185e9c1
+_e942cf25e7fd97636ea090f5e185e9c1.Name = "createSpy.spec"
+_e942cf25e7fd97636ea090f5e185e9c1.Properties.Source = [===[ return function()
 	local createSpy = require(script.Parent.createSpy)
 
 	describe("createSpy", function()
@@ -882,11 +897,12 @@ sourceMap[_96f943902215e61208ee554891164330] = [===[ return function()
 	end)
 end
  ]===]
-_96f943902215e61208ee554891164330.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_e942cf25e7fd97636ea090f5e185e9c1"] = _e942cf25e7fd97636ea090f5e185e9c1
 
-local _20fd70b3bb74e471121a9af1b11ab0fd = Instance.new("ModuleScript")
-_20fd70b3bb74e471121a9af1b11ab0fd.Name = "createSpy"
-sourceMap[_20fd70b3bb74e471121a9af1b11ab0fd] = [===[ --[[
+local _713b4a9d8f7fdc277db5e17594cb2fab = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_713b4a9d8f7fdc277db5e17594cb2fab"] = _713b4a9d8f7fdc277db5e17594cb2fab
+_713b4a9d8f7fdc277db5e17594cb2fab.Name = "createSpy"
+_713b4a9d8f7fdc277db5e17594cb2fab.Properties.Source = [===[ --[[
 	A utility used to create a function spy that can be used to robustly test
 	that functions are invoked the correct number of times and with the correct
 	number of arguments.
@@ -965,11 +981,12 @@ end
 
 return createSpy
  ]===]
-_20fd70b3bb74e471121a9af1b11ab0fd.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_713b4a9d8f7fdc277db5e17594cb2fab"] = _713b4a9d8f7fdc277db5e17594cb2fab
 
-local _54dbc3fda2097a0cf0a4fd40e5995bfd = Instance.new("ModuleScript")
-_54dbc3fda2097a0cf0a4fd40e5995bfd.Name = "createSignal.spec"
-sourceMap[_54dbc3fda2097a0cf0a4fd40e5995bfd] = [===[ return function()
+local _ca97c32b3dd652d951455cbf5810d925 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_ca97c32b3dd652d951455cbf5810d925"] = _ca97c32b3dd652d951455cbf5810d925
+_ca97c32b3dd652d951455cbf5810d925.Name = "createSignal.spec"
+_ca97c32b3dd652d951455cbf5810d925.Properties.Source = [===[ return function()
 	local createSignal = require(script.Parent.createSignal)
 
 	local createSpy = require(script.Parent.createSpy)
@@ -1124,11 +1141,12 @@ sourceMap[_54dbc3fda2097a0cf0a4fd40e5995bfd] = [===[ return function()
 	end)
 end
  ]===]
-_54dbc3fda2097a0cf0a4fd40e5995bfd.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_ca97c32b3dd652d951455cbf5810d925"] = _ca97c32b3dd652d951455cbf5810d925
 
-local _d57b1a7803ca4492f77d462b93a1ef7f = Instance.new("ModuleScript")
-_d57b1a7803ca4492f77d462b93a1ef7f.Name = "createSignal"
-sourceMap[_d57b1a7803ca4492f77d462b93a1ef7f] = [===[ --[[
+local _2192c0cb666b3ddb884d47f356824fe7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_2192c0cb666b3ddb884d47f356824fe7"] = _2192c0cb666b3ddb884d47f356824fe7
+_2192c0cb666b3ddb884d47f356824fe7.Name = "createSignal"
+_2192c0cb666b3ddb884d47f356824fe7.Properties.Source = [===[ --[[
 	This is a simple signal implementation that has a dead-simple API.
 
 		local signal = createSignal()
@@ -1197,11 +1215,12 @@ end
 
 return createSignal
  ]===]
-_d57b1a7803ca4492f77d462b93a1ef7f.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_2192c0cb666b3ddb884d47f356824fe7"] = _2192c0cb666b3ddb884d47f356824fe7
 
-local _069fb65f48f86fb51ca1f9f376b0a730 = Instance.new("ModuleScript")
-_069fb65f48f86fb51ca1f9f376b0a730.Name = "createRef.spec"
-sourceMap[_069fb65f48f86fb51ca1f9f376b0a730] = [===[ return function()
+local _d245b2314c5f0366f2903287ff9875cb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_d245b2314c5f0366f2903287ff9875cb"] = _d245b2314c5f0366f2903287ff9875cb
+_d245b2314c5f0366f2903287ff9875cb.Name = "createRef.spec"
+_d245b2314c5f0366f2903287ff9875cb.Properties.Source = [===[ return function()
 	local Binding = require(script.Parent.Binding)
 	local Type = require(script.Parent.Type)
 
@@ -1257,11 +1276,12 @@ sourceMap[_069fb65f48f86fb51ca1f9f376b0a730] = [===[ return function()
 	end)
 end
  ]===]
-_069fb65f48f86fb51ca1f9f376b0a730.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_d245b2314c5f0366f2903287ff9875cb"] = _d245b2314c5f0366f2903287ff9875cb
 
-local _e6504a510d3a8aa2c52a2107b4ea197f = Instance.new("ModuleScript")
-_e6504a510d3a8aa2c52a2107b4ea197f.Name = "createRef"
-sourceMap[_e6504a510d3a8aa2c52a2107b4ea197f] = [===[ --[[
+local _15ae490cd653e560dea0201216417271 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_15ae490cd653e560dea0201216417271"] = _15ae490cd653e560dea0201216417271
+_15ae490cd653e560dea0201216417271.Name = "createRef"
+_15ae490cd653e560dea0201216417271.Properties.Source = [===[ --[[
 	A ref is nothing more than a binding with a special field 'current'
 	that maps to the getValue method of the binding
 ]]
@@ -1300,11 +1320,12 @@ end
 
 return createRef
  ]===]
-_e6504a510d3a8aa2c52a2107b4ea197f.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_15ae490cd653e560dea0201216417271"] = _15ae490cd653e560dea0201216417271
 
-local _77702b875a03ce7b7987791a71b7762f = Instance.new("ModuleScript")
-_77702b875a03ce7b7987791a71b7762f.Name = "createReconcilerCompat.spec"
-sourceMap[_77702b875a03ce7b7987791a71b7762f] = [===[ return function()
+local _3f801b4afb61e1879fc9331cab2fb9c6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_3f801b4afb61e1879fc9331cab2fb9c6"] = _3f801b4afb61e1879fc9331cab2fb9c6
+_3f801b4afb61e1879fc9331cab2fb9c6.Name = "createReconcilerCompat.spec"
+_3f801b4afb61e1879fc9331cab2fb9c6.Properties.Source = [===[ return function()
 	local createElement = require(script.Parent.createElement)
 	local createReconciler = require(script.Parent.createReconciler)
 	local Logging = require(script.Parent.Logging)
@@ -1387,11 +1408,12 @@ sourceMap[_77702b875a03ce7b7987791a71b7762f] = [===[ return function()
 	end)
 end
  ]===]
-_77702b875a03ce7b7987791a71b7762f.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_3f801b4afb61e1879fc9331cab2fb9c6"] = _3f801b4afb61e1879fc9331cab2fb9c6
 
-local _53947fd1d55b80942775f9aca8362641 = Instance.new("ModuleScript")
-_53947fd1d55b80942775f9aca8362641.Name = "createReconcilerCompat"
-sourceMap[_53947fd1d55b80942775f9aca8362641] = [===[ --[[
+local _1c08e746f7dc797f6f45b746b54f91d2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_1c08e746f7dc797f6f45b746b54f91d2"] = _1c08e746f7dc797f6f45b746b54f91d2
+_1c08e746f7dc797f6f45b746b54f91d2.Name = "createReconcilerCompat"
+_1c08e746f7dc797f6f45b746b54f91d2.Properties.Source = [===[ --[[
 	Contains deprecated methods from Reconciler. Broken out so that removing
 	this shim is easy -- just delete this file and remove it from init.
 ]]
@@ -1439,11 +1461,12 @@ end
 
 return createReconcilerCompat
  ]===]
-_53947fd1d55b80942775f9aca8362641.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_1c08e746f7dc797f6f45b746b54f91d2"] = _1c08e746f7dc797f6f45b746b54f91d2
 
-local _b6e014abfd88089b10008cab444acce7 = Instance.new("ModuleScript")
-_b6e014abfd88089b10008cab444acce7.Name = "createReconciler.spec"
-sourceMap[_b6e014abfd88089b10008cab444acce7] = [===[ return function()
+local _75731f5fcda173b90691a9dbad744ddc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_75731f5fcda173b90691a9dbad744ddc"] = _75731f5fcda173b90691a9dbad744ddc
+_75731f5fcda173b90691a9dbad744ddc.Name = "createReconciler.spec"
+_75731f5fcda173b90691a9dbad744ddc.Properties.Source = [===[ return function()
 	local assign = require(script.Parent.assign)
 	local createElement = require(script.Parent.createElement)
 	local createFragment = require(script.Parent.createFragment)
@@ -1772,11 +1795,12 @@ sourceMap[_b6e014abfd88089b10008cab444acce7] = [===[ return function()
 	end)
 end
  ]===]
-_b6e014abfd88089b10008cab444acce7.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_75731f5fcda173b90691a9dbad744ddc"] = _75731f5fcda173b90691a9dbad744ddc
 
-local _e2e15336e56393b61bd5355231442c02 = Instance.new("ModuleScript")
-_e2e15336e56393b61bd5355231442c02.Name = "createReconciler"
-sourceMap[_e2e15336e56393b61bd5355231442c02] = [===[ --!nonstrict
+local _ed4be495c27907c4ba7a599b51cc48cc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_ed4be495c27907c4ba7a599b51cc48cc"] = _ed4be495c27907c4ba7a599b51cc48cc
+_ed4be495c27907c4ba7a599b51cc48cc.Name = "createReconciler"
+_ed4be495c27907c4ba7a599b51cc48cc.Properties.Source = [===[ --!nonstrict
 local Type = require(script.Parent.Type)
 local ElementKind = require(script.Parent.ElementKind)
 local ElementUtils = require(script.Parent.ElementUtils)
@@ -2278,11 +2302,12 @@ end
 
 return createReconciler
  ]===]
-_e2e15336e56393b61bd5355231442c02.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_ed4be495c27907c4ba7a599b51cc48cc"] = _ed4be495c27907c4ba7a599b51cc48cc
 
-local _1fc4fcd998a5e113a8f05517966d6a48 = Instance.new("ModuleScript")
-_1fc4fcd998a5e113a8f05517966d6a48.Name = "createFragment.spec"
-sourceMap[_1fc4fcd998a5e113a8f05517966d6a48] = [===[ return function()
+local _986c06eb4f8aca6aa613e098a2af6b27 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_986c06eb4f8aca6aa613e098a2af6b27"] = _986c06eb4f8aca6aa613e098a2af6b27
+_986c06eb4f8aca6aa613e098a2af6b27.Name = "createFragment.spec"
+_986c06eb4f8aca6aa613e098a2af6b27.Properties.Source = [===[ return function()
 	local ElementKind = require(script.Parent.ElementKind)
 	local Type = require(script.Parent.Type)
 
@@ -2304,11 +2329,12 @@ sourceMap[_1fc4fcd998a5e113a8f05517966d6a48] = [===[ return function()
 	end)
 end
  ]===]
-_1fc4fcd998a5e113a8f05517966d6a48.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_986c06eb4f8aca6aa613e098a2af6b27"] = _986c06eb4f8aca6aa613e098a2af6b27
 
-local _4c0dd872e7d5537a41ce788ad2d35280 = Instance.new("ModuleScript")
-_4c0dd872e7d5537a41ce788ad2d35280.Name = "createFragment"
-sourceMap[_4c0dd872e7d5537a41ce788ad2d35280] = [===[ local ElementKind = require(script.Parent.ElementKind)
+local _d5f186deff2434339f5c0284acae818f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_d5f186deff2434339f5c0284acae818f"] = _d5f186deff2434339f5c0284acae818f
+_d5f186deff2434339f5c0284acae818f.Name = "createFragment"
+_d5f186deff2434339f5c0284acae818f.Properties.Source = [===[ local ElementKind = require(script.Parent.ElementKind)
 local Type = require(script.Parent.Type)
 
 local function createFragment(elements)
@@ -2321,11 +2347,12 @@ end
 
 return createFragment
  ]===]
-_4c0dd872e7d5537a41ce788ad2d35280.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_d5f186deff2434339f5c0284acae818f"] = _d5f186deff2434339f5c0284acae818f
 
-local _6824df7a088e16f657991e7a144dd44b = Instance.new("ModuleScript")
-_6824df7a088e16f657991e7a144dd44b.Name = "createElement.spec"
-sourceMap[_6824df7a088e16f657991e7a144dd44b] = [===[ return function()
+local _65e227b7e33675b870012ca4c54196c5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_65e227b7e33675b870012ca4c54196c5"] = _65e227b7e33675b870012ca4c54196c5
+_65e227b7e33675b870012ca4c54196c5.Name = "createElement.spec"
+_65e227b7e33675b870012ca4c54196c5.Properties.Source = [===[ return function()
 	local Component = require(script.Parent.Component)
 	local ElementKind = require(script.Parent.ElementKind)
 	local GlobalConfig = require(script.Parent.GlobalConfig)
@@ -2435,11 +2462,12 @@ sourceMap[_6824df7a088e16f657991e7a144dd44b] = [===[ return function()
 	end)
 end
  ]===]
-_6824df7a088e16f657991e7a144dd44b.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_65e227b7e33675b870012ca4c54196c5"] = _65e227b7e33675b870012ca4c54196c5
 
-local _caf0ae3d32118dd7fca3c201cd97b855 = Instance.new("ModuleScript")
-_caf0ae3d32118dd7fca3c201cd97b855.Name = "createElement"
-sourceMap[_caf0ae3d32118dd7fca3c201cd97b855] = [===[ local Children = require(script.Parent.PropMarkers.Children)
+local _92343e2c8262a5b32afeb3e460b53a4f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_92343e2c8262a5b32afeb3e460b53a4f"] = _92343e2c8262a5b32afeb3e460b53a4f
+_92343e2c8262a5b32afeb3e460b53a4f.Name = "createElement"
+_92343e2c8262a5b32afeb3e460b53a4f.Properties.Source = [===[ local Children = require(script.Parent.PropMarkers.Children)
 local ElementKind = require(script.Parent.ElementKind)
 local Logging = require(script.Parent.Logging)
 local Type = require(script.Parent.Type)
@@ -2514,11 +2542,12 @@ end
 
 return createElement
  ]===]
-_caf0ae3d32118dd7fca3c201cd97b855.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_92343e2c8262a5b32afeb3e460b53a4f"] = _92343e2c8262a5b32afeb3e460b53a4f
 
-local _ac756ef32e2c7323213dbdb83acf15a6 = Instance.new("ModuleScript")
-_ac756ef32e2c7323213dbdb83acf15a6.Name = "createContext.spec"
-sourceMap[_ac756ef32e2c7323213dbdb83acf15a6] = [===[ return function()
+local _4e4344ef2202e05a3d61ad062a2e247a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_4e4344ef2202e05a3d61ad062a2e247a"] = _4e4344ef2202e05a3d61ad062a2e247a
+_4e4344ef2202e05a3d61ad062a2e247a.Name = "createContext.spec"
+_4e4344ef2202e05a3d61ad062a2e247a.Properties.Source = [===[ return function()
 	local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 	local Component = require(script.Parent.Component)
@@ -2924,11 +2953,12 @@ sourceMap[_ac756ef32e2c7323213dbdb83acf15a6] = [===[ return function()
 	end)
 end
  ]===]
-_ac756ef32e2c7323213dbdb83acf15a6.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_4e4344ef2202e05a3d61ad062a2e247a"] = _4e4344ef2202e05a3d61ad062a2e247a
 
-local _2cffc773c6aa50af99c84899ba53fbbf = Instance.new("ModuleScript")
-_2cffc773c6aa50af99c84899ba53fbbf.Name = "createContext"
-sourceMap[_2cffc773c6aa50af99c84899ba53fbbf] = [===[ local Symbol = require(script.Parent.Symbol)
+local _bda1a4737b8bd16115d9d14f695b3150 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_bda1a4737b8bd16115d9d14f695b3150"] = _bda1a4737b8bd16115d9d14f695b3150
+_bda1a4737b8bd16115d9d14f695b3150.Name = "createContext"
+_bda1a4737b8bd16115d9d14f695b3150.Properties.Source = [===[ local Symbol = require(script.Parent.Symbol)
 local createFragment = require(script.Parent.createFragment)
 local createSignal = require(script.Parent.createSignal)
 local Children = require(script.Parent.PropMarkers.Children)
@@ -3081,11 +3111,12 @@ end
 
 return createContext
  ]===]
-_2cffc773c6aa50af99c84899ba53fbbf.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_bda1a4737b8bd16115d9d14f695b3150"] = _bda1a4737b8bd16115d9d14f695b3150
 
-local _ec556db359b07d233687a708c52c0afc = Instance.new("ModuleScript")
-_ec556db359b07d233687a708c52c0afc.Name = "assign.spec"
-sourceMap[_ec556db359b07d233687a708c52c0afc] = [===[ return function()
+local _3dc9fdbc7b24b859c6e8413c91bafd47 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_3dc9fdbc7b24b859c6e8413c91bafd47"] = _3dc9fdbc7b24b859c6e8413c91bafd47
+_3dc9fdbc7b24b859c6e8413c91bafd47.Name = "assign.spec"
+_3dc9fdbc7b24b859c6e8413c91bafd47.Properties.Source = [===[ return function()
 	local None = require(script.Parent.None)
 
 	local assign = require(script.Parent.assign)
@@ -3154,11 +3185,12 @@ sourceMap[_ec556db359b07d233687a708c52c0afc] = [===[ return function()
 	end)
 end
  ]===]
-_ec556db359b07d233687a708c52c0afc.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_3dc9fdbc7b24b859c6e8413c91bafd47"] = _3dc9fdbc7b24b859c6e8413c91bafd47
 
-local _8cbda0f5c4c935db05dee9745bf967c3 = Instance.new("ModuleScript")
-_8cbda0f5c4c935db05dee9745bf967c3.Name = "assign"
-sourceMap[_8cbda0f5c4c935db05dee9745bf967c3] = [===[ local None = require(script.Parent.None)
+local _e0ddc808e40838de18dbc2810869dc29 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_e0ddc808e40838de18dbc2810869dc29"] = _e0ddc808e40838de18dbc2810869dc29
+_e0ddc808e40838de18dbc2810869dc29.Name = "assign"
+_e0ddc808e40838de18dbc2810869dc29.Properties.Source = [===[ local None = require(script.Parent.None)
 
 --[[
 	Merges values from zero or more tables onto a target table. If a value is
@@ -3186,11 +3218,12 @@ end
 
 return assign
  ]===]
-_8cbda0f5c4c935db05dee9745bf967c3.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_e0ddc808e40838de18dbc2810869dc29"] = _e0ddc808e40838de18dbc2810869dc29
 
-local _fcb958f9c430130f3ae97050ae69ac9a = Instance.new("ModuleScript")
-_fcb958f9c430130f3ae97050ae69ac9a.Name = "assertDeepEqual.spec"
-sourceMap[_fcb958f9c430130f3ae97050ae69ac9a] = [===[ return function()
+local _43c311639e2b77e5cd8770944d4aec11 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_43c311639e2b77e5cd8770944d4aec11"] = _43c311639e2b77e5cd8770944d4aec11
+_43c311639e2b77e5cd8770944d4aec11.Name = "assertDeepEqual.spec"
+_43c311639e2b77e5cd8770944d4aec11.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.assertDeepEqual)
 
 	it("should fail with a message when args are not equal", function()
@@ -3294,11 +3327,12 @@ sourceMap[_fcb958f9c430130f3ae97050ae69ac9a] = [===[ return function()
 	end)
 end
  ]===]
-_fcb958f9c430130f3ae97050ae69ac9a.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_43c311639e2b77e5cd8770944d4aec11"] = _43c311639e2b77e5cd8770944d4aec11
 
-local _e1a2ec754a1ed4305ca68dbf6335462a = Instance.new("ModuleScript")
-_e1a2ec754a1ed4305ca68dbf6335462a.Name = "assertDeepEqual"
-sourceMap[_e1a2ec754a1ed4305ca68dbf6335462a] = [===[ --!strict
+local _af36e5596de249745d63cb49bc13500e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_af36e5596de249745d63cb49bc13500e"] = _af36e5596de249745d63cb49bc13500e
+_af36e5596de249745d63cb49bc13500e.Name = "assertDeepEqual"
+_af36e5596de249745d63cb49bc13500e.Properties.Source = [===[ --!strict
 --[[
 	A utility used to assert that two objects are value-equal recursively. It
 	outputs fairly nicely formatted messages to help diagnose why two objects
@@ -3368,11 +3402,12 @@ end
 
 return assertDeepEqual
  ]===]
-_e1a2ec754a1ed4305ca68dbf6335462a.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_af36e5596de249745d63cb49bc13500e"] = _af36e5596de249745d63cb49bc13500e
 
-local _54d6fc55ebb049553ce7885f4d85551a = Instance.new("ModuleScript")
-_54d6fc55ebb049553ce7885f4d85551a.Name = "Type.spec"
-sourceMap[_54d6fc55ebb049553ce7885f4d85551a] = [===[ return function()
+local _e5d05c92d3795da279a33d0a63de7423 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_e5d05c92d3795da279a33d0a63de7423"] = _e5d05c92d3795da279a33d0a63de7423
+_e5d05c92d3795da279a33d0a63de7423.Name = "Type.spec"
+_e5d05c92d3795da279a33d0a63de7423.Properties.Source = [===[ return function()
 	local Type = require(script.Parent.Type)
 
 	describe("of", function()
@@ -3397,11 +3432,12 @@ sourceMap[_54d6fc55ebb049553ce7885f4d85551a] = [===[ return function()
 	end)
 end
  ]===]
-_54d6fc55ebb049553ce7885f4d85551a.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_e5d05c92d3795da279a33d0a63de7423"] = _e5d05c92d3795da279a33d0a63de7423
 
-local _ede90a0df874934bc9d94cd380a138c7 = Instance.new("ModuleScript")
-_ede90a0df874934bc9d94cd380a138c7.Name = "Type"
-sourceMap[_ede90a0df874934bc9d94cd380a138c7] = [===[ --[[
+local _1099265d6144c35540f55442a124c570 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_1099265d6144c35540f55442a124c570"] = _1099265d6144c35540f55442a124c570
+_1099265d6144c35540f55442a124c570.Name = "Type"
+_1099265d6144c35540f55442a124c570.Properties.Source = [===[ --[[
 	Contains markers for annotating objects with types.
 
 	To set the type of an object, use `Type` as a key and the actual marker as
@@ -3450,11 +3486,12 @@ strict(TypeInternal, "Type")
 
 return Type
  ]===]
-_ede90a0df874934bc9d94cd380a138c7.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_1099265d6144c35540f55442a124c570"] = _1099265d6144c35540f55442a124c570
 
-local _a0ea970606c8e6be2567f0229ef5a3fa = Instance.new("ModuleScript")
-_a0ea970606c8e6be2567f0229ef5a3fa.Name = "Symbol.spec"
-sourceMap[_a0ea970606c8e6be2567f0229ef5a3fa] = [===[ return function()
+local _648cc08f15cc0ef91e938fc2c0063cb8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_648cc08f15cc0ef91e938fc2c0063cb8"] = _648cc08f15cc0ef91e938fc2c0063cb8
+_648cc08f15cc0ef91e938fc2c0063cb8.Name = "Symbol.spec"
+_648cc08f15cc0ef91e938fc2c0063cb8.Properties.Source = [===[ return function()
 	local Symbol = require(script.Parent.Symbol)
 
 	describe("named", function()
@@ -3480,11 +3517,12 @@ sourceMap[_a0ea970606c8e6be2567f0229ef5a3fa] = [===[ return function()
 	end)
 end
  ]===]
-_a0ea970606c8e6be2567f0229ef5a3fa.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_648cc08f15cc0ef91e938fc2c0063cb8"] = _648cc08f15cc0ef91e938fc2c0063cb8
 
-local _7e484c918a3d75641a1d2237bdd55654 = Instance.new("ModuleScript")
-_7e484c918a3d75641a1d2237bdd55654.Name = "Symbol"
-sourceMap[_7e484c918a3d75641a1d2237bdd55654] = [===[ --!strict
+local _8245d692c9f178a5cbf96c1ee0356bda = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_8245d692c9f178a5cbf96c1ee0356bda"] = _8245d692c9f178a5cbf96c1ee0356bda
+_8245d692c9f178a5cbf96c1ee0356bda.Name = "Symbol"
+_8245d692c9f178a5cbf96c1ee0356bda.Properties.Source = [===[ --!strict
 --[[
 	A 'Symbol' is an opaque marker type.
 
@@ -3516,11 +3554,12 @@ end
 
 return Symbol
  ]===]
-_7e484c918a3d75641a1d2237bdd55654.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_8245d692c9f178a5cbf96c1ee0356bda"] = _8245d692c9f178a5cbf96c1ee0356bda
 
-local _5e7e0de9899139e9090737657a398e32 = Instance.new("ModuleScript")
-_5e7e0de9899139e9090737657a398e32.Name = "SingleEventManager.spec"
-sourceMap[_5e7e0de9899139e9090737657a398e32] = [===[ return function()
+local _f6fdecd03b7518858c304672b131eea5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_f6fdecd03b7518858c304672b131eea5"] = _f6fdecd03b7518858c304672b131eea5
+_f6fdecd03b7518858c304672b131eea5.Name = "SingleEventManager.spec"
+_f6fdecd03b7518858c304672b131eea5.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.assertDeepEqual)
 	local createSpy = require(script.Parent.createSpy)
 	local Logging = require(script.Parent.Logging)
@@ -3760,11 +3799,12 @@ sourceMap[_5e7e0de9899139e9090737657a398e32] = [===[ return function()
 	end)
 end
  ]===]
-_5e7e0de9899139e9090737657a398e32.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_f6fdecd03b7518858c304672b131eea5"] = _f6fdecd03b7518858c304672b131eea5
 
-local _52c938bd91ab9455f44fb76c52493bea = Instance.new("ModuleScript")
-_52c938bd91ab9455f44fb76c52493bea.Name = "SingleEventManager"
-sourceMap[_52c938bd91ab9455f44fb76c52493bea] = [===[ --[[
+local _bfffbf27a37a6a670d123f63e98ffcc6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_bfffbf27a37a6a670d123f63e98ffcc6"] = _bfffbf27a37a6a670d123f63e98ffcc6
+_bfffbf27a37a6a670d123f63e98ffcc6.Name = "SingleEventManager"
+_bfffbf27a37a6a670d123f63e98ffcc6.Properties.Source = [===[ --[[
 	A manager for a single host virtual node's connected events.
 ]]
 
@@ -3910,11 +3950,12 @@ end
 
 return SingleEventManager
  ]===]
-_52c938bd91ab9455f44fb76c52493bea.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_bfffbf27a37a6a670d123f63e98ffcc6"] = _bfffbf27a37a6a670d123f63e98ffcc6
 
-local _fb27a3874ec7624862ba3a521ba3af20 = Instance.new("ModuleScript")
-_fb27a3874ec7624862ba3a521ba3af20.Name = "RobloxRenderer.spec"
-sourceMap[_fb27a3874ec7624862ba3a521ba3af20] = [===[ return function()
+local _eccc2879dce9534ea20963ce24ac6ea2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_eccc2879dce9534ea20963ce24ac6ea2"] = _eccc2879dce9534ea20963ce24ac6ea2
+_eccc2879dce9534ea20963ce24ac6ea2.Name = "RobloxRenderer.spec"
+_eccc2879dce9534ea20963ce24ac6ea2.Properties.Source = [===[ return function()
 	local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 	local assertDeepEqual = require(script.Parent.assertDeepEqual)
@@ -5254,11 +5295,12 @@ sourceMap[_fb27a3874ec7624862ba3a521ba3af20] = [===[ return function()
 	end)
 end
  ]===]
-_fb27a3874ec7624862ba3a521ba3af20.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_eccc2879dce9534ea20963ce24ac6ea2"] = _eccc2879dce9534ea20963ce24ac6ea2
 
-local _463d2c1ed8ae2a80ee24b5c3659f1b7a = Instance.new("ModuleScript")
-_463d2c1ed8ae2a80ee24b5c3659f1b7a.Name = "RobloxRenderer"
-sourceMap[_463d2c1ed8ae2a80ee24b5c3659f1b7a] = [===[ --[[
+local _c970d62ef5b8fad206b314fcc54ce3a9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_c970d62ef5b8fad206b314fcc54ce3a9"] = _c970d62ef5b8fad206b314fcc54ce3a9
+_c970d62ef5b8fad206b314fcc54ce3a9.Name = "RobloxRenderer"
+_c970d62ef5b8fad206b314fcc54ce3a9.Properties.Source = [===[ --[[
 	Renderer that deals in terms of Roblox Instances. This is the most
 	well-supported renderer after NoopRenderer and is currently the only
 	renderer that does anything.
@@ -5541,11 +5583,12 @@ end
 
 return RobloxRenderer
  ]===]
-_463d2c1ed8ae2a80ee24b5c3659f1b7a.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_c970d62ef5b8fad206b314fcc54ce3a9"] = _c970d62ef5b8fad206b314fcc54ce3a9
 
-local _9791caa5e175a581d9bf992bc842851e = Instance.new("ModuleScript")
-_9791caa5e175a581d9bf992bc842851e.Name = "PureComponent.spec"
-sourceMap[_9791caa5e175a581d9bf992bc842851e] = [===[ return function()
+local _81a79b0f2ba9d7d275b8a35b93e272b2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_81a79b0f2ba9d7d275b8a35b93e272b2"] = _81a79b0f2ba9d7d275b8a35b93e272b2
+_81a79b0f2ba9d7d275b8a35b93e272b2.Name = "PureComponent.spec"
+_81a79b0f2ba9d7d275b8a35b93e272b2.Properties.Source = [===[ return function()
 	local createElement = require(script.Parent.createElement)
 	local NoopRenderer = require(script.Parent.NoopRenderer)
 	local createReconciler = require(script.Parent.createReconciler)
@@ -5621,11 +5664,12 @@ sourceMap[_9791caa5e175a581d9bf992bc842851e] = [===[ return function()
 	end)
 end
  ]===]
-_9791caa5e175a581d9bf992bc842851e.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_81a79b0f2ba9d7d275b8a35b93e272b2"] = _81a79b0f2ba9d7d275b8a35b93e272b2
 
-local _b689b716b07400389007fd91fbafc000 = Instance.new("ModuleScript")
-_b689b716b07400389007fd91fbafc000.Name = "PureComponent"
-sourceMap[_b689b716b07400389007fd91fbafc000] = [===[ --[[
+local _c1228b6bcb85e1519ee2ea2cafc5edf3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_c1228b6bcb85e1519ee2ea2cafc5edf3"] = _c1228b6bcb85e1519ee2ea2cafc5edf3
+_c1228b6bcb85e1519ee2ea2cafc5edf3.Name = "PureComponent"
+_c1228b6bcb85e1519ee2ea2cafc5edf3.Properties.Source = [===[ --[[
 	A version of Component with a `shouldUpdate` method that forces the
 	resulting component to be pure.
 ]]
@@ -5667,24 +5711,27 @@ end
 
 return PureComponent
  ]===]
-_b689b716b07400389007fd91fbafc000.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_c1228b6bcb85e1519ee2ea2cafc5edf3"] = _c1228b6bcb85e1519ee2ea2cafc5edf3
 
-local _2f8778c5272419c4742c9f226b7f2b4e = Instance.new("Folder")
-_2f8778c5272419c4742c9f226b7f2b4e.Name = "PropMarkers"
-_2f8778c5272419c4742c9f226b7f2b4e.Parent = _95577a94600768cc9b1a63ce3bd71a19
-local _ea92a9dc20765114286cc5e6fc0e09fb = Instance.new("ModuleScript")
-_ea92a9dc20765114286cc5e6fc0e09fb.Name = "Ref"
-sourceMap[_ea92a9dc20765114286cc5e6fc0e09fb] = [===[ local Symbol = require(script.Parent.Parent.Symbol)
+local _99b5d280227b539af81b82946fb37cab = { ClassName = "Folder", Children = {}, Properties = {} }
+referentMap["_99b5d280227b539af81b82946fb37cab"] = _99b5d280227b539af81b82946fb37cab
+_99b5d280227b539af81b82946fb37cab.Name = "PropMarkers"
+_5cd65233edc8204aa0652e301bed6886.Children["_99b5d280227b539af81b82946fb37cab"] = _99b5d280227b539af81b82946fb37cab
+local _5334fb13d1cdd0788390784e8aa048eb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_5334fb13d1cdd0788390784e8aa048eb"] = _5334fb13d1cdd0788390784e8aa048eb
+_5334fb13d1cdd0788390784e8aa048eb.Name = "Ref"
+_5334fb13d1cdd0788390784e8aa048eb.Properties.Source = [===[ local Symbol = require(script.Parent.Parent.Symbol)
 
 local Ref = Symbol.named("Ref")
 
 return Ref
  ]===]
-_ea92a9dc20765114286cc5e6fc0e09fb.Parent = _2f8778c5272419c4742c9f226b7f2b4e
+_99b5d280227b539af81b82946fb37cab.Children["_5334fb13d1cdd0788390784e8aa048eb"] = _5334fb13d1cdd0788390784e8aa048eb
 
-local _eb4c96492d5ac2a1e3f6c301c69092d1 = Instance.new("ModuleScript")
-_eb4c96492d5ac2a1e3f6c301c69092d1.Name = "Event.spec"
-sourceMap[_eb4c96492d5ac2a1e3f6c301c69092d1] = [===[ return function()
+local _42d07cef7487f755e1b3c775f2699bac = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_42d07cef7487f755e1b3c775f2699bac"] = _42d07cef7487f755e1b3c775f2699bac
+_42d07cef7487f755e1b3c775f2699bac.Name = "Event.spec"
+_42d07cef7487f755e1b3c775f2699bac.Properties.Source = [===[ return function()
 	local Type = require(script.Parent.Parent.Type)
 
 	local Event = require(script.Parent.Event)
@@ -5704,11 +5751,12 @@ sourceMap[_eb4c96492d5ac2a1e3f6c301c69092d1] = [===[ return function()
 	end)
 end
  ]===]
-_eb4c96492d5ac2a1e3f6c301c69092d1.Parent = _2f8778c5272419c4742c9f226b7f2b4e
+_99b5d280227b539af81b82946fb37cab.Children["_42d07cef7487f755e1b3c775f2699bac"] = _42d07cef7487f755e1b3c775f2699bac
 
-local _c60f921f3fe373045cc741eea1293eb1 = Instance.new("ModuleScript")
-_c60f921f3fe373045cc741eea1293eb1.Name = "Event"
-sourceMap[_c60f921f3fe373045cc741eea1293eb1] = [===[ --[[
+local _9dc61ed908da9fd9b88efabebc2d9b7f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_9dc61ed908da9fd9b88efabebc2d9b7f"] = _9dc61ed908da9fd9b88efabebc2d9b7f
+_9dc61ed908da9fd9b88efabebc2d9b7f.Name = "Event"
+_9dc61ed908da9fd9b88efabebc2d9b7f.Properties.Source = [===[ --[[
 	Index into `Event` to get a prop key for attaching to an event on a Roblox
 	Instance.
 
@@ -5750,21 +5798,23 @@ setmetatable(Event, {
 
 return Event
  ]===]
-_c60f921f3fe373045cc741eea1293eb1.Parent = _2f8778c5272419c4742c9f226b7f2b4e
+_99b5d280227b539af81b82946fb37cab.Children["_9dc61ed908da9fd9b88efabebc2d9b7f"] = _9dc61ed908da9fd9b88efabebc2d9b7f
 
-local _81ba59b719d7c0569b859e3ccbf9792c = Instance.new("ModuleScript")
-_81ba59b719d7c0569b859e3ccbf9792c.Name = "Children"
-sourceMap[_81ba59b719d7c0569b859e3ccbf9792c] = [===[ local Symbol = require(script.Parent.Parent.Symbol)
+local _4d0ad1d2a541b5d3bf3eaa863a33d366 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_4d0ad1d2a541b5d3bf3eaa863a33d366"] = _4d0ad1d2a541b5d3bf3eaa863a33d366
+_4d0ad1d2a541b5d3bf3eaa863a33d366.Name = "Children"
+_4d0ad1d2a541b5d3bf3eaa863a33d366.Properties.Source = [===[ local Symbol = require(script.Parent.Parent.Symbol)
 
 local Children = Symbol.named("Children")
 
 return Children
  ]===]
-_81ba59b719d7c0569b859e3ccbf9792c.Parent = _2f8778c5272419c4742c9f226b7f2b4e
+_99b5d280227b539af81b82946fb37cab.Children["_4d0ad1d2a541b5d3bf3eaa863a33d366"] = _4d0ad1d2a541b5d3bf3eaa863a33d366
 
-local _be262c331fa29ef63962bfddb18bc8d2 = Instance.new("ModuleScript")
-_be262c331fa29ef63962bfddb18bc8d2.Name = "Change.spec"
-sourceMap[_be262c331fa29ef63962bfddb18bc8d2] = [===[ return function()
+local _5edf94ab7160e70740f8153c61bf78da = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_5edf94ab7160e70740f8153c61bf78da"] = _5edf94ab7160e70740f8153c61bf78da
+_5edf94ab7160e70740f8153c61bf78da.Name = "Change.spec"
+_5edf94ab7160e70740f8153c61bf78da.Properties.Source = [===[ return function()
 	local Type = require(script.Parent.Parent.Type)
 
 	local Change = require(script.Parent.Change)
@@ -5784,11 +5834,12 @@ sourceMap[_be262c331fa29ef63962bfddb18bc8d2] = [===[ return function()
 	end)
 end
  ]===]
-_be262c331fa29ef63962bfddb18bc8d2.Parent = _2f8778c5272419c4742c9f226b7f2b4e
+_99b5d280227b539af81b82946fb37cab.Children["_5edf94ab7160e70740f8153c61bf78da"] = _5edf94ab7160e70740f8153c61bf78da
 
-local _a298caf39ff455dcb0f2eb1e25b2e3f5 = Instance.new("ModuleScript")
-_a298caf39ff455dcb0f2eb1e25b2e3f5.Name = "Change"
-sourceMap[_a298caf39ff455dcb0f2eb1e25b2e3f5] = [===[ --[[
+local _ee4e1e977691797b3ea1144b17f74150 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_ee4e1e977691797b3ea1144b17f74150"] = _ee4e1e977691797b3ea1144b17f74150
+_ee4e1e977691797b3ea1144b17f74150.Name = "Change"
+_ee4e1e977691797b3ea1144b17f74150.Properties.Source = [===[ --[[
 	Change is used to generate special prop keys that can be used to connect to
 	GetPropertyChangedSignal.
 
@@ -5827,21 +5878,23 @@ setmetatable(Change, {
 
 return Change
  ]===]
-_a298caf39ff455dcb0f2eb1e25b2e3f5.Parent = _2f8778c5272419c4742c9f226b7f2b4e
+_99b5d280227b539af81b82946fb37cab.Children["_ee4e1e977691797b3ea1144b17f74150"] = _ee4e1e977691797b3ea1144b17f74150
 
-local _03d177e8b960d65725349052abe8ebd5 = Instance.new("ModuleScript")
-_03d177e8b960d65725349052abe8ebd5.Name = "Portal"
-sourceMap[_03d177e8b960d65725349052abe8ebd5] = [===[ local Symbol = require(script.Parent.Symbol)
+local _d464ed1faa0204d6a39856e5d8fd4e74 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_d464ed1faa0204d6a39856e5d8fd4e74"] = _d464ed1faa0204d6a39856e5d8fd4e74
+_d464ed1faa0204d6a39856e5d8fd4e74.Name = "Portal"
+_d464ed1faa0204d6a39856e5d8fd4e74.Properties.Source = [===[ local Symbol = require(script.Parent.Symbol)
 
 local Portal = Symbol.named("Portal")
 
 return Portal
  ]===]
-_03d177e8b960d65725349052abe8ebd5.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_d464ed1faa0204d6a39856e5d8fd4e74"] = _d464ed1faa0204d6a39856e5d8fd4e74
 
-local _2e937b522b28047a6f54804be3fe9ec4 = Instance.new("ModuleScript")
-_2e937b522b28047a6f54804be3fe9ec4.Name = "NoopRenderer"
-sourceMap[_2e937b522b28047a6f54804be3fe9ec4] = [===[ --[[
+local _6c905f99fe7fddb49955e7bc624c6b35 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_6c905f99fe7fddb49955e7bc624c6b35"] = _6c905f99fe7fddb49955e7bc624c6b35
+_6c905f99fe7fddb49955e7bc624c6b35.Name = "NoopRenderer"
+_6c905f99fe7fddb49955e7bc624c6b35.Properties.Source = [===[ --[[
 	Reference renderer intended for use in tests as well as for documenting the
 	minimum required interface for a Roact renderer.
 ]]
@@ -5864,11 +5917,12 @@ end
 
 return NoopRenderer
  ]===]
-_2e937b522b28047a6f54804be3fe9ec4.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_6c905f99fe7fddb49955e7bc624c6b35"] = _6c905f99fe7fddb49955e7bc624c6b35
 
-local _4b1de7291130701662f4550d20bdf566 = Instance.new("ModuleScript")
-_4b1de7291130701662f4550d20bdf566.Name = "None"
-sourceMap[_4b1de7291130701662f4550d20bdf566] = [===[ local Symbol = require(script.Parent.Symbol)
+local _65dc386aa79d060c9bd5448cdeab83da = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_65dc386aa79d060c9bd5448cdeab83da"] = _65dc386aa79d060c9bd5448cdeab83da
+_65dc386aa79d060c9bd5448cdeab83da.Name = "None"
+_65dc386aa79d060c9bd5448cdeab83da.Properties.Source = [===[ local Symbol = require(script.Parent.Symbol)
 
 -- Marker used to specify that the value is nothing, because nil cannot be
 -- stored in tables.
@@ -5876,11 +5930,12 @@ local None = Symbol.named("None")
 
 return None
  ]===]
-_4b1de7291130701662f4550d20bdf566.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_65dc386aa79d060c9bd5448cdeab83da"] = _65dc386aa79d060c9bd5448cdeab83da
 
-local _5ea404966686e9bd25a149c5f0da2ffb = Instance.new("ModuleScript")
-_5ea404966686e9bd25a149c5f0da2ffb.Name = "Logging"
-sourceMap[_5ea404966686e9bd25a149c5f0da2ffb] = [===[ --[[
+local _d38b5420ac0600c2de62c82237b78ad6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_d38b5420ac0600c2de62c82237b78ad6"] = _d38b5420ac0600c2de62c82237b78ad6
+_d38b5420ac0600c2de62c82237b78ad6.Name = "Logging"
+_d38b5420ac0600c2de62c82237b78ad6.Properties.Source = [===[ --[[
 	Centralized place to handle logging. Lets us:
 	- Unit test log output via `Logging.capture`
 	- Disable verbose log messages when not debugging Roact
@@ -6040,11 +6095,12 @@ end
 
 return Logging
  ]===]
-_5ea404966686e9bd25a149c5f0da2ffb.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_d38b5420ac0600c2de62c82237b78ad6"] = _d38b5420ac0600c2de62c82237b78ad6
 
-local _b20e8ef15f3bfef90800bd209fbe7491 = Instance.new("ModuleScript")
-_b20e8ef15f3bfef90800bd209fbe7491.Name = "GlobalConfig.spec"
-sourceMap[_b20e8ef15f3bfef90800bd209fbe7491] = [===[ return function()
+local _821af910eb04c9eb8bcb64b358249021 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_821af910eb04c9eb8bcb64b358249021"] = _821af910eb04c9eb8bcb64b358249021
+_821af910eb04c9eb8bcb64b358249021.Name = "GlobalConfig.spec"
+_821af910eb04c9eb8bcb64b358249021.Properties.Source = [===[ return function()
 	local GlobalConfig = require(script.Parent.GlobalConfig)
 
 	it("should have the correct methods", function()
@@ -6054,11 +6110,12 @@ sourceMap[_b20e8ef15f3bfef90800bd209fbe7491] = [===[ return function()
 	end)
 end
  ]===]
-_b20e8ef15f3bfef90800bd209fbe7491.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_821af910eb04c9eb8bcb64b358249021"] = _821af910eb04c9eb8bcb64b358249021
 
-local _4ea241c62e1ea9d5d7fe8aded9c2b21e = Instance.new("ModuleScript")
-_4ea241c62e1ea9d5d7fe8aded9c2b21e.Name = "GlobalConfig"
-sourceMap[_4ea241c62e1ea9d5d7fe8aded9c2b21e] = [===[ --[[
+local _6fc1860012025f2bfd3a688a9d3a26a2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_6fc1860012025f2bfd3a688a9d3a26a2"] = _6fc1860012025f2bfd3a688a9d3a26a2
+_6fc1860012025f2bfd3a688a9d3a26a2.Name = "GlobalConfig"
+_6fc1860012025f2bfd3a688a9d3a26a2.Properties.Source = [===[ --[[
 	Exposes a single instance of a configuration as Roact's GlobalConfig.
 ]]
 
@@ -6066,11 +6123,12 @@ local Config = require(script.Parent.Config)
 
 return Config.new()
  ]===]
-_4ea241c62e1ea9d5d7fe8aded9c2b21e.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_6fc1860012025f2bfd3a688a9d3a26a2"] = _6fc1860012025f2bfd3a688a9d3a26a2
 
-local _7cf797a5d08b677a53792bffcc7b5a5e = Instance.new("ModuleScript")
-_7cf797a5d08b677a53792bffcc7b5a5e.Name = "ElementUtils.spec"
-sourceMap[_7cf797a5d08b677a53792bffcc7b5a5e] = [===[ return function()
+local _da20c4db93ea76ac8bfac72618197818 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_da20c4db93ea76ac8bfac72618197818"] = _da20c4db93ea76ac8bfac72618197818
+_da20c4db93ea76ac8bfac72618197818.Name = "ElementUtils.spec"
+_da20c4db93ea76ac8bfac72618197818.Properties.Source = [===[ return function()
 	local ElementUtils = require(script.Parent.ElementUtils)
 	local createElement = require(script.Parent.createElement)
 	local createFragment = require(script.Parent.createFragment)
@@ -6166,11 +6224,12 @@ sourceMap[_7cf797a5d08b677a53792bffcc7b5a5e] = [===[ return function()
 	end)
 end
  ]===]
-_7cf797a5d08b677a53792bffcc7b5a5e.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_da20c4db93ea76ac8bfac72618197818"] = _da20c4db93ea76ac8bfac72618197818
 
-local _12148f5fd10a306b5f4272ff4f1924ad = Instance.new("ModuleScript")
-_12148f5fd10a306b5f4272ff4f1924ad.Name = "ElementUtils"
-sourceMap[_12148f5fd10a306b5f4272ff4f1924ad] = [===[ --!strict
+local _27c0658ba70b6e9e575afece8cc4ba69 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_27c0658ba70b6e9e575afece8cc4ba69"] = _27c0658ba70b6e9e575afece8cc4ba69
+_27c0658ba70b6e9e575afece8cc4ba69.Name = "ElementUtils"
+_27c0658ba70b6e9e575afece8cc4ba69.Properties.Source = [===[ --!strict
 local Type = require(script.Parent.Type)
 local Symbol = require(script.Parent.Symbol)
 
@@ -6273,11 +6332,12 @@ end
 
 return ElementUtils
  ]===]
-_12148f5fd10a306b5f4272ff4f1924ad.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_27c0658ba70b6e9e575afece8cc4ba69"] = _27c0658ba70b6e9e575afece8cc4ba69
 
-local _dbecdad3d5ca506940d61bc9f8218223 = Instance.new("ModuleScript")
-_dbecdad3d5ca506940d61bc9f8218223.Name = "ElementKind.spec"
-sourceMap[_dbecdad3d5ca506940d61bc9f8218223] = [===[ return function()
+local _19042b75672c07f028e0318211a342e9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_19042b75672c07f028e0318211a342e9"] = _19042b75672c07f028e0318211a342e9
+_19042b75672c07f028e0318211a342e9.Name = "ElementKind.spec"
+_19042b75672c07f028e0318211a342e9.Properties.Source = [===[ return function()
 	local Portal = require(script.Parent.Portal)
 	local Component = require(script.Parent.Component)
 
@@ -6331,11 +6391,12 @@ sourceMap[_dbecdad3d5ca506940d61bc9f8218223] = [===[ return function()
 	end)
 end
  ]===]
-_dbecdad3d5ca506940d61bc9f8218223.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_19042b75672c07f028e0318211a342e9"] = _19042b75672c07f028e0318211a342e9
 
-local _1e6906a75c9cc340e74f8dfb46e01bfa = Instance.new("ModuleScript")
-_1e6906a75c9cc340e74f8dfb46e01bfa.Name = "ElementKind"
-sourceMap[_1e6906a75c9cc340e74f8dfb46e01bfa] = [===[ --[[
+local _88ffdb1a004c41a3a2ae46e82e622423 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_88ffdb1a004c41a3a2ae46e82e622423"] = _88ffdb1a004c41a3a2ae46e82e622423
+_88ffdb1a004c41a3a2ae46e82e622423.Name = "ElementKind"
+_88ffdb1a004c41a3a2ae46e82e622423.Properties.Source = [===[ --[[
 	Contains markers for annotating the type of an element.
 
 	Use `ElementKind` as a key, and values from it as the value.
@@ -6387,11 +6448,12 @@ strict(ElementKindInternal, "ElementKind")
 
 return ElementKind
  ]===]
-_1e6906a75c9cc340e74f8dfb46e01bfa.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_88ffdb1a004c41a3a2ae46e82e622423"] = _88ffdb1a004c41a3a2ae46e82e622423
 
-local _17d1ae237b1b803d709b96093b7106fd = Instance.new("ModuleScript")
-_17d1ae237b1b803d709b96093b7106fd.Name = "Config.spec"
-sourceMap[_17d1ae237b1b803d709b96093b7106fd] = [===[ return function()
+local _51a6d7a5d28532fab34999683469bf49 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_51a6d7a5d28532fab34999683469bf49"] = _51a6d7a5d28532fab34999683469bf49
+_51a6d7a5d28532fab34999683469bf49.Name = "Config.spec"
+_51a6d7a5d28532fab34999683469bf49.Properties.Source = [===[ return function()
 	local Config = require(script.Parent.Config)
 
 	it("should accept valid configuration", function()
@@ -6444,11 +6506,12 @@ sourceMap[_17d1ae237b1b803d709b96093b7106fd] = [===[ return function()
 	end)
 end
  ]===]
-_17d1ae237b1b803d709b96093b7106fd.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_51a6d7a5d28532fab34999683469bf49"] = _51a6d7a5d28532fab34999683469bf49
 
-local _32e559084aa8d2f74c103ec560174260 = Instance.new("ModuleScript")
-_32e559084aa8d2f74c103ec560174260.Name = "Config"
-sourceMap[_32e559084aa8d2f74c103ec560174260] = [===[ --[[
+local _99a7136847fc2af460f1f150687be5e6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_99a7136847fc2af460f1f150687be5e6"] = _99a7136847fc2af460f1f150687be5e6
+_99a7136847fc2af460f1f150687be5e6.Name = "Config"
+_99a7136847fc2af460f1f150687be5e6.Properties.Source = [===[ --[[
 	Exposes an interface to set global configuration values for Roact.
 
 	Configuration can only occur once, and should only be done by an application
@@ -6564,11 +6627,12 @@ end
 
 return Config
  ]===]
-_32e559084aa8d2f74c103ec560174260.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_99a7136847fc2af460f1f150687be5e6"] = _99a7136847fc2af460f1f150687be5e6
 
-local _315df2de0284350a592e24f3eedbfd33 = Instance.new("ModuleScript")
-_315df2de0284350a592e24f3eedbfd33.Name = "ComponentLifecyclePhase"
-sourceMap[_315df2de0284350a592e24f3eedbfd33] = [===[ local Symbol = require(script.Parent.Symbol)
+local _a3e09eb26e897a70ead38fafebcc8aec = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_a3e09eb26e897a70ead38fafebcc8aec"] = _a3e09eb26e897a70ead38fafebcc8aec
+_a3e09eb26e897a70ead38fafebcc8aec.Name = "ComponentLifecyclePhase"
+_a3e09eb26e897a70ead38fafebcc8aec.Properties.Source = [===[ local Symbol = require(script.Parent.Symbol)
 local strict = require(script.Parent.strict)
 
 local ComponentLifecyclePhase = strict({
@@ -6588,14 +6652,16 @@ local ComponentLifecyclePhase = strict({
 
 return ComponentLifecyclePhase
  ]===]
-_315df2de0284350a592e24f3eedbfd33.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_a3e09eb26e897a70ead38fafebcc8aec"] = _a3e09eb26e897a70ead38fafebcc8aec
 
-local _7dd32b55c25b1012418594cfa4963ddf = Instance.new("Folder")
-_7dd32b55c25b1012418594cfa4963ddf.Name = "Component.spec"
-_7dd32b55c25b1012418594cfa4963ddf.Parent = _95577a94600768cc9b1a63ce3bd71a19
-local _40748bb06f0a610eb785066d5c51a85d = Instance.new("ModuleScript")
-_40748bb06f0a610eb785066d5c51a85d.Name = "willUpdate.spec"
-sourceMap[_40748bb06f0a610eb785066d5c51a85d] = [===[ return function()
+local _6a580a831683a7a8188daa6202db3c95 = { ClassName = "Folder", Children = {}, Properties = {} }
+referentMap["_6a580a831683a7a8188daa6202db3c95"] = _6a580a831683a7a8188daa6202db3c95
+_6a580a831683a7a8188daa6202db3c95.Name = "Component.spec"
+_5cd65233edc8204aa0652e301bed6886.Children["_6a580a831683a7a8188daa6202db3c95"] = _6a580a831683a7a8188daa6202db3c95
+local _a5e47d2c9b147d7bd1c6ff464f834483 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_a5e47d2c9b147d7bd1c6ff464f834483"] = _a5e47d2c9b147d7bd1c6ff464f834483
+_a5e47d2c9b147d7bd1c6ff464f834483.Name = "willUpdate.spec"
+_a5e47d2c9b147d7bd1c6ff464f834483.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -6689,11 +6755,12 @@ sourceMap[_40748bb06f0a610eb785066d5c51a85d] = [===[ return function()
 	end)
 end
  ]===]
-_40748bb06f0a610eb785066d5c51a85d.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_a5e47d2c9b147d7bd1c6ff464f834483"] = _a5e47d2c9b147d7bd1c6ff464f834483
 
-local _68602b5120f6b105cecad87e7c6d7d66 = Instance.new("ModuleScript")
-_68602b5120f6b105cecad87e7c6d7d66.Name = "willUnmount.spec"
-sourceMap[_68602b5120f6b105cecad87e7c6d7d66] = [===[ return function()
+local _b786f1910370d17add5dfe89e1fb7b6a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_b786f1910370d17add5dfe89e1fb7b6a"] = _b786f1910370d17add5dfe89e1fb7b6a
+_b786f1910370d17add5dfe89e1fb7b6a.Name = "willUnmount.spec"
+_b786f1910370d17add5dfe89e1fb7b6a.Properties.Source = [===[ return function()
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
 	local createSpy = require(script.Parent.Parent.createSpy)
@@ -6730,11 +6797,12 @@ sourceMap[_68602b5120f6b105cecad87e7c6d7d66] = [===[ return function()
 	end)
 end
  ]===]
-_68602b5120f6b105cecad87e7c6d7d66.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_b786f1910370d17add5dfe89e1fb7b6a"] = _b786f1910370d17add5dfe89e1fb7b6a
 
-local _e01310178496aa40b2228e24f1d5cf99 = Instance.new("ModuleScript")
-_e01310178496aa40b2228e24f1d5cf99.Name = "validateProps.spec"
-sourceMap[_e01310178496aa40b2228e24f1d5cf99] = [===[ return function()
+local _3f6367e4bd19db564b60c33a2e764b99 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_3f6367e4bd19db564b60c33a2e764b99"] = _3f6367e4bd19db564b60c33a2e764b99
+_3f6367e4bd19db564b60c33a2e764b99.Name = "validateProps.spec"
+_3f6367e4bd19db564b60c33a2e764b99.Properties.Source = [===[ return function()
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
 	local createSpy = require(script.Parent.Parent.createSpy)
@@ -7004,11 +7072,12 @@ sourceMap[_e01310178496aa40b2228e24f1d5cf99] = [===[ return function()
 	end)
 end
  ]===]
-_e01310178496aa40b2228e24f1d5cf99.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_3f6367e4bd19db564b60c33a2e764b99"] = _3f6367e4bd19db564b60c33a2e764b99
 
-local _bdfcdeb2f7cf9b32e2a53188f42c1e00 = Instance.new("ModuleScript")
-_bdfcdeb2f7cf9b32e2a53188f42c1e00.Name = "shouldUpdate.spec"
-sourceMap[_bdfcdeb2f7cf9b32e2a53188f42c1e00] = [===[ return function()
+local _be94ff7935aa910656bcb270c9b7b454 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_be94ff7935aa910656bcb270c9b7b454"] = _be94ff7935aa910656bcb270c9b7b454
+_be94ff7935aa910656bcb270c9b7b454.Name = "shouldUpdate.spec"
+_be94ff7935aa910656bcb270c9b7b454.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -7184,11 +7253,12 @@ sourceMap[_bdfcdeb2f7cf9b32e2a53188f42c1e00] = [===[ return function()
 	end)
 end
  ]===]
-_bdfcdeb2f7cf9b32e2a53188f42c1e00.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_be94ff7935aa910656bcb270c9b7b454"] = _be94ff7935aa910656bcb270c9b7b454
 
-local _72564113ec291d36f1fbfe7a408b2e8d = Instance.new("ModuleScript")
-_72564113ec291d36f1fbfe7a408b2e8d.Name = "setState.spec"
-sourceMap[_72564113ec291d36f1fbfe7a408b2e8d] = [===[ return function()
+local _621906e83874b3b2b9754b31fe76b3a3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_621906e83874b3b2b9754b31fe76b3a3"] = _621906e83874b3b2b9754b31fe76b3a3
+_621906e83874b3b2b9754b31fe76b3a3.Name = "setState.spec"
+_621906e83874b3b2b9754b31fe76b3a3.Properties.Source = [===[ return function()
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
 	local createSpy = require(script.Parent.Parent.createSpy)
@@ -7789,11 +7859,12 @@ sourceMap[_72564113ec291d36f1fbfe7a408b2e8d] = [===[ return function()
 	end)
 end
  ]===]
-_72564113ec291d36f1fbfe7a408b2e8d.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_621906e83874b3b2b9754b31fe76b3a3"] = _621906e83874b3b2b9754b31fe76b3a3
 
-local _68a235eb4d318d9c48d63399648f2013 = Instance.new("ModuleScript")
-_68a235eb4d318d9c48d63399648f2013.Name = "render.spec"
-sourceMap[_68a235eb4d318d9c48d63399648f2013] = [===[ return function()
+local _f9451682f6b32345d90132098c865e8a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_f9451682f6b32345d90132098c865e8a"] = _f9451682f6b32345d90132098c865e8a
+_f9451682f6b32345d90132098c865e8a.Name = "render.spec"
+_f9451682f6b32345d90132098c865e8a.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -7944,11 +8015,12 @@ sourceMap[_68a235eb4d318d9c48d63399648f2013] = [===[ return function()
 	itSKIP("Test defaultProps on state update", function() end)
 end
  ]===]
-_68a235eb4d318d9c48d63399648f2013.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_f9451682f6b32345d90132098c865e8a"] = _f9451682f6b32345d90132098c865e8a
 
-local _a71318822ec2a4a5ab2ce81514e47da7 = Instance.new("ModuleScript")
-_a71318822ec2a4a5ab2ce81514e47da7.Name = "legacyContext.spec"
-sourceMap[_a71318822ec2a4a5ab2ce81514e47da7] = [===[ return function()
+local _ddfa9b8b2758a9ee2016308d9dd2a81c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_ddfa9b8b2758a9ee2016308d9dd2a81c"] = _ddfa9b8b2758a9ee2016308d9dd2a81c
+_ddfa9b8b2758a9ee2016308d9dd2a81c.Name = "legacyContext.spec"
+_ddfa9b8b2758a9ee2016308d9dd2a81c.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -8152,11 +8224,12 @@ sourceMap[_a71318822ec2a4a5ab2ce81514e47da7] = [===[ return function()
 	end)
 end
  ]===]
-_a71318822ec2a4a5ab2ce81514e47da7.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_ddfa9b8b2758a9ee2016308d9dd2a81c"] = _ddfa9b8b2758a9ee2016308d9dd2a81c
 
-local _34a42410a822adfd27ee5cc68d57161f = Instance.new("ModuleScript")
-_34a42410a822adfd27ee5cc68d57161f.Name = "init.spec"
-sourceMap[_34a42410a822adfd27ee5cc68d57161f] = [===[ return function()
+local _433bbe1afaa902f22db930cd5d960e9e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_433bbe1afaa902f22db930cd5d960e9e"] = _433bbe1afaa902f22db930cd5d960e9e
+_433bbe1afaa902f22db930cd5d960e9e.Name = "init.spec"
+_433bbe1afaa902f22db930cd5d960e9e.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -8198,11 +8271,12 @@ sourceMap[_34a42410a822adfd27ee5cc68d57161f] = [===[ return function()
 	end)
 end
  ]===]
-_34a42410a822adfd27ee5cc68d57161f.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_433bbe1afaa902f22db930cd5d960e9e"] = _433bbe1afaa902f22db930cd5d960e9e
 
-local _d081bda77ab3696ce4f5c93e33b7fde3 = Instance.new("ModuleScript")
-_d081bda77ab3696ce4f5c93e33b7fde3.Name = "getElementTraceback.spec"
-sourceMap[_d081bda77ab3696ce4f5c93e33b7fde3] = [===[ return function()
+local _8810f7d1fe9f927ef3b486b9e2c14055 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_8810f7d1fe9f927ef3b486b9e2c14055"] = _8810f7d1fe9f927ef3b486b9e2c14055
+_8810f7d1fe9f927ef3b486b9e2c14055.Name = "getElementTraceback.spec"
+_8810f7d1fe9f927ef3b486b9e2c14055.Properties.Source = [===[ return function()
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
 	local GlobalConfig = require(script.Parent.Parent.GlobalConfig)
@@ -8270,11 +8344,12 @@ sourceMap[_d081bda77ab3696ce4f5c93e33b7fde3] = [===[ return function()
 	end)
 end
  ]===]
-_d081bda77ab3696ce4f5c93e33b7fde3.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_8810f7d1fe9f927ef3b486b9e2c14055"] = _8810f7d1fe9f927ef3b486b9e2c14055
 
-local _2dc19f1cf8f0cd572f52e4262f8257d3 = Instance.new("ModuleScript")
-_2dc19f1cf8f0cd572f52e4262f8257d3.Name = "getDerivedStateFromProps.spec"
-sourceMap[_2dc19f1cf8f0cd572f52e4262f8257d3] = [===[ return function()
+local _7e56eb869005e3588d9c5aeb778992cc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_7e56eb869005e3588d9c5aeb778992cc"] = _7e56eb869005e3588d9c5aeb778992cc
+_7e56eb869005e3588d9c5aeb778992cc.Name = "getDerivedStateFromProps.spec"
+_7e56eb869005e3588d9c5aeb778992cc.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createSpy = require(script.Parent.Parent.createSpy)
 	local createElement = require(script.Parent.Parent.createElement)
@@ -8561,11 +8636,12 @@ sourceMap[_2dc19f1cf8f0cd572f52e4262f8257d3] = [===[ return function()
 	end)
 end
  ]===]
-_2dc19f1cf8f0cd572f52e4262f8257d3.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_7e56eb869005e3588d9c5aeb778992cc"] = _7e56eb869005e3588d9c5aeb778992cc
 
-local _575ae463ec0838563aa64262627526f0 = Instance.new("ModuleScript")
-_575ae463ec0838563aa64262627526f0.Name = "extend.spec"
-sourceMap[_575ae463ec0838563aa64262627526f0] = [===[ return function()
+local _243a1a77e4185e56b7fc6afd8ba80a9c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_243a1a77e4185e56b7fc6afd8ba80a9c"] = _243a1a77e4185e56b7fc6afd8ba80a9c
+_243a1a77e4185e56b7fc6afd8ba80a9c.Name = "extend.spec"
+_243a1a77e4185e56b7fc6afd8ba80a9c.Properties.Source = [===[ return function()
 	local Type = require(script.Parent.Parent.Type)
 
 	local Component = require(script.Parent.Parent.Component)
@@ -8595,11 +8671,12 @@ sourceMap[_575ae463ec0838563aa64262627526f0] = [===[ return function()
 	end)
 end
  ]===]
-_575ae463ec0838563aa64262627526f0.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_243a1a77e4185e56b7fc6afd8ba80a9c"] = _243a1a77e4185e56b7fc6afd8ba80a9c
 
-local _979431320b2cd2887e1816c23828f106 = Instance.new("ModuleScript")
-_979431320b2cd2887e1816c23828f106.Name = "didUpdate.spec"
-sourceMap[_979431320b2cd2887e1816c23828f106] = [===[ return function()
+local _6bc2066197b1ee4457e12d50d9fe6555 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_6bc2066197b1ee4457e12d50d9fe6555"] = _6bc2066197b1ee4457e12d50d9fe6555
+_6bc2066197b1ee4457e12d50d9fe6555.Name = "didUpdate.spec"
+_6bc2066197b1ee4457e12d50d9fe6555.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -8691,11 +8768,12 @@ sourceMap[_979431320b2cd2887e1816c23828f106] = [===[ return function()
 	end)
 end
  ]===]
-_979431320b2cd2887e1816c23828f106.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_6bc2066197b1ee4457e12d50d9fe6555"] = _6bc2066197b1ee4457e12d50d9fe6555
 
-local _5b31f9831114e0c1bc9da365c554ece4 = Instance.new("ModuleScript")
-_5b31f9831114e0c1bc9da365c554ece4.Name = "didMount.spec"
-sourceMap[_5b31f9831114e0c1bc9da365c554ece4] = [===[ return function()
+local _6ccfcc44c418f6d10cb36be562ff5ab8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_6ccfcc44c418f6d10cb36be562ff5ab8"] = _6ccfcc44c418f6d10cb36be562ff5ab8
+_6ccfcc44c418f6d10cb36be562ff5ab8.Name = "didMount.spec"
+_6ccfcc44c418f6d10cb36be562ff5ab8.Properties.Source = [===[ return function()
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
 	local createSpy = require(script.Parent.Parent.createSpy)
@@ -8731,11 +8809,12 @@ sourceMap[_5b31f9831114e0c1bc9da365c554ece4] = [===[ return function()
 	end)
 end
  ]===]
-_5b31f9831114e0c1bc9da365c554ece4.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_6ccfcc44c418f6d10cb36be562ff5ab8"] = _6ccfcc44c418f6d10cb36be562ff5ab8
 
-local _81f55d53da0f5d1fe045aac40c581d95 = Instance.new("ModuleScript")
-_81f55d53da0f5d1fe045aac40c581d95.Name = "defaultProps.spec"
-sourceMap[_81f55d53da0f5d1fe045aac40c581d95] = [===[ return function()
+local _fae1f8399dda6d9d324432aa1b681449 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_fae1f8399dda6d9d324432aa1b681449"] = _fae1f8399dda6d9d324432aa1b681449
+_fae1f8399dda6d9d324432aa1b681449.Name = "defaultProps.spec"
+_fae1f8399dda6d9d324432aa1b681449.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -8861,11 +8940,12 @@ sourceMap[_81f55d53da0f5d1fe045aac40c581d95] = [===[ return function()
 	end)
 end
  ]===]
-_81f55d53da0f5d1fe045aac40c581d95.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_fae1f8399dda6d9d324432aa1b681449"] = _fae1f8399dda6d9d324432aa1b681449
 
-local _669a805f996066fe7a27004e5f4155c7 = Instance.new("ModuleScript")
-_669a805f996066fe7a27004e5f4155c7.Name = "context.spec"
-sourceMap[_669a805f996066fe7a27004e5f4155c7] = [===[ return function()
+local _e32f5d6c088bd88526517bbb30faf76d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_e32f5d6c088bd88526517bbb30faf76d"] = _e32f5d6c088bd88526517bbb30faf76d
+_e32f5d6c088bd88526517bbb30faf76d.Name = "context.spec"
+_e32f5d6c088bd88526517bbb30faf76d.Properties.Source = [===[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -9156,11 +9236,12 @@ sourceMap[_669a805f996066fe7a27004e5f4155c7] = [===[ return function()
 	end)
 end
  ]===]
-_669a805f996066fe7a27004e5f4155c7.Parent = _7dd32b55c25b1012418594cfa4963ddf
+_6a580a831683a7a8188daa6202db3c95.Children["_e32f5d6c088bd88526517bbb30faf76d"] = _e32f5d6c088bd88526517bbb30faf76d
 
-local _718d4fc0f4ba892123b1d15cd76234fe = Instance.new("ModuleScript")
-_718d4fc0f4ba892123b1d15cd76234fe.Name = "Component"
-sourceMap[_718d4fc0f4ba892123b1d15cd76234fe] = [===[ local assign = require(script.Parent.assign)
+local _555352e46c6ee9a719559eedfd35e2af = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_555352e46c6ee9a719559eedfd35e2af"] = _555352e46c6ee9a719559eedfd35e2af
+_555352e46c6ee9a719559eedfd35e2af.Name = "Component"
+_555352e46c6ee9a719559eedfd35e2af.Properties.Source = [===[ local assign = require(script.Parent.assign)
 local ComponentLifecyclePhase = require(script.Parent.ComponentLifecyclePhase)
 local Type = require(script.Parent.Type)
 local Symbol = require(script.Parent.Symbol)
@@ -9673,11 +9754,12 @@ end
 
 return Component
  ]===]
-_718d4fc0f4ba892123b1d15cd76234fe.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_555352e46c6ee9a719559eedfd35e2af"] = _555352e46c6ee9a719559eedfd35e2af
 
-local _c6a26257a9d317d54ae25ed1392f2c06 = Instance.new("ModuleScript")
-_c6a26257a9d317d54ae25ed1392f2c06.Name = "Binding.spec"
-sourceMap[_c6a26257a9d317d54ae25ed1392f2c06] = [===[ return function()
+local _2962305ea26dcf54b750f609830d6fc2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_2962305ea26dcf54b750f609830d6fc2"] = _2962305ea26dcf54b750f609830d6fc2
+_2962305ea26dcf54b750f609830d6fc2.Name = "Binding.spec"
+_2962305ea26dcf54b750f609830d6fc2.Properties.Source = [===[ return function()
 	local createSpy = require(script.Parent.createSpy)
 	local Type = require(script.Parent.Type)
 	local GlobalConfig = require(script.Parent.GlobalConfig)
@@ -9947,11 +10029,12 @@ sourceMap[_c6a26257a9d317d54ae25ed1392f2c06] = [===[ return function()
 	end)
 end
  ]===]
-_c6a26257a9d317d54ae25ed1392f2c06.Parent = _95577a94600768cc9b1a63ce3bd71a19
+_5cd65233edc8204aa0652e301bed6886.Children["_2962305ea26dcf54b750f609830d6fc2"] = _2962305ea26dcf54b750f609830d6fc2
 
-local _fd18ff7f05d75035827faf932896f755 = Instance.new("ModuleScript")
-_fd18ff7f05d75035827faf932896f755.Name = "Binding"
-sourceMap[_fd18ff7f05d75035827faf932896f755] = [===[ local createSignal = require(script.Parent.createSignal)
+local _ae6e02853edc49ed78a2575909f48de6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+referentMap["_ae6e02853edc49ed78a2575909f48de6"] = _ae6e02853edc49ed78a2575909f48de6
+_ae6e02853edc49ed78a2575909f48de6.Name = "Binding"
+_ae6e02853edc49ed78a2575909f48de6.Properties.Source = [===[ local createSignal = require(script.Parent.createSignal)
 local Symbol = require(script.Parent.Symbol)
 local Type = require(script.Parent.Type)
 
@@ -10107,8 +10190,10 @@ end
 
 return BindingInternalApi
  ]===]
-_fd18ff7f05d75035827faf932896f755.Parent = _95577a94600768cc9b1a63ce3bd71a19
-getfenv(0).root = _9fe5bc7bebcb7bfda2a009cbe5e8bc76
+_5cd65233edc8204aa0652e301bed6886.Children["_ae6e02853edc49ed78a2575909f48de6"] = _ae6e02853edc49ed78a2575909f48de6
+-- 82 referents
+getfenv(0).rootTree = _c611e9ce53464c1578d74c59e45df702
+getfenv(0).rootReferent = "_c611e9ce53464c1578d74c59e45df702"
 type Runtime = {
 	getPatchedEnvironment: (script: LuaSourceContainer) -> (),
 	loadedModules: {
@@ -10123,78 +10208,128 @@ local runtime: Runtime = {} :: any
 if getfenv().__runtime then
 	runtime = getfenv().__runtime
 else
-	local HttpService = game:GetService("HttpService")
-	local root: Model = getfenv(0).root
-	local sourceMap = getfenv(0).sourceMap
 	runtime.loadedModules = {}
-	local nilParentedInstance = Instance.new("Script")
-	nilParentedInstance.Name = "<nil>"
-	nilParentedInstance.Parent = nil
+
+	local HttpService = game:GetService("HttpService")
+	local SharedTableRegistry = game:GetService("SharedTableRegistry")
+	local rootTree = getfenv(0).rootTree
+	local rootReferent = getfenv(0).rootReferent
+	local referentMap = getfenv(0).referentMap
+	local nilProtectedFolder = Instance.new("Folder")
+	nilProtectedFolder.Name = "nil-protected-instances"
+	nilProtectedFolder.Parent = nil
+	local constructorSource = string.format(
+		[[
+		local constructInstanceFromTree
+		constructInstanceFromTree = function(tree, referents, sourceMap)
+			local sourceMap = sourceMap or {}
+			local tags = tree.Tags or {}
+			local attributes = tree.Attributes or {}
+			local children = tree.Children or {}
+			local instance = Instance.new(tree.ClassName)
+			if not referents then
+				referents = {
+					["%s"] = instance,
+				}
+			end
+
+			for _, tag in tags do
+				instance:AddTag(tag)
+			end
+
+			for index, value in attributes do
+				instance:SetAttribute(index, value)
+			end
+			-- ref is inside property
+
+			local instancePropertyReferences = {}
+			for index, value in tree.Properties do
+				if typeof(value) == "table" and value.ref then
+					-- referent
+					instancePropertyReferences[instance] = {
+						index = index,
+						referent = value.ref,
+					}
+				else
+					if index == "Source" then
+						sourceMap[instance] = value
+					else
+						instance[index] = value
+					end
+				end
+			end
+
+			for referent, child in children do
+				referents[referent] = constructInstanceFromTree(child, referents, sourceMap)
+				referents[referent].Parent = instance
+			end
+
+			for affectedInstance, info in instancePropertyReferences do
+				-- info.index is property, referents[info.referent] is the value
+				affectedInstance[info.index] = referents[info.referent]
+			end
+
+			return instance, referents, sourceMap
+		end
+		return constructInstanceFromTree
+	]],
+		rootReferent
+	)
+	-- instance, referents, sourceMap
+	local constructInstanceFromTree: (tree: {}, referents: {}?, sourceMap: {}?) -> (Instance, { [string]: Instance }, { [Instance]: string }) =
+		loadstring(constructorSource)()
+	local start = os.clock()
+	local rootModel, rootReferents, sourceMap = constructInstanceFromTree(rootTree)
+	print(`rojo-script: took {os.clock() - start} seconds to construct instance from tree`)
 
 	local function wrappedNS(source: Script | string, parent: Instance)
 		if typeof(source) == "string" then
 			return getfenv().NS(source, parent)
 		elseif typeof(source) == "Instance" then
-			if source:IsA("Script") then
-				-- prevent tampering
+			if source:IsA("LuaSourceContainer") then
+				-- prevent tampering with objects
 				local accessToken = HttpService:GenerateGUID(false)
 				local sourcePatch = string.format(
 					[[
 						--- rojo-script environment tampering ---
 						(function()
-							repeat task.wait() until script.Parent:IsA("Actor")
-							local communication = script.Parent
-							local token = "%s"
-							local c
-							c = communication:BindToMessage(token .. "| runtime::getPatchedEnvironment<return>", function(environment)
-								setfenv(0, environment);
-								c:Disconnect()
-							end)
-							communication:SendMessage(token .. "| runtime::getPatchedEnvironment", script)
+							-- setup fake tree with a SharedTable
+							script:Destroy();
+							script = nil
+							local accessToken = "%s"
+							local SharedTableRegistry = game:GetService("SharedTableRegistry")
+							local rootTree = SharedTableRegistry:GetSharedTable("tree-" .. accessToken)
+							local rtSource = SharedTableRegistry:GetSharedTable("runtime-" .. accessToken).source
+							SharedTableRegistry:SetSharedTable(accessToken, nil)
+
+							local constructorSource = [=[
+								%s
+							]=]
+							local constructInstanceFromTree: (tree: {}, referents: {}?, sourceMap: {}?) -> (Instance, { [Instance]: string }) = loadstring(constructorSource)()
+							local rootModel, rootReferents, sourceMap = constructInstanceFromTree(rootTree)
+							newInstance.Parent = nil
+							script = newInstance
+							
+							-- TODO: Sandbox a "real" script that will appear to the outside world
+							-- "real" script will not accept any changes
 						end)()
-
+						--- end rojo-script environment tampering ---\n
 					]],
-					accessToken
+					accessToken,
+					constructorSource
 				)
-				-- transfer instances from source to new script
-				-- nil parent prevents execution for localscripts
-
-				local created = getfenv().NLS(sourcePatch .. sourceMap[source], nilParentedInstance)
-				local connection
-				local communication = Instance.new("Actor")
-				created.Disabled = true
-				-- TODO: Make adding instances to the source safe.
-				for _, v in source:GetChildren() do
-					v.Parent = created
-				end
-				-- run it
-				created.Disabled = false
-				connection = communication:BindToMessage(
-					accessToken .. "| runtime::getPatchedEnvironment",
-					function(script)
-						if script ~= created then
-							return
-						end
-						communication:SendMessage(
-							accessToken .. "| runtime::getPatchedEnvironment<return>",
-							runtime.getPatchedEnvironment(script)
-						)
-						created.Parent = parent
-						connection:Disconnect()
-					end
-				)
-				-- take 20 cycles to ensure script has been ran
-				local amplify = table.create(20, task.defer)
+				SharedTableRegistry:SetSharedTable("tree-" .. accessToken, SharedTable.new(referentMap[source]))
+				SharedTableRegistry:SetSharedTable("runtime-" .. accessToken, SharedTable.new({ source = rtSource }))
+				local created: Script = getfenv().NS(sourcePatch .. sourceMap[source], nilProtectedFolder)
+				-- while parenting to nilProtectedFolder does prevent script execution,
+				-- we should still disable it until its safe to continue
 				created.Parent = parent
-				pcall(amplify, function()
-					created.Parent = communication
-				end)
 				return created
 			else
-				error("expected class Script" .. " but got " .. source.ClassName)
+				error("expected instance LuaSourceContainer" .. " but got " .. source.ClassName)
 			end
 		else
-			error("expected type string | Script" .. " but got " .. typeof(source))
+			error("expected type string | LuaSourceContainer" .. " but got " .. typeof(source))
 		end
 	end
 
@@ -10206,7 +10341,7 @@ else
 				-- transfer instances from source to new script
 				-- nil parent prevents execution for localscripts
 
-				local created = getfenv().NLS(sourceMap[source], nilParentedInstance)
+				local created = getfenv().NLS(sourceMap[source], nilProtectedFolder)
 				created.Disabled = true
 				-- TODO: Make adding instances to the source safe.
 				for _, v in source:GetChildren() do
@@ -10235,7 +10370,6 @@ else
 			NLS = wrappedNLS,
 			NS = wrappedNS,
 			__runtime = runtime,
-			realScript = getfenv(0).script,
 		}, {
 			__index = getfenv(0),
 			__metatable = "The metatable is locked",
@@ -10257,7 +10391,7 @@ else
 		local environment = runtime.getPatchedEnvironment(script)
 		local fn: ((...any) -> ...any)?, e: string? = loadstring(source)
 		if not fn then
-			error("Error loading module, loadstring failed " .. if e then e else "no error")
+			error("Error loading module, loadstring failed " .. if e then e else "(no error)")
 		else
 			setfenv(fn, environment)
 			runtime.loadedModules[script] = { fn() }
@@ -10278,12 +10412,12 @@ else
 
 	local safeContainer = Instance.new("Script")
 	safeContainer.Name = "Script"
-	root.Parent = safeContainer
+	rootTree.Parent = safeContainer
 	safeContainer.Parent = workspace
 
 	function runtime.main()
 		-- getchildren is impossible for rojo projects
-		for _, instance in root:GetDescendants() do
+		for _, instance in rootModel:GetDescendants() do
 			if instance:IsA("Script") and not instance.Disabled then
 				runScript(instance)
 			end

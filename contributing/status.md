@@ -19,4 +19,4 @@ script = fake
 
 # Status
 
-We are currently on stage 3. This is due to the fact that we need to implement rt.require and sandboxing. We need to sandbox fake scripts to allow for better developer experience, and so that developers can parent Instances to `script`. 
+We are currently on stage 3. This is due to the fact that we need to implement rt.require and sandboxing. We need to sandbox fake scripts to allow for better developer experience, and so that developers can parent Instances to `script`.  

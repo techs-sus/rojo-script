@@ -28,7 +28,10 @@ struct Args {
 
 fn variant_to_lua(value: &Variant, instance: &Ref) -> String {
 	match value {
-		Variant::String(string) => format!("[===[ {string} ]===]"),
+		Variant::String(string) => format!(
+			"[[ {} ]]",
+			string.replace("[[", "\\[\\[").replace("]]", "\\]\\]")
+		),
 		Variant::Bool(bool) => format!("{bool}"),
 		Variant::Float32(float) => format!("{float}"),
 		Variant::Float64(float) => format!("{float}"),
@@ -152,18 +155,12 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 			Runtime::LuaSandbox => {
 				source.push_str("-- rojo-script runtime 'lua-sandbox'\n");
 				source.push_str("script:Destroy();script=nil\n");
-				// source.push_str("local sourceMap={};getfenv(0).sourceMap=sourceMap\n");
-				source.push_str("local referentMap={};getfenv(0).referentMap=referentMap\n");
 			}
 		}
 	}
 
 	source.push_str(&format!(
-		"local {instance_ref} = {{ ClassName = \"{class}\", Children = {{}} }}\n"
-	));
-
-	source.push_str(&format!(
-		"referentMap[\"{instance_ref}\"] = {instance_ref}\n"
+		"local {instance_ref} = {{ ClassName = \"{class}\", Children = {{}}, Properties = {{}} }}\n"
 	));
 
 	// properties
@@ -188,7 +185,9 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 			// 		source.push_str(&format!("{instance_ref}.{property} = {lua_value}\n"))
 			// 	}
 			// }
-			_ => source.push_str(&format!("{instance_ref}.{property} = {lua_value}\n")),
+			_ => source.push_str(&format!(
+				"{instance_ref}.Properties.{property} = {lua_value}\n"
+			)),
 		}
 	}
 
