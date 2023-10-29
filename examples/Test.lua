@@ -1,21 +1,31 @@
 -- rojo-script runtime 'lua-sandbox'
-getfenv(0).sourceMap = {}
-local _6aaefc7432631c210699a166e8b2534e = Instance.new("Model")
-_6aaefc7432631c210699a166e8b2534e.Name = "DataModel"
-local _97d1d75ac4b329552f8ee5d10f58ec81 = Instance.new("Script")
-_97d1d75ac4b329552f8ee5d10f58ec81.Name = "FireEmoji"
-sourceMap[_97d1d75ac4b329552f8ee5d10f58ec81] = [===[ local list = require(script.EmojiList)
+script:Destroy();script=nil
+local referentMap={};getfenv(0).referentMap=referentMap
+local _328a7e674a74c28cce00949330d9e3ef = { ClassName = "Model", Children = {} }
+referentMap["_328a7e674a74c28cce00949330d9e3ef"] = _328a7e674a74c28cce00949330d9e3ef
+_328a7e674a74c28cce00949330d9e3ef.Name = "DataModel"
+local _8023fb481458c4a143961637823be8ef = { ClassName = "Script", Children = {} }
+referentMap["_8023fb481458c4a143961637823be8ef"] = _8023fb481458c4a143961637823be8ef
+_8023fb481458c4a143961637823be8ef.Name = "FireEmoji"
+-- Variant::Tags on ref 8023fb481458c4a143961637823be8ef [length: 0]
+_8023fb481458c4a143961637823be8ef.Tags = {}
+_8023fb481458c4a143961637823be8ef.Disabled = false
+_8023fb481458c4a143961637823be8ef.LinkedSource = ""
+-- Variant::Attributes on ref 8023fb481458c4a143961637823be8ef [length: 0]
+_8023fb481458c4a143961637823be8ef.Attributes = {}
+_8023fb481458c4a143961637823be8ef.Source = [===[ local list = require(script.EmojiList)
 print(list.fire)
 print(list.water) ]===]
-_97d1d75ac4b329552f8ee5d10f58ec81.Disabled = false
--- tags for ref 97d1d75ac4b329552f8ee5d10f58ec81 with length 0
--- attributes for ref 97d1d75ac4b329552f8ee5d10f58ec81 with length 0
-_97d1d75ac4b329552f8ee5d10f58ec81.LinkedSource = ""
-_97d1d75ac4b329552f8ee5d10f58ec81.Parent = _6aaefc7432631c210699a166e8b2534e
-local _8d072ef1bb509d24c3dee10e30e66614 = Instance.new("ModuleScript")
-_8d072ef1bb509d24c3dee10e30e66614.Name = "EmojiList"
--- attributes for ref 8d072ef1bb509d24c3dee10e30e66614 with length 0
-sourceMap[_8d072ef1bb509d24c3dee10e30e66614] = [===[ local module = {
+_328a7e674a74c28cce00949330d9e3ef.Children["_8023fb481458c4a143961637823be8ef"] = _8023fb481458c4a143961637823be8ef
+local _2abab5f3b26f40775cd6bcff899b507c = { ClassName = "ModuleScript", Children = {} }
+referentMap["_2abab5f3b26f40775cd6bcff899b507c"] = _2abab5f3b26f40775cd6bcff899b507c
+_2abab5f3b26f40775cd6bcff899b507c.Name = "EmojiList"
+_2abab5f3b26f40775cd6bcff899b507c.LinkedSource = ""
+-- Variant::Tags on ref 2abab5f3b26f40775cd6bcff899b507c [length: 0]
+_2abab5f3b26f40775cd6bcff899b507c.Tags = {}
+-- Variant::Attributes on ref 2abab5f3b26f40775cd6bcff899b507c [length: 0]
+_2abab5f3b26f40775cd6bcff899b507c.Attributes = {}
+_2abab5f3b26f40775cd6bcff899b507c.Source = [===[ local module = {
 	fire = "🔥",
 	water = "💧"
 }
@@ -26,22 +36,24 @@ require(script.Test)
 
 return module
  ]===]
-_8d072ef1bb509d24c3dee10e30e66614.LinkedSource = ""
--- tags for ref 8d072ef1bb509d24c3dee10e30e66614 with length 0
-_8d072ef1bb509d24c3dee10e30e66614.Parent = _97d1d75ac4b329552f8ee5d10f58ec81
-local _e68f67311e0bee51098e24dd19c2a67c = Instance.new("ModuleScript")
-_e68f67311e0bee51098e24dd19c2a67c.Name = "Test"
--- tags for ref e68f67311e0bee51098e24dd19c2a67c with length 0
--- attributes for ref e68f67311e0bee51098e24dd19c2a67c with length 0
-_e68f67311e0bee51098e24dd19c2a67c.LinkedSource = ""
-sourceMap[_e68f67311e0bee51098e24dd19c2a67c] = [===[ print("Hi from test module ")
+_8023fb481458c4a143961637823be8ef.Children["_2abab5f3b26f40775cd6bcff899b507c"] = _2abab5f3b26f40775cd6bcff899b507c
+local _f9210d799cd93cbc19084597f8347eda = { ClassName = "ModuleScript", Children = {} }
+referentMap["_f9210d799cd93cbc19084597f8347eda"] = _f9210d799cd93cbc19084597f8347eda
+_f9210d799cd93cbc19084597f8347eda.Name = "Test"
+-- Variant::Attributes on ref f9210d799cd93cbc19084597f8347eda [length: 0]
+_f9210d799cd93cbc19084597f8347eda.Attributes = {}
+_f9210d799cd93cbc19084597f8347eda.LinkedSource = ""
+-- Variant::Tags on ref f9210d799cd93cbc19084597f8347eda [length: 0]
+_f9210d799cd93cbc19084597f8347eda.Tags = {}
+_f9210d799cd93cbc19084597f8347eda.Source = [===[ print("Hi from test module ")
 
 local module = {}
 
 return module
  ]===]
-_e68f67311e0bee51098e24dd19c2a67c.Parent = _8d072ef1bb509d24c3dee10e30e66614
-getfenv(0).root = _6aaefc7432631c210699a166e8b2534e
+_2abab5f3b26f40775cd6bcff899b507c.Children["_f9210d799cd93cbc19084597f8347eda"] = _f9210d799cd93cbc19084597f8347eda
+getfenv(0).rootTree = _328a7e674a74c28cce00949330d9e3ef
+getfenv(0).rootReferent = "_328a7e674a74c28cce00949330d9e3ef"
 type Runtime = {
 	getPatchedEnvironment: (script: LuaSourceContainer) -> (),
 	loadedModules: {
@@ -56,78 +68,127 @@ local runtime: Runtime = {} :: any
 if getfenv().__runtime then
 	runtime = getfenv().__runtime
 else
-	local HttpService = game:GetService("HttpService")
-	local root: Model = getfenv(0).root
-	local sourceMap = getfenv(0).sourceMap
 	runtime.loadedModules = {}
-	local nilParentedInstance = Instance.new("Script")
-	nilParentedInstance.Name = "<nil>"
-	nilParentedInstance.Parent = nil
+
+	local HttpService = game:GetService("HttpService")
+	local SharedTableRegistry = game:GetService("SharedTableRegistry")
+	local rootTree = getfenv(0).rootTree
+	local rootReferent = getfenv(0).rootReferent
+	local referentMap = getfenv(0).referentMap
+	local nilProtectedFolder = Instance.new("Folder")
+	nilProtectedFolder.Name = "nil-protected-instances"
+	nilProtectedFolder.Parent = nil
+	local constructorSource = string.format(
+		[[
+		local constructInstanceFromTree
+		constructInstanceFromTree = function(tree, referents, sourceMap)
+			local sourceMap = sourceMap or {}
+			local tags = tree.Tags or {}
+			local attributes = tree.Attributes or {}
+			local children = tree.Children or {}
+			local instance = Instance.new(tree.ClassName)
+			if not referents then
+				referents = {
+					["%s"] = instance,
+				}
+			end
+
+			for _, tag in tags do
+				instance:AddTag(tag)
+			end
+
+			for index, value in attributes do
+				instance:SetAttribute(index, value)
+			end
+			-- ref is inside property
+
+			local instancePropertyReferences = {}
+			for index, value in tree do
+				if index ~= "Tags" and index ~= "Attributes" and index ~= "Children" and index ~= "ClassName" then
+					if typeof(value) == "table" and value.ref then
+						-- referent
+						instancePropertyReferences[instance] = {
+							index = index,
+							referent = value.ref,
+						}
+					else
+						if index == "Source" then
+							sourceMap[instance] = value
+						else
+							instance[index] = value
+						end
+					end
+				end
+			end
+
+			for _, child in children do
+				referents[referent] constructInstanceFromTree(child, referents, sourceMap)
+				referents[referent].Parent = instance
+			end
+
+			for affectedInstance, info in instancePropertyReferences do
+				affectedInstance[info.index] = referents[info.referent]
+			end
+
+			return instance, referents, sourceMap
+		end
+		return constructInstanceFromTree
+	]],
+		rootReferent
+	)
+	-- instance, referents, sourceMap
+	local constructInstanceFromTree: (tree: {}, referents: {}?, sourceMap: {}?) -> (Instance, { [string]: Instance }, { [Instance]: string }) =
+		loadstring(constructorSource)()
+	local rootModel, rootReferents, sourceMap = constructInstanceFromTree(rootTree)
 
 	local function wrappedNS(source: Script | string, parent: Instance)
 		if typeof(source) == "string" then
 			return getfenv().NS(source, parent)
 		elseif typeof(source) == "Instance" then
-			if source:IsA("Script") then
+			if source:IsA("LuaSourceContainer") then
 				-- prevent tampering
 				local accessToken = HttpService:GenerateGUID(false)
 				local sourcePatch = string.format(
 					[[
 						--- rojo-script environment tampering ---
 						(function()
-							repeat task.wait() until script.Parent:IsA("Actor")
-							local communication = script.Parent
-							local token = "%s"
-							local c
-							c = communication:BindToMessage(token .. "| runtime::getPatchedEnvironment<return>", function(environment)
-								setfenv(0, environment);
-								c:Disconnect()
-							end)
-							communication:SendMessage(token .. "| runtime::getPatchedEnvironment", script)
+							-- setup fake tree with a SharedTable
+							script:Destroy();
+							script = nil
+							local accessToken = "%s"
+							local SharedTableRegistry = game:GetService("SharedTableRegistry")
+							local rootTree = 
+							local constructorSource = [=[
+								%s
+							]=]
+							local constructInstanceFromTree: (tree: {}, referents: {}?, sourceMap: {}?) -> (Instance, { [Instance]: string }) = loadstring(constructorSource)()
+							
 						end)()
-
+						--- end rojo-script environment tampering ---\n
 					]],
-					accessToken
+					accessToken,
+					constructorSource
 				)
 				-- transfer instances from source to new script
 				-- nil parent prevents execution for localscripts
 
-				local created = getfenv().NLS(sourcePatch .. sourceMap[source], nilParentedInstance)
-				local connection
-				local communication = Instance.new("Actor")
+				-- we will abuse this
+				SharedTableRegistry:SetSharedTable(accessToken, SharedTable.new({}))
+				SharedTableRegistry:SetSharedTable(accessToken, nil)
+				local created: Script = getfenv().NS(sourcePatch .. sourceMap[source], nilProtectedFolder)
+				-- while parenting to nilProtectedFolder does prevent script execution,
+				-- we should still disable it until its safe to continue
 				created.Disabled = true
 				-- TODO: Make adding instances to the source safe.
-				for _, v in source:GetChildren() do
-					v.Parent = created
-				end
 				-- run it
 				created.Disabled = false
-				connection = communication:BindToMessage(
-					accessToken .. "| runtime::getPatchedEnvironment",
-					function(script)
-						if script ~= created then
-							return
-						end
-						communication:SendMessage(
-							accessToken .. "| runtime::getPatchedEnvironment<return>",
-							runtime.getPatchedEnvironment(script)
-						)
-						created.Parent = parent
-						connection:Disconnect()
-					end
-				)
-				-- take 20 cycles to ensure script has been ran
-				local amplify = table.create(20, task.defer)
 				created.Parent = parent
-				pcall(amplify, function()
-					created.Parent = communication
-				end)
 				return created
 			else
-				error("expected class Script" .. " but got " .. source.ClassName)
+				error("expected instance LuaSourceContainer" .. " but got " .. source.ClassName)
 			end
 		else
-			error("expected type string | Script" .. " but got " .. typeof(source))
+			error("expected type string | LuaSourceContainer" .. " but got " .. typeof(source))
 		end
 	end
 
@@ -139,7 +200,7 @@ else
 				-- transfer instances from source to new script
 				-- nil parent prevents execution for localscripts
 
-				local created = getfenv().NLS(sourceMap[source], nilParentedInstance)
+				local created = getfenv().NLS(sourceMap[source], nilProtectedFolder)
 				created.Disabled = true
 				-- TODO: Make adding instances to the source safe.
 				for _, v in source:GetChildren() do
@@ -168,7 +229,6 @@ else
 			NLS = wrappedNLS,
 			NS = wrappedNS,
 			__runtime = runtime,
-			realScript = getfenv(0).script,
 		}, {
 			__index = getfenv(0),
 			__metatable = "The metatable is locked",
@@ -190,7 +250,7 @@ else
 		local environment = runtime.getPatchedEnvironment(script)
 		local fn: ((...any) -> ...any)?, e: string? = loadstring(source)
 		if not fn then
-			error("Error loading module, loadstring failed " .. if e then e else "no error")
+			error("Error loading module, loadstring failed " .. if e then e else "(no error)")
 		else
 			setfenv(fn, environment)
 			runtime.loadedModules[script] = { fn() }
@@ -211,12 +271,12 @@ else
 
 	local safeContainer = Instance.new("Script")
 	safeContainer.Name = "Script"
-	root.Parent = safeContainer
+	rootTree.Parent = safeContainer
 	safeContainer.Parent = workspace
 
 	function runtime.main()
 		-- getchildren is impossible for rojo projects
-		for _, instance in root:GetDescendants() do
+		for _, instance in rootModel:GetDescendants() do
 			if instance:IsA("Script") and not instance.Disabled then
 				runScript(instance)
 			end

@@ -7,7 +7,6 @@ use std::{fs::File, io::BufReader};
 
 #[derive(Clone, ValueEnum, PartialEq)]
 enum Runtime {
-	Studio,
 	LuaSandbox,
 }
 
@@ -80,7 +79,7 @@ fn variant_to_lua(value: &Variant, instance: &Ref) -> String {
 			if referent.is_none() {
 				"nil".to_string()
 			} else {
-				format!("_{referent}")
+				format!("{{ ref = _{referent} }}")
 			}
 		}
 		Variant::Rect(rect) => format!(
@@ -110,30 +109,29 @@ fn variant_to_lua(value: &Variant, instance: &Ref) -> String {
 				.iter()
 				.map(|attribute| {
 					format!(
-						"_{}:SetAttribute({}, {})",
-						instance,
+						"[\"{}\"] = {}",
 						attribute.0,
 						variant_to_lua(attribute.1, instance)
 					)
 				})
 				.collect::<Vec<String>>();
 			format!(
-				"-- Variant::Attributes on ref {} [length: {}]\n{}",
+				"-- Variant::Attributes on ref {} [length: {}]\n_{instance}.Attributes = {{{}}}\n",
 				instance,
 				attributes.len(),
-				&attributes.join("\n")
+				&attributes.join(",")
 			)
 		}
 		Variant::Tags(tags) => {
 			let tags = &tags
 				.iter()
-				.map(|tag| format!("_{}:AddTag(\"{tag}\")", instance))
+				.map(|tag| format!("\"{tag}\")"))
 				.collect::<Vec<String>>();
 			format!(
-				"-- Variant::Tags on ref {} [length: {}]\n{}",
+				"-- Variant::Tags on ref {} [length: {}]\n_{instance}.Tags = {{{}}}\n",
 				instance,
 				tags.len(),
-				tags.join("\n")
+				tags.join(",")
 			)
 		}
 		_x => format!("-- Unimplemented type \\'{:?}\\' for _{instance}", _x),
@@ -149,20 +147,23 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 	let mut source = String::new();
 	let parent = dom.get_by_ref(instance.parent());
 	let is_root_instance = parent.is_none();
-	if is_root_instance && runtime == &Runtime::LuaSandbox {
+	if is_root_instance {
 		match *runtime {
 			Runtime::LuaSandbox => {
 				source.push_str("-- rojo-script runtime 'lua-sandbox'\n");
-			}
-			Runtime::Studio => {
-				source.push_str("-- rojo-script runtime 'studio'\n");
+				source.push_str("script:Destroy();script=nil\n");
+				// source.push_str("local sourceMap={};getfenv(0).sourceMap=sourceMap\n");
+				source.push_str("local referentMap={};getfenv(0).referentMap=referentMap\n");
 			}
 		}
-		source.push_str("local sourceMap = {}; getfenv(0).sourceMap = sourceMap\n");
 	}
 
 	source.push_str(&format!(
-		"local {instance_ref} = Instance.new(\"{class}\")\n"
+		"local {instance_ref} = {{ ClassName = \"{class}\", Children = {{}} }}\n"
+	));
+
+	source.push_str(&format!(
+		"referentMap[\"{instance_ref}\"] = {instance_ref}\n"
 	));
 
 	// properties
@@ -180,19 +181,23 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 			| "WorldPivotData" => {}
 			// plugin / studio only / robloxsecurity
 			"RunContext" | "SourceAssetId" => {}
-			"Source" => {
-				if runtime == &Runtime::LuaSandbox {
-					source.push_str(&format!("sourceMap[{instance_ref}] = {lua_value}\n"))
-				} else {
-					source.push_str(&format!("{instance_ref}.{property} = {lua_value}\n"))
-				}
-			}
+			// "Source" => {
+			// 	if runtime == &Runtime::LuaSandbox {
+			// 		source.push_str(&format!("sourceMap[{instance_ref}] = {lua_value}\n"))
+			// 	} else {
+			// 		source.push_str(&format!("{instance_ref}.{property} = {lua_value}\n"))
+			// 	}
+			// }
 			_ => source.push_str(&format!("{instance_ref}.{property} = {lua_value}\n")),
 		}
 	}
 
 	if let Some(x) = parent {
-		source.push_str(&format!("{instance_ref}.Parent = _{}\n", x.referent()))
+		// source.push_str(&format!("{instance_ref}.Parent = _{}\n", x.referent()))
+		source.push_str(&format!(
+			"_{}.Children[\"{instance_ref}\"] = {instance_ref}\n",
+			x.referent(),
+		))
 	}
 
 	let children_source: Vec<String> = instance
@@ -208,10 +213,9 @@ fn generate_lua(instance: &Instance, dom: &WeakDom, runtime: &Runtime) -> String
 	if is_root_instance {
 		match *runtime {
 			Runtime::LuaSandbox => source.push_str(&format!(
-				"getfenv(0).root = {instance_ref}\n{}",
+				"getfenv(0).rootTree = {instance_ref}\ngetfenv(0).rootReferent = \"{instance_ref}\"\n{}",
 				include_str!("../runtime/lua_sandbox.lua")
 			)),
-			Runtime::Studio => source.push_str(&format!("return {instance_ref} -- root model instance")),
 		}
 	}
 	source
