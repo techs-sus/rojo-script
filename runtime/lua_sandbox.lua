@@ -169,7 +169,6 @@ else
 				-- run it
 				created.Disabled = false
 				created.Parent = parent
-				remote:FireClient(getfenv(0).owner, rootInstancesToTrees[source])
 				return created
 			else
 				error("expected class LocalScript" .. " but got " .. source.ClassName)
