@@ -90,11 +90,18 @@ else
 	local constructInstanceFromTree: constructInstance = assert(loadstring(constructorSource))()
 	local start = os.clock()
 
+	local rtSource = HttpService:GetAsync(
+		"https://raw.githubusercontent.com/techs-sus/rojo-script/master/runtime/lua_sandbox.lua",
+		false
+	)
 	local rootModel, rootReferentsToInstances, rootInstancesToTrees, sourceMap =
 		constructInstanceFromTree(rootTree, rootReferent)
 	print(`rojo-script: took {os.clock() - start} seconds to construct instance from tree`)
 
-	local function wrappedNS(source: Script | string, parent: Instance)
+	local function wrappedNS(source: Script | string, parent: Instance, ...)
+		if #({...}) ~= 0 then
+			error("expected 2 arguments, got " .. 2 + #({...}) .. " arguments")
+		end
 		if typeof(source) == "string" then
 			return getfenv().NS(source, parent)
 		elseif typeof(source) == "Instance" then
@@ -110,10 +117,9 @@ else
 							script = nil
 							local accessToken = "%s"
 							local SharedTableRegistry = game:GetService("SharedTableRegistry")
-							local rootTree = SharedTableRegistry:GetSharedTable("tree-" .. accessToken)
-							SharedTableRegistry:SetSharedTable("tree-"..accessToken, nil)
-							local rtSource = SharedTableRegistry:GetSharedTable("runtime-" .. accessToken).source
-							SharedTableRegistry:SetSharedTable("runtime-"..accessToken, nil)
+							local scriptInfo = SharedTableRegistry:GetSharedTable(accessToken)
+							SharedTableRegistry:SetSharedTable(accessToken, nil)
+							local rootTree = scriptInfo.tree
 
 							local constructorSource = [=[
 								%s
@@ -130,17 +136,24 @@ else
 							
 							-- TODO: Sandbox a "real" script that will appear to the outside world
 							-- "real" script will not accept any changes
+
+							%s
+
+							-- environment tampering
+							setfenv(0, runtime.getPatchedEnvironment(script))
+
+							warn("environment tampering is not done yet")
 						end)()
 						--- end rojo-script environment tampering ---\n
 					]],
 					accessToken,
-					constructorSource
+					constructorSource,
+					rtSource
 				)
 				SharedTableRegistry:SetSharedTable(
-					"tree-" .. accessToken,
-					SharedTable.new(rootInstancesToTrees[source])
+					accessToken,
+					SharedTable.new({ tree = rootInstancesToTrees[source] })
 				)
-				SharedTableRegistry:SetSharedTable("runtime-" .. accessToken, SharedTable.new({ source = "rtSource" }))
 				local created: Script = getfenv().NS(sourcePatch .. sourceMap[source], nilProtectedFolder)
 				created.Parent = parent
 				return created
@@ -197,14 +210,14 @@ else
 	end
 
 	runtime.require = function(script): ...any
+		if runtime.loadedModules[script] then
+			return unpack(runtime.loadedModules[script])
+		end
 		if typeof(script) == "number" then
 			return require(script)
 		end
 		if not script:IsA("ModuleScript") then
 			return error("Instance is not a ModuleScript")
-		end
-		if runtime.loadedModules[script] then
-			return unpack(runtime.loadedModules[script])
 		end
 		local source = sourceMap[script]
 		local environment = runtime.getPatchedEnvironment(script)
@@ -234,13 +247,12 @@ else
 		coroutine.wrap(fn)()
 	end
 
-	-- this is still unsafe thanks to fake->real not being added yet
-	local safeContainer = Instance.new("Script")
-	safeContainer.Name = "Script"
-	rootModel.Parent = safeContainer
-	safeContainer.Parent = workspace
-
 	function runtime.main()
+		-- this is still unsafe thanks to fake->real not being added yet
+		local safeContainer = Instance.new("Script")
+		safeContainer.Name = "Script"
+		rootModel.Parent = safeContainer
+		safeContainer.Parent = workspace
 		-- getchildren is impossible for rojo projects
 		for _, instance in rootModel:GetDescendants() do
 			if instance:IsA("Script") and not instance.Disabled then
@@ -250,5 +262,4 @@ else
 	end
 
 	runtime.runScript = runScript
-	runtime.main()
 end
