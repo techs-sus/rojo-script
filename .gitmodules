@@ -3,7 +3,7 @@
 	url = https://github.com/dphfox/Fusion.git
 [submodule "examples/react-lua"]
 	path = examples/react-lua
-	url = https://github.com/Roblox/react-lua.git
+	url = https://github.com/techs-sus/react-lua.git
 [submodule "examples/roact"]
 	path = examples/roact
 	url = https://github.com/Roblox/roact.git
