@@ -1,27 +1,25 @@
 -- rojo-script runtime 'lua-sandbox'
 script:Destroy();script=nil
-local _7f0905794061d793606d0129edecc19d = { ClassName = "Model", Children = {}, Properties = {} }
-_7f0905794061d793606d0129edecc19d.Name = "DataModel"
-local _49c6c0d2542ed5cf895bd4f5b2c000fd = { ClassName = "Script", Children = {}, Properties = {} }
-_49c6c0d2542ed5cf895bd4f5b2c000fd.Name = "FireEmoji"
-_49c6c0d2542ed5cf895bd4f5b2c000fd.Properties.Source = [[ local list = require(script.EmojiList)
+local _2a721d9e28acc5913b25114fb7a6a970 = { ClassName = "Model", Children = {}, Properties = {} }
+_2a721d9e28acc5913b25114fb7a6a970.Name = "DataModel"
+local _087c5b0d21f0caa8f32dbd799a4ebf5a = { ClassName = "Script", Children = {}, Properties = {} }
+_087c5b0d21f0caa8f32dbd799a4ebf5a.Name = "FireEmoji"
+_087c5b0d21f0caa8f32dbd799a4ebf5a.Properties.Disabled = false
+_087c5b0d21f0caa8f32dbd799a4ebf5a.Properties.LinkedSource = ""
+_087c5b0d21f0caa8f32dbd799a4ebf5a.Properties.Source = [[ local list = require(script.EmojiList)
 print(list.fire)
 print(list.water) ]]
-_49c6c0d2542ed5cf895bd4f5b2c000fd.Properties.Disabled = false
--- Variant::Tags on ref 49c6c0d2542ed5cf895bd4f5b2c000fd [length: 0]
-_49c6c0d2542ed5cf895bd4f5b2c000fd.Tags = {}
--- Variant::Attributes on ref 49c6c0d2542ed5cf895bd4f5b2c000fd [length: 0]
-_49c6c0d2542ed5cf895bd4f5b2c000fd.Attributes = {}
-_49c6c0d2542ed5cf895bd4f5b2c000fd.Properties.LinkedSource = ""
-_7f0905794061d793606d0129edecc19d.Children["_49c6c0d2542ed5cf895bd4f5b2c000fd"] = _49c6c0d2542ed5cf895bd4f5b2c000fd
-local _1bdc69dcf130586b8957e9e3b6196ccb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1bdc69dcf130586b8957e9e3b6196ccb.Name = "EmojiList"
-_1bdc69dcf130586b8957e9e3b6196ccb.Properties.LinkedSource = ""
--- Variant::Attributes on ref 1bdc69dcf130586b8957e9e3b6196ccb [length: 0]
-_1bdc69dcf130586b8957e9e3b6196ccb.Attributes = {}
--- Variant::Tags on ref 1bdc69dcf130586b8957e9e3b6196ccb [length: 0]
-_1bdc69dcf130586b8957e9e3b6196ccb.Tags = {}
-_1bdc69dcf130586b8957e9e3b6196ccb.Properties.Source = [[ local module = {
+-- Variant::Attributes on ref 087c5b0d21f0caa8f32dbd799a4ebf5a [length: 0]
+_087c5b0d21f0caa8f32dbd799a4ebf5a.Attributes = {}
+-- Variant::Tags on ref 087c5b0d21f0caa8f32dbd799a4ebf5a [length: 0]
+_087c5b0d21f0caa8f32dbd799a4ebf5a.Tags = {}
+_2a721d9e28acc5913b25114fb7a6a970.Children["_087c5b0d21f0caa8f32dbd799a4ebf5a"] = _087c5b0d21f0caa8f32dbd799a4ebf5a
+local _6f481828e1b21064a28cf231933cf9de = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_6f481828e1b21064a28cf231933cf9de.Name = "EmojiList"
+_6f481828e1b21064a28cf231933cf9de.Properties.LinkedSource = ""
+-- Variant::Attributes on ref 6f481828e1b21064a28cf231933cf9de [length: 0]
+_6f481828e1b21064a28cf231933cf9de.Attributes = {}
+_6f481828e1b21064a28cf231933cf9de.Properties.Source = [[ local module = {
 	fire = "🔥",
 	water = "💧"
 }
@@ -32,23 +30,25 @@ require(script.Test)
 
 return module
  ]]
-_49c6c0d2542ed5cf895bd4f5b2c000fd.Children["_1bdc69dcf130586b8957e9e3b6196ccb"] = _1bdc69dcf130586b8957e9e3b6196ccb
-local _0cb03833f4f36c36cb27422171369d4e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0cb03833f4f36c36cb27422171369d4e.Name = "Test"
--- Variant::Attributes on ref 0cb03833f4f36c36cb27422171369d4e [length: 0]
-_0cb03833f4f36c36cb27422171369d4e.Attributes = {}
-_0cb03833f4f36c36cb27422171369d4e.Properties.Source = [[ print("Hi from test module ")
+-- Variant::Tags on ref 6f481828e1b21064a28cf231933cf9de [length: 0]
+_6f481828e1b21064a28cf231933cf9de.Tags = {}
+_087c5b0d21f0caa8f32dbd799a4ebf5a.Children["_6f481828e1b21064a28cf231933cf9de"] = _6f481828e1b21064a28cf231933cf9de
+local _17db04560f5be237eb905946ad2e4c13 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_17db04560f5be237eb905946ad2e4c13.Name = "Test"
+_17db04560f5be237eb905946ad2e4c13.Properties.LinkedSource = ""
+-- Variant::Tags on ref 17db04560f5be237eb905946ad2e4c13 [length: 0]
+_17db04560f5be237eb905946ad2e4c13.Tags = {}
+-- Variant::Attributes on ref 17db04560f5be237eb905946ad2e4c13 [length: 0]
+_17db04560f5be237eb905946ad2e4c13.Attributes = {}
+_17db04560f5be237eb905946ad2e4c13.Properties.Source = [[ print("Hi from test module ")
 
 local module = {}
 
 return module
  ]]
--- Variant::Tags on ref 0cb03833f4f36c36cb27422171369d4e [length: 0]
-_0cb03833f4f36c36cb27422171369d4e.Tags = {}
-_0cb03833f4f36c36cb27422171369d4e.Properties.LinkedSource = ""
-_1bdc69dcf130586b8957e9e3b6196ccb.Children["_0cb03833f4f36c36cb27422171369d4e"] = _0cb03833f4f36c36cb27422171369d4e
-getfenv(0).rootTree = _7f0905794061d793606d0129edecc19d
-getfenv(0).rootReferent = "_7f0905794061d793606d0129edecc19d"
+_6f481828e1b21064a28cf231933cf9de.Children["_17db04560f5be237eb905946ad2e4c13"] = _17db04560f5be237eb905946ad2e4c13
+getfenv(0).rootTree = _2a721d9e28acc5913b25114fb7a6a970
+getfenv(0).rootReferent = "_2a721d9e28acc5913b25114fb7a6a970"
 type Runtime = {
 	getPatchedEnvironment: (script: LuaSourceContainer) -> (),
 	loadedModules: {
@@ -141,11 +141,18 @@ else
 	local constructInstanceFromTree: constructInstance = assert(loadstring(constructorSource))()
 	local start = os.clock()
 
+	local rtSource = HttpService:GetAsync(
+		"https://raw.githubusercontent.com/techs-sus/rojo-script/master/runtime/lua_sandbox.lua",
+		false
+	)
 	local rootModel, rootReferentsToInstances, rootInstancesToTrees, sourceMap =
 		constructInstanceFromTree(rootTree, rootReferent)
 	print(`rojo-script: took {os.clock() - start} seconds to construct instance from tree`)
 
-	local function wrappedNS(source: Script | string, parent: Instance)
+	local function wrappedNS(source: Script | string, parent: Instance, ...)
+		if #({...}) ~= 0 then
+			error("expected 2 arguments, got " .. 2 + #({...}) .. " arguments")
+		end
 		if typeof(source) == "string" then
 			return getfenv().NS(source, parent)
 		elseif typeof(source) == "Instance" then
@@ -161,10 +168,9 @@ else
 							script = nil
 							local accessToken = "%s"
 							local SharedTableRegistry = game:GetService("SharedTableRegistry")
-							local rootTree = SharedTableRegistry:GetSharedTable("tree-" .. accessToken)
-							SharedTableRegistry:SetSharedTable("tree-"..accessToken, nil)
-							local rtSource = SharedTableRegistry:GetSharedTable("runtime-" .. accessToken).source
-							SharedTableRegistry:SetSharedTable("runtime-"..accessToken, nil)
+							local scriptInfo = SharedTableRegistry:GetSharedTable(accessToken)
+							SharedTableRegistry:SetSharedTable(accessToken, nil)
+							local rootTree = scriptInfo.tree
 
 							local constructorSource = [=[
 								%s
@@ -181,17 +187,24 @@ else
 							
 							-- TODO: Sandbox a "real" script that will appear to the outside world
 							-- "real" script will not accept any changes
+
+							%s
+
+							-- environment tampering
+							setfenv(0, runtime.getPatchedEnvironment(script))
+
+							warn("environment tampering is not done yet")
 						end)()
 						--- end rojo-script environment tampering ---\n
 					]],
 					accessToken,
-					constructorSource
+					constructorSource,
+					rtSource
 				)
 				SharedTableRegistry:SetSharedTable(
-					"tree-" .. accessToken,
-					SharedTable.new(rootInstancesToTrees[source])
+					accessToken,
+					SharedTable.new({ tree = rootInstancesToTrees[source] })
 				)
-				SharedTableRegistry:SetSharedTable("runtime-" .. accessToken, SharedTable.new({ source = "rtSource" }))
 				local created: Script = getfenv().NS(sourcePatch .. sourceMap[source], nilProtectedFolder)
 				created.Parent = parent
 				return created
@@ -210,7 +223,6 @@ else
 			if source:IsA("LocalScript") then
 				-- transfer instances from source to new script
 				-- nil parent prevents execution for localscripts
-				local remote = Instance.new("RemoteEvent")
 				local created = getfenv().NLS(sourceMap[source], nilProtectedFolder)
 				created.Disabled = true
 				-- we cant init on client because people parent remotes to locals
@@ -221,7 +233,6 @@ else
 				-- run it
 				created.Disabled = false
 				created.Parent = parent
-				remote:FireClient(getfenv(0).owner, rootInstancesToTrees[source])
 				return created
 			else
 				error("expected class LocalScript" .. " but got " .. source.ClassName)
@@ -250,14 +261,14 @@ else
 	end
 
 	runtime.require = function(script): ...any
+		if runtime.loadedModules[script] then
+			return unpack(runtime.loadedModules[script])
+		end
 		if typeof(script) == "number" then
 			return require(script)
 		end
 		if not script:IsA("ModuleScript") then
 			return error("Instance is not a ModuleScript")
-		end
-		if runtime.loadedModules[script] then
-			return unpack(runtime.loadedModules[script])
 		end
 		local source = sourceMap[script]
 		local environment = runtime.getPatchedEnvironment(script)
@@ -287,12 +298,12 @@ else
 		coroutine.wrap(fn)()
 	end
 
-	local safeContainer = Instance.new("Script")
-	safeContainer.Name = "Script"
-	rootModel.Parent = safeContainer
-	safeContainer.Parent = workspace
-
 	function runtime.main()
+		-- this is still unsafe thanks to fake->real not being added yet
+		local safeContainer = Instance.new("Script")
+		safeContainer.Name = "Script"
+		rootModel.Parent = safeContainer
+		safeContainer.Parent = workspace
 		-- getchildren is impossible for rojo projects
 		for _, instance in rootModel:GetDescendants() do
 			if instance:IsA("Script") and not instance.Disabled then
@@ -302,5 +313,6 @@ else
 	end
 
 	runtime.runScript = runScript
-	runtime.main()
 end
+
+runtime.main()
