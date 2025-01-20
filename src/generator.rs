@@ -110,7 +110,7 @@ fn write_varstring<T: Write>(mut target: T, string: String) -> Result<(), std::i
 	Ok(())
 }
 
-fn write_variant<T: Write>(mut target: T, variant: Variant) {
+fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 	match variant {
 		// Attribute + String name -> Variant
 		Variant::Attributes(attributes) => {
