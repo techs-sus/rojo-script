@@ -1,25 +1,27 @@
 -- rojo-script runtime 'lua-sandbox'
 script:Destroy();script=nil
-local _2a721d9e28acc5913b25114fb7a6a970 = { ClassName = "Model", Children = {}, Properties = {} }
-_2a721d9e28acc5913b25114fb7a6a970.Name = "DataModel"
-local _087c5b0d21f0caa8f32dbd799a4ebf5a = { ClassName = "Script", Children = {}, Properties = {} }
-_087c5b0d21f0caa8f32dbd799a4ebf5a.Name = "FireEmoji"
-_087c5b0d21f0caa8f32dbd799a4ebf5a.Properties.Disabled = false
-_087c5b0d21f0caa8f32dbd799a4ebf5a.Properties.LinkedSource = ""
-_087c5b0d21f0caa8f32dbd799a4ebf5a.Properties.Source = [[ local list = require(script.EmojiList)
+local _770bdd8d83e182a31474a13178a6276b = { ClassName = "Model", Children = {}, Properties = {} }
+_770bdd8d83e182a31474a13178a6276b.Name = "DataModel"
+local _56f1a993282a7a74e82fc29ad6d6680f = { ClassName = "Script", Children = {}, Properties = {} }
+_56f1a993282a7a74e82fc29ad6d6680f.Name = "FireEmoji"
+_56f1a993282a7a74e82fc29ad6d6680f.Properties.Source = [[ local list = require(script.EmojiList)
 print(list.fire)
 print(list.water) ]]
--- Variant::Attributes on ref 087c5b0d21f0caa8f32dbd799a4ebf5a [length: 0]
-_087c5b0d21f0caa8f32dbd799a4ebf5a.Attributes = {}
--- Variant::Tags on ref 087c5b0d21f0caa8f32dbd799a4ebf5a [length: 0]
-_087c5b0d21f0caa8f32dbd799a4ebf5a.Tags = {}
-_2a721d9e28acc5913b25114fb7a6a970.Children["_087c5b0d21f0caa8f32dbd799a4ebf5a"] = _087c5b0d21f0caa8f32dbd799a4ebf5a
-local _6f481828e1b21064a28cf231933cf9de = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6f481828e1b21064a28cf231933cf9de.Name = "EmojiList"
-_6f481828e1b21064a28cf231933cf9de.Properties.LinkedSource = ""
--- Variant::Attributes on ref 6f481828e1b21064a28cf231933cf9de [length: 0]
-_6f481828e1b21064a28cf231933cf9de.Attributes = {}
-_6f481828e1b21064a28cf231933cf9de.Properties.Source = [[ local module = {
+_56f1a993282a7a74e82fc29ad6d6680f.Properties.LinkedSource = ""
+-- Variant::Tags on ref 56f1a993282a7a74e82fc29ad6d6680f [length: 0]
+_56f1a993282a7a74e82fc29ad6d6680f.Tags = {}
+-- Variant::Attributes on ref 56f1a993282a7a74e82fc29ad6d6680f [length: 0]
+_56f1a993282a7a74e82fc29ad6d6680f.Attributes = {}
+_56f1a993282a7a74e82fc29ad6d6680f.Properties.Disabled = false
+_770bdd8d83e182a31474a13178a6276b.Children["_56f1a993282a7a74e82fc29ad6d6680f"] = _56f1a993282a7a74e82fc29ad6d6680f
+local _dfba389a4b93fdb8f11f8c5db512abfb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_dfba389a4b93fdb8f11f8c5db512abfb.Name = "EmojiList"
+_dfba389a4b93fdb8f11f8c5db512abfb.Properties.LinkedSource = ""
+-- Variant::Attributes on ref dfba389a4b93fdb8f11f8c5db512abfb [length: 0]
+_dfba389a4b93fdb8f11f8c5db512abfb.Attributes = {}
+-- Variant::Tags on ref dfba389a4b93fdb8f11f8c5db512abfb [length: 0]
+_dfba389a4b93fdb8f11f8c5db512abfb.Tags = {}
+_dfba389a4b93fdb8f11f8c5db512abfb.Properties.Source = [[ local module = {
 	fire = "🔥",
 	water = "💧"
 }
@@ -30,25 +32,23 @@ require(script.Test)
 
 return module
  ]]
--- Variant::Tags on ref 6f481828e1b21064a28cf231933cf9de [length: 0]
-_6f481828e1b21064a28cf231933cf9de.Tags = {}
-_087c5b0d21f0caa8f32dbd799a4ebf5a.Children["_6f481828e1b21064a28cf231933cf9de"] = _6f481828e1b21064a28cf231933cf9de
-local _17db04560f5be237eb905946ad2e4c13 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_17db04560f5be237eb905946ad2e4c13.Name = "Test"
-_17db04560f5be237eb905946ad2e4c13.Properties.LinkedSource = ""
--- Variant::Tags on ref 17db04560f5be237eb905946ad2e4c13 [length: 0]
-_17db04560f5be237eb905946ad2e4c13.Tags = {}
--- Variant::Attributes on ref 17db04560f5be237eb905946ad2e4c13 [length: 0]
-_17db04560f5be237eb905946ad2e4c13.Attributes = {}
-_17db04560f5be237eb905946ad2e4c13.Properties.Source = [[ print("Hi from test module ")
+_56f1a993282a7a74e82fc29ad6d6680f.Children["_dfba389a4b93fdb8f11f8c5db512abfb"] = _dfba389a4b93fdb8f11f8c5db512abfb
+local _88f96a5bd9dee1a6508aa743a1ca0e0b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_88f96a5bd9dee1a6508aa743a1ca0e0b.Name = "Test"
+_88f96a5bd9dee1a6508aa743a1ca0e0b.Properties.LinkedSource = ""
+-- Variant::Attributes on ref 88f96a5bd9dee1a6508aa743a1ca0e0b [length: 0]
+_88f96a5bd9dee1a6508aa743a1ca0e0b.Attributes = {}
+-- Variant::Tags on ref 88f96a5bd9dee1a6508aa743a1ca0e0b [length: 0]
+_88f96a5bd9dee1a6508aa743a1ca0e0b.Tags = {}
+_88f96a5bd9dee1a6508aa743a1ca0e0b.Properties.Source = [[ print("Hi from test module ")
 
 local module = {}
 
 return module
  ]]
-_6f481828e1b21064a28cf231933cf9de.Children["_17db04560f5be237eb905946ad2e4c13"] = _17db04560f5be237eb905946ad2e4c13
-getfenv(0).rootTree = _2a721d9e28acc5913b25114fb7a6a970
-getfenv(0).rootReferent = "_2a721d9e28acc5913b25114fb7a6a970"
+_dfba389a4b93fdb8f11f8c5db512abfb.Children["_88f96a5bd9dee1a6508aa743a1ca0e0b"] = _88f96a5bd9dee1a6508aa743a1ca0e0b
+getfenv(0).rootTree = _770bdd8d83e182a31474a13178a6276b
+getfenv(0).rootReferent = "_770bdd8d83e182a31474a13178a6276b"
 type Runtime = {
 	getPatchedEnvironment: (script: LuaSourceContainer) -> (),
 	loadedModules: {

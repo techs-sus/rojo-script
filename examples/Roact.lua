@@ -1,10 +1,10 @@
 -- rojo-script runtime 'lua-sandbox'
 script:Destroy();script=nil
-local _69de763b8c4df419815bd54135f4404b = { ClassName = "Model", Children = {}, Properties = {} }
-_69de763b8c4df419815bd54135f4404b.Name = "DataModel"
-local _cd5753ca389647ffae3bbda1d39ed2cd = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_cd5753ca389647ffae3bbda1d39ed2cd.Name = "Roact"
-_cd5753ca389647ffae3bbda1d39ed2cd.Properties.Source = [[ --~strict
+local _9df0b325193e84994e6b9cc5ae584d22 = { ClassName = "Model", Children = {}, Properties = {} }
+_9df0b325193e84994e6b9cc5ae584d22.Name = "DataModel"
+local _4939180de2039ab164a0b6fd3ff1aed2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_4939180de2039ab164a0b6fd3ff1aed2.Name = "Roact"
+_4939180de2039ab164a0b6fd3ff1aed2.Properties.Source = [[ --~strict
 --\[\[
 	Packages up the internals of Roact and exposes a public API for it.
 \]\]
@@ -53,10 +53,11 @@ local Roact = strict({
 })
 
 return Roact ]]
-_69de763b8c4df419815bd54135f4404b.Children["_cd5753ca389647ffae3bbda1d39ed2cd"] = _cd5753ca389647ffae3bbda1d39ed2cd
-local _ddb774ba69eab2b13b01e2af0dd6e6e1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ddb774ba69eab2b13b01e2af0dd6e6e1.Name = "Binding"
-_ddb774ba69eab2b13b01e2af0dd6e6e1.Properties.Source = [[ local createSignal = require(script.Parent.createSignal)
+_9df0b325193e84994e6b9cc5ae584d22.Children["_4939180de2039ab164a0b6fd3ff1aed2"] = _4939180de2039ab164a0b6fd3ff1aed2
+local _4939180de2039ab164a0b6fd3ff1aed2 = nil -- DEALLOCATE PLS :pray:
+local _75ed4e604838b78af219b567b2a2d6c8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_75ed4e604838b78af219b567b2a2d6c8.Name = "Binding"
+_75ed4e604838b78af219b567b2a2d6c8.Properties.Source = [[ local createSignal = require(script.Parent.createSignal)
 local Symbol = require(script.Parent.Symbol)
 local Type = require(script.Parent.Type)
 
@@ -211,11 +212,12 @@ function BindingInternalApi.join(upstreamBindings)
 end
 
 return BindingInternalApi ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_ddb774ba69eab2b13b01e2af0dd6e6e1"] = _ddb774ba69eab2b13b01e2af0dd6e6e1
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_75ed4e604838b78af219b567b2a2d6c8"] = _75ed4e604838b78af219b567b2a2d6c8
+local _75ed4e604838b78af219b567b2a2d6c8 = nil -- DEALLOCATE PLS :pray:
 
-local _822b3d003c2a54545153dccf6864f105 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_822b3d003c2a54545153dccf6864f105.Name = "Binding.spec"
-_822b3d003c2a54545153dccf6864f105.Properties.Source = [[ return function()
+local _a35c763fe2aa5bbae90536fd32bbbb4c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_a35c763fe2aa5bbae90536fd32bbbb4c.Name = "Binding.spec"
+_a35c763fe2aa5bbae90536fd32bbbb4c.Properties.Source = [[ return function()
 	local createSpy = require(script.Parent.createSpy)
 	local Type = require(script.Parent.Type)
 	local GlobalConfig = require(script.Parent.GlobalConfig)
@@ -484,11 +486,12 @@ _822b3d003c2a54545153dccf6864f105.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_822b3d003c2a54545153dccf6864f105"] = _822b3d003c2a54545153dccf6864f105
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_a35c763fe2aa5bbae90536fd32bbbb4c"] = _a35c763fe2aa5bbae90536fd32bbbb4c
+local _a35c763fe2aa5bbae90536fd32bbbb4c = nil -- DEALLOCATE PLS :pray:
 
-local _50c26df8b6410f4172325f6b6ac7513d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_50c26df8b6410f4172325f6b6ac7513d.Name = "Component"
-_50c26df8b6410f4172325f6b6ac7513d.Properties.Source = [[ local assign = require(script.Parent.assign)
+local _763f72be355b1770902b6a0a302baa23 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_763f72be355b1770902b6a0a302baa23.Name = "Component"
+_763f72be355b1770902b6a0a302baa23.Properties.Source = [[ local assign = require(script.Parent.assign)
 local ComponentLifecyclePhase = require(script.Parent.ComponentLifecyclePhase)
 local Type = require(script.Parent.Type)
 local Symbol = require(script.Parent.Symbol)
@@ -1000,14 +1003,16 @@ function Component:__resolveUpdate(incomingProps, incomingState)
 end
 
 return Component ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_50c26df8b6410f4172325f6b6ac7513d"] = _50c26df8b6410f4172325f6b6ac7513d
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_763f72be355b1770902b6a0a302baa23"] = _763f72be355b1770902b6a0a302baa23
+local _763f72be355b1770902b6a0a302baa23 = nil -- DEALLOCATE PLS :pray:
 
-local _ab0ff3e7dbc3004c4342b32c74ef441d = { ClassName = "Folder", Children = {}, Properties = {} }
-_ab0ff3e7dbc3004c4342b32c74ef441d.Name = "Component.spec"
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_ab0ff3e7dbc3004c4342b32c74ef441d"] = _ab0ff3e7dbc3004c4342b32c74ef441d
-local _96186d646fe7f6f0d6dd64489f6f0eb7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_96186d646fe7f6f0d6dd64489f6f0eb7.Name = "context.spec"
-_96186d646fe7f6f0d6dd64489f6f0eb7.Properties.Source = [[ return function()
+local _bc24a22c68c00f094ac68169d455a73a = { ClassName = "Folder", Children = {}, Properties = {} }
+_bc24a22c68c00f094ac68169d455a73a.Name = "Component.spec"
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_bc24a22c68c00f094ac68169d455a73a"] = _bc24a22c68c00f094ac68169d455a73a
+local _bc24a22c68c00f094ac68169d455a73a = nil -- DEALLOCATE PLS :pray:
+local _aaaf70ba3218db45553503c858bd960a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_aaaf70ba3218db45553503c858bd960a.Name = "context.spec"
+_aaaf70ba3218db45553503c858bd960a.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -1297,11 +1302,12 @@ _96186d646fe7f6f0d6dd64489f6f0eb7.Properties.Source = [[ return function()
 		assertDeepEqual(capturedContextB, expectedContextB)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_96186d646fe7f6f0d6dd64489f6f0eb7"] = _96186d646fe7f6f0d6dd64489f6f0eb7
+_bc24a22c68c00f094ac68169d455a73a.Children["_aaaf70ba3218db45553503c858bd960a"] = _aaaf70ba3218db45553503c858bd960a
+local _aaaf70ba3218db45553503c858bd960a = nil -- DEALLOCATE PLS :pray:
 
-local _30ae742f3b873a9c60cc2d24474a12f9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_30ae742f3b873a9c60cc2d24474a12f9.Name = "defaultProps.spec"
-_30ae742f3b873a9c60cc2d24474a12f9.Properties.Source = [[ return function()
+local _4c7a944b4df29560c4773fb2fcab070d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_4c7a944b4df29560c4773fb2fcab070d.Name = "defaultProps.spec"
+_4c7a944b4df29560c4773fb2fcab070d.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -1426,11 +1432,12 @@ _30ae742f3b873a9c60cc2d24474a12f9.Properties.Source = [[ return function()
 		assertDeepEqual(capturedProps, expectedProps)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_30ae742f3b873a9c60cc2d24474a12f9"] = _30ae742f3b873a9c60cc2d24474a12f9
+_bc24a22c68c00f094ac68169d455a73a.Children["_4c7a944b4df29560c4773fb2fcab070d"] = _4c7a944b4df29560c4773fb2fcab070d
+local _4c7a944b4df29560c4773fb2fcab070d = nil -- DEALLOCATE PLS :pray:
 
-local _0f53e1a00986e3d234c3b7919e107443 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0f53e1a00986e3d234c3b7919e107443.Name = "didMount.spec"
-_0f53e1a00986e3d234c3b7919e107443.Properties.Source = [[ return function()
+local _47d1630b71d10bef645be891a2baada2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_47d1630b71d10bef645be891a2baada2.Name = "didMount.spec"
+_47d1630b71d10bef645be891a2baada2.Properties.Source = [[ return function()
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
 	local createSpy = require(script.Parent.Parent.createSpy)
@@ -1465,11 +1472,12 @@ _0f53e1a00986e3d234c3b7919e107443.Properties.Source = [[ return function()
 		expect(Type.of(values.self)).to.equal(Type.StatefulComponentInstance)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_0f53e1a00986e3d234c3b7919e107443"] = _0f53e1a00986e3d234c3b7919e107443
+_bc24a22c68c00f094ac68169d455a73a.Children["_47d1630b71d10bef645be891a2baada2"] = _47d1630b71d10bef645be891a2baada2
+local _47d1630b71d10bef645be891a2baada2 = nil -- DEALLOCATE PLS :pray:
 
-local _521779040025357227e3349659759366 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_521779040025357227e3349659759366.Name = "didUpdate.spec"
-_521779040025357227e3349659759366.Properties.Source = [[ return function()
+local _744f46cd39adbf1b90852e7479c7121c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_744f46cd39adbf1b90852e7479c7121c.Name = "didUpdate.spec"
+_744f46cd39adbf1b90852e7479c7121c.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -1560,11 +1568,12 @@ _521779040025357227e3349659759366.Properties.Source = [[ return function()
 		assertDeepEqual(values.oldState, initialState)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_521779040025357227e3349659759366"] = _521779040025357227e3349659759366
+_bc24a22c68c00f094ac68169d455a73a.Children["_744f46cd39adbf1b90852e7479c7121c"] = _744f46cd39adbf1b90852e7479c7121c
+local _744f46cd39adbf1b90852e7479c7121c = nil -- DEALLOCATE PLS :pray:
 
-local _98f3c20d3219997d3fa9757a8fd1cb08 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_98f3c20d3219997d3fa9757a8fd1cb08.Name = "extend.spec"
-_98f3c20d3219997d3fa9757a8fd1cb08.Properties.Source = [[ return function()
+local _cde21da6c2863642f184de79a6f6441f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_cde21da6c2863642f184de79a6f6441f.Name = "extend.spec"
+_cde21da6c2863642f184de79a6f6441f.Properties.Source = [[ return function()
 	local Type = require(script.Parent.Parent.Type)
 
 	local Component = require(script.Parent.Parent.Component)
@@ -1593,11 +1602,12 @@ _98f3c20d3219997d3fa9757a8fd1cb08.Properties.Source = [[ return function()
 		expect(name:find("FooBar")).to.be.ok()
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_98f3c20d3219997d3fa9757a8fd1cb08"] = _98f3c20d3219997d3fa9757a8fd1cb08
+_bc24a22c68c00f094ac68169d455a73a.Children["_cde21da6c2863642f184de79a6f6441f"] = _cde21da6c2863642f184de79a6f6441f
+local _cde21da6c2863642f184de79a6f6441f = nil -- DEALLOCATE PLS :pray:
 
-local _f3dc0f495c006ecd47a5f1330088e4d3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f3dc0f495c006ecd47a5f1330088e4d3.Name = "getDerivedStateFromProps.spec"
-_f3dc0f495c006ecd47a5f1330088e4d3.Properties.Source = [[ return function()
+local _a98c3404ec8e15468cf6c73aa92b0d05 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_a98c3404ec8e15468cf6c73aa92b0d05.Name = "getDerivedStateFromProps.spec"
+_a98c3404ec8e15468cf6c73aa92b0d05.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createSpy = require(script.Parent.Parent.createSpy)
 	local createElement = require(script.Parent.Parent.createElement)
@@ -1883,11 +1893,12 @@ _f3dc0f495c006ecd47a5f1330088e4d3.Properties.Source = [[ return function()
 		})
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_f3dc0f495c006ecd47a5f1330088e4d3"] = _f3dc0f495c006ecd47a5f1330088e4d3
+_bc24a22c68c00f094ac68169d455a73a.Children["_a98c3404ec8e15468cf6c73aa92b0d05"] = _a98c3404ec8e15468cf6c73aa92b0d05
+local _a98c3404ec8e15468cf6c73aa92b0d05 = nil -- DEALLOCATE PLS :pray:
 
-local _c010d781b5240dd8dc83f6667d97a1b4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c010d781b5240dd8dc83f6667d97a1b4.Name = "getElementTraceback.spec"
-_c010d781b5240dd8dc83f6667d97a1b4.Properties.Source = [[ return function()
+local _c87094dc786ff25f09b247e22aafa04d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_c87094dc786ff25f09b247e22aafa04d.Name = "getElementTraceback.spec"
+_c87094dc786ff25f09b247e22aafa04d.Properties.Source = [[ return function()
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
 	local GlobalConfig = require(script.Parent.Parent.GlobalConfig)
@@ -1954,11 +1965,12 @@ _c010d781b5240dd8dc83f6667d97a1b4.Properties.Source = [[ return function()
 		expect(stackTrace).to.equal(nil)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_c010d781b5240dd8dc83f6667d97a1b4"] = _c010d781b5240dd8dc83f6667d97a1b4
+_bc24a22c68c00f094ac68169d455a73a.Children["_c87094dc786ff25f09b247e22aafa04d"] = _c87094dc786ff25f09b247e22aafa04d
+local _c87094dc786ff25f09b247e22aafa04d = nil -- DEALLOCATE PLS :pray:
 
-local _de74e21ba28e58ad2d2bc3e6b9c77ea2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_de74e21ba28e58ad2d2bc3e6b9c77ea2.Name = "init.spec"
-_de74e21ba28e58ad2d2bc3e6b9c77ea2.Properties.Source = [[ return function()
+local _984129ecb018ec85afe98e5376248cd5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_984129ecb018ec85afe98e5376248cd5.Name = "init.spec"
+_984129ecb018ec85afe98e5376248cd5.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -1999,11 +2011,12 @@ _de74e21ba28e58ad2d2bc3e6b9c77ea2.Properties.Source = [[ return function()
 		assertDeepEqual(values.props, props)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_de74e21ba28e58ad2d2bc3e6b9c77ea2"] = _de74e21ba28e58ad2d2bc3e6b9c77ea2
+_bc24a22c68c00f094ac68169d455a73a.Children["_984129ecb018ec85afe98e5376248cd5"] = _984129ecb018ec85afe98e5376248cd5
+local _984129ecb018ec85afe98e5376248cd5 = nil -- DEALLOCATE PLS :pray:
 
-local _8aa72aca188c8129ff16e37d1de08773 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_8aa72aca188c8129ff16e37d1de08773.Name = "legacyContext.spec"
-_8aa72aca188c8129ff16e37d1de08773.Properties.Source = [[ return function()
+local _c49b18efb8acb09c0da8c68ca9861e25 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_c49b18efb8acb09c0da8c68ca9861e25.Name = "legacyContext.spec"
+_c49b18efb8acb09c0da8c68ca9861e25.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -2206,11 +2219,12 @@ _8aa72aca188c8129ff16e37d1de08773.Properties.Source = [[ return function()
 		assertDeepEqual(capturedContextB, expectedContextB)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_8aa72aca188c8129ff16e37d1de08773"] = _8aa72aca188c8129ff16e37d1de08773
+_bc24a22c68c00f094ac68169d455a73a.Children["_c49b18efb8acb09c0da8c68ca9861e25"] = _c49b18efb8acb09c0da8c68ca9861e25
+local _c49b18efb8acb09c0da8c68ca9861e25 = nil -- DEALLOCATE PLS :pray:
 
-local _188dea66d74410798c88920e0acad364 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_188dea66d74410798c88920e0acad364.Name = "render.spec"
-_188dea66d74410798c88920e0acad364.Properties.Source = [[ return function()
+local _b93f8365bd4335fc980521343dea9991 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_b93f8365bd4335fc980521343dea9991.Name = "render.spec"
+_b93f8365bd4335fc980521343dea9991.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -2360,11 +2374,12 @@ _188dea66d74410798c88920e0acad364.Properties.Source = [[ return function()
 	itSKIP("Test defaultProps on prop update", function() end)
 	itSKIP("Test defaultProps on state update", function() end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_188dea66d74410798c88920e0acad364"] = _188dea66d74410798c88920e0acad364
+_bc24a22c68c00f094ac68169d455a73a.Children["_b93f8365bd4335fc980521343dea9991"] = _b93f8365bd4335fc980521343dea9991
+local _b93f8365bd4335fc980521343dea9991 = nil -- DEALLOCATE PLS :pray:
 
-local _f03f4da73ddd0d1365007f3a6b423c05 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f03f4da73ddd0d1365007f3a6b423c05.Name = "setState.spec"
-_f03f4da73ddd0d1365007f3a6b423c05.Properties.Source = [[ return function()
+local _9bb1dd5b26cef5800e12a9b6e44bf01f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_9bb1dd5b26cef5800e12a9b6e44bf01f.Name = "setState.spec"
+_9bb1dd5b26cef5800e12a9b6e44bf01f.Properties.Source = [[ return function()
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
 	local createSpy = require(script.Parent.Parent.createSpy)
@@ -2964,11 +2979,12 @@ _f03f4da73ddd0d1365007f3a6b423c05.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_f03f4da73ddd0d1365007f3a6b423c05"] = _f03f4da73ddd0d1365007f3a6b423c05
+_bc24a22c68c00f094ac68169d455a73a.Children["_9bb1dd5b26cef5800e12a9b6e44bf01f"] = _9bb1dd5b26cef5800e12a9b6e44bf01f
+local _9bb1dd5b26cef5800e12a9b6e44bf01f = nil -- DEALLOCATE PLS :pray:
 
-local _3f02a2d5211679d160a3f9a6d288bdd9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3f02a2d5211679d160a3f9a6d288bdd9.Name = "shouldUpdate.spec"
-_3f02a2d5211679d160a3f9a6d288bdd9.Properties.Source = [[ return function()
+local _0008f113c8712a2030ce6130b05f6bd3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_0008f113c8712a2030ce6130b05f6bd3.Name = "shouldUpdate.spec"
+_0008f113c8712a2030ce6130b05f6bd3.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -3143,11 +3159,12 @@ _3f02a2d5211679d160a3f9a6d288bdd9.Properties.Source = [[ return function()
 		expect(renderSpy.callCount).to.equal(1)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_3f02a2d5211679d160a3f9a6d288bdd9"] = _3f02a2d5211679d160a3f9a6d288bdd9
+_bc24a22c68c00f094ac68169d455a73a.Children["_0008f113c8712a2030ce6130b05f6bd3"] = _0008f113c8712a2030ce6130b05f6bd3
+local _0008f113c8712a2030ce6130b05f6bd3 = nil -- DEALLOCATE PLS :pray:
 
-local _68cd33980a0ddd84338f9e148011800e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_68cd33980a0ddd84338f9e148011800e.Name = "validateProps.spec"
-_68cd33980a0ddd84338f9e148011800e.Properties.Source = [[ return function()
+local _a53894be1db05cc20eda1aa9f3d205ac = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_a53894be1db05cc20eda1aa9f3d205ac.Name = "validateProps.spec"
+_a53894be1db05cc20eda1aa9f3d205ac.Properties.Source = [[ return function()
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
 	local createSpy = require(script.Parent.Parent.createSpy)
@@ -3416,11 +3433,12 @@ _68cd33980a0ddd84338f9e148011800e.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_68cd33980a0ddd84338f9e148011800e"] = _68cd33980a0ddd84338f9e148011800e
+_bc24a22c68c00f094ac68169d455a73a.Children["_a53894be1db05cc20eda1aa9f3d205ac"] = _a53894be1db05cc20eda1aa9f3d205ac
+local _a53894be1db05cc20eda1aa9f3d205ac = nil -- DEALLOCATE PLS :pray:
 
-local _afbeb243e68bd79c9e543362192a9cee = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_afbeb243e68bd79c9e543362192a9cee.Name = "willUnmount.spec"
-_afbeb243e68bd79c9e543362192a9cee.Properties.Source = [[ return function()
+local _162729d2b17518d93490c9b7372594e8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_162729d2b17518d93490c9b7372594e8.Name = "willUnmount.spec"
+_162729d2b17518d93490c9b7372594e8.Properties.Source = [[ return function()
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
 	local createSpy = require(script.Parent.Parent.createSpy)
@@ -3456,11 +3474,12 @@ _afbeb243e68bd79c9e543362192a9cee.Properties.Source = [[ return function()
 		expect(Type.of(values.self)).to.equal(Type.StatefulComponentInstance)
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_afbeb243e68bd79c9e543362192a9cee"] = _afbeb243e68bd79c9e543362192a9cee
+_bc24a22c68c00f094ac68169d455a73a.Children["_162729d2b17518d93490c9b7372594e8"] = _162729d2b17518d93490c9b7372594e8
+local _162729d2b17518d93490c9b7372594e8 = nil -- DEALLOCATE PLS :pray:
 
-local _122a1f0ca88ffb3cf44bc148a2920930 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_122a1f0ca88ffb3cf44bc148a2920930.Name = "willUpdate.spec"
-_122a1f0ca88ffb3cf44bc148a2920930.Properties.Source = [[ return function()
+local _e817a0b97cee5c016ee17f6b7005e9cb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_e817a0b97cee5c016ee17f6b7005e9cb.Name = "willUpdate.spec"
+_e817a0b97cee5c016ee17f6b7005e9cb.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.Parent.assertDeepEqual)
 	local createElement = require(script.Parent.Parent.createElement)
 	local createReconciler = require(script.Parent.Parent.createReconciler)
@@ -3553,11 +3572,12 @@ _122a1f0ca88ffb3cf44bc148a2920930.Properties.Source = [[ return function()
 		})
 	end)
 end ]]
-_ab0ff3e7dbc3004c4342b32c74ef441d.Children["_122a1f0ca88ffb3cf44bc148a2920930"] = _122a1f0ca88ffb3cf44bc148a2920930
+_bc24a22c68c00f094ac68169d455a73a.Children["_e817a0b97cee5c016ee17f6b7005e9cb"] = _e817a0b97cee5c016ee17f6b7005e9cb
+local _e817a0b97cee5c016ee17f6b7005e9cb = nil -- DEALLOCATE PLS :pray:
 
-local _f3ac0be09d66aee89cbdae9b571166bc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f3ac0be09d66aee89cbdae9b571166bc.Name = "ComponentLifecyclePhase"
-_f3ac0be09d66aee89cbdae9b571166bc.Properties.Source = [[ local Symbol = require(script.Parent.Symbol)
+local _5962e589bb0e3ff6d881748c3369c008 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_5962e589bb0e3ff6d881748c3369c008.Name = "ComponentLifecyclePhase"
+_5962e589bb0e3ff6d881748c3369c008.Properties.Source = [[ local Symbol = require(script.Parent.Symbol)
 local strict = require(script.Parent.strict)
 
 local ComponentLifecyclePhase = strict({
@@ -3576,11 +3596,12 @@ local ComponentLifecyclePhase = strict({
 }, "ComponentLifecyclePhase")
 
 return ComponentLifecyclePhase ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_f3ac0be09d66aee89cbdae9b571166bc"] = _f3ac0be09d66aee89cbdae9b571166bc
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_5962e589bb0e3ff6d881748c3369c008"] = _5962e589bb0e3ff6d881748c3369c008
+local _5962e589bb0e3ff6d881748c3369c008 = nil -- DEALLOCATE PLS :pray:
 
-local _d8dc2e17487ae61749bbbaf6684d4821 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d8dc2e17487ae61749bbbaf6684d4821.Name = "Config"
-_d8dc2e17487ae61749bbbaf6684d4821.Properties.Source = [[ --\[\[
+local _a1bb5a55b0ea7ff8eebe6f53a6c24702 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_a1bb5a55b0ea7ff8eebe6f53a6c24702.Name = "Config"
+_a1bb5a55b0ea7ff8eebe6f53a6c24702.Properties.Source = [[ --\[\[
 	Exposes an interface to set global configuration values for Roact.
 
 	Configuration can only occur once, and should only be done by an application
@@ -3695,11 +3716,12 @@ function Config:scoped(configValues, callback)
 end
 
 return Config ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_d8dc2e17487ae61749bbbaf6684d4821"] = _d8dc2e17487ae61749bbbaf6684d4821
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_a1bb5a55b0ea7ff8eebe6f53a6c24702"] = _a1bb5a55b0ea7ff8eebe6f53a6c24702
+local _a1bb5a55b0ea7ff8eebe6f53a6c24702 = nil -- DEALLOCATE PLS :pray:
 
-local _4f2fce0d2312db62d02b50865929635b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_4f2fce0d2312db62d02b50865929635b.Name = "Config.spec"
-_4f2fce0d2312db62d02b50865929635b.Properties.Source = [[ return function()
+local _517cc3af8b6acd296d4c8ea6b1028c95 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_517cc3af8b6acd296d4c8ea6b1028c95.Name = "Config.spec"
+_517cc3af8b6acd296d4c8ea6b1028c95.Properties.Source = [[ return function()
 	local Config = require(script.Parent.Config)
 
 	it("should accept valid configuration", function()
@@ -3751,11 +3773,12 @@ _4f2fce0d2312db62d02b50865929635b.Properties.Source = [[ return function()
 		expect(err:find(badValue)).to.be.ok()
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_4f2fce0d2312db62d02b50865929635b"] = _4f2fce0d2312db62d02b50865929635b
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_517cc3af8b6acd296d4c8ea6b1028c95"] = _517cc3af8b6acd296d4c8ea6b1028c95
+local _517cc3af8b6acd296d4c8ea6b1028c95 = nil -- DEALLOCATE PLS :pray:
 
-local _766c787f55b7eb869611ce254c186520 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_766c787f55b7eb869611ce254c186520.Name = "ElementKind"
-_766c787f55b7eb869611ce254c186520.Properties.Source = [[ --\[\[
+local _a3bd4882c0d59b1b25eecd96158cb03c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_a3bd4882c0d59b1b25eecd96158cb03c.Name = "ElementKind"
+_a3bd4882c0d59b1b25eecd96158cb03c.Properties.Source = [[ --\[\[
 	Contains markers for annotating the type of an element.
 
 	Use `ElementKind` as a key, and values from it as the value.
@@ -3806,11 +3829,12 @@ getmetatable(ElementKind).__index = ElementKindInternal
 strict(ElementKindInternal, "ElementKind")
 
 return ElementKind ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_766c787f55b7eb869611ce254c186520"] = _766c787f55b7eb869611ce254c186520
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_a3bd4882c0d59b1b25eecd96158cb03c"] = _a3bd4882c0d59b1b25eecd96158cb03c
+local _a3bd4882c0d59b1b25eecd96158cb03c = nil -- DEALLOCATE PLS :pray:
 
-local _3998da4c2ec19b04ffbb98e53fe63697 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3998da4c2ec19b04ffbb98e53fe63697.Name = "ElementKind.spec"
-_3998da4c2ec19b04ffbb98e53fe63697.Properties.Source = [[ return function()
+local _2daa18552b62dab6fac856422d4db56a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_2daa18552b62dab6fac856422d4db56a.Name = "ElementKind.spec"
+_2daa18552b62dab6fac856422d4db56a.Properties.Source = [[ return function()
 	local Portal = require(script.Parent.Portal)
 	local Component = require(script.Parent.Component)
 
@@ -3863,11 +3887,12 @@ _3998da4c2ec19b04ffbb98e53fe63697.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_3998da4c2ec19b04ffbb98e53fe63697"] = _3998da4c2ec19b04ffbb98e53fe63697
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_2daa18552b62dab6fac856422d4db56a"] = _2daa18552b62dab6fac856422d4db56a
+local _2daa18552b62dab6fac856422d4db56a = nil -- DEALLOCATE PLS :pray:
 
-local _b635cccb697ba8878b735ffdbae0ec0b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b635cccb697ba8878b735ffdbae0ec0b.Name = "ElementUtils"
-_b635cccb697ba8878b735ffdbae0ec0b.Properties.Source = [[ --!strict
+local _2167ccd8deb5507a180ebedde25d7543 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_2167ccd8deb5507a180ebedde25d7543.Name = "ElementUtils"
+_2167ccd8deb5507a180ebedde25d7543.Properties.Source = [[ --!strict
 local Type = require(script.Parent.Type)
 local Symbol = require(script.Parent.Symbol)
 
@@ -3969,11 +3994,12 @@ function ElementUtils.getElementByKey(elements, hostKey)
 end
 
 return ElementUtils ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_b635cccb697ba8878b735ffdbae0ec0b"] = _b635cccb697ba8878b735ffdbae0ec0b
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_2167ccd8deb5507a180ebedde25d7543"] = _2167ccd8deb5507a180ebedde25d7543
+local _2167ccd8deb5507a180ebedde25d7543 = nil -- DEALLOCATE PLS :pray:
 
-local _c154c34063a7c6f85fdf1c9f25c2bd2f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c154c34063a7c6f85fdf1c9f25c2bd2f.Name = "ElementUtils.spec"
-_c154c34063a7c6f85fdf1c9f25c2bd2f.Properties.Source = [[ return function()
+local _d756d20a9069b71cd9061faa37e96fbd = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_d756d20a9069b71cd9061faa37e96fbd.Name = "ElementUtils.spec"
+_d756d20a9069b71cd9061faa37e96fbd.Properties.Source = [[ return function()
 	local ElementUtils = require(script.Parent.ElementUtils)
 	local createElement = require(script.Parent.createElement)
 	local createFragment = require(script.Parent.createFragment)
@@ -4068,22 +4094,24 @@ _c154c34063a7c6f85fdf1c9f25c2bd2f.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_c154c34063a7c6f85fdf1c9f25c2bd2f"] = _c154c34063a7c6f85fdf1c9f25c2bd2f
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_d756d20a9069b71cd9061faa37e96fbd"] = _d756d20a9069b71cd9061faa37e96fbd
+local _d756d20a9069b71cd9061faa37e96fbd = nil -- DEALLOCATE PLS :pray:
 
-local _afdbc703012497dc0387a072fd8c315b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_afdbc703012497dc0387a072fd8c315b.Name = "GlobalConfig"
-_afdbc703012497dc0387a072fd8c315b.Properties.Source = [[ --\[\[
+local _30486cc0f84a8f43d6a8a8eba8db4ff4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_30486cc0f84a8f43d6a8a8eba8db4ff4.Name = "GlobalConfig"
+_30486cc0f84a8f43d6a8a8eba8db4ff4.Properties.Source = [[ --\[\[
 	Exposes a single instance of a configuration as Roact's GlobalConfig.
 \]\]
 
 local Config = require(script.Parent.Config)
 
 return Config.new() ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_afdbc703012497dc0387a072fd8c315b"] = _afdbc703012497dc0387a072fd8c315b
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_30486cc0f84a8f43d6a8a8eba8db4ff4"] = _30486cc0f84a8f43d6a8a8eba8db4ff4
+local _30486cc0f84a8f43d6a8a8eba8db4ff4 = nil -- DEALLOCATE PLS :pray:
 
-local _b4a82ec456b9b029fb71efda9d9e081a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b4a82ec456b9b029fb71efda9d9e081a.Name = "GlobalConfig.spec"
-_b4a82ec456b9b029fb71efda9d9e081a.Properties.Source = [[ return function()
+local _3842fbdcb59033088c203c1eed4b1926 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_3842fbdcb59033088c203c1eed4b1926.Name = "GlobalConfig.spec"
+_3842fbdcb59033088c203c1eed4b1926.Properties.Source = [[ return function()
 	local GlobalConfig = require(script.Parent.GlobalConfig)
 
 	it("should have the correct methods", function()
@@ -4092,11 +4120,12 @@ _b4a82ec456b9b029fb71efda9d9e081a.Properties.Source = [[ return function()
 		expect(GlobalConfig.get).to.be.ok()
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_b4a82ec456b9b029fb71efda9d9e081a"] = _b4a82ec456b9b029fb71efda9d9e081a
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_3842fbdcb59033088c203c1eed4b1926"] = _3842fbdcb59033088c203c1eed4b1926
+local _3842fbdcb59033088c203c1eed4b1926 = nil -- DEALLOCATE PLS :pray:
 
-local _91587fa68ed99b0301818f4767ccf1e1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_91587fa68ed99b0301818f4767ccf1e1.Name = "Logging"
-_91587fa68ed99b0301818f4767ccf1e1.Properties.Source = [[ --\[\[
+local _fb139bb291f0e9fbd16f30a53fdef048 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_fb139bb291f0e9fbd16f30a53fdef048.Name = "Logging"
+_fb139bb291f0e9fbd16f30a53fdef048.Properties.Source = [[ --\[\[
 	Centralized place to handle logging. Lets us:
 	- Unit test log output via `Logging.capture`
 	- Disable verbose log messages when not debugging Roact
@@ -4255,22 +4284,24 @@ function Logging.warnOnce(messageTemplate, ...)
 end
 
 return Logging ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_91587fa68ed99b0301818f4767ccf1e1"] = _91587fa68ed99b0301818f4767ccf1e1
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_fb139bb291f0e9fbd16f30a53fdef048"] = _fb139bb291f0e9fbd16f30a53fdef048
+local _fb139bb291f0e9fbd16f30a53fdef048 = nil -- DEALLOCATE PLS :pray:
 
-local _a7f15a97d4ef22149eadb1cdc2a779fc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a7f15a97d4ef22149eadb1cdc2a779fc.Name = "None"
-_a7f15a97d4ef22149eadb1cdc2a779fc.Properties.Source = [[ local Symbol = require(script.Parent.Symbol)
+local _a220abf016cebf8b003ff11ce50ff067 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_a220abf016cebf8b003ff11ce50ff067.Name = "None"
+_a220abf016cebf8b003ff11ce50ff067.Properties.Source = [[ local Symbol = require(script.Parent.Symbol)
 
 -- Marker used to specify that the value is nothing, because nil cannot be
 -- stored in tables.
 local None = Symbol.named("None")
 
 return None ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_a7f15a97d4ef22149eadb1cdc2a779fc"] = _a7f15a97d4ef22149eadb1cdc2a779fc
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_a220abf016cebf8b003ff11ce50ff067"] = _a220abf016cebf8b003ff11ce50ff067
+local _a220abf016cebf8b003ff11ce50ff067 = nil -- DEALLOCATE PLS :pray:
 
-local _5cdd6d9e5772dd806e4e1a545a3cbb3d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5cdd6d9e5772dd806e4e1a545a3cbb3d.Name = "NoopRenderer"
-_5cdd6d9e5772dd806e4e1a545a3cbb3d.Properties.Source = [[ --\[\[
+local _2810b87aaf014881e161c2bd0fb84ae9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_2810b87aaf014881e161c2bd0fb84ae9.Name = "NoopRenderer"
+_2810b87aaf014881e161c2bd0fb84ae9.Properties.Source = [[ --\[\[
 	Reference renderer intended for use in tests as well as for documenting the
 	minimum required interface for a Roact renderer.
 \]\]
@@ -4292,23 +4323,26 @@ function NoopRenderer.updateHostNode(_reconciler, node, _newElement)
 end
 
 return NoopRenderer ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_5cdd6d9e5772dd806e4e1a545a3cbb3d"] = _5cdd6d9e5772dd806e4e1a545a3cbb3d
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_2810b87aaf014881e161c2bd0fb84ae9"] = _2810b87aaf014881e161c2bd0fb84ae9
+local _2810b87aaf014881e161c2bd0fb84ae9 = nil -- DEALLOCATE PLS :pray:
 
-local _a22a3dce544d4d58c3dc53c7298653bb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a22a3dce544d4d58c3dc53c7298653bb.Name = "Portal"
-_a22a3dce544d4d58c3dc53c7298653bb.Properties.Source = [[ local Symbol = require(script.Parent.Symbol)
+local _71b0af5b4e5b51759fae3b37b802fe24 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_71b0af5b4e5b51759fae3b37b802fe24.Name = "Portal"
+_71b0af5b4e5b51759fae3b37b802fe24.Properties.Source = [[ local Symbol = require(script.Parent.Symbol)
 
 local Portal = Symbol.named("Portal")
 
 return Portal ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_a22a3dce544d4d58c3dc53c7298653bb"] = _a22a3dce544d4d58c3dc53c7298653bb
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_71b0af5b4e5b51759fae3b37b802fe24"] = _71b0af5b4e5b51759fae3b37b802fe24
+local _71b0af5b4e5b51759fae3b37b802fe24 = nil -- DEALLOCATE PLS :pray:
 
-local _2f1f0c0b12ba535af92a76e66f9e9c92 = { ClassName = "Folder", Children = {}, Properties = {} }
-_2f1f0c0b12ba535af92a76e66f9e9c92.Name = "PropMarkers"
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_2f1f0c0b12ba535af92a76e66f9e9c92"] = _2f1f0c0b12ba535af92a76e66f9e9c92
-local _3505423d8f9a7ea8bd2097dbdf8bf725 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3505423d8f9a7ea8bd2097dbdf8bf725.Name = "Change"
-_3505423d8f9a7ea8bd2097dbdf8bf725.Properties.Source = [[ --\[\[
+local _2a51e46d4b1eaa5d95065e7b3e9d28ec = { ClassName = "Folder", Children = {}, Properties = {} }
+_2a51e46d4b1eaa5d95065e7b3e9d28ec.Name = "PropMarkers"
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_2a51e46d4b1eaa5d95065e7b3e9d28ec"] = _2a51e46d4b1eaa5d95065e7b3e9d28ec
+local _2a51e46d4b1eaa5d95065e7b3e9d28ec = nil -- DEALLOCATE PLS :pray:
+local _ccd74a184c02aa79259afe7a93981e70 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_ccd74a184c02aa79259afe7a93981e70.Name = "Change"
+_ccd74a184c02aa79259afe7a93981e70.Properties.Source = [[ --\[\[
 	Change is used to generate special prop keys that can be used to connect to
 	GetPropertyChangedSignal.
 
@@ -4346,11 +4380,12 @@ setmetatable(Change, {
 })
 
 return Change ]]
-_2f1f0c0b12ba535af92a76e66f9e9c92.Children["_3505423d8f9a7ea8bd2097dbdf8bf725"] = _3505423d8f9a7ea8bd2097dbdf8bf725
+_2a51e46d4b1eaa5d95065e7b3e9d28ec.Children["_ccd74a184c02aa79259afe7a93981e70"] = _ccd74a184c02aa79259afe7a93981e70
+local _ccd74a184c02aa79259afe7a93981e70 = nil -- DEALLOCATE PLS :pray:
 
-local _b857aa22d3bdaf7d59f01a6560eb5641 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b857aa22d3bdaf7d59f01a6560eb5641.Name = "Change.spec"
-_b857aa22d3bdaf7d59f01a6560eb5641.Properties.Source = [[ return function()
+local _66cc4852eb6cc5a883a276f105f706aa = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_66cc4852eb6cc5a883a276f105f706aa.Name = "Change.spec"
+_66cc4852eb6cc5a883a276f105f706aa.Properties.Source = [[ return function()
 	local Type = require(script.Parent.Parent.Type)
 
 	local Change = require(script.Parent.Change)
@@ -4369,20 +4404,22 @@ _b857aa22d3bdaf7d59f01a6560eb5641.Properties.Source = [[ return function()
 		expect(a).never.to.equal(c)
 	end)
 end ]]
-_2f1f0c0b12ba535af92a76e66f9e9c92.Children["_b857aa22d3bdaf7d59f01a6560eb5641"] = _b857aa22d3bdaf7d59f01a6560eb5641
+_2a51e46d4b1eaa5d95065e7b3e9d28ec.Children["_66cc4852eb6cc5a883a276f105f706aa"] = _66cc4852eb6cc5a883a276f105f706aa
+local _66cc4852eb6cc5a883a276f105f706aa = nil -- DEALLOCATE PLS :pray:
 
-local _640e611b83aa132bd345806c6bbad8ba = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_640e611b83aa132bd345806c6bbad8ba.Name = "Children"
-_640e611b83aa132bd345806c6bbad8ba.Properties.Source = [[ local Symbol = require(script.Parent.Parent.Symbol)
+local _d311b27e5f3f92b490eb1779a01011eb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_d311b27e5f3f92b490eb1779a01011eb.Name = "Children"
+_d311b27e5f3f92b490eb1779a01011eb.Properties.Source = [[ local Symbol = require(script.Parent.Parent.Symbol)
 
 local Children = Symbol.named("Children")
 
 return Children ]]
-_2f1f0c0b12ba535af92a76e66f9e9c92.Children["_640e611b83aa132bd345806c6bbad8ba"] = _640e611b83aa132bd345806c6bbad8ba
+_2a51e46d4b1eaa5d95065e7b3e9d28ec.Children["_d311b27e5f3f92b490eb1779a01011eb"] = _d311b27e5f3f92b490eb1779a01011eb
+local _d311b27e5f3f92b490eb1779a01011eb = nil -- DEALLOCATE PLS :pray:
 
-local _7207cd6c3645052b0d0b6c974e0a6cf0 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7207cd6c3645052b0d0b6c974e0a6cf0.Name = "Event"
-_7207cd6c3645052b0d0b6c974e0a6cf0.Properties.Source = [[ --\[\[
+local _d32b73fa19bd7335e63d1af4d9a3dafa = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_d32b73fa19bd7335e63d1af4d9a3dafa.Name = "Event"
+_d32b73fa19bd7335e63d1af4d9a3dafa.Properties.Source = [[ --\[\[
 	Index into `Event` to get a prop key for attaching to an event on a Roblox
 	Instance.
 
@@ -4423,11 +4460,12 @@ setmetatable(Event, {
 })
 
 return Event ]]
-_2f1f0c0b12ba535af92a76e66f9e9c92.Children["_7207cd6c3645052b0d0b6c974e0a6cf0"] = _7207cd6c3645052b0d0b6c974e0a6cf0
+_2a51e46d4b1eaa5d95065e7b3e9d28ec.Children["_d32b73fa19bd7335e63d1af4d9a3dafa"] = _d32b73fa19bd7335e63d1af4d9a3dafa
+local _d32b73fa19bd7335e63d1af4d9a3dafa = nil -- DEALLOCATE PLS :pray:
 
-local _8fc4d0ced6f30f6c719b3a6459c74669 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_8fc4d0ced6f30f6c719b3a6459c74669.Name = "Event.spec"
-_8fc4d0ced6f30f6c719b3a6459c74669.Properties.Source = [[ return function()
+local _bf05fc30c9f88c1f3ad07b6cc9288dea = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_bf05fc30c9f88c1f3ad07b6cc9288dea.Name = "Event.spec"
+_bf05fc30c9f88c1f3ad07b6cc9288dea.Properties.Source = [[ return function()
 	local Type = require(script.Parent.Parent.Type)
 
 	local Event = require(script.Parent.Event)
@@ -4446,20 +4484,22 @@ _8fc4d0ced6f30f6c719b3a6459c74669.Properties.Source = [[ return function()
 		expect(a).never.to.equal(c)
 	end)
 end ]]
-_2f1f0c0b12ba535af92a76e66f9e9c92.Children["_8fc4d0ced6f30f6c719b3a6459c74669"] = _8fc4d0ced6f30f6c719b3a6459c74669
+_2a51e46d4b1eaa5d95065e7b3e9d28ec.Children["_bf05fc30c9f88c1f3ad07b6cc9288dea"] = _bf05fc30c9f88c1f3ad07b6cc9288dea
+local _bf05fc30c9f88c1f3ad07b6cc9288dea = nil -- DEALLOCATE PLS :pray:
 
-local _0285fb1231c0df975ae4728ce1347d4b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0285fb1231c0df975ae4728ce1347d4b.Name = "Ref"
-_0285fb1231c0df975ae4728ce1347d4b.Properties.Source = [[ local Symbol = require(script.Parent.Parent.Symbol)
+local _b6ae2b160d5c58083c0340b3c829d64b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_b6ae2b160d5c58083c0340b3c829d64b.Name = "Ref"
+_b6ae2b160d5c58083c0340b3c829d64b.Properties.Source = [[ local Symbol = require(script.Parent.Parent.Symbol)
 
 local Ref = Symbol.named("Ref")
 
 return Ref ]]
-_2f1f0c0b12ba535af92a76e66f9e9c92.Children["_0285fb1231c0df975ae4728ce1347d4b"] = _0285fb1231c0df975ae4728ce1347d4b
+_2a51e46d4b1eaa5d95065e7b3e9d28ec.Children["_b6ae2b160d5c58083c0340b3c829d64b"] = _b6ae2b160d5c58083c0340b3c829d64b
+local _b6ae2b160d5c58083c0340b3c829d64b = nil -- DEALLOCATE PLS :pray:
 
-local _b6a80055b619cbe56103301f9796c659 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b6a80055b619cbe56103301f9796c659.Name = "PureComponent"
-_b6a80055b619cbe56103301f9796c659.Properties.Source = [[ --\[\[
+local _c3c26bd24d9ee7073957fdc11d82bdbf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_c3c26bd24d9ee7073957fdc11d82bdbf.Name = "PureComponent"
+_c3c26bd24d9ee7073957fdc11d82bdbf.Properties.Source = [[ --\[\[
 	A version of Component with a `shouldUpdate` method that forces the
 	resulting component to be pure.
 \]\]
@@ -4500,11 +4540,12 @@ function PureComponent:shouldUpdate(newProps, newState)
 end
 
 return PureComponent ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_b6a80055b619cbe56103301f9796c659"] = _b6a80055b619cbe56103301f9796c659
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_c3c26bd24d9ee7073957fdc11d82bdbf"] = _c3c26bd24d9ee7073957fdc11d82bdbf
+local _c3c26bd24d9ee7073957fdc11d82bdbf = nil -- DEALLOCATE PLS :pray:
 
-local _ba63397fc9c2c0d513b802d55475cce1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ba63397fc9c2c0d513b802d55475cce1.Name = "PureComponent.spec"
-_ba63397fc9c2c0d513b802d55475cce1.Properties.Source = [[ return function()
+local _0dddce1eb05ae17ca510b882fb377de3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_0dddce1eb05ae17ca510b882fb377de3.Name = "PureComponent.spec"
+_0dddce1eb05ae17ca510b882fb377de3.Properties.Source = [[ return function()
 	local createElement = require(script.Parent.createElement)
 	local NoopRenderer = require(script.Parent.NoopRenderer)
 	local createReconciler = require(script.Parent.createReconciler)
@@ -4579,11 +4620,12 @@ _ba63397fc9c2c0d513b802d55475cce1.Properties.Source = [[ return function()
 		noopReconciler.unmountVirtualTree(tree)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_ba63397fc9c2c0d513b802d55475cce1"] = _ba63397fc9c2c0d513b802d55475cce1
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_0dddce1eb05ae17ca510b882fb377de3"] = _0dddce1eb05ae17ca510b882fb377de3
+local _0dddce1eb05ae17ca510b882fb377de3 = nil -- DEALLOCATE PLS :pray:
 
-local _7d1a5d8bd81708ffbd6a0c9750cd8f27 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7d1a5d8bd81708ffbd6a0c9750cd8f27.Name = "RobloxRenderer"
-_7d1a5d8bd81708ffbd6a0c9750cd8f27.Properties.Source = [[ --\[\[
+local _5b3ee5efe8e9be435d161bc77da24b76 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_5b3ee5efe8e9be435d161bc77da24b76.Name = "RobloxRenderer"
+_5b3ee5efe8e9be435d161bc77da24b76.Properties.Source = [[ --\[\[
 	Renderer that deals in terms of Roblox Instances. This is the most
 	well-supported renderer after NoopRenderer and is currently the only
 	renderer that does anything.
@@ -4865,11 +4907,12 @@ function RobloxRenderer.updateHostNode(reconciler, virtualNode, newElement)
 end
 
 return RobloxRenderer ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_7d1a5d8bd81708ffbd6a0c9750cd8f27"] = _7d1a5d8bd81708ffbd6a0c9750cd8f27
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_5b3ee5efe8e9be435d161bc77da24b76"] = _5b3ee5efe8e9be435d161bc77da24b76
+local _5b3ee5efe8e9be435d161bc77da24b76 = nil -- DEALLOCATE PLS :pray:
 
-local _d2514e6fbc2f5f4359eb77e47a93dee2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d2514e6fbc2f5f4359eb77e47a93dee2.Name = "RobloxRenderer.spec"
-_d2514e6fbc2f5f4359eb77e47a93dee2.Properties.Source = [[ return function()
+local _dd162c2155e9d9c4c065e5baee5e7bda = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_dd162c2155e9d9c4c065e5baee5e7bda.Name = "RobloxRenderer.spec"
+_dd162c2155e9d9c4c065e5baee5e7bda.Properties.Source = [[ return function()
 	local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 	local assertDeepEqual = require(script.Parent.assertDeepEqual)
@@ -6208,11 +6251,12 @@ _d2514e6fbc2f5f4359eb77e47a93dee2.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_d2514e6fbc2f5f4359eb77e47a93dee2"] = _d2514e6fbc2f5f4359eb77e47a93dee2
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_dd162c2155e9d9c4c065e5baee5e7bda"] = _dd162c2155e9d9c4c065e5baee5e7bda
+local _dd162c2155e9d9c4c065e5baee5e7bda = nil -- DEALLOCATE PLS :pray:
 
-local _3558840e55c1fa3f464aaf3bef420be2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3558840e55c1fa3f464aaf3bef420be2.Name = "SingleEventManager"
-_3558840e55c1fa3f464aaf3bef420be2.Properties.Source = [[ --\[\[
+local _31d6aad2dd19400f71b1c093d35b483b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_31d6aad2dd19400f71b1c093d35b483b.Name = "SingleEventManager"
+_31d6aad2dd19400f71b1c093d35b483b.Properties.Source = [[ --\[\[
 	A manager for a single host virtual node's connected events.
 \]\]
 
@@ -6357,11 +6401,12 @@ function SingleEventManager:resume()
 end
 
 return SingleEventManager ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_3558840e55c1fa3f464aaf3bef420be2"] = _3558840e55c1fa3f464aaf3bef420be2
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_31d6aad2dd19400f71b1c093d35b483b"] = _31d6aad2dd19400f71b1c093d35b483b
+local _31d6aad2dd19400f71b1c093d35b483b = nil -- DEALLOCATE PLS :pray:
 
-local _cc622de025e0111c26b28840050894eb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_cc622de025e0111c26b28840050894eb.Name = "SingleEventManager.spec"
-_cc622de025e0111c26b28840050894eb.Properties.Source = [[ return function()
+local _cdb1e8a8e0eb8b61bf914c380b43b72f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_cdb1e8a8e0eb8b61bf914c380b43b72f.Name = "SingleEventManager.spec"
+_cdb1e8a8e0eb8b61bf914c380b43b72f.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.assertDeepEqual)
 	local createSpy = require(script.Parent.createSpy)
 	local Logging = require(script.Parent.Logging)
@@ -6600,11 +6645,12 @@ _cc622de025e0111c26b28840050894eb.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_cc622de025e0111c26b28840050894eb"] = _cc622de025e0111c26b28840050894eb
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_cdb1e8a8e0eb8b61bf914c380b43b72f"] = _cdb1e8a8e0eb8b61bf914c380b43b72f
+local _cdb1e8a8e0eb8b61bf914c380b43b72f = nil -- DEALLOCATE PLS :pray:
 
-local _a6675bd28b9f2325fe1d2012bf68e7e5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a6675bd28b9f2325fe1d2012bf68e7e5.Name = "Symbol"
-_a6675bd28b9f2325fe1d2012bf68e7e5.Properties.Source = [[ --!strict
+local _5c47f6041cef40deaed79e5b455a06a1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_5c47f6041cef40deaed79e5b455a06a1.Name = "Symbol"
+_5c47f6041cef40deaed79e5b455a06a1.Properties.Source = [[ --!strict
 --\[\[
 	A 'Symbol' is an opaque marker type.
 
@@ -6635,11 +6681,12 @@ function Symbol.named(name)
 end
 
 return Symbol ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_a6675bd28b9f2325fe1d2012bf68e7e5"] = _a6675bd28b9f2325fe1d2012bf68e7e5
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_5c47f6041cef40deaed79e5b455a06a1"] = _5c47f6041cef40deaed79e5b455a06a1
+local _5c47f6041cef40deaed79e5b455a06a1 = nil -- DEALLOCATE PLS :pray:
 
-local _1bc227737142ed296ad888930a8c5426 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1bc227737142ed296ad888930a8c5426.Name = "Symbol.spec"
-_1bc227737142ed296ad888930a8c5426.Properties.Source = [[ return function()
+local _90efe02cba8c8b93519ff67ebca5a13c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_90efe02cba8c8b93519ff67ebca5a13c.Name = "Symbol.spec"
+_90efe02cba8c8b93519ff67ebca5a13c.Properties.Source = [[ return function()
 	local Symbol = require(script.Parent.Symbol)
 
 	describe("named", function()
@@ -6664,11 +6711,12 @@ _1bc227737142ed296ad888930a8c5426.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_1bc227737142ed296ad888930a8c5426"] = _1bc227737142ed296ad888930a8c5426
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_90efe02cba8c8b93519ff67ebca5a13c"] = _90efe02cba8c8b93519ff67ebca5a13c
+local _90efe02cba8c8b93519ff67ebca5a13c = nil -- DEALLOCATE PLS :pray:
 
-local _9aaa6d6b86c8934cee9d06e7bd062266 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9aaa6d6b86c8934cee9d06e7bd062266.Name = "Type"
-_9aaa6d6b86c8934cee9d06e7bd062266.Properties.Source = [[ --\[\[
+local _9198dcd355c20beccf07109c51a5307c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_9198dcd355c20beccf07109c51a5307c.Name = "Type"
+_9198dcd355c20beccf07109c51a5307c.Properties.Source = [[ --\[\[
 	Contains markers for annotating objects with types.
 
 	To set the type of an object, use `Type` as a key and the actual marker as
@@ -6716,11 +6764,12 @@ end
 strict(TypeInternal, "Type")
 
 return Type ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_9aaa6d6b86c8934cee9d06e7bd062266"] = _9aaa6d6b86c8934cee9d06e7bd062266
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_9198dcd355c20beccf07109c51a5307c"] = _9198dcd355c20beccf07109c51a5307c
+local _9198dcd355c20beccf07109c51a5307c = nil -- DEALLOCATE PLS :pray:
 
-local _69f4870ba3f6bb2e0e034edc3af57ea1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_69f4870ba3f6bb2e0e034edc3af57ea1.Name = "Type.spec"
-_69f4870ba3f6bb2e0e034edc3af57ea1.Properties.Source = [[ return function()
+local _120a718af1e94d2523b1e17e3bbd64e8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_120a718af1e94d2523b1e17e3bbd64e8.Name = "Type.spec"
+_120a718af1e94d2523b1e17e3bbd64e8.Properties.Source = [[ return function()
 	local Type = require(script.Parent.Type)
 
 	describe("of", function()
@@ -6744,11 +6793,12 @@ _69f4870ba3f6bb2e0e034edc3af57ea1.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_69f4870ba3f6bb2e0e034edc3af57ea1"] = _69f4870ba3f6bb2e0e034edc3af57ea1
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_120a718af1e94d2523b1e17e3bbd64e8"] = _120a718af1e94d2523b1e17e3bbd64e8
+local _120a718af1e94d2523b1e17e3bbd64e8 = nil -- DEALLOCATE PLS :pray:
 
-local _84e2472a96400f6c0c2c27de26d0933a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_84e2472a96400f6c0c2c27de26d0933a.Name = "assertDeepEqual"
-_84e2472a96400f6c0c2c27de26d0933a.Properties.Source = [[ --!strict
+local _ded215fb183cdbb74d74e1c00c6d1efe = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_ded215fb183cdbb74d74e1c00c6d1efe.Name = "assertDeepEqual"
+_ded215fb183cdbb74d74e1c00c6d1efe.Properties.Source = [[ --!strict
 --\[\[
 	A utility used to assert that two objects are value-equal recursively. It
 	outputs fairly nicely formatted messages to help diagnose why two objects
@@ -6817,11 +6867,12 @@ local function assertDeepEqual(a, b)
 end
 
 return assertDeepEqual ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_84e2472a96400f6c0c2c27de26d0933a"] = _84e2472a96400f6c0c2c27de26d0933a
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_ded215fb183cdbb74d74e1c00c6d1efe"] = _ded215fb183cdbb74d74e1c00c6d1efe
+local _ded215fb183cdbb74d74e1c00c6d1efe = nil -- DEALLOCATE PLS :pray:
 
-local _8e58d360010c6e2f137c0b2794c7c02b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_8e58d360010c6e2f137c0b2794c7c02b.Name = "assertDeepEqual.spec"
-_8e58d360010c6e2f137c0b2794c7c02b.Properties.Source = [[ return function()
+local _71cca29ffe76e8d6f5fddc3e65913a57 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_71cca29ffe76e8d6f5fddc3e65913a57.Name = "assertDeepEqual.spec"
+_71cca29ffe76e8d6f5fddc3e65913a57.Properties.Source = [[ return function()
 	local assertDeepEqual = require(script.Parent.assertDeepEqual)
 
 	it("should fail with a message when args are not equal", function()
@@ -6924,11 +6975,12 @@ _8e58d360010c6e2f137c0b2794c7c02b.Properties.Source = [[ return function()
 		end).to.throw()
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_8e58d360010c6e2f137c0b2794c7c02b"] = _8e58d360010c6e2f137c0b2794c7c02b
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_71cca29ffe76e8d6f5fddc3e65913a57"] = _71cca29ffe76e8d6f5fddc3e65913a57
+local _71cca29ffe76e8d6f5fddc3e65913a57 = nil -- DEALLOCATE PLS :pray:
 
-local _8be7f9f8a76ad30ac5a766d6e912ff3d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_8be7f9f8a76ad30ac5a766d6e912ff3d.Name = "assign"
-_8be7f9f8a76ad30ac5a766d6e912ff3d.Properties.Source = [[ local None = require(script.Parent.None)
+local _4195d8e70e3e9303b9a11e62b650f2ac = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_4195d8e70e3e9303b9a11e62b650f2ac.Name = "assign"
+_4195d8e70e3e9303b9a11e62b650f2ac.Properties.Source = [[ local None = require(script.Parent.None)
 
 --\[\[
 	Merges values from zero or more tables onto a target table. If a value is
@@ -6955,11 +7007,12 @@ local function assign(target, ...)
 end
 
 return assign ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_8be7f9f8a76ad30ac5a766d6e912ff3d"] = _8be7f9f8a76ad30ac5a766d6e912ff3d
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_4195d8e70e3e9303b9a11e62b650f2ac"] = _4195d8e70e3e9303b9a11e62b650f2ac
+local _4195d8e70e3e9303b9a11e62b650f2ac = nil -- DEALLOCATE PLS :pray:
 
-local _7df2b2be61e9f59b55548190d9e84006 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7df2b2be61e9f59b55548190d9e84006.Name = "assign.spec"
-_7df2b2be61e9f59b55548190d9e84006.Properties.Source = [[ return function()
+local _ae69c1f4b16e1e3cf8345a9d77e990d9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_ae69c1f4b16e1e3cf8345a9d77e990d9.Name = "assign.spec"
+_ae69c1f4b16e1e3cf8345a9d77e990d9.Properties.Source = [[ return function()
 	local None = require(script.Parent.None)
 
 	local assign = require(script.Parent.assign)
@@ -7027,11 +7080,12 @@ _7df2b2be61e9f59b55548190d9e84006.Properties.Source = [[ return function()
 		expect(target.foo).to.equal(source2.foo)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_7df2b2be61e9f59b55548190d9e84006"] = _7df2b2be61e9f59b55548190d9e84006
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_ae69c1f4b16e1e3cf8345a9d77e990d9"] = _ae69c1f4b16e1e3cf8345a9d77e990d9
+local _ae69c1f4b16e1e3cf8345a9d77e990d9 = nil -- DEALLOCATE PLS :pray:
 
-local _6c697ed7a5409f9382a27414ace799ce = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6c697ed7a5409f9382a27414ace799ce.Name = "createContext"
-_6c697ed7a5409f9382a27414ace799ce.Properties.Source = [[ local Symbol = require(script.Parent.Symbol)
+local _b02bf005f590a8566e56cefea9ec9cf8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_b02bf005f590a8566e56cefea9ec9cf8.Name = "createContext"
+_b02bf005f590a8566e56cefea9ec9cf8.Properties.Source = [[ local Symbol = require(script.Parent.Symbol)
 local createFragment = require(script.Parent.createFragment)
 local createSignal = require(script.Parent.createSignal)
 local Children = require(script.Parent.PropMarkers.Children)
@@ -7183,11 +7237,12 @@ local function createContext(defaultValue)
 end
 
 return createContext ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_6c697ed7a5409f9382a27414ace799ce"] = _6c697ed7a5409f9382a27414ace799ce
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_b02bf005f590a8566e56cefea9ec9cf8"] = _b02bf005f590a8566e56cefea9ec9cf8
+local _b02bf005f590a8566e56cefea9ec9cf8 = nil -- DEALLOCATE PLS :pray:
 
-local _9a22095e164e08044bb075f3ace48aee = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9a22095e164e08044bb075f3ace48aee.Name = "createContext.spec"
-_9a22095e164e08044bb075f3ace48aee.Properties.Source = [[ return function()
+local _e90866210e56b77a64299f883a50c154 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_e90866210e56b77a64299f883a50c154.Name = "createContext.spec"
+_e90866210e56b77a64299f883a50c154.Properties.Source = [[ return function()
 	local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 	local Component = require(script.Parent.Component)
@@ -7592,11 +7647,12 @@ _9a22095e164e08044bb075f3ace48aee.Properties.Source = [[ return function()
 		end).never.to.throw()
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_9a22095e164e08044bb075f3ace48aee"] = _9a22095e164e08044bb075f3ace48aee
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_e90866210e56b77a64299f883a50c154"] = _e90866210e56b77a64299f883a50c154
+local _e90866210e56b77a64299f883a50c154 = nil -- DEALLOCATE PLS :pray:
 
-local _98f0ad838546de2bb6a9a89fcdae2273 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_98f0ad838546de2bb6a9a89fcdae2273.Name = "createElement"
-_98f0ad838546de2bb6a9a89fcdae2273.Properties.Source = [[ local Children = require(script.Parent.PropMarkers.Children)
+local _86c83949d451d79a693a3060179d6471 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_86c83949d451d79a693a3060179d6471.Name = "createElement"
+_86c83949d451d79a693a3060179d6471.Properties.Source = [[ local Children = require(script.Parent.PropMarkers.Children)
 local ElementKind = require(script.Parent.ElementKind)
 local Logging = require(script.Parent.Logging)
 local Type = require(script.Parent.Type)
@@ -7670,11 +7726,12 @@ local function createElement(component, props, children)
 end
 
 return createElement ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_98f0ad838546de2bb6a9a89fcdae2273"] = _98f0ad838546de2bb6a9a89fcdae2273
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_86c83949d451d79a693a3060179d6471"] = _86c83949d451d79a693a3060179d6471
+local _86c83949d451d79a693a3060179d6471 = nil -- DEALLOCATE PLS :pray:
 
-local _f8ae003a8610ce66bb6fb47685f91c36 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f8ae003a8610ce66bb6fb47685f91c36.Name = "createElement.spec"
-_f8ae003a8610ce66bb6fb47685f91c36.Properties.Source = [[ return function()
+local _547f8238a7c21f49a36481ce4186f636 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_547f8238a7c21f49a36481ce4186f636.Name = "createElement.spec"
+_547f8238a7c21f49a36481ce4186f636.Properties.Source = [[ return function()
 	local Component = require(script.Parent.Component)
 	local ElementKind = require(script.Parent.ElementKind)
 	local GlobalConfig = require(script.Parent.GlobalConfig)
@@ -7783,11 +7840,12 @@ _f8ae003a8610ce66bb6fb47685f91c36.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_f8ae003a8610ce66bb6fb47685f91c36"] = _f8ae003a8610ce66bb6fb47685f91c36
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_547f8238a7c21f49a36481ce4186f636"] = _547f8238a7c21f49a36481ce4186f636
+local _547f8238a7c21f49a36481ce4186f636 = nil -- DEALLOCATE PLS :pray:
 
-local _f027fd97bb2eff77ca267fdbf1c746bc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f027fd97bb2eff77ca267fdbf1c746bc.Name = "createFragment"
-_f027fd97bb2eff77ca267fdbf1c746bc.Properties.Source = [[ local ElementKind = require(script.Parent.ElementKind)
+local _6b214cbc40c1485465587096d803658c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_6b214cbc40c1485465587096d803658c.Name = "createFragment"
+_6b214cbc40c1485465587096d803658c.Properties.Source = [[ local ElementKind = require(script.Parent.ElementKind)
 local Type = require(script.Parent.Type)
 
 local function createFragment(elements)
@@ -7799,11 +7857,12 @@ local function createFragment(elements)
 end
 
 return createFragment ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_f027fd97bb2eff77ca267fdbf1c746bc"] = _f027fd97bb2eff77ca267fdbf1c746bc
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_6b214cbc40c1485465587096d803658c"] = _6b214cbc40c1485465587096d803658c
+local _6b214cbc40c1485465587096d803658c = nil -- DEALLOCATE PLS :pray:
 
-local _b136e5c99922b73b9105c7e8d2264f95 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b136e5c99922b73b9105c7e8d2264f95.Name = "createFragment.spec"
-_b136e5c99922b73b9105c7e8d2264f95.Properties.Source = [[ return function()
+local _afeb03e7c341ddcd2076ee8e20ca8aa1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_afeb03e7c341ddcd2076ee8e20ca8aa1.Name = "createFragment.spec"
+_afeb03e7c341ddcd2076ee8e20ca8aa1.Properties.Source = [[ return function()
 	local ElementKind = require(script.Parent.ElementKind)
 	local Type = require(script.Parent.Type)
 
@@ -7824,11 +7883,12 @@ _b136e5c99922b73b9105c7e8d2264f95.Properties.Source = [[ return function()
 		expect(fragment.elements.key).to.equal(subFragment)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_b136e5c99922b73b9105c7e8d2264f95"] = _b136e5c99922b73b9105c7e8d2264f95
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_afeb03e7c341ddcd2076ee8e20ca8aa1"] = _afeb03e7c341ddcd2076ee8e20ca8aa1
+local _afeb03e7c341ddcd2076ee8e20ca8aa1 = nil -- DEALLOCATE PLS :pray:
 
-local _2c078f362d11d8fec6916e52ffcd1553 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2c078f362d11d8fec6916e52ffcd1553.Name = "createReconciler"
-_2c078f362d11d8fec6916e52ffcd1553.Properties.Source = [[ --!nonstrict
+local _cf8178b3fb75bcbb1f6949c55a341c46 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_cf8178b3fb75bcbb1f6949c55a341c46.Name = "createReconciler"
+_cf8178b3fb75bcbb1f6949c55a341c46.Properties.Source = [[ --!nonstrict
 local Type = require(script.Parent.Type)
 local ElementKind = require(script.Parent.ElementKind)
 local ElementUtils = require(script.Parent.ElementUtils)
@@ -8329,11 +8389,12 @@ local function createReconciler(renderer)
 end
 
 return createReconciler ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_2c078f362d11d8fec6916e52ffcd1553"] = _2c078f362d11d8fec6916e52ffcd1553
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_cf8178b3fb75bcbb1f6949c55a341c46"] = _cf8178b3fb75bcbb1f6949c55a341c46
+local _cf8178b3fb75bcbb1f6949c55a341c46 = nil -- DEALLOCATE PLS :pray:
 
-local _b111206f81666bd52d3111e9993aa1c8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b111206f81666bd52d3111e9993aa1c8.Name = "createReconciler.spec"
-_b111206f81666bd52d3111e9993aa1c8.Properties.Source = [[ return function()
+local _9e86ab653e1400f4bd812fe7daa4fedf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_9e86ab653e1400f4bd812fe7daa4fedf.Name = "createReconciler.spec"
+_9e86ab653e1400f4bd812fe7daa4fedf.Properties.Source = [[ return function()
 	local assign = require(script.Parent.assign)
 	local createElement = require(script.Parent.createElement)
 	local createFragment = require(script.Parent.createFragment)
@@ -8661,11 +8722,12 @@ _b111206f81666bd52d3111e9993aa1c8.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_b111206f81666bd52d3111e9993aa1c8"] = _b111206f81666bd52d3111e9993aa1c8
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_9e86ab653e1400f4bd812fe7daa4fedf"] = _9e86ab653e1400f4bd812fe7daa4fedf
+local _9e86ab653e1400f4bd812fe7daa4fedf = nil -- DEALLOCATE PLS :pray:
 
-local _d9358d0483ad8174bd99d8b0703bdd00 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d9358d0483ad8174bd99d8b0703bdd00.Name = "createReconcilerCompat"
-_d9358d0483ad8174bd99d8b0703bdd00.Properties.Source = [[ --\[\[
+local _a3b2186d8808c2db7970866f32c6d7bb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_a3b2186d8808c2db7970866f32c6d7bb.Name = "createReconcilerCompat"
+_a3b2186d8808c2db7970866f32c6d7bb.Properties.Source = [[ --\[\[
 	Contains deprecated methods from Reconciler. Broken out so that removing
 	this shim is easy -- just delete this file and remove it from init.
 \]\]
@@ -8712,11 +8774,12 @@ local function createReconcilerCompat(reconciler)
 end
 
 return createReconcilerCompat ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_d9358d0483ad8174bd99d8b0703bdd00"] = _d9358d0483ad8174bd99d8b0703bdd00
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_a3b2186d8808c2db7970866f32c6d7bb"] = _a3b2186d8808c2db7970866f32c6d7bb
+local _a3b2186d8808c2db7970866f32c6d7bb = nil -- DEALLOCATE PLS :pray:
 
-local _9f70c7e5d1d4578fa52d29ac37da2c5a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9f70c7e5d1d4578fa52d29ac37da2c5a.Name = "createReconcilerCompat.spec"
-_9f70c7e5d1d4578fa52d29ac37da2c5a.Properties.Source = [[ return function()
+local _e26e2c21f0d3e5ec2195fa7b7d4d8b12 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_e26e2c21f0d3e5ec2195fa7b7d4d8b12.Name = "createReconcilerCompat.spec"
+_e26e2c21f0d3e5ec2195fa7b7d4d8b12.Properties.Source = [[ return function()
 	local createElement = require(script.Parent.createElement)
 	local createReconciler = require(script.Parent.createReconciler)
 	local Logging = require(script.Parent.Logging)
@@ -8798,11 +8861,12 @@ _9f70c7e5d1d4578fa52d29ac37da2c5a.Properties.Source = [[ return function()
 		expect(logInfo.warnings[1]:find("reconcile")).to.be.ok()
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_9f70c7e5d1d4578fa52d29ac37da2c5a"] = _9f70c7e5d1d4578fa52d29ac37da2c5a
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_e26e2c21f0d3e5ec2195fa7b7d4d8b12"] = _e26e2c21f0d3e5ec2195fa7b7d4d8b12
+local _e26e2c21f0d3e5ec2195fa7b7d4d8b12 = nil -- DEALLOCATE PLS :pray:
 
-local _c1fc0cb5cc4faf8702a53933bd0e9d9f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c1fc0cb5cc4faf8702a53933bd0e9d9f.Name = "createRef"
-_c1fc0cb5cc4faf8702a53933bd0e9d9f.Properties.Source = [[ --\[\[
+local _6a15dbcb6bc1cc5e6fe312c3e9118b8d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_6a15dbcb6bc1cc5e6fe312c3e9118b8d.Name = "createRef"
+_6a15dbcb6bc1cc5e6fe312c3e9118b8d.Properties.Source = [[ --\[\[
 	A ref is nothing more than a binding with a special field 'current'
 	that maps to the getValue method of the binding
 \]\]
@@ -8840,11 +8904,12 @@ local function createRef()
 end
 
 return createRef ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_c1fc0cb5cc4faf8702a53933bd0e9d9f"] = _c1fc0cb5cc4faf8702a53933bd0e9d9f
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_6a15dbcb6bc1cc5e6fe312c3e9118b8d"] = _6a15dbcb6bc1cc5e6fe312c3e9118b8d
+local _6a15dbcb6bc1cc5e6fe312c3e9118b8d = nil -- DEALLOCATE PLS :pray:
 
-local _e29e2110331b181254a9c75d63144056 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e29e2110331b181254a9c75d63144056.Name = "createRef.spec"
-_e29e2110331b181254a9c75d63144056.Properties.Source = [[ return function()
+local _3d86ea92f3a86c3902dba43a557cfc1a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_3d86ea92f3a86c3902dba43a557cfc1a.Name = "createRef.spec"
+_3d86ea92f3a86c3902dba43a557cfc1a.Properties.Source = [[ return function()
 	local Binding = require(script.Parent.Binding)
 	local Type = require(script.Parent.Type)
 
@@ -8899,11 +8964,12 @@ _e29e2110331b181254a9c75d63144056.Properties.Source = [[ return function()
 		expect(ref:getValue()).to.equal(ref.current)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_e29e2110331b181254a9c75d63144056"] = _e29e2110331b181254a9c75d63144056
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_3d86ea92f3a86c3902dba43a557cfc1a"] = _3d86ea92f3a86c3902dba43a557cfc1a
+local _3d86ea92f3a86c3902dba43a557cfc1a = nil -- DEALLOCATE PLS :pray:
 
-local _d70909093abfd9b7c2a9fc7d27ebe47e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d70909093abfd9b7c2a9fc7d27ebe47e.Name = "createSignal"
-_d70909093abfd9b7c2a9fc7d27ebe47e.Properties.Source = [[ --\[\[
+local _3474ab65c50e106bab1682321b69edbf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_3474ab65c50e106bab1682321b69edbf.Name = "createSignal"
+_3474ab65c50e106bab1682321b69edbf.Properties.Source = [[ --\[\[
 	This is a simple signal implementation that has a dead-simple API.
 
 		local signal = createSignal()
@@ -8971,11 +9037,12 @@ local function createSignal()
 end
 
 return createSignal ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_d70909093abfd9b7c2a9fc7d27ebe47e"] = _d70909093abfd9b7c2a9fc7d27ebe47e
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_3474ab65c50e106bab1682321b69edbf"] = _3474ab65c50e106bab1682321b69edbf
+local _3474ab65c50e106bab1682321b69edbf = nil -- DEALLOCATE PLS :pray:
 
-local _344210a9f36b843e6f479b08a040eb44 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_344210a9f36b843e6f479b08a040eb44.Name = "createSignal.spec"
-_344210a9f36b843e6f479b08a040eb44.Properties.Source = [[ return function()
+local _f08fc55925657bf5c6449ea96ef18507 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_f08fc55925657bf5c6449ea96ef18507.Name = "createSignal.spec"
+_f08fc55925657bf5c6449ea96ef18507.Properties.Source = [[ return function()
 	local createSignal = require(script.Parent.createSignal)
 
 	local createSpy = require(script.Parent.createSpy)
@@ -9129,11 +9196,12 @@ _344210a9f36b843e6f479b08a040eb44.Properties.Source = [[ return function()
 		expect(spyA.callCount).to.equal(2)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_344210a9f36b843e6f479b08a040eb44"] = _344210a9f36b843e6f479b08a040eb44
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_f08fc55925657bf5c6449ea96ef18507"] = _f08fc55925657bf5c6449ea96ef18507
+local _f08fc55925657bf5c6449ea96ef18507 = nil -- DEALLOCATE PLS :pray:
 
-local _53b0dd5fbbb47d359927109818d81fb0 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_53b0dd5fbbb47d359927109818d81fb0.Name = "createSpy"
-_53b0dd5fbbb47d359927109818d81fb0.Properties.Source = [[ --\[\[
+local _f8064f589de2997263ebd2503191a69c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_f8064f589de2997263ebd2503191a69c.Name = "createSpy"
+_f8064f589de2997263ebd2503191a69c.Properties.Source = [[ --\[\[
 	A utility used to create a function spy that can be used to robustly test
 	that functions are invoked the correct number of times and with the correct
 	number of arguments.
@@ -9211,11 +9279,12 @@ local function createSpy(inner)
 end
 
 return createSpy ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_53b0dd5fbbb47d359927109818d81fb0"] = _53b0dd5fbbb47d359927109818d81fb0
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_f8064f589de2997263ebd2503191a69c"] = _f8064f589de2997263ebd2503191a69c
+local _f8064f589de2997263ebd2503191a69c = nil -- DEALLOCATE PLS :pray:
 
-local _b42ce1e06e561f2d482d4ebb1191cdd4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b42ce1e06e561f2d482d4ebb1191cdd4.Name = "createSpy.spec"
-_b42ce1e06e561f2d482d4ebb1191cdd4.Properties.Source = [[ return function()
+local _1882b8d746580b1034031a280d0ae00a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_1882b8d746580b1034031a280d0ae00a.Name = "createSpy.spec"
+_1882b8d746580b1034031a280d0ae00a.Properties.Source = [[ return function()
 	local createSpy = require(script.Parent.createSpy)
 
 	describe("createSpy", function()
@@ -9305,11 +9374,12 @@ _b42ce1e06e561f2d482d4ebb1191cdd4.Properties.Source = [[ return function()
 		end)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_b42ce1e06e561f2d482d4ebb1191cdd4"] = _b42ce1e06e561f2d482d4ebb1191cdd4
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_1882b8d746580b1034031a280d0ae00a"] = _1882b8d746580b1034031a280d0ae00a
+local _1882b8d746580b1034031a280d0ae00a = nil -- DEALLOCATE PLS :pray:
 
-local _5e88ef5728e42208cea978d6c30be7b9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5e88ef5728e42208cea978d6c30be7b9.Name = "forwardRef"
-_5e88ef5728e42208cea978d6c30be7b9.Properties.Source = [[ local assign = require(script.Parent.assign)
+local _155405e44633b62ab5bc338f6cf20ef9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_155405e44633b62ab5bc338f6cf20ef9.Name = "forwardRef"
+_155405e44633b62ab5bc338f6cf20ef9.Properties.Source = [[ local assign = require(script.Parent.assign)
 local None = require(script.Parent.None)
 local Ref = require(script.Parent.PropMarkers.Ref)
 
@@ -9337,11 +9407,12 @@ local function forwardRef(render)
 end
 
 return forwardRef ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_5e88ef5728e42208cea978d6c30be7b9"] = _5e88ef5728e42208cea978d6c30be7b9
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_155405e44633b62ab5bc338f6cf20ef9"] = _155405e44633b62ab5bc338f6cf20ef9
+local _155405e44633b62ab5bc338f6cf20ef9 = nil -- DEALLOCATE PLS :pray:
 
-local _4c85801cbb62f869a963155db74f56b1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_4c85801cbb62f869a963155db74f56b1.Name = "forwardRef.spec"
-_4c85801cbb62f869a963155db74f56b1.Properties.Source = [[ -- Tests loosely adapted from those found at:
+local _ba2ea279755f6edecea53960020cf21c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_ba2ea279755f6edecea53960020cf21c.Name = "forwardRef.spec"
+_ba2ea279755f6edecea53960020cf21c.Properties.Source = [[ -- Tests loosely adapted from those found at:
 -- * https://github.com/facebook/react/blob/v17.0.1/packages/react/src/__tests__/forwardRef-test.js
 -- * https://github.com/facebook/react/blob/v17.0.1/packages/react/src/__tests__/forwardRef-test.internal.js
 return function()
@@ -9685,11 +9756,12 @@ return function()
 		reconciler.unmountVirtualTree(tree)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_4c85801cbb62f869a963155db74f56b1"] = _4c85801cbb62f869a963155db74f56b1
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_ba2ea279755f6edecea53960020cf21c"] = _ba2ea279755f6edecea53960020cf21c
+local _ba2ea279755f6edecea53960020cf21c = nil -- DEALLOCATE PLS :pray:
 
-local _0630eb74988c6e1c124708a0088cbd0e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0630eb74988c6e1c124708a0088cbd0e.Name = "getDefaultInstanceProperty"
-_0630eb74988c6e1c124708a0088cbd0e.Properties.Source = [[ --\[\[
+local _8996773ba67174a3e97a5acfa2644e24 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_8996773ba67174a3e97a5acfa2644e24.Name = "getDefaultInstanceProperty"
+_8996773ba67174a3e97a5acfa2644e24.Properties.Source = [[ --\[\[
 	Attempts to get the default value of a given property on a Roblox instance.
 
 	This is used by the reconciler in cases where a prop was previously set on a
@@ -9743,11 +9815,12 @@ local function getDefaultInstanceProperty(className, propertyName)
 end
 
 return getDefaultInstanceProperty ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_0630eb74988c6e1c124708a0088cbd0e"] = _0630eb74988c6e1c124708a0088cbd0e
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_8996773ba67174a3e97a5acfa2644e24"] = _8996773ba67174a3e97a5acfa2644e24
+local _8996773ba67174a3e97a5acfa2644e24 = nil -- DEALLOCATE PLS :pray:
 
-local _1eff9ca13b311a119ae44095cf9624f6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1eff9ca13b311a119ae44095cf9624f6.Name = "getDefaultInstanceProperty.spec"
-_1eff9ca13b311a119ae44095cf9624f6.Properties.Source = [[ return function()
+local _871c2cd781ad4da89784a047358e5b5f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_871c2cd781ad4da89784a047358e5b5f.Name = "getDefaultInstanceProperty.spec"
+_871c2cd781ad4da89784a047358e5b5f.Properties.Source = [[ return function()
 	local getDefaultInstanceProperty = require(script.Parent.getDefaultInstanceProperty)
 
 	it("should get default name string values", function()
@@ -9780,11 +9853,12 @@ _1eff9ca13b311a119ae44095cf9624f6.Properties.Source = [[ return function()
 		expect(defaultValue).to.equal(false)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_1eff9ca13b311a119ae44095cf9624f6"] = _1eff9ca13b311a119ae44095cf9624f6
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_871c2cd781ad4da89784a047358e5b5f"] = _871c2cd781ad4da89784a047358e5b5f
+local _871c2cd781ad4da89784a047358e5b5f = nil -- DEALLOCATE PLS :pray:
 
-local _a2ed1b5123b719c7a7db853693b0dfa4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a2ed1b5123b719c7a7db853693b0dfa4.Name = "init.spec"
-_a2ed1b5123b719c7a7db853693b0dfa4.Properties.Source = [[ return function()
+local _acd8568bb3957a7c5b0c04617afe09fc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_acd8568bb3957a7c5b0c04617afe09fc.Name = "init.spec"
+_acd8568bb3957a7c5b0c04617afe09fc.Properties.Source = [[ return function()
 	local Roact = require(script.Parent)
 
 	it("should load with all public APIs", function()
@@ -9849,22 +9923,24 @@ _a2ed1b5123b719c7a7db853693b0dfa4.Properties.Source = [[ return function()
 		end
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_a2ed1b5123b719c7a7db853693b0dfa4"] = _a2ed1b5123b719c7a7db853693b0dfa4
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_acd8568bb3957a7c5b0c04617afe09fc"] = _acd8568bb3957a7c5b0c04617afe09fc
+local _acd8568bb3957a7c5b0c04617afe09fc = nil -- DEALLOCATE PLS :pray:
 
-local _be1339016e8511a38b67514682bac8b9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_be1339016e8511a38b67514682bac8b9.Name = "internalAssert"
-_be1339016e8511a38b67514682bac8b9.Properties.Source = [[ local function internalAssert(condition, message)
+local _88d20fbaab3c9276f4643618be136c2f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_88d20fbaab3c9276f4643618be136c2f.Name = "internalAssert"
+_88d20fbaab3c9276f4643618be136c2f.Properties.Source = [[ local function internalAssert(condition, message)
 	if not condition then
 		error(message .. " (This is probably a bug in Roact!)", 3)
 	end
 end
 
 return internalAssert ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_be1339016e8511a38b67514682bac8b9"] = _be1339016e8511a38b67514682bac8b9
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_88d20fbaab3c9276f4643618be136c2f"] = _88d20fbaab3c9276f4643618be136c2f
+local _88d20fbaab3c9276f4643618be136c2f = nil -- DEALLOCATE PLS :pray:
 
-local _22ec2dc5f0b71e15995adcf755ec34df = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_22ec2dc5f0b71e15995adcf755ec34df.Name = "invalidSetStateMessages"
-_22ec2dc5f0b71e15995adcf755ec34df.Properties.Source = [[ --\[\[
+local _9911962e476393fd2b2150fa74c109a9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_9911962e476393fd2b2150fa74c109a9.Name = "invalidSetStateMessages"
+_9911962e476393fd2b2150fa74c109a9.Properties.Source = [[ --\[\[
 	These messages are used by Component to help users diagnose when they're
 	calling setState in inappropriate places.
 
@@ -9902,11 +9978,12 @@ It was triggered by the component %q.
 \]\]
 
 return invalidSetStateMessages ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_22ec2dc5f0b71e15995adcf755ec34df"] = _22ec2dc5f0b71e15995adcf755ec34df
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_9911962e476393fd2b2150fa74c109a9"] = _9911962e476393fd2b2150fa74c109a9
+local _9911962e476393fd2b2150fa74c109a9 = nil -- DEALLOCATE PLS :pray:
 
-local _325df4f58a882bfb333860be0340769c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_325df4f58a882bfb333860be0340769c.Name = "oneChild"
-_325df4f58a882bfb333860be0340769c.Properties.Source = [[ --\[\[
+local _48807eafb50148aeff1ec6655601676d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_48807eafb50148aeff1ec6655601676d.Name = "oneChild"
+_48807eafb50148aeff1ec6655601676d.Properties.Source = [[ --\[\[
 	Retrieves at most one child from the children passed to a component.
 
 	If passed nil or an empty table, will return nil.
@@ -9934,11 +10011,12 @@ local function oneChild(children)
 end
 
 return oneChild ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_325df4f58a882bfb333860be0340769c"] = _325df4f58a882bfb333860be0340769c
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_48807eafb50148aeff1ec6655601676d"] = _48807eafb50148aeff1ec6655601676d
+local _48807eafb50148aeff1ec6655601676d = nil -- DEALLOCATE PLS :pray:
 
-local _b195e59b7ce6dabfcd5ac0556c47a9b3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b195e59b7ce6dabfcd5ac0556c47a9b3.Name = "oneChild.spec"
-_b195e59b7ce6dabfcd5ac0556c47a9b3.Properties.Source = [[ return function()
+local _6157c58296a9aa7f885ca5ccac554e9d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_6157c58296a9aa7f885ca5ccac554e9d.Name = "oneChild.spec"
+_6157c58296a9aa7f885ca5ccac554e9d.Properties.Source = [[ return function()
 	local createElement = require(script.Parent.createElement)
 
 	local oneChild = require(script.Parent.oneChild)
@@ -9973,11 +10051,12 @@ _b195e59b7ce6dabfcd5ac0556c47a9b3.Properties.Source = [[ return function()
 		expect(oneChild(nil)).to.equal(nil)
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_b195e59b7ce6dabfcd5ac0556c47a9b3"] = _b195e59b7ce6dabfcd5ac0556c47a9b3
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_6157c58296a9aa7f885ca5ccac554e9d"] = _6157c58296a9aa7f885ca5ccac554e9d
+local _6157c58296a9aa7f885ca5ccac554e9d = nil -- DEALLOCATE PLS :pray:
 
-local _25d763667e12dfecc5843afc58acc9b9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_25d763667e12dfecc5843afc58acc9b9.Name = "strict"
-_25d763667e12dfecc5843afc58acc9b9.Properties.Source = [[ --!strict
+local _b916994bccf4f48955ab8dc80bf74c0d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_b916994bccf4f48955ab8dc80bf74c0d.Name = "strict"
+_b916994bccf4f48955ab8dc80bf74c0d.Properties.Source = [[ --!strict
 local function strict(t: { [any]: any }, name: string?)
 	-- FIXME Luau: Need to define a new variable since reassigning `name = ...`
 	-- doesn't narrow the type
@@ -9999,11 +10078,12 @@ local function strict(t: { [any]: any }, name: string?)
 end
 
 return strict ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_25d763667e12dfecc5843afc58acc9b9"] = _25d763667e12dfecc5843afc58acc9b9
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_b916994bccf4f48955ab8dc80bf74c0d"] = _b916994bccf4f48955ab8dc80bf74c0d
+local _b916994bccf4f48955ab8dc80bf74c0d = nil -- DEALLOCATE PLS :pray:
 
-local _12577d8d0eb5993be81c877c12e8cd01 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_12577d8d0eb5993be81c877c12e8cd01.Name = "strict.spec"
-_12577d8d0eb5993be81c877c12e8cd01.Properties.Source = [[ return function()
+local _596ba04e7281c53ab108f4023cbe7f0d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_596ba04e7281c53ab108f4023cbe7f0d.Name = "strict.spec"
+_596ba04e7281c53ab108f4023cbe7f0d.Properties.Source = [[ return function()
 	local strict = require(script.Parent.strict)
 
 	it("should error when getting a nonexistent key", function()
@@ -10028,9 +10108,10 @@ _12577d8d0eb5993be81c877c12e8cd01.Properties.Source = [[ return function()
 		end).to.throw()
 	end)
 end ]]
-_cd5753ca389647ffae3bbda1d39ed2cd.Children["_12577d8d0eb5993be81c877c12e8cd01"] = _12577d8d0eb5993be81c877c12e8cd01
-getfenv(0).rootTree = _69de763b8c4df419815bd54135f4404b
-getfenv(0).rootReferent = "_69de763b8c4df419815bd54135f4404b"
+_4939180de2039ab164a0b6fd3ff1aed2.Children["_596ba04e7281c53ab108f4023cbe7f0d"] = _596ba04e7281c53ab108f4023cbe7f0d
+local _596ba04e7281c53ab108f4023cbe7f0d = nil -- DEALLOCATE PLS :pray:
+getfenv(0).rootTree = _9df0b325193e84994e6b9cc5ae584d22
+getfenv(0).rootReferent = "_9df0b325193e84994e6b9cc5ae584d22"
 type Runtime = {
 	getPatchedEnvironment: (script: LuaSourceContainer) -> (),
 	loadedModules: {

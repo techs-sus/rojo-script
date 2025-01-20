@@ -1,10 +1,10 @@
 -- rojo-script runtime 'lua-sandbox'
 script:Destroy();script=nil
-local _beb443ae5d47bd0a1745a1f0e063d1b8 = { ClassName = "Model", Children = {}, Properties = {} }
-_beb443ae5d47bd0a1745a1f0e063d1b8.Name = "DataModel"
-local _42bd8e1509eac35257f4c98340d8360f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_42bd8e1509eac35257f4c98340d8360f.Name = "Fusion"
-_42bd8e1509eac35257f4c98340d8360f.Properties.Source = [[ --!strict
+local _c781ff795ccaae172b8a8013d25039e5 = { ClassName = "Model", Children = {}, Properties = {} }
+_c781ff795ccaae172b8a8013d25039e5.Name = "DataModel"
+local _d56864cbc3c61714243504ffab872304 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_d56864cbc3c61714243504ffab872304.Name = "Fusion"
+_d56864cbc3c61714243504ffab872304.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -83,13 +83,15 @@ local Fusion: Types.Fusion = {
 }
 
 return Fusion ]]
-_beb443ae5d47bd0a1745a1f0e063d1b8.Children["_42bd8e1509eac35257f4c98340d8360f"] = _42bd8e1509eac35257f4c98340d8360f
-local _bd32380b3664b1403c570b96deaebc57 = { ClassName = "Folder", Children = {}, Properties = {} }
-_bd32380b3664b1403c570b96deaebc57.Name = "Animation"
-_42bd8e1509eac35257f4c98340d8360f.Children["_bd32380b3664b1403c570b96deaebc57"] = _bd32380b3664b1403c570b96deaebc57
-local _e5854d2c04e754325d8a3e3e7089e8b3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e5854d2c04e754325d8a3e3e7089e8b3.Name = "Spring"
-_e5854d2c04e754325d8a3e3e7089e8b3.Properties.Source = [[ --!strict
+_c781ff795ccaae172b8a8013d25039e5.Children["_d56864cbc3c61714243504ffab872304"] = _d56864cbc3c61714243504ffab872304
+local _d56864cbc3c61714243504ffab872304 = nil -- DEALLOCATE PLS :pray:
+local _c0d361e4644871baf04d173a22202ee8 = { ClassName = "Folder", Children = {}, Properties = {} }
+_c0d361e4644871baf04d173a22202ee8.Name = "Animation"
+_d56864cbc3c61714243504ffab872304.Children["_c0d361e4644871baf04d173a22202ee8"] = _c0d361e4644871baf04d173a22202ee8
+local _c0d361e4644871baf04d173a22202ee8 = nil -- DEALLOCATE PLS :pray:
+local _e39c60d2a708c84011f4d3f1e59a5402 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_e39c60d2a708c84011f4d3f1e59a5402.Name = "Spring"
+_e39c60d2a708c84011f4d3f1e59a5402.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -356,11 +358,12 @@ local function Spring<T>(
 end
 
 return Spring ]]
-_bd32380b3664b1403c570b96deaebc57.Children["_e5854d2c04e754325d8a3e3e7089e8b3"] = _e5854d2c04e754325d8a3e3e7089e8b3
+_c0d361e4644871baf04d173a22202ee8.Children["_e39c60d2a708c84011f4d3f1e59a5402"] = _e39c60d2a708c84011f4d3f1e59a5402
+local _e39c60d2a708c84011f4d3f1e59a5402 = nil -- DEALLOCATE PLS :pray:
 
-local _1e9a4a79a7ac8125adb86dd30dfef8c2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1e9a4a79a7ac8125adb86dd30dfef8c2.Name = "SpringScheduler"
-_1e9a4a79a7ac8125adb86dd30dfef8c2.Properties.Source = [[ --!strict
+local _b5fe21077e1a3ad6dbb6beea6bc5d048 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_b5fe21077e1a3ad6dbb6beea6bc5d048.Name = "SpringScheduler"
+_b5fe21077e1a3ad6dbb6beea6bc5d048.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -473,11 +476,12 @@ end
 External.bindToUpdateStep(updateAllSprings)
 
 return SpringScheduler ]]
-_bd32380b3664b1403c570b96deaebc57.Children["_1e9a4a79a7ac8125adb86dd30dfef8c2"] = _1e9a4a79a7ac8125adb86dd30dfef8c2
+_c0d361e4644871baf04d173a22202ee8.Children["_b5fe21077e1a3ad6dbb6beea6bc5d048"] = _b5fe21077e1a3ad6dbb6beea6bc5d048
+local _b5fe21077e1a3ad6dbb6beea6bc5d048 = nil -- DEALLOCATE PLS :pray:
 
-local _9d7c872054784fe13c7c99d60338873f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9d7c872054784fe13c7c99d60338873f.Name = "Tween"
-_9d7c872054784fe13c7c99d60338873f.Properties.Source = [[ --!strict
+local _acf68cc2a25ff6a025edc4bf8ce2d9e0 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_acf68cc2a25ff6a025edc4bf8ce2d9e0.Name = "Tween"
+_acf68cc2a25ff6a025edc4bf8ce2d9e0.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -643,11 +647,12 @@ local function Tween<T>(
 end
 
 return Tween ]]
-_bd32380b3664b1403c570b96deaebc57.Children["_9d7c872054784fe13c7c99d60338873f"] = _9d7c872054784fe13c7c99d60338873f
+_c0d361e4644871baf04d173a22202ee8.Children["_acf68cc2a25ff6a025edc4bf8ce2d9e0"] = _acf68cc2a25ff6a025edc4bf8ce2d9e0
+local _acf68cc2a25ff6a025edc4bf8ce2d9e0 = nil -- DEALLOCATE PLS :pray:
 
-local _7170f2f4aacf8483bad6973c4cd92984 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7170f2f4aacf8483bad6973c4cd92984.Name = "TweenScheduler"
-_7170f2f4aacf8483bad6973c4cd92984.Properties.Source = [[ --!strict
+local _5633ad1663484c890c4a4ca5f2b8df7b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_5633ad1663484c890c4a4ca5f2b8df7b.Name = "TweenScheduler"
+_5633ad1663484c890c4a4ca5f2b8df7b.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -719,11 +724,12 @@ end
 External.bindToUpdateStep(updateAllTweens)
 
 return TweenScheduler ]]
-_bd32380b3664b1403c570b96deaebc57.Children["_7170f2f4aacf8483bad6973c4cd92984"] = _7170f2f4aacf8483bad6973c4cd92984
+_c0d361e4644871baf04d173a22202ee8.Children["_5633ad1663484c890c4a4ca5f2b8df7b"] = _5633ad1663484c890c4a4ca5f2b8df7b
+local _5633ad1663484c890c4a4ca5f2b8df7b = nil -- DEALLOCATE PLS :pray:
 
-local _b35185bddb227f7a09a211af29c21999 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b35185bddb227f7a09a211af29c21999.Name = "getTweenRatio"
-_b35185bddb227f7a09a211af29c21999.Properties.Source = [[ --!strict
+local _1c7842d0abd6a3ea39358dd7ae24a65f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_1c7842d0abd6a3ea39358dd7ae24a65f.Name = "getTweenRatio"
+_1c7842d0abd6a3ea39358dd7ae24a65f.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -771,11 +777,12 @@ local function getTweenRatio(
 end
 
 return getTweenRatio ]]
-_bd32380b3664b1403c570b96deaebc57.Children["_b35185bddb227f7a09a211af29c21999"] = _b35185bddb227f7a09a211af29c21999
+_c0d361e4644871baf04d173a22202ee8.Children["_1c7842d0abd6a3ea39358dd7ae24a65f"] = _1c7842d0abd6a3ea39358dd7ae24a65f
+local _1c7842d0abd6a3ea39358dd7ae24a65f = nil -- DEALLOCATE PLS :pray:
 
-local _96791a06b4a192a04c07877e1fc479dd = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_96791a06b4a192a04c07877e1fc479dd.Name = "lerpType"
-_96791a06b4a192a04c07877e1fc479dd.Properties.Source = [[ --!strict
+local _1da1f3f54dc86a890ab9366a551c32a0 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_1da1f3f54dc86a890ab9366a551c32a0.Name = "lerpType"
+_1da1f3f54dc86a890ab9366a551c32a0.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -939,11 +946,12 @@ local function lerpType(
 end
 
 return lerpType ]]
-_bd32380b3664b1403c570b96deaebc57.Children["_96791a06b4a192a04c07877e1fc479dd"] = _96791a06b4a192a04c07877e1fc479dd
+_c0d361e4644871baf04d173a22202ee8.Children["_1da1f3f54dc86a890ab9366a551c32a0"] = _1da1f3f54dc86a890ab9366a551c32a0
+local _1da1f3f54dc86a890ab9366a551c32a0 = nil -- DEALLOCATE PLS :pray:
 
-local _d0169ecea7645c006ca1677438cce207 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d0169ecea7645c006ca1677438cce207.Name = "packType"
-_d0169ecea7645c006ca1677438cce207.Properties.Source = [[ --!strict
+local _2af5db9c45410769af07c0009a6cd2b5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_2af5db9c45410769af07c0009a6cd2b5.Name = "packType"
+_2af5db9c45410769af07c0009a6cd2b5.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1043,11 +1051,12 @@ local function packType(
 end
 
 return packType ]]
-_bd32380b3664b1403c570b96deaebc57.Children["_d0169ecea7645c006ca1677438cce207"] = _d0169ecea7645c006ca1677438cce207
+_c0d361e4644871baf04d173a22202ee8.Children["_2af5db9c45410769af07c0009a6cd2b5"] = _2af5db9c45410769af07c0009a6cd2b5
+local _2af5db9c45410769af07c0009a6cd2b5 = nil -- DEALLOCATE PLS :pray:
 
-local _ceb184d11d3169c586654ee001daf356 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ceb184d11d3169c586654ee001daf356.Name = "springCoefficients"
-_ceb184d11d3169c586654ee001daf356.Properties.Source = [[ --!strict
+local _e58478cab4152d69d9887803d9e1422a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_e58478cab4152d69d9887803d9e1422a.Name = "springCoefficients"
+_e58478cab4152d69d9887803d9e1422a.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1138,11 +1147,12 @@ local function springCoefficients(
 end
 
 return springCoefficients ]]
-_bd32380b3664b1403c570b96deaebc57.Children["_ceb184d11d3169c586654ee001daf356"] = _ceb184d11d3169c586654ee001daf356
+_c0d361e4644871baf04d173a22202ee8.Children["_e58478cab4152d69d9887803d9e1422a"] = _e58478cab4152d69d9887803d9e1422a
+local _e58478cab4152d69d9887803d9e1422a = nil -- DEALLOCATE PLS :pray:
 
-local _836609499c24dac00da82f3352f72ca1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_836609499c24dac00da82f3352f72ca1.Name = "unpackType"
-_836609499c24dac00da82f3352f72ca1.Properties.Source = [[ --!strict
+local _7333fbe4cfcc08c5ac7177cfcda5cd14 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_7333fbe4cfcc08c5ac7177cfcda5cd14.Name = "unpackType"
+_7333fbe4cfcc08c5ac7177cfcda5cd14.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1245,14 +1255,16 @@ local function unpackType(
 end
 
 return unpackType ]]
-_bd32380b3664b1403c570b96deaebc57.Children["_836609499c24dac00da82f3352f72ca1"] = _836609499c24dac00da82f3352f72ca1
+_c0d361e4644871baf04d173a22202ee8.Children["_7333fbe4cfcc08c5ac7177cfcda5cd14"] = _7333fbe4cfcc08c5ac7177cfcda5cd14
+local _7333fbe4cfcc08c5ac7177cfcda5cd14 = nil -- DEALLOCATE PLS :pray:
 
-local _449482b54a829476b4fc82d999c63351 = { ClassName = "Folder", Children = {}, Properties = {} }
-_449482b54a829476b4fc82d999c63351.Name = "Colour"
-_42bd8e1509eac35257f4c98340d8360f.Children["_449482b54a829476b4fc82d999c63351"] = _449482b54a829476b4fc82d999c63351
-local _31d7211bbc225f4f42c4a7a2a48ac5f8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_31d7211bbc225f4f42c4a7a2a48ac5f8.Name = "Oklab"
-_31d7211bbc225f4f42c4a7a2a48ac5f8.Properties.Source = [[ --!strict
+local _2f858aadbe1ef588e837541ae6a652d1 = { ClassName = "Folder", Children = {}, Properties = {} }
+_2f858aadbe1ef588e837541ae6a652d1.Name = "Colour"
+_d56864cbc3c61714243504ffab872304.Children["_2f858aadbe1ef588e837541ae6a652d1"] = _2f858aadbe1ef588e837541ae6a652d1
+local _2f858aadbe1ef588e837541ae6a652d1 = nil -- DEALLOCATE PLS :pray:
+local _c18812a3e21ffb32ca456d755d6a3224 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_c18812a3e21ffb32ca456d755d6a3224.Name = "Oklab"
+_c18812a3e21ffb32ca456d755d6a3224.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1322,11 +1334,12 @@ function Oklab.toSRGB(lab: Vector3, unclamped: boolean?): Color3
 end
 
 return Oklab ]]
-_449482b54a829476b4fc82d999c63351.Children["_31d7211bbc225f4f42c4a7a2a48ac5f8"] = _31d7211bbc225f4f42c4a7a2a48ac5f8
+_2f858aadbe1ef588e837541ae6a652d1.Children["_c18812a3e21ffb32ca456d755d6a3224"] = _c18812a3e21ffb32ca456d755d6a3224
+local _c18812a3e21ffb32ca456d755d6a3224 = nil -- DEALLOCATE PLS :pray:
 
-local _37f38834401e6be0d87ace69cdb50f8a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_37f38834401e6be0d87ace69cdb50f8a.Name = "sRGB"
-_37f38834401e6be0d87ace69cdb50f8a.Properties.Source = [[ --!strict
+local _c15efb62de0afca67a5f917f4b48227d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_c15efb62de0afca67a5f917f4b48227d.Name = "sRGB"
+_c15efb62de0afca67a5f917f4b48227d.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1381,11 +1394,12 @@ function sRGB.toLinear(srgb: Color3): Color3
 end
 
 return sRGB ]]
-_449482b54a829476b4fc82d999c63351.Children["_37f38834401e6be0d87ace69cdb50f8a"] = _37f38834401e6be0d87ace69cdb50f8a
+_2f858aadbe1ef588e837541ae6a652d1.Children["_c15efb62de0afca67a5f917f4b48227d"] = _c15efb62de0afca67a5f917f4b48227d
+local _c15efb62de0afca67a5f917f4b48227d = nil -- DEALLOCATE PLS :pray:
 
-local _f1381291db477a2a45e4e438afcb36ef = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f1381291db477a2a45e4e438afcb36ef.Name = "External"
-_f1381291db477a2a45e4e438afcb36ef.Properties.Source = [[ --!strict
+local _456fc8cb77d4bbadb9d6c52dc951c387 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_456fc8cb77d4bbadb9d6c52dc951c387.Name = "External"
+_456fc8cb77d4bbadb9d6c52dc951c387.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1519,14 +1533,16 @@ function External.lastUpdateStep()
 end
 
 return External ]]
-_42bd8e1509eac35257f4c98340d8360f.Children["_f1381291db477a2a45e4e438afcb36ef"] = _f1381291db477a2a45e4e438afcb36ef
+_d56864cbc3c61714243504ffab872304.Children["_456fc8cb77d4bbadb9d6c52dc951c387"] = _456fc8cb77d4bbadb9d6c52dc951c387
+local _456fc8cb77d4bbadb9d6c52dc951c387 = nil -- DEALLOCATE PLS :pray:
 
-local _9b5354583b0a4e476fe336740eccf0f9 = { ClassName = "Folder", Children = {}, Properties = {} }
-_9b5354583b0a4e476fe336740eccf0f9.Name = "Instances"
-_42bd8e1509eac35257f4c98340d8360f.Children["_9b5354583b0a4e476fe336740eccf0f9"] = _9b5354583b0a4e476fe336740eccf0f9
-local _fbab52e1e78124676e49b6dbb6762c1b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_fbab52e1e78124676e49b6dbb6762c1b.Name = "Attribute"
-_fbab52e1e78124676e49b6dbb6762c1b.Properties.Source = [[ --!strict
+local _57f0a784b6878581c404cdc080a3057d = { ClassName = "Folder", Children = {}, Properties = {} }
+_57f0a784b6878581c404cdc080a3057d.Name = "Instances"
+_d56864cbc3c61714243504ffab872304.Children["_57f0a784b6878581c404cdc080a3057d"] = _57f0a784b6878581c404cdc080a3057d
+local _57f0a784b6878581c404cdc080a3057d = nil -- DEALLOCATE PLS :pray:
+local _85859ee5d817c5eada7b354f52f3e4b6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_85859ee5d817c5eada7b354f52f3e4b6.Name = "Attribute"
+_85859ee5d817c5eada7b354f52f3e4b6.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1583,11 +1599,12 @@ local function Attribute(
 end
 
 return Attribute ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_fbab52e1e78124676e49b6dbb6762c1b"] = _fbab52e1e78124676e49b6dbb6762c1b
+_57f0a784b6878581c404cdc080a3057d.Children["_85859ee5d817c5eada7b354f52f3e4b6"] = _85859ee5d817c5eada7b354f52f3e4b6
+local _85859ee5d817c5eada7b354f52f3e4b6 = nil -- DEALLOCATE PLS :pray:
 
-local _0a663bf4e2bb70e69e82d958130436cf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0a663bf4e2bb70e69e82d958130436cf.Name = "AttributeChange"
-_0a663bf4e2bb70e69e82d958130436cf.Properties.Source = [[ --!strict
+local _8b82b1ee2abb7eb220dfcb94a98d5fb8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_8b82b1ee2abb7eb220dfcb94a98d5fb8.Name = "AttributeChange"
+_8b82b1ee2abb7eb220dfcb94a98d5fb8.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1634,11 +1651,12 @@ local function AttributeChange(
 end
 
 return AttributeChange ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_0a663bf4e2bb70e69e82d958130436cf"] = _0a663bf4e2bb70e69e82d958130436cf
+_57f0a784b6878581c404cdc080a3057d.Children["_8b82b1ee2abb7eb220dfcb94a98d5fb8"] = _8b82b1ee2abb7eb220dfcb94a98d5fb8
+local _8b82b1ee2abb7eb220dfcb94a98d5fb8 = nil -- DEALLOCATE PLS :pray:
 
-local _ec08a3a8642f6b5a19844ff27576bee0 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ec08a3a8642f6b5a19844ff27576bee0.Name = "AttributeOut"
-_ec08a3a8642f6b5a19844ff27576bee0.Properties.Source = [[ --!strict
+local _531059633766115f9da3f62f1bf88067 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_531059633766115f9da3f62f1bf88067.Name = "AttributeOut"
+_531059633766115f9da3f62f1bf88067.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1700,11 +1718,12 @@ local function AttributeOut(
 end
 
 return AttributeOut ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_ec08a3a8642f6b5a19844ff27576bee0"] = _ec08a3a8642f6b5a19844ff27576bee0
+_57f0a784b6878581c404cdc080a3057d.Children["_531059633766115f9da3f62f1bf88067"] = _531059633766115f9da3f62f1bf88067
+local _531059633766115f9da3f62f1bf88067 = nil -- DEALLOCATE PLS :pray:
 
-local _44bd72acde9372d11493aed1380dbf76 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_44bd72acde9372d11493aed1380dbf76.Name = "Children"
-_44bd72acde9372d11493aed1380dbf76.Properties.Source = [[ --!strict
+local _583ba759b934dc5c5b06b333e50a89ae = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_583ba759b934dc5c5b06b333e50a89ae.Name = "Children"
+_583ba759b934dc5c5b06b333e50a89ae.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1854,11 +1873,12 @@ return {
 		updateChildren()
 	end
 } :: Types.SpecialKey ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_44bd72acde9372d11493aed1380dbf76"] = _44bd72acde9372d11493aed1380dbf76
+_57f0a784b6878581c404cdc080a3057d.Children["_583ba759b934dc5c5b06b333e50a89ae"] = _583ba759b934dc5c5b06b333e50a89ae
+local _583ba759b934dc5c5b06b333e50a89ae = nil -- DEALLOCATE PLS :pray:
 
-local _136a26459c4a049264121624f525370f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_136a26459c4a049264121624f525370f.Name = "Hydrate"
-_136a26459c4a049264121624f525370f.Properties.Source = [[ --!strict
+local _72e7a57d66580ad6791af44c52c56e90 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_72e7a57d66580ad6791af44c52c56e90.Name = "Hydrate"
+_72e7a57d66580ad6791af44c52c56e90.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1891,11 +1911,12 @@ local function Hydrate(
 end
 
 return Hydrate ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_136a26459c4a049264121624f525370f"] = _136a26459c4a049264121624f525370f
+_57f0a784b6878581c404cdc080a3057d.Children["_72e7a57d66580ad6791af44c52c56e90"] = _72e7a57d66580ad6791af44c52c56e90
+local _72e7a57d66580ad6791af44c52c56e90 = nil -- DEALLOCATE PLS :pray:
 
-local _4c17ecb5586c0c9db2779500df673b62 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_4c17ecb5586c0c9db2779500df673b62.Name = "New"
-_4c17ecb5586c0c9db2779500df673b62.Properties.Source = [[ --!strict
+local _f1f5dc75f8136b39324f9f80ea90c3f7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_f1f5dc75f8136b39324f9f80ea90c3f7.Name = "New"
+_f1f5dc75f8136b39324f9f80ea90c3f7.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1942,11 +1963,12 @@ local function New(
 end
 
 return New ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_4c17ecb5586c0c9db2779500df673b62"] = _4c17ecb5586c0c9db2779500df673b62
+_57f0a784b6878581c404cdc080a3057d.Children["_f1f5dc75f8136b39324f9f80ea90c3f7"] = _f1f5dc75f8136b39324f9f80ea90c3f7
+local _f1f5dc75f8136b39324f9f80ea90c3f7 = nil -- DEALLOCATE PLS :pray:
 
-local _b29cf37450ec421a1e17946d6b8c4fa3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b29cf37450ec421a1e17946d6b8c4fa3.Name = "OnChange"
-_b29cf37450ec421a1e17946d6b8c4fa3.Properties.Source = [[ --!strict
+local _94cb8f47016adf2c5ca5a3c21474d098 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_94cb8f47016adf2c5ca5a3c21474d098.Name = "OnChange"
+_94cb8f47016adf2c5ca5a3c21474d098.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -1996,11 +2018,12 @@ local function OnChange(
 end
 
 return OnChange ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_b29cf37450ec421a1e17946d6b8c4fa3"] = _b29cf37450ec421a1e17946d6b8c4fa3
+_57f0a784b6878581c404cdc080a3057d.Children["_94cb8f47016adf2c5ca5a3c21474d098"] = _94cb8f47016adf2c5ca5a3c21474d098
+local _94cb8f47016adf2c5ca5a3c21474d098 = nil -- DEALLOCATE PLS :pray:
 
-local _aef65631d8c42a1d76e98d3debdcb401 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_aef65631d8c42a1d76e98d3debdcb401.Name = "OnEvent"
-_aef65631d8c42a1d76e98d3debdcb401.Properties.Source = [[ --!strict
+local _9994ef3a91309405a3a1040fde8d7566 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_9994ef3a91309405a3a1040fde8d7566.Name = "OnEvent"
+_9994ef3a91309405a3a1040fde8d7566.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2054,11 +2077,12 @@ local function OnEvent(
 end
 
 return OnEvent ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_aef65631d8c42a1d76e98d3debdcb401"] = _aef65631d8c42a1d76e98d3debdcb401
+_57f0a784b6878581c404cdc080a3057d.Children["_9994ef3a91309405a3a1040fde8d7566"] = _9994ef3a91309405a3a1040fde8d7566
+local _9994ef3a91309405a3a1040fde8d7566 = nil -- DEALLOCATE PLS :pray:
 
-local _98f3acf8c0e8904ff41c0d91945487b7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_98f3acf8c0e8904ff41c0d91945487b7.Name = "Out"
-_98f3acf8c0e8904ff41c0d91945487b7.Properties.Source = [[ --!strict
+local _ecdeb259262c8a8470c360c32b4c7002 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_ecdeb259262c8a8470c360c32b4c7002.Name = "Out"
+_ecdeb259262c8a8470c360c32b4c7002.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2126,11 +2150,12 @@ local function Out(
 end
 
 return Out ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_98f3acf8c0e8904ff41c0d91945487b7"] = _98f3acf8c0e8904ff41c0d91945487b7
+_57f0a784b6878581c404cdc080a3057d.Children["_ecdeb259262c8a8470c360c32b4c7002"] = _ecdeb259262c8a8470c360c32b4c7002
+local _ecdeb259262c8a8470c360c32b4c7002 = nil -- DEALLOCATE PLS :pray:
 
-local _9001cbc7422cf5cec7eb522bd918c4fd = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9001cbc7422cf5cec7eb522bd918c4fd.Name = "Ref"
-_9001cbc7422cf5cec7eb522bd918c4fd.Properties.Source = [[ --!strict
+local _01b3be06db36c403ebc32fcb0ceab126 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_01b3be06db36c403ebc32fcb0ceab126.Name = "Ref"
+_01b3be06db36c403ebc32fcb0ceab126.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2174,11 +2199,12 @@ return {
 		value:set(applyTo)
 	end
 } :: Types.SpecialKey ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_9001cbc7422cf5cec7eb522bd918c4fd"] = _9001cbc7422cf5cec7eb522bd918c4fd
+_57f0a784b6878581c404cdc080a3057d.Children["_01b3be06db36c403ebc32fcb0ceab126"] = _01b3be06db36c403ebc32fcb0ceab126
+local _01b3be06db36c403ebc32fcb0ceab126 = nil -- DEALLOCATE PLS :pray:
 
-local _e2343ccb81c62972d7ab8da8e591ab90 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e2343ccb81c62972d7ab8da8e591ab90.Name = "applyInstanceProps"
-_e2343ccb81c62972d7ab8da8e591ab90.Properties.Source = [[ --!strict
+local _00fb05e29568655c301f2b96e3392fc9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_00fb05e29568655c301f2b96e3392fc9.Name = "applyInstanceProps"
+_00fb05e29568655c301f2b96e3392fc9.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2324,11 +2350,12 @@ local function applyInstanceProps(
 end
 
 return applyInstanceProps ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_e2343ccb81c62972d7ab8da8e591ab90"] = _e2343ccb81c62972d7ab8da8e591ab90
+_57f0a784b6878581c404cdc080a3057d.Children["_00fb05e29568655c301f2b96e3392fc9"] = _00fb05e29568655c301f2b96e3392fc9
+local _00fb05e29568655c301f2b96e3392fc9 = nil -- DEALLOCATE PLS :pray:
 
-local _7078e4201297298185839828aab81969 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7078e4201297298185839828aab81969.Name = "defaultProps"
-_7078e4201297298185839828aab81969.Properties.Source = [[ --!strict
+local _96dbd5a16d483462fb404b19bc126fca = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_96dbd5a16d483462fb404b19bc126fca.Name = "defaultProps"
+_96dbd5a16d483462fb404b19bc126fca.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2522,11 +2549,12 @@ return {
 		BottomSurface = Enum.SurfaceType.Smooth,
 	},
 } ]]
-_9b5354583b0a4e476fe336740eccf0f9.Children["_7078e4201297298185839828aab81969"] = _7078e4201297298185839828aab81969
+_57f0a784b6878581c404cdc080a3057d.Children["_96dbd5a16d483462fb404b19bc126fca"] = _96dbd5a16d483462fb404b19bc126fca
+local _96dbd5a16d483462fb404b19bc126fca = nil -- DEALLOCATE PLS :pray:
 
-local _aa856c6c9399b6781745f5b90fcbdfbf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_aa856c6c9399b6781745f5b90fcbdfbf.Name = "InternalTypes"
-_aa856c6c9399b6781745f5b90fcbdfbf.Properties.Source = [[ --!strict
+local _201ef66e146c33801769dd5114c5cf09 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_201ef66e146c33801769dd5114c5cf09.Name = "InternalTypes"
+_201ef66e146c33801769dd5114c5cf09.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2648,14 +2676,16 @@ export type Observer = Types.Observer & {
 }
 
 return nil ]]
-_42bd8e1509eac35257f4c98340d8360f.Children["_aa856c6c9399b6781745f5b90fcbdfbf"] = _aa856c6c9399b6781745f5b90fcbdfbf
+_d56864cbc3c61714243504ffab872304.Children["_201ef66e146c33801769dd5114c5cf09"] = _201ef66e146c33801769dd5114c5cf09
+local _201ef66e146c33801769dd5114c5cf09 = nil -- DEALLOCATE PLS :pray:
 
-local _5c09050bad83ab3321f289ff774a5f64 = { ClassName = "Folder", Children = {}, Properties = {} }
-_5c09050bad83ab3321f289ff774a5f64.Name = "Logging"
-_42bd8e1509eac35257f4c98340d8360f.Children["_5c09050bad83ab3321f289ff774a5f64"] = _5c09050bad83ab3321f289ff774a5f64
-local _54655fe448a5ae6b576355f215853a97 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_54655fe448a5ae6b576355f215853a97.Name = "logError"
-_54655fe448a5ae6b576355f215853a97.Properties.Source = [[ --!strict
+local _60957cac1c271eef57101fe1f975177b = { ClassName = "Folder", Children = {}, Properties = {} }
+_60957cac1c271eef57101fe1f975177b.Name = "Logging"
+_d56864cbc3c61714243504ffab872304.Children["_60957cac1c271eef57101fe1f975177b"] = _60957cac1c271eef57101fe1f975177b
+local _60957cac1c271eef57101fe1f975177b = nil -- DEALLOCATE PLS :pray:
+local _07bf2f029ea27b0f423e291b56e73a34 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_07bf2f029ea27b0f423e291b56e73a34.Name = "logError"
+_07bf2f029ea27b0f423e291b56e73a34.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2694,11 +2724,12 @@ local function logError(
 end
 
 return logError ]]
-_5c09050bad83ab3321f289ff774a5f64.Children["_54655fe448a5ae6b576355f215853a97"] = _54655fe448a5ae6b576355f215853a97
+_60957cac1c271eef57101fe1f975177b.Children["_07bf2f029ea27b0f423e291b56e73a34"] = _07bf2f029ea27b0f423e291b56e73a34
+local _07bf2f029ea27b0f423e291b56e73a34 = nil -- DEALLOCATE PLS :pray:
 
-local _d4b7fe516397c97e9dac36c981229dc6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d4b7fe516397c97e9dac36c981229dc6.Name = "logErrorNonFatal"
-_d4b7fe516397c97e9dac36c981229dc6.Properties.Source = [[ --!strict
+local _32cdc6d51fb65839b18c34be4ac74267 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_32cdc6d51fb65839b18c34be4ac74267.Name = "logErrorNonFatal"
+_32cdc6d51fb65839b18c34be4ac74267.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 -- local task = nil -- Disable usage of Roblox's task scheduler
@@ -2739,11 +2770,12 @@ local function logErrorNonFatal(
 end
 
 return logErrorNonFatal ]]
-_5c09050bad83ab3321f289ff774a5f64.Children["_d4b7fe516397c97e9dac36c981229dc6"] = _d4b7fe516397c97e9dac36c981229dc6
+_60957cac1c271eef57101fe1f975177b.Children["_32cdc6d51fb65839b18c34be4ac74267"] = _32cdc6d51fb65839b18c34be4ac74267
+local _32cdc6d51fb65839b18c34be4ac74267 = nil -- DEALLOCATE PLS :pray:
 
-local _f1ed892319089719dcf700226b4037cd = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f1ed892319089719dcf700226b4037cd.Name = "logWarn"
-_f1ed892319089719dcf700226b4037cd.Properties.Source = [[ --!strict
+local _babf4bffc50fee8ef9c27294eb5d21cb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_babf4bffc50fee8ef9c27294eb5d21cb.Name = "logWarn"
+_babf4bffc50fee8ef9c27294eb5d21cb.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2774,11 +2806,12 @@ local function logWarn(
 end
 
 return logWarn ]]
-_5c09050bad83ab3321f289ff774a5f64.Children["_f1ed892319089719dcf700226b4037cd"] = _f1ed892319089719dcf700226b4037cd
+_60957cac1c271eef57101fe1f975177b.Children["_babf4bffc50fee8ef9c27294eb5d21cb"] = _babf4bffc50fee8ef9c27294eb5d21cb
+local _babf4bffc50fee8ef9c27294eb5d21cb = nil -- DEALLOCATE PLS :pray:
 
-local _450c6917ed817e374562cdf0d5b93f46 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_450c6917ed817e374562cdf0d5b93f46.Name = "messages"
-_450c6917ed817e374562cdf0d5b93f46.Properties.Source = [[ --!strict
+local _6b33d4947b8415701604a3d2e71281a1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_6b33d4947b8415701604a3d2e71281a1.Name = "messages"
+_6b33d4947b8415701604a3d2e71281a1.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2825,11 +2858,12 @@ return {
 	unrecognisedPropertyStage = "'%s' isn't a valid stage for a special key to be applied at.",
 	useAfterDestroy = "%s is no longer valid - it was destroyed before %s. See discussion #292 on GitHub for advice."
 } ]]
-_5c09050bad83ab3321f289ff774a5f64.Children["_450c6917ed817e374562cdf0d5b93f46"] = _450c6917ed817e374562cdf0d5b93f46
+_60957cac1c271eef57101fe1f975177b.Children["_6b33d4947b8415701604a3d2e71281a1"] = _6b33d4947b8415701604a3d2e71281a1
+local _6b33d4947b8415701604a3d2e71281a1 = nil -- DEALLOCATE PLS :pray:
 
-local _2fd34bf511c59b341ca0b14d782a2d83 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2fd34bf511c59b341ca0b14d782a2d83.Name = "parseError"
-_2fd34bf511c59b341ca0b14d782a2d83.Properties.Source = [[ --!strict
+local _bd14eef10d44ebddede8cd6aaec2ee17 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_bd14eef10d44ebddede8cd6aaec2ee17.Name = "parseError"
+_bd14eef10d44ebddede8cd6aaec2ee17.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2854,14 +2888,16 @@ local function parseError(
 end
 
 return parseError ]]
-_5c09050bad83ab3321f289ff774a5f64.Children["_2fd34bf511c59b341ca0b14d782a2d83"] = _2fd34bf511c59b341ca0b14d782a2d83
+_60957cac1c271eef57101fe1f975177b.Children["_bd14eef10d44ebddede8cd6aaec2ee17"] = _bd14eef10d44ebddede8cd6aaec2ee17
+local _bd14eef10d44ebddede8cd6aaec2ee17 = nil -- DEALLOCATE PLS :pray:
 
-local _9f247003002abcb9bf931f313b7c2b5b = { ClassName = "Folder", Children = {}, Properties = {} }
-_9f247003002abcb9bf931f313b7c2b5b.Name = "Memory"
-_42bd8e1509eac35257f4c98340d8360f.Children["_9f247003002abcb9bf931f313b7c2b5b"] = _9f247003002abcb9bf931f313b7c2b5b
-local _f51420c89af838ec3d66d871cd79b99a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f51420c89af838ec3d66d871cd79b99a.Name = "deriveScope"
-_f51420c89af838ec3d66d871cd79b99a.Properties.Source = [[ --!strict
+local _3439a48d55cc34457e0a8458f3490296 = { ClassName = "Folder", Children = {}, Properties = {} }
+_3439a48d55cc34457e0a8458f3490296.Name = "Memory"
+_d56864cbc3c61714243504ffab872304.Children["_3439a48d55cc34457e0a8458f3490296"] = _3439a48d55cc34457e0a8458f3490296
+local _3439a48d55cc34457e0a8458f3490296 = nil -- DEALLOCATE PLS :pray:
+local _c18e627dfc4750fb8a04bc76982e9ce9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_c18e627dfc4750fb8a04bc76982e9ce9.Name = "deriveScope"
+_c18e627dfc4750fb8a04bc76982e9ce9.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2894,11 +2930,12 @@ local function deriveScope<T>(
 end
 
 return (deriveScope :: any) :: Types.DeriveScopeConstructor ]]
-_9f247003002abcb9bf931f313b7c2b5b.Children["_f51420c89af838ec3d66d871cd79b99a"] = _f51420c89af838ec3d66d871cd79b99a
+_3439a48d55cc34457e0a8458f3490296.Children["_c18e627dfc4750fb8a04bc76982e9ce9"] = _c18e627dfc4750fb8a04bc76982e9ce9
+local _c18e627dfc4750fb8a04bc76982e9ce9 = nil -- DEALLOCATE PLS :pray:
 
-local _93b8840429660a828dbae14155ca4f0e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_93b8840429660a828dbae14155ca4f0e.Name = "doCleanup"
-_93b8840429660a828dbae14155ca4f0e.Properties.Source = [[ --!strict
+local _ab3b28446b500a6eb9b92eaf3c17b09b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_ab3b28446b500a6eb9b92eaf3c17b09b.Name = "doCleanup"
+_ab3b28446b500a6eb9b92eaf3c17b09b.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -2969,11 +3006,12 @@ local function doCleanup(
 end
 
 return doCleanup ]]
-_9f247003002abcb9bf931f313b7c2b5b.Children["_93b8840429660a828dbae14155ca4f0e"] = _93b8840429660a828dbae14155ca4f0e
+_3439a48d55cc34457e0a8458f3490296.Children["_ab3b28446b500a6eb9b92eaf3c17b09b"] = _ab3b28446b500a6eb9b92eaf3c17b09b
+local _ab3b28446b500a6eb9b92eaf3c17b09b = nil -- DEALLOCATE PLS :pray:
 
-local _26098418050ba7192612b5fa6eaf4bf8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_26098418050ba7192612b5fa6eaf4bf8.Name = "innerScope"
-_26098418050ba7192612b5fa6eaf4bf8.Properties.Source = [[ --!strict
+local _50a981df80613741b6cb06b5a1d7f582 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_50a981df80613741b6cb06b5a1d7f582.Name = "innerScope"
+_50a981df80613741b6cb06b5a1d7f582.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3005,11 +3043,12 @@ local function innerScope<T>(
 end
 
 return (innerScope :: any) :: Types.DeriveScopeConstructor ]]
-_9f247003002abcb9bf931f313b7c2b5b.Children["_26098418050ba7192612b5fa6eaf4bf8"] = _26098418050ba7192612b5fa6eaf4bf8
+_3439a48d55cc34457e0a8458f3490296.Children["_50a981df80613741b6cb06b5a1d7f582"] = _50a981df80613741b6cb06b5a1d7f582
+local _50a981df80613741b6cb06b5a1d7f582 = nil -- DEALLOCATE PLS :pray:
 
-local _a0531da59c05b3a5c039bdff794b6011 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a0531da59c05b3a5c039bdff794b6011.Name = "legacyCleanup"
-_a0531da59c05b3a5c039bdff794b6011.Properties.Source = [[ --!strict
+local _58d2ec7e7f7d76a723712fc9a7152d0f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_58d2ec7e7f7d76a723712fc9a7152d0f.Name = "legacyCleanup"
+_58d2ec7e7f7d76a723712fc9a7152d0f.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3026,11 +3065,12 @@ local function legacyCleanup(
 end
 
 return legacyCleanup ]]
-_9f247003002abcb9bf931f313b7c2b5b.Children["_a0531da59c05b3a5c039bdff794b6011"] = _a0531da59c05b3a5c039bdff794b6011
+_3439a48d55cc34457e0a8458f3490296.Children["_58d2ec7e7f7d76a723712fc9a7152d0f"] = _58d2ec7e7f7d76a723712fc9a7152d0f
+local _58d2ec7e7f7d76a723712fc9a7152d0f = nil -- DEALLOCATE PLS :pray:
 
-local _1dc7b0c7127d9101cca85c4d832e17cc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1dc7b0c7127d9101cca85c4d832e17cc.Name = "needsDestruction"
-_1dc7b0c7127d9101cca85c4d832e17cc.Properties.Source = [[ --!strict
+local _7f47547275d0bd5c379d9316ec5567d8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_7f47547275d0bd5c379d9316ec5567d8.Name = "needsDestruction"
+_7f47547275d0bd5c379d9316ec5567d8.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3047,11 +3087,12 @@ local function needsDestruction(
 end
 
 return needsDestruction ]]
-_9f247003002abcb9bf931f313b7c2b5b.Children["_1dc7b0c7127d9101cca85c4d832e17cc"] = _1dc7b0c7127d9101cca85c4d832e17cc
+_3439a48d55cc34457e0a8458f3490296.Children["_7f47547275d0bd5c379d9316ec5567d8"] = _7f47547275d0bd5c379d9316ec5567d8
+local _7f47547275d0bd5c379d9316ec5567d8 = nil -- DEALLOCATE PLS :pray:
 
-local _e01a9a6cebe6a24072d179b643fd708c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e01a9a6cebe6a24072d179b643fd708c.Name = "scopePool"
-_e01a9a6cebe6a24072d179b643fd708c.Properties.Source = [[ --!strict
+local _9c039cb6c9a44c94fb5f1b752a9d275b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_9c039cb6c9a44c94fb5f1b752a9d275b.Name = "scopePool"
+_9c039cb6c9a44c94fb5f1b752a9d275b.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3097,11 +3138,12 @@ return {
 		end
 	end
 } ]]
-_9f247003002abcb9bf931f313b7c2b5b.Children["_e01a9a6cebe6a24072d179b643fd708c"] = _e01a9a6cebe6a24072d179b643fd708c
+_3439a48d55cc34457e0a8458f3490296.Children["_9c039cb6c9a44c94fb5f1b752a9d275b"] = _9c039cb6c9a44c94fb5f1b752a9d275b
+local _9c039cb6c9a44c94fb5f1b752a9d275b = nil -- DEALLOCATE PLS :pray:
 
-local _58e79f8812fcc752041a4a1b85dc7872 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_58e79f8812fcc752041a4a1b85dc7872.Name = "scoped"
-_58e79f8812fcc752041a4a1b85dc7872.Properties.Source = [[ --!strict
+local _a6caaa346f4173113b81b2209da47989 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_a6caaa346f4173113b81b2209da47989.Name = "scoped"
+_a6caaa346f4173113b81b2209da47989.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3125,11 +3167,12 @@ local function scoped(
 end
 
 return (scoped :: any) :: Types.ScopedConstructor ]]
-_9f247003002abcb9bf931f313b7c2b5b.Children["_58e79f8812fcc752041a4a1b85dc7872"] = _58e79f8812fcc752041a4a1b85dc7872
+_3439a48d55cc34457e0a8458f3490296.Children["_a6caaa346f4173113b81b2209da47989"] = _a6caaa346f4173113b81b2209da47989
+local _a6caaa346f4173113b81b2209da47989 = nil -- DEALLOCATE PLS :pray:
 
-local _3b30731ac32aedfdca3e9d0f7857c73e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3b30731ac32aedfdca3e9d0f7857c73e.Name = "whichLivesLonger"
-_3b30731ac32aedfdca3e9d0f7857c73e.Properties.Source = [[ --!strict
+local _ae7fefbc859d43e2bcd3aab3fb58fb3b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_ae7fefbc859d43e2bcd3aab3fb58fb3b.Name = "whichLivesLonger"
+_ae7fefbc859d43e2bcd3aab3fb58fb3b.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3200,11 +3243,12 @@ local function whichLivesLonger(
 end
 
 return whichLivesLonger ]]
-_9f247003002abcb9bf931f313b7c2b5b.Children["_3b30731ac32aedfdca3e9d0f7857c73e"] = _3b30731ac32aedfdca3e9d0f7857c73e
+_3439a48d55cc34457e0a8458f3490296.Children["_ae7fefbc859d43e2bcd3aab3fb58fb3b"] = _ae7fefbc859d43e2bcd3aab3fb58fb3b
+local _ae7fefbc859d43e2bcd3aab3fb58fb3b = nil -- DEALLOCATE PLS :pray:
 
-local _21a58f8f6a14ecc22092ca6ea8b94b9f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_21a58f8f6a14ecc22092ca6ea8b94b9f.Name = "RobloxExternal"
-_21a58f8f6a14ecc22092ca6ea8b94b9f.Properties.Source = [[ --!strict
+local _09def814eeb77cdcf1dc2c780c74f491 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_09def814eeb77cdcf1dc2c780c74f491.Name = "RobloxExternal"
+_09def814eeb77cdcf1dc2c780c74f491.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 
@@ -3293,14 +3337,16 @@ function RobloxExternal.stopScheduler()
 end
 
 return RobloxExternal ]]
-_42bd8e1509eac35257f4c98340d8360f.Children["_21a58f8f6a14ecc22092ca6ea8b94b9f"] = _21a58f8f6a14ecc22092ca6ea8b94b9f
+_d56864cbc3c61714243504ffab872304.Children["_09def814eeb77cdcf1dc2c780c74f491"] = _09def814eeb77cdcf1dc2c780c74f491
+local _09def814eeb77cdcf1dc2c780c74f491 = nil -- DEALLOCATE PLS :pray:
 
-local _ffb46716fb77ac573558d91ad9abf6fa = { ClassName = "Folder", Children = {}, Properties = {} }
-_ffb46716fb77ac573558d91ad9abf6fa.Name = "State"
-_42bd8e1509eac35257f4c98340d8360f.Children["_ffb46716fb77ac573558d91ad9abf6fa"] = _ffb46716fb77ac573558d91ad9abf6fa
-local _93bd1d732e70d1fe2fd9e6874692bb8c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_93bd1d732e70d1fe2fd9e6874692bb8c.Name = "Computed"
-_93bd1d732e70d1fe2fd9e6874692bb8c.Properties.Source = [[ --!strict
+local _3a83d9b6e14f598dcdf75ad65acdfecb = { ClassName = "Folder", Children = {}, Properties = {} }
+_3a83d9b6e14f598dcdf75ad65acdfecb.Name = "State"
+_d56864cbc3c61714243504ffab872304.Children["_3a83d9b6e14f598dcdf75ad65acdfecb"] = _3a83d9b6e14f598dcdf75ad65acdfecb
+local _3a83d9b6e14f598dcdf75ad65acdfecb = nil -- DEALLOCATE PLS :pray:
+local _57344aa22dd82be83d72380d960ccff0 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_57344aa22dd82be83d72380d960ccff0.Name = "Computed"
+_57344aa22dd82be83d72380d960ccff0.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3471,11 +3517,12 @@ local function Computed<T, S>(
 end
 
 return Computed ]]
-_ffb46716fb77ac573558d91ad9abf6fa.Children["_93bd1d732e70d1fe2fd9e6874692bb8c"] = _93bd1d732e70d1fe2fd9e6874692bb8c
+_3a83d9b6e14f598dcdf75ad65acdfecb.Children["_57344aa22dd82be83d72380d960ccff0"] = _57344aa22dd82be83d72380d960ccff0
+local _57344aa22dd82be83d72380d960ccff0 = nil -- DEALLOCATE PLS :pray:
 
-local _36bf1017b70525cc34af0e96846403f5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_36bf1017b70525cc34af0e96846403f5.Name = "For"
-_36bf1017b70525cc34af0e96846403f5.Properties.Source = [[ --!strict
+local _25d9678750294988b9ca84b318338519 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_25d9678750294988b9ca84b318338519.Name = "For"
+_25d9678750294988b9ca84b318338519.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3730,11 +3777,12 @@ local function For<KI, KO, VI, VO, S>(
 end
 
 return For ]]
-_ffb46716fb77ac573558d91ad9abf6fa.Children["_36bf1017b70525cc34af0e96846403f5"] = _36bf1017b70525cc34af0e96846403f5
+_3a83d9b6e14f598dcdf75ad65acdfecb.Children["_25d9678750294988b9ca84b318338519"] = _25d9678750294988b9ca84b318338519
+local _25d9678750294988b9ca84b318338519 = nil -- DEALLOCATE PLS :pray:
 
-local _bc864e3bf17425ae922933d980823c4b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_bc864e3bf17425ae922933d980823c4b.Name = "ForKeys"
-_bc864e3bf17425ae922933d980823c4b.Properties.Source = [[ --!strict
+local _ea903761b5dd025a094df2949bc3550f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_ea903761b5dd025a094df2949bc3550f.Name = "ForKeys"
+_ea903761b5dd025a094df2949bc3550f.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3805,11 +3853,12 @@ local function ForKeys<KI, KO, V, S>(
 end
 
 return ForKeys ]]
-_ffb46716fb77ac573558d91ad9abf6fa.Children["_bc864e3bf17425ae922933d980823c4b"] = _bc864e3bf17425ae922933d980823c4b
+_3a83d9b6e14f598dcdf75ad65acdfecb.Children["_ea903761b5dd025a094df2949bc3550f"] = _ea903761b5dd025a094df2949bc3550f
+local _ea903761b5dd025a094df2949bc3550f = nil -- DEALLOCATE PLS :pray:
 
-local _84ca46ef81d175799002f4c51b5af86e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_84ca46ef81d175799002f4c51b5af86e.Name = "ForPairs"
-_84ca46ef81d175799002f4c51b5af86e.Properties.Source = [[ --!strict
+local _0bc74a8a7b17d2c48ab3d8ab5a0abb6f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_0bc74a8a7b17d2c48ab3d8ab5a0abb6f.Name = "ForPairs"
+_0bc74a8a7b17d2c48ab3d8ab5a0abb6f.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3874,11 +3923,12 @@ local function ForPairs<KI, KO, VI, VO, S>(
 end
 
 return ForPairs ]]
-_ffb46716fb77ac573558d91ad9abf6fa.Children["_84ca46ef81d175799002f4c51b5af86e"] = _84ca46ef81d175799002f4c51b5af86e
+_3a83d9b6e14f598dcdf75ad65acdfecb.Children["_0bc74a8a7b17d2c48ab3d8ab5a0abb6f"] = _0bc74a8a7b17d2c48ab3d8ab5a0abb6f
+local _0bc74a8a7b17d2c48ab3d8ab5a0abb6f = nil -- DEALLOCATE PLS :pray:
 
-local _be0183f294b0cc7106d5ff39dc2e11c9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_be0183f294b0cc7106d5ff39dc2e11c9.Name = "ForValues"
-_be0183f294b0cc7106d5ff39dc2e11c9.Properties.Source = [[ --!strict
+local _5750999d14f421b4d6a99b12e6a29191 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_5750999d14f421b4d6a99b12e6a29191.Name = "ForValues"
+_5750999d14f421b4d6a99b12e6a29191.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -3946,11 +3996,12 @@ local function ForValues<K, VI, VO, S>(
 end
 
 return ForValues ]]
-_ffb46716fb77ac573558d91ad9abf6fa.Children["_be0183f294b0cc7106d5ff39dc2e11c9"] = _be0183f294b0cc7106d5ff39dc2e11c9
+_3a83d9b6e14f598dcdf75ad65acdfecb.Children["_5750999d14f421b4d6a99b12e6a29191"] = _5750999d14f421b4d6a99b12e6a29191
+local _5750999d14f421b4d6a99b12e6a29191 = nil -- DEALLOCATE PLS :pray:
 
-local _9940d7113166e5324d589966a4e23fbd = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9940d7113166e5324d589966a4e23fbd.Name = "Observer"
-_9940d7113166e5324d589966a4e23fbd.Properties.Source = [[ --!strict
+local _102a4f4447f600f826108f371822f8d5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_102a4f4447f600f826108f371822f8d5.Name = "Observer"
+_102a4f4447f600f826108f371822f8d5.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4071,11 +4122,12 @@ local function Observer(
 end
 
 return Observer ]]
-_ffb46716fb77ac573558d91ad9abf6fa.Children["_9940d7113166e5324d589966a4e23fbd"] = _9940d7113166e5324d589966a4e23fbd
+_3a83d9b6e14f598dcdf75ad65acdfecb.Children["_102a4f4447f600f826108f371822f8d5"] = _102a4f4447f600f826108f371822f8d5
+local _102a4f4447f600f826108f371822f8d5 = nil -- DEALLOCATE PLS :pray:
 
-local _5e158037e4f7f0eb6acc24c05ca37161 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5e158037e4f7f0eb6acc24c05ca37161.Name = "Value"
-_5e158037e4f7f0eb6acc24c05ca37161.Properties.Source = [[ --!strict
+local _06df9e5b7dccbf4261407a30095f4374 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_06df9e5b7dccbf4261407a30095f4374.Name = "Value"
+_06df9e5b7dccbf4261407a30095f4374.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4161,11 +4213,12 @@ local function Value<T>(
 end
 
 return Value ]]
-_ffb46716fb77ac573558d91ad9abf6fa.Children["_5e158037e4f7f0eb6acc24c05ca37161"] = _5e158037e4f7f0eb6acc24c05ca37161
+_3a83d9b6e14f598dcdf75ad65acdfecb.Children["_06df9e5b7dccbf4261407a30095f4374"] = _06df9e5b7dccbf4261407a30095f4374
+local _06df9e5b7dccbf4261407a30095f4374 = nil -- DEALLOCATE PLS :pray:
 
-local _de7a459fc83450b9ffb48433f58f2436 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_de7a459fc83450b9ffb48433f58f2436.Name = "isState"
-_de7a459fc83450b9ffb48433f58f2436.Properties.Source = [[ --!strict
+local _76d7d87b4c9754d4d05a24e2d1005b05 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_76d7d87b4c9754d4d05a24e2d1005b05.Name = "isState"
+_76d7d87b4c9754d4d05a24e2d1005b05.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4185,11 +4238,12 @@ local function isState(
 end
 
 return isState ]]
-_ffb46716fb77ac573558d91ad9abf6fa.Children["_de7a459fc83450b9ffb48433f58f2436"] = _de7a459fc83450b9ffb48433f58f2436
+_3a83d9b6e14f598dcdf75ad65acdfecb.Children["_76d7d87b4c9754d4d05a24e2d1005b05"] = _76d7d87b4c9754d4d05a24e2d1005b05
+local _76d7d87b4c9754d4d05a24e2d1005b05 = nil -- DEALLOCATE PLS :pray:
 
-local _2a67ea4bbb490c5764ec47ad08b46efb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2a67ea4bbb490c5764ec47ad08b46efb.Name = "peek"
-_2a67ea4bbb490c5764ec47ad08b46efb.Properties.Source = [[ --!strict
+local _7f14587b2043baf6b3746a920915aa95 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_7f14587b2043baf6b3746a920915aa95.Name = "peek"
+_7f14587b2043baf6b3746a920915aa95.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4215,11 +4269,12 @@ local function peek<T>(
 end
 
 return peek ]]
-_ffb46716fb77ac573558d91ad9abf6fa.Children["_2a67ea4bbb490c5764ec47ad08b46efb"] = _2a67ea4bbb490c5764ec47ad08b46efb
+_3a83d9b6e14f598dcdf75ad65acdfecb.Children["_7f14587b2043baf6b3746a920915aa95"] = _7f14587b2043baf6b3746a920915aa95
+local _7f14587b2043baf6b3746a920915aa95 = nil -- DEALLOCATE PLS :pray:
 
-local _c1659a04f1612b09dfcbb254a4698f00 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c1659a04f1612b09dfcbb254a4698f00.Name = "updateAll"
-_c1659a04f1612b09dfcbb254a4698f00.Properties.Source = [[ --!strict
+local _3923a24cd8cf6cca1842f5d34fd4d13c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_3923a24cd8cf6cca1842f5d34fd4d13c.Name = "updateAll"
+_3923a24cd8cf6cca1842f5d34fd4d13c.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4290,11 +4345,12 @@ local function updateAll(
 end
 
 return updateAll ]]
-_ffb46716fb77ac573558d91ad9abf6fa.Children["_c1659a04f1612b09dfcbb254a4698f00"] = _c1659a04f1612b09dfcbb254a4698f00
+_3a83d9b6e14f598dcdf75ad65acdfecb.Children["_3923a24cd8cf6cca1842f5d34fd4d13c"] = _3923a24cd8cf6cca1842f5d34fd4d13c
+local _3923a24cd8cf6cca1842f5d34fd4d13c = nil -- DEALLOCATE PLS :pray:
 
-local _dc16f71385dab0c038a27db068fa3288 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_dc16f71385dab0c038a27db068fa3288.Name = "Types"
-_dc16f71385dab0c038a27db068fa3288.Properties.Source = [[ --!strict
+local _cdf3c9273cceda962fd37a207a4a252d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_cdf3c9273cceda962fd37a207a4a252d.Name = "Types"
+_cdf3c9273cceda962fd37a207a4a252d.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4571,14 +4627,16 @@ export type Fusion = {
 }
 
 return nil ]]
-_42bd8e1509eac35257f4c98340d8360f.Children["_dc16f71385dab0c038a27db068fa3288"] = _dc16f71385dab0c038a27db068fa3288
+_d56864cbc3c61714243504ffab872304.Children["_cdf3c9273cceda962fd37a207a4a252d"] = _cdf3c9273cceda962fd37a207a4a252d
+local _cdf3c9273cceda962fd37a207a4a252d = nil -- DEALLOCATE PLS :pray:
 
-local _3afffd6992699edfe173c9f9e7ca3161 = { ClassName = "Folder", Children = {}, Properties = {} }
-_3afffd6992699edfe173c9f9e7ca3161.Name = "Utility"
-_42bd8e1509eac35257f4c98340d8360f.Children["_3afffd6992699edfe173c9f9e7ca3161"] = _3afffd6992699edfe173c9f9e7ca3161
-local _c20619bfbb0032b18fd5b3d28a4bd2e4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c20619bfbb0032b18fd5b3d28a4bd2e4.Name = "Contextual"
-_c20619bfbb0032b18fd5b3d28a4bd2e4.Properties.Source = [[ --!strict
+local _8ba60ba5cb83255462879f0cd2a5a14a = { ClassName = "Folder", Children = {}, Properties = {} }
+_8ba60ba5cb83255462879f0cd2a5a14a.Name = "Utility"
+_d56864cbc3c61714243504ffab872304.Children["_8ba60ba5cb83255462879f0cd2a5a14a"] = _8ba60ba5cb83255462879f0cd2a5a14a
+local _8ba60ba5cb83255462879f0cd2a5a14a = nil -- DEALLOCATE PLS :pray:
+local _4503315f1267ef1ecaeadd1397fda876 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_4503315f1267ef1ecaeadd1397fda876.Name = "Contextual"
+_4503315f1267ef1ecaeadd1397fda876.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4662,11 +4720,12 @@ local function Contextual<T>(
 end
 
 return Contextual ]]
-_3afffd6992699edfe173c9f9e7ca3161.Children["_c20619bfbb0032b18fd5b3d28a4bd2e4"] = _c20619bfbb0032b18fd5b3d28a4bd2e4
+_8ba60ba5cb83255462879f0cd2a5a14a.Children["_4503315f1267ef1ecaeadd1397fda876"] = _4503315f1267ef1ecaeadd1397fda876
+local _4503315f1267ef1ecaeadd1397fda876 = nil -- DEALLOCATE PLS :pray:
 
-local _fa08fa6992a26899be673d1acb988872 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_fa08fa6992a26899be673d1acb988872.Name = "Safe"
-_fa08fa6992a26899be673d1acb988872.Properties.Source = [[ --!strict
+local _e2d7adbf246e9f04ebd6c1e87d98dd8d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_e2d7adbf246e9f04ebd6c1e87d98dd8d.Name = "Safe"
+_e2d7adbf246e9f04ebd6c1e87d98dd8d.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4689,11 +4748,12 @@ local function Safe<Success, Fail>(
 end
 
 return Safe ]]
-_3afffd6992699edfe173c9f9e7ca3161.Children["_fa08fa6992a26899be673d1acb988872"] = _fa08fa6992a26899be673d1acb988872
+_8ba60ba5cb83255462879f0cd2a5a14a.Children["_e2d7adbf246e9f04ebd6c1e87d98dd8d"] = _e2d7adbf246e9f04ebd6c1e87d98dd8d
+local _e2d7adbf246e9f04ebd6c1e87d98dd8d = nil -- DEALLOCATE PLS :pray:
 
-local _95adcff42fd4a0ee92fa6027f42892ad = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_95adcff42fd4a0ee92fa6027f42892ad.Name = "isSimilar"
-_95adcff42fd4a0ee92fa6027f42892ad.Properties.Source = [[ --!strict
+local _e2fb08c04665169163fe341f064c6449 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_e2fb08c04665169163fe341f064c6449.Name = "isSimilar"
+_e2fb08c04665169163fe341f064c6449.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4722,11 +4782,12 @@ local function isSimilar(
 end
 
 return isSimilar ]]
-_3afffd6992699edfe173c9f9e7ca3161.Children["_95adcff42fd4a0ee92fa6027f42892ad"] = _95adcff42fd4a0ee92fa6027f42892ad
+_8ba60ba5cb83255462879f0cd2a5a14a.Children["_e2fb08c04665169163fe341f064c6449"] = _e2fb08c04665169163fe341f064c6449
+local _e2fb08c04665169163fe341f064c6449 = nil -- DEALLOCATE PLS :pray:
 
-local _bd7a84f3c7f474b7bccf9f5645647cbf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_bd7a84f3c7f474b7bccf9f5645647cbf.Name = "merge"
-_bd7a84f3c7f474b7bccf9f5645647cbf.Properties.Source = [[ --!strict
+local _438d4935423b7834ac82bf3a5f5030fb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_438d4935423b7834ac82bf3a5f5030fb.Name = "merge"
+_438d4935423b7834ac82bf3a5f5030fb.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4759,11 +4820,12 @@ local function merge(
 end
 
 return merge ]]
-_3afffd6992699edfe173c9f9e7ca3161.Children["_bd7a84f3c7f474b7bccf9f5645647cbf"] = _bd7a84f3c7f474b7bccf9f5645647cbf
+_8ba60ba5cb83255462879f0cd2a5a14a.Children["_438d4935423b7834ac82bf3a5f5030fb"] = _438d4935423b7834ac82bf3a5f5030fb
+local _438d4935423b7834ac82bf3a5f5030fb = nil -- DEALLOCATE PLS :pray:
 
-local _775b80d9ba18f2de1a1658dae56dded3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_775b80d9ba18f2de1a1658dae56dded3.Name = "xtypeof"
-_775b80d9ba18f2de1a1658dae56dded3.Properties.Source = [[ --!strict
+local _a83d2072a9076bdd921c17525e5e496c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
+_a83d2072a9076bdd921c17525e5e496c.Name = "xtypeof"
+_a83d2072a9076bdd921c17525e5e496c.Properties.Source = [[ --!strict
 --!nolint LocalUnused
 --!nolint LocalShadow
 local task = nil -- Disable usage of Roblox's task scheduler
@@ -4790,9 +4852,10 @@ local function xtypeof(
 end
 
 return xtypeof ]]
-_3afffd6992699edfe173c9f9e7ca3161.Children["_775b80d9ba18f2de1a1658dae56dded3"] = _775b80d9ba18f2de1a1658dae56dded3
-getfenv(0).rootTree = _beb443ae5d47bd0a1745a1f0e063d1b8
-getfenv(0).rootReferent = "_beb443ae5d47bd0a1745a1f0e063d1b8"
+_8ba60ba5cb83255462879f0cd2a5a14a.Children["_a83d2072a9076bdd921c17525e5e496c"] = _a83d2072a9076bdd921c17525e5e496c
+local _a83d2072a9076bdd921c17525e5e496c = nil -- DEALLOCATE PLS :pray:
+getfenv(0).rootTree = _c781ff795ccaae172b8a8013d25039e5
+getfenv(0).rootReferent = "_c781ff795ccaae172b8a8013d25039e5"
 type Runtime = {
 	getPatchedEnvironment: (script: LuaSourceContainer) -> (),
 	loadedModules: {

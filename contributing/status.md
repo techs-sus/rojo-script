@@ -3,6 +3,7 @@
 Scripts refers to spawned scripts (by NS and NLS), and not the main scripts we are worried about. NLS script security will be based on remotes.
 
 NLS:
+
 ```lua
 local tree = ...
 local createInstanceFromTree = ...
@@ -19,4 +20,12 @@ script = fake
 
 # Status
 
-We are currently on stage 3. This is due to the fact that we need to implement rt.require and sandboxing. We need to sandbox fake scripts to allow for better developer experience, and so that developers can parent Instances to `script`.  
+We are currently on stage 3. This is due to the fact that we need to implement rt.require and sandboxing. We need to sandbox fake scripts to allow for better developer experience, and so that developers can parent Instances to `script`.
+
+# Goals
+
+1. lzma compress everything
+2. make a fast lzma decompresser
+3. put source thru darklua and minify final output too
+4. use buffer and bit32 magic
+5. represent tree in a single string and use custom decoder to rewrite it
