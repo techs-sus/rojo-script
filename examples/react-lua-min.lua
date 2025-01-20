@@ -1,24 +1,24 @@
--- rojo-script runtime 'lua-sandbox'
-script:Destroy();script=nil
-local _9e3c7aedc18c985a2d67909866216e52 = { ClassName = "Model", Children = {}, Properties = {} }
-_9e3c7aedc18c985a2d67909866216e52.Name = "DataModel"
-local _3a3b759d2de5c9cef41f0ecb3ad132a3 = { ClassName = "Folder", Children = {}, Properties = {} }
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Name = "RoactAlignment"
-_9e3c7aedc18c985a2d67909866216e52.Children["_3a3b759d2de5c9cef41f0ecb3ad132a3"] = _3a3b759d2de5c9cef41f0ecb3ad132a3
-local _3a3b759d2de5c9cef41f0ecb3ad132a3 = nil -- DEALLOCATE PLS :pray:
-local _b6bbf58c5d6619cb8f49aeec075d0925 = { ClassName = "Folder", Children = {}, Properties = {} }
-_b6bbf58c5d6619cb8f49aeec075d0925.Name = "TestRunner"
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_b6bbf58c5d6619cb8f49aeec075d0925"] = _b6bbf58c5d6619cb8f49aeec075d0925
-local _b6bbf58c5d6619cb8f49aeec075d0925 = nil -- DEALLOCATE PLS :pray:
-local _2a96756d58d21271bf05d76b98a5809e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2a96756d58d21271bf05d76b98a5809e.Name = "Src"
-_2a96756d58d21271bf05d76b98a5809e.Properties.Source = [[ return {} ]]
-_b6bbf58c5d6619cb8f49aeec075d0925.Children["_2a96756d58d21271bf05d76b98a5809e"] = _2a96756d58d21271bf05d76b98a5809e
-local _2a96756d58d21271bf05d76b98a5809e = nil -- DEALLOCATE PLS :pray:
 
-local _ca0e01d97af5166777e2e48d84fa0244 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ca0e01d97af5166777e2e48d84fa0244.Name = "JestReact"
-_ca0e01d97af5166777e2e48d84fa0244.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/jest-react/index.js
+script:Destroy();script=nil
+local a={ClassName="Model",Children={},Properties={}}
+a.Name="DataModel"
+local b={ClassName="Folder",Children={},Properties={}}
+b.Name="RoactAlignment"
+a.Children._3a3b759d2de5c9cef41f0ecb3ad132a3=b
+local c
+local d={ClassName="Folder",Children={},Properties={}}
+d.Name="TestRunner"
+c.Children._b6bbf58c5d6619cb8f49aeec075d0925=d
+local e
+local f={ClassName="ModuleScript",Children={},Properties={}}
+f.Name="Src"
+f.Properties.Source=[[ return {} ]]
+e.Children._2a96756d58d21271bf05d76b98a5809e=f
+local g
+
+local h={ClassName="ModuleScript",Children={},Properties={}}
+h.Name="JestReact"
+h.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/jest-react/index.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -34,11 +34,11 @@ local exports = {}
 local jestReactModule = Object.assign(exports, require(script.JestReact))
 return exports :: typeof(exports) & typeof(jestReactModule)
 -- ROBLOX deviation END ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_ca0e01d97af5166777e2e48d84fa0244"] = _ca0e01d97af5166777e2e48d84fa0244
-local _ca0e01d97af5166777e2e48d84fa0244 = nil -- DEALLOCATE PLS :pray:
-local _ca60d19dab41d272d3b7e882c0d7ec97 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ca60d19dab41d272d3b7e882c0d7ec97.Name = "JestReact"
-_ca60d19dab41d272d3b7e882c0d7ec97.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/jest-react/src/JestReact.js
+c.Children._ca0e01d97af5166777e2e48d84fa0244=h
+local i
+local j={ClassName="ModuleScript",Children={},Properties={}}
+j.Name="JestReact"
+j.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/jest-react/src/JestReact.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -267,12 +267,12 @@ function jsonChildrenToJSXChildren(jsonChildren)
 	return nil
 end
 return exports ]]
-_ca0e01d97af5166777e2e48d84fa0244.Children["_ca60d19dab41d272d3b7e882c0d7ec97"] = _ca60d19dab41d272d3b7e882c0d7ec97
-local _ca60d19dab41d272d3b7e882c0d7ec97 = nil -- DEALLOCATE PLS :pray:
+i.Children._ca60d19dab41d272d3b7e882c0d7ec97=j
+local k
 
-local _1d44bd677e02369ce251fcee385f8672 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1d44bd677e02369ce251fcee385f8672.Name = "React"
-_1d44bd677e02369ce251fcee385f8672.Properties.Source = [[ --!strict
+local l={ClassName="ModuleScript",Children={},Properties={}}
+l.Name="React"
+l.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react/src/index.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -351,11 +351,11 @@ export type React_Node = SharedModule.React_Node
 -- ROBLOX deviation END
 
 return React ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_1d44bd677e02369ce251fcee385f8672"] = _1d44bd677e02369ce251fcee385f8672
-local _1d44bd677e02369ce251fcee385f8672 = nil -- DEALLOCATE PLS :pray:
-local _e77e6a45f83de7d4a70597cabfb25206 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e77e6a45f83de7d4a70597cabfb25206.Name = "None.roblox"
-_e77e6a45f83de7d4a70597cabfb25206.Properties.Source = [[ --!strict
+c.Children._1d44bd677e02369ce251fcee385f8672=l
+local m
+local n={ClassName="ModuleScript",Children={},Properties={}}
+n.Name="None.roblox"
+n.Properties.Source=[[ --!strict
 -- code derived from https://github.com/Roblox/roact/blob/master/src/None.lua
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
@@ -379,12 +379,12 @@ local LuauPolyfill = require(Packages.LuauPolyfill)
 -- None value should give us the proper semantics. We can re-export this value
 -- as React.None for easy use, and to mirror Roact.None in legacy Roact.
 return LuauPolyfill.Object.None ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_e77e6a45f83de7d4a70597cabfb25206"] = _e77e6a45f83de7d4a70597cabfb25206
-local _e77e6a45f83de7d4a70597cabfb25206 = nil -- DEALLOCATE PLS :pray:
+m.Children._e77e6a45f83de7d4a70597cabfb25206=n
+local o
 
-local _8282b02c7061064afa5a8800c6ec3476 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_8282b02c7061064afa5a8800c6ec3476.Name = "React"
-_8282b02c7061064afa5a8800c6ec3476.Properties.Source = [[ --!strict
+local p={ClassName="ModuleScript",Children={},Properties={}}
+p.Name="React"
+p.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react/src/React.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -539,12 +539,12 @@ return {
 	-- ScriptContext signals that may ultimately catch them
 	unstable_parseReactError = require(Packages.Shared).parseReactError,
 } ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_8282b02c7061064afa5a8800c6ec3476"] = _8282b02c7061064afa5a8800c6ec3476
-local _8282b02c7061064afa5a8800c6ec3476 = nil -- DEALLOCATE PLS :pray:
+m.Children._8282b02c7061064afa5a8800c6ec3476=p
+local q
 
-local _515f4cd0696310587e844482ec37056c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_515f4cd0696310587e844482ec37056c.Name = "ReactBaseClasses"
-_515f4cd0696310587e844482ec37056c.Properties.Source = [[ --!strict
+local r={ClassName="ModuleScript",Children={},Properties={}}
+r.Name="ReactBaseClasses"
+r.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/0cf22a56a18790ef34c71bef14f64695c0498619/packages/react/src/ReactBaseClasses.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -981,12 +981,12 @@ return {
 	Component = Component,
 	PureComponent = PureComponent :: typeof(Component),
 } ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_515f4cd0696310587e844482ec37056c"] = _515f4cd0696310587e844482ec37056c
-local _515f4cd0696310587e844482ec37056c = nil -- DEALLOCATE PLS :pray:
+m.Children._515f4cd0696310587e844482ec37056c=r
+local s
 
-local _0ce1753ff9fd7e05319e2a02cbabf05e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0ce1753ff9fd7e05319e2a02cbabf05e.Name = "ReactBinding.roblox"
-_0ce1753ff9fd7e05319e2a02cbabf05e.Properties.Source = [[ --!strict
+local t={ClassName="ModuleScript",Children={},Properties={}}
+t.Name="ReactBinding.roblox"
+t.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -1218,12 +1218,12 @@ function BindingInternalApi.join<T>(
 end
 
 return BindingInternalApi ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_0ce1753ff9fd7e05319e2a02cbabf05e"] = _0ce1753ff9fd7e05319e2a02cbabf05e
-local _0ce1753ff9fd7e05319e2a02cbabf05e = nil -- DEALLOCATE PLS :pray:
+m.Children._0ce1753ff9fd7e05319e2a02cbabf05e=t
+local u
 
-local _7c8c0c54b4752e50631083ce81ad53c4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7c8c0c54b4752e50631083ce81ad53c4.Name = "ReactChildren"
-_7c8c0c54b4752e50631083ce81ad53c4.Properties.Source = [[ --!strict
+local v={ClassName="ModuleScript",Children={},Properties={}}
+v.Name="ReactChildren"
+v.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/7516bdfce3f0f8c675494b5c5d0e7ae441bef1d9/packages/react/src/ReactChildren.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -1583,12 +1583,12 @@ return {
 	only = onlyChild,
 	toArray = toArray,
 } ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_7c8c0c54b4752e50631083ce81ad53c4"] = _7c8c0c54b4752e50631083ce81ad53c4
-local _7c8c0c54b4752e50631083ce81ad53c4 = nil -- DEALLOCATE PLS :pray:
+m.Children._7c8c0c54b4752e50631083ce81ad53c4=v
+local w
 
-local _61ab26df1cef070a6d876fc47d5dd6f4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_61ab26df1cef070a6d876fc47d5dd6f4.Name = "ReactContext"
-_61ab26df1cef070a6d876fc47d5dd6f4.Properties.Source = [[ --!strict
+local x={ClassName="ModuleScript",Children={},Properties={}}
+x.Name="ReactContext"
+x.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/7516bdfce3f0f8c675494b5c5d0e7ae441bef1d9/packages/react/src/ReactContext.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -1704,12 +1704,12 @@ exports.createContext = function<T>(
 end
 
 return exports ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_61ab26df1cef070a6d876fc47d5dd6f4"] = _61ab26df1cef070a6d876fc47d5dd6f4
-local _61ab26df1cef070a6d876fc47d5dd6f4 = nil -- DEALLOCATE PLS :pray:
+m.Children._61ab26df1cef070a6d876fc47d5dd6f4=x
+local y
 
-local _cf68a13e680fd45e3be1db0be52b8651 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_cf68a13e680fd45e3be1db0be52b8651.Name = "ReactCreateRef"
-_cf68a13e680fd45e3be1db0be52b8651.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/b87aabdfe1b7461e7331abb3601d9e6bb27544bc/packages/react/src/ReactCreateRef.js
+local z={ClassName="ModuleScript",Children={},Properties={}}
+z.Name="ReactCreateRef"
+z.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/b87aabdfe1b7461e7331abb3601d9e6bb27544bc/packages/react/src/ReactCreateRef.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -1778,12 +1778,12 @@ exports.createRef = function(): RefObject
 end
 
 return exports ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_cf68a13e680fd45e3be1db0be52b8651"] = _cf68a13e680fd45e3be1db0be52b8651
-local _cf68a13e680fd45e3be1db0be52b8651 = nil -- DEALLOCATE PLS :pray:
+m.Children._cf68a13e680fd45e3be1db0be52b8651=z
+local A
 
-local _a333e407c3eb59b3c43a3a718ff638af = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a333e407c3eb59b3c43a3a718ff638af.Name = "ReactElement"
-_a333e407c3eb59b3c43a3a718ff638af.Properties.Source = [[ --!strict
+local B={ClassName="ModuleScript",Children={},Properties={}}
+B.Name="ReactElement"
+B.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react/src/ReactElement.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -2507,12 +2507,12 @@ exports.isValidElement = function(object)
 end
 
 return exports ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_a333e407c3eb59b3c43a3a718ff638af"] = _a333e407c3eb59b3c43a3a718ff638af
-local _a333e407c3eb59b3c43a3a718ff638af = nil -- DEALLOCATE PLS :pray:
+m.Children._a333e407c3eb59b3c43a3a718ff638af=B
+local C
 
-local _38c7d40e9bed265657097dc0a42a76a8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_38c7d40e9bed265657097dc0a42a76a8.Name = "ReactElementValidator"
-_38c7d40e9bed265657097dc0a42a76a8.Properties.Source = [[ --!strict
+local D={ClassName="ModuleScript",Children={},Properties={}}
+D.Name="ReactElementValidator"
+D.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/bc6b7b6b16f771bfc8048fe15e211ac777253b64/packages/react/src/ReactElementValidator.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -3160,12 +3160,12 @@ exports.cloneElementWithValidation = function<P, T>(
 end
 
 return exports ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_38c7d40e9bed265657097dc0a42a76a8"] = _38c7d40e9bed265657097dc0a42a76a8
-local _38c7d40e9bed265657097dc0a42a76a8 = nil -- DEALLOCATE PLS :pray:
+m.Children._38c7d40e9bed265657097dc0a42a76a8=D
+local E
 
-local _90bb9472ab52fba3bce855779b8d4048 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_90bb9472ab52fba3bce855779b8d4048.Name = "ReactForwardRef"
-_90bb9472ab52fba3bce855779b8d4048.Properties.Source = [[ --!strict
+local F={ClassName="ModuleScript",Children={},Properties={}}
+F.Name="ReactForwardRef"
+F.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/41694201988c5e651f0c3bc69921d5c9717be88b/packages/react/src/ReactForwardRef.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -3273,12 +3273,12 @@ exports.forwardRef =
 	end
 
 return exports ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_90bb9472ab52fba3bce855779b8d4048"] = _90bb9472ab52fba3bce855779b8d4048
-local _90bb9472ab52fba3bce855779b8d4048 = nil -- DEALLOCATE PLS :pray:
+m.Children._90bb9472ab52fba3bce855779b8d4048=F
+local G
 
-local _fc397028ca95d62f5bcf180d9b1357a2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_fc397028ca95d62f5bcf180d9b1357a2.Name = "ReactHooks"
-_fc397028ca95d62f5bcf180d9b1357a2.Properties.Source = [[ --!strict
+local H={ClassName="ModuleScript",Children={},Properties={}}
+H.Name="ReactHooks"
+H.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/ddd1faa1972b614dfbfae205f2aa4a6c0b39a759/packages/react/src/ReactHooks.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -3510,12 +3510,12 @@ exports.useMutableSource =
 	end
 
 return exports ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_fc397028ca95d62f5bcf180d9b1357a2"] = _fc397028ca95d62f5bcf180d9b1357a2
-local _fc397028ca95d62f5bcf180d9b1357a2 = nil -- DEALLOCATE PLS :pray:
+m.Children._fc397028ca95d62f5bcf180d9b1357a2=H
+local I
 
-local _92b47d701d10ca3c1ec06076fa8845bf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_92b47d701d10ca3c1ec06076fa8845bf.Name = "ReactLazy"
-_92b47d701d10ca3c1ec06076fa8845bf.Properties.Source = [[ --!nonstrict
+local J={ClassName="ModuleScript",Children={},Properties={}}
+J.Name="ReactLazy"
+J.Properties.Source=[[ --!nonstrict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react/src/ReactLazy.js
 --\[\[
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -3701,12 +3701,12 @@ exports.lazy = function<T>(
 end
 
 return exports ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_92b47d701d10ca3c1ec06076fa8845bf"] = _92b47d701d10ca3c1ec06076fa8845bf
-local _92b47d701d10ca3c1ec06076fa8845bf = nil -- DEALLOCATE PLS :pray:
+m.Children._92b47d701d10ca3c1ec06076fa8845bf=J
+local K
 
-local _dc88c1cdd75a709d858008fedd9d1a96 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_dc88c1cdd75a709d858008fedd9d1a96.Name = "ReactMemo"
-_dc88c1cdd75a709d858008fedd9d1a96.Properties.Source = [[ --!strict
+local L={ClassName="ModuleScript",Children={},Properties={}}
+L.Name="ReactMemo"
+L.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/41694201988c5e651f0c3bc69921d5c9717be88b/packages/react/src/ReactMemo.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -3835,12 +3835,12 @@ exports.memo = function<Props, T>(
 end
 
 return exports ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_dc88c1cdd75a709d858008fedd9d1a96"] = _dc88c1cdd75a709d858008fedd9d1a96
-local _dc88c1cdd75a709d858008fedd9d1a96 = nil -- DEALLOCATE PLS :pray:
+m.Children._dc88c1cdd75a709d858008fedd9d1a96=L
+local M
 
-local _734129d7f6fd5a1fcefcb5d08e8f4738 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_734129d7f6fd5a1fcefcb5d08e8f4738.Name = "ReactMutableSource"
-_734129d7f6fd5a1fcefcb5d08e8f4738.Properties.Source = [[ --!strict
+local N={ClassName="ModuleScript",Children={},Properties={}}
+N.Name="ReactMutableSource"
+N.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/142d4f1c00c66f3d728177082dbc027fd6335115/packages/react/src/ReactMutableSource.js
 -- \[\[
 --  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -3876,12 +3876,12 @@ local function createMutableSource<Source>(
 end
 
 return createMutableSource ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_734129d7f6fd5a1fcefcb5d08e8f4738"] = _734129d7f6fd5a1fcefcb5d08e8f4738
-local _734129d7f6fd5a1fcefcb5d08e8f4738 = nil -- DEALLOCATE PLS :pray:
+m.Children._734129d7f6fd5a1fcefcb5d08e8f4738=N
+local O
 
-local _f990bbf1f52d0c6cc1ef11f694e66325 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f990bbf1f52d0c6cc1ef11f694e66325.Name = "ReactNoopUpdateQueue"
-_f990bbf1f52d0c6cc1ef11f694e66325.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/0cf22a56a18790ef34c71bef14f64695c0498619/packages/react/src/ReactNoopUpdateQueue.js
+local P={ClassName="ModuleScript",Children={},Properties={}}
+P.Name="ReactNoopUpdateQueue"
+P.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/0cf22a56a18790ef34c71bef14f64695c0498619/packages/react/src/ReactNoopUpdateQueue.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -3985,16 +3985,16 @@ local ReactNoopUpdateQueue = {
 }
 
 return ReactNoopUpdateQueue ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_f990bbf1f52d0c6cc1ef11f694e66325"] = _f990bbf1f52d0c6cc1ef11f694e66325
-local _f990bbf1f52d0c6cc1ef11f694e66325 = nil -- DEALLOCATE PLS :pray:
+m.Children._f990bbf1f52d0c6cc1ef11f694e66325=P
+local Q
 
-local _66527c145cd3e5ce1fe079f192ac81b8 = { ClassName = "Folder", Children = {}, Properties = {} }
-_66527c145cd3e5ce1fe079f192ac81b8.Name = "__tests__"
-_1d44bd677e02369ce251fcee385f8672.Children["_66527c145cd3e5ce1fe079f192ac81b8"] = _66527c145cd3e5ce1fe079f192ac81b8
-local _66527c145cd3e5ce1fe079f192ac81b8 = nil -- DEALLOCATE PLS :pray:
-local _d6c224d4f630f1310f5f73ea60383f2d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d6c224d4f630f1310f5f73ea60383f2d.Name = "ReactBaseClasses.roblox.spec"
-_d6c224d4f630f1310f5f73ea60383f2d.Properties.Source = [[ --!strict
+local R={ClassName="Folder",Children={},Properties={}}
+R.Name="__tests__"
+m.Children._66527c145cd3e5ce1fe079f192ac81b8=R
+local S
+local T={ClassName="ModuleScript",Children={},Properties={}}
+T.Name="ReactBaseClasses.roblox.spec"
+T.Properties.Source=[[ --!strict
 local Packages = script.Parent.Parent.Parent
 local ReactBaseClasses = require(script.Parent.Parent.ReactBaseClasses)
 local JestGlobals = require(Packages.Dev.JestGlobals)
@@ -4042,12 +4042,12 @@ describe("PureComponent", function()
 		jestExpect(name).toContain("FooBar")
 	end)
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_d6c224d4f630f1310f5f73ea60383f2d"] = _d6c224d4f630f1310f5f73ea60383f2d
-local _d6c224d4f630f1310f5f73ea60383f2d = nil -- DEALLOCATE PLS :pray:
+S.Children._d6c224d4f630f1310f5f73ea60383f2d=T
+local U
 
-local _94e73777962b8de46269960102514b82 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_94e73777962b8de46269960102514b82.Name = "ReactBinding.spec"
-_94e73777962b8de46269960102514b82.Properties.Source = [[ --!strict
+local V={ClassName="ModuleScript",Children={},Properties={}}
+V.Name="ReactBinding.spec"
+V.Properties.Source=[[ --!strict
 local Packages = script.Parent.Parent.Parent
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local jestExpect = JestGlobals.expect
@@ -4396,12 +4396,12 @@ describe("createRef", function()
 		end)
 	end
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_94e73777962b8de46269960102514b82"] = _94e73777962b8de46269960102514b82
-local _94e73777962b8de46269960102514b82 = nil -- DEALLOCATE PLS :pray:
+S.Children._94e73777962b8de46269960102514b82=V
+local W
 
-local _9afa7c3c102a084a81fcd5630fdc0a4a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9afa7c3c102a084a81fcd5630fdc0a4a.Name = "ReactChildren.spec"
-_9afa7c3c102a084a81fcd5630fdc0a4a.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/7516bdfce3f0f8c675494b5c5d0e7ae441bef1d9/packages/react/src/__tests__/ReactChildren-test.js
+local X={ClassName="ModuleScript",Children={},Properties={}}
+X.Name="ReactChildren.spec"
+X.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/7516bdfce3f0f8c675494b5c5d0e7ae441bef1d9/packages/react/src/__tests__/ReactChildren-test.js
 --!nonstrict
 --\[\[
 	**
@@ -5474,12 +5474,12 @@ describe("ReactChildren", function()
 		end)
 	end)
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_9afa7c3c102a084a81fcd5630fdc0a4a"] = _9afa7c3c102a084a81fcd5630fdc0a4a
-local _9afa7c3c102a084a81fcd5630fdc0a4a = nil -- DEALLOCATE PLS :pray:
+S.Children._9afa7c3c102a084a81fcd5630fdc0a4a=X
+local Y
 
-local _467b4e502b3707f381223423d002dfee = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_467b4e502b3707f381223423d002dfee.Name = "ReactDeprecationWarnings-internal.spec"
-_467b4e502b3707f381223423d002dfee.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-dom/src/__tests__/ReactDeprecationWarnings-test.internal.js
+local Z={ClassName="ModuleScript",Children={},Properties={}}
+Z.Name="ReactDeprecationWarnings-internal.spec"
+Z.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-dom/src/__tests__/ReactDeprecationWarnings-test.internal.js
 local React
 local ReactFeatureFlags
 local ReactNoop
@@ -5640,12 +5640,12 @@ describe("ReactDeprecationWarnings", function()
 	-- 	end)
 	-- end
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_467b4e502b3707f381223423d002dfee"] = _467b4e502b3707f381223423d002dfee
-local _467b4e502b3707f381223423d002dfee = nil -- DEALLOCATE PLS :pray:
+S.Children._467b4e502b3707f381223423d002dfee=Z
+local _
 
-local _4b6df8673e9eddbd82d8be271408d6dd = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_4b6df8673e9eddbd82d8be271408d6dd.Name = "ReactElement.roblox.spec"
-_4b6df8673e9eddbd82d8be271408d6dd.Properties.Source = [[ --!strict
+local aa={ClassName="ModuleScript",Children={},Properties={}}
+aa.Name="ReactElement.roblox.spec"
+aa.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react/src/__tests__/ReactElement-test.js
 
 local Packages = script.Parent.Parent.Parent
@@ -5785,12 +5785,12 @@ describe("should accept", function()
 		jestExpect(element.props.Value).toEqual(false)
 	end)
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_4b6df8673e9eddbd82d8be271408d6dd"] = _4b6df8673e9eddbd82d8be271408d6dd
-local _4b6df8673e9eddbd82d8be271408d6dd = nil -- DEALLOCATE PLS :pray:
+S.Children._4b6df8673e9eddbd82d8be271408d6dd=aa
+local ab
 
-local _e350f3b0a12989fb3761ed147851a5d9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e350f3b0a12989fb3761ed147851a5d9.Name = "ReactElementValidator-internal.spec"
-_e350f3b0a12989fb3761ed147851a5d9.Properties.Source = [[ --\[\[*
+local ac={ClassName="ModuleScript",Children={},Properties={}}
+ac.Name="ReactElementValidator-internal.spec"
+ac.Properties.Source=[[ --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -6451,12 +6451,12 @@ describe("ReactElementValidator", function()
 		)
 	end)
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_e350f3b0a12989fb3761ed147851a5d9"] = _e350f3b0a12989fb3761ed147851a5d9
-local _e350f3b0a12989fb3761ed147851a5d9 = nil -- DEALLOCATE PLS :pray:
+S.Children._e350f3b0a12989fb3761ed147851a5d9=ac
+local ad
 
-local _5761ed950c400f23b8813ba9385d30d2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5761ed950c400f23b8813ba9385d30d2.Name = "ReactProfiler-internal.spec"
-_5761ed950c400f23b8813ba9385d30d2.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react/src/__tests__/ReactProfiler-test.internal.js
+local ae={ClassName="ModuleScript",Children={},Properties={}}
+ae.Name="ReactProfiler-internal.spec"
+ae.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react/src/__tests__/ReactProfiler-test.internal.js
 local React
 local ReactFeatureFlags
 local ReactNoop
@@ -7601,12 +7601,12 @@ describe("Profiler", function()
 		end)
 	end
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_5761ed950c400f23b8813ba9385d30d2"] = _5761ed950c400f23b8813ba9385d30d2
-local _5761ed950c400f23b8813ba9385d30d2 = nil -- DEALLOCATE PLS :pray:
+S.Children._5761ed950c400f23b8813ba9385d30d2=ae
+local af
 
-local _e717827804d79be1150c8719d9caa462 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e717827804d79be1150c8719d9caa462.Name = "ReactProfilerDevToolsIntegration-internal.spec"
-_e717827804d79be1150c8719d9caa462.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react/src/__tests__/ReactProfilerDevToolsIntegration-test.internal.js
+local ag={ClassName="ModuleScript",Children={},Properties={}}
+ag.Name="ReactProfilerDevToolsIntegration-internal.spec"
+ag.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react/src/__tests__/ReactProfilerDevToolsIntegration-test.internal.js
 local Packages = script.Parent.Parent.Parent
 local React
 local Scheduler
@@ -7850,12 +7850,12 @@ describe("ReactProfiler DevTools integration", function()
 		jestExpect(root).toMatchRenderedOutput("B")
 	end)
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_e717827804d79be1150c8719d9caa462"] = _e717827804d79be1150c8719d9caa462
-local _e717827804d79be1150c8719d9caa462 = nil -- DEALLOCATE PLS :pray:
+S.Children._e717827804d79be1150c8719d9caa462=ag
+local ah
 
-local _d62cfde03d0bf78c13658ea60dab8deb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d62cfde03d0bf78c13658ea60dab8deb.Name = "ReactStrictMode.spec"
-_d62cfde03d0bf78c13658ea60dab8deb.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react/src/__tests__/ReactStrictMode-test.js
+local ai={ClassName="ModuleScript",Children={},Properties={}}
+ai.Name="ReactStrictMode.spec"
+ai.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react/src/__tests__/ReactStrictMode-test.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
 --  * This source code is licensed under the MIT license found in the
@@ -8828,12 +8828,12 @@ describe("context legacy", function()
 		--     ReactNoop.render(React.createElement(Root))
 	end)
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_d62cfde03d0bf78c13658ea60dab8deb"] = _d62cfde03d0bf78c13658ea60dab8deb
-local _d62cfde03d0bf78c13658ea60dab8deb = nil -- DEALLOCATE PLS :pray:
+S.Children._d62cfde03d0bf78c13658ea60dab8deb=ai
+local aj
 
-local _49d9995f30e7663759fb4cb7ba0d54ef = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_49d9995f30e7663759fb4cb7ba0d54ef.Name = "ReactUpdates.spec"
-_49d9995f30e7663759fb4cb7ba0d54ef.Properties.Source = [[ --!strict
+local ak={ClassName="ModuleScript",Children={},Properties={}}
+ak.Name="ReactUpdates.spec"
+ak.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-dom/src/__tests__/ReactUpdates-test.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -10532,12 +10532,12 @@ describe("ReactUpdates", function()
 		-- ROBLOX deviation END
 	end)
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_49d9995f30e7663759fb4cb7ba0d54ef"] = _49d9995f30e7663759fb4cb7ba0d54ef
-local _49d9995f30e7663759fb4cb7ba0d54ef = nil -- DEALLOCATE PLS :pray:
+S.Children._49d9995f30e7663759fb4cb7ba0d54ef=ak
+local al
 
-local _cfb6be7306770fee4ef2589ab8c6a040 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_cfb6be7306770fee4ef2589ab8c6a040.Name = "SetStateInConstructor.roblox.spec"
-_cfb6be7306770fee4ef2589ab8c6a040.Properties.Source = [[ -- ROBLOX: tests deviant logic for Roblox react which permits use of setState() in component constructor
+local am={ClassName="ModuleScript",Children={},Properties={}}
+am.Name="SetStateInConstructor.roblox.spec"
+am.Properties.Source=[[ -- ROBLOX: tests deviant logic for Roblox react which permits use of setState() in component constructor
 
 local Packages = script.Parent.Parent.Parent
 local React, Shared, ReactNoop
@@ -10961,12 +10961,12 @@ describe("setState-specific behavior", function()
 		)
 	end)
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_cfb6be7306770fee4ef2589ab8c6a040"] = _cfb6be7306770fee4ef2589ab8c6a040
-local _cfb6be7306770fee4ef2589ab8c6a040 = nil -- DEALLOCATE PLS :pray:
+S.Children._cfb6be7306770fee4ef2589ab8c6a040=am
+local an
 
-local _a8ab0d030f7094263dfb9de22468f57e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a8ab0d030f7094263dfb9de22468f57e.Name = "createSignal.spec"
-_a8ab0d030f7094263dfb9de22468f57e.Properties.Source = [[ local createSignal = require(script.Parent.Parent["createSignal.roblox"])
+local ao={ClassName="ModuleScript",Children={},Properties={}}
+ao.Name="createSignal.spec"
+ao.Properties.Source=[[ local createSignal = require(script.Parent.Parent["createSignal.roblox"])
 
 local Packages = script.Parent.Parent.Parent
 local JestGlobals = require(Packages.Dev.JestGlobals)
@@ -11067,12 +11067,12 @@ it("should stop firing a connection if disconnected mid-fire", function()
 
 	jestExpect(#spyA.mock.calls + #spyB.mock.calls).toBe(1)
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_a8ab0d030f7094263dfb9de22468f57e"] = _a8ab0d030f7094263dfb9de22468f57e
-local _a8ab0d030f7094263dfb9de22468f57e = nil -- DEALLOCATE PLS :pray:
+S.Children._a8ab0d030f7094263dfb9de22468f57e=ao
+local ap
 
-local _27d09cfe4cfd402915d04e16751f4dd1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_27d09cfe4cfd402915d04e16751f4dd1.Name = "forwardRef-internal.spec"
-_27d09cfe4cfd402915d04e16751f4dd1.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react/src/__tests__/forwardRef-test.internal.js
+local aq={ClassName="ModuleScript",Children={},Properties={}}
+aq.Name="forwardRef-internal.spec"
+aq.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react/src/__tests__/forwardRef-test.internal.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -11352,12 +11352,12 @@ it("should not re-run the render callback on a deep setState", function()
 	inst:setState({})
 	jestExpect(Scheduler).toFlushAndYield({ "Inner" })
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_27d09cfe4cfd402915d04e16751f4dd1"] = _27d09cfe4cfd402915d04e16751f4dd1
-local _27d09cfe4cfd402915d04e16751f4dd1 = nil -- DEALLOCATE PLS :pray:
+S.Children._27d09cfe4cfd402915d04e16751f4dd1=aq
+local ar
 
-local _e1812e2293920e75ea5a0b320779993d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e1812e2293920e75ea5a0b320779993d.Name = "forwardRef.spec"
-_e1812e2293920e75ea5a0b320779993d.Properties.Source = [[ --\[\[*
+local as={ClassName="ModuleScript",Children={},Properties={}}
+as.Name="forwardRef.spec"
+as.Properties.Source=[[ --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -11933,12 +11933,12 @@ describe("forwardRef", function()
 		jestExpect(MyComponent.SomeEnum.ValueB).toBe(2)
 	end)
 end) ]]
-_66527c145cd3e5ce1fe079f192ac81b8.Children["_e1812e2293920e75ea5a0b320779993d"] = _e1812e2293920e75ea5a0b320779993d
-local _e1812e2293920e75ea5a0b320779993d = nil -- DEALLOCATE PLS :pray:
+S.Children._e1812e2293920e75ea5a0b320779993d=as
+local at
 
-local _2b3001d9191f9a788c1162942516a1f7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2b3001d9191f9a788c1162942516a1f7.Name = "createSignal.roblox"
-_2b3001d9191f9a788c1162942516a1f7.Properties.Source = [[ --!strict
+local au={ClassName="ModuleScript",Children={},Properties={}}
+au.Name="createSignal.roblox"
+au.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/Roblox/roact/blob/master/src/createSignal.lua
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
@@ -12029,12 +12029,12 @@ local function createSignal(): ((Function) -> (() -> ()), (...any) -> ())
 end
 
 return createSignal ]]
-_1d44bd677e02369ce251fcee385f8672.Children["_2b3001d9191f9a788c1162942516a1f7"] = _2b3001d9191f9a788c1162942516a1f7
-local _2b3001d9191f9a788c1162942516a1f7 = nil -- DEALLOCATE PLS :pray:
+m.Children._2b3001d9191f9a788c1162942516a1f7=au
+local av
 
-local _aea7b946f147338237e0e9e1684f2310 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_aea7b946f147338237e0e9e1684f2310.Name = "ReactCache"
-_aea7b946f147338237e0e9e1684f2310.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-cache/index.js
+local aw={ClassName="ModuleScript",Children={},Properties={}}
+aw.Name="ReactCache"
+aw.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-cache/index.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -12053,11 +12053,11 @@ _aea7b946f147338237e0e9e1684f2310.Properties.Source = [[ -- ROBLOX upstream: htt
 -- return exports
 return require(script.ReactCacheOld)
 -- ROBLOX deviation END ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_aea7b946f147338237e0e9e1684f2310"] = _aea7b946f147338237e0e9e1684f2310
-local _aea7b946f147338237e0e9e1684f2310 = nil -- DEALLOCATE PLS :pray:
-local _88b5ba91171ea114f810ce4b2fbd5c63 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_88b5ba91171ea114f810ce4b2fbd5c63.Name = "LRU"
-_88b5ba91171ea114f810ce4b2fbd5c63.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-cache/src/LRU.js
+c.Children._aea7b946f147338237e0e9e1684f2310=aw
+local ax
+local ay={ClassName="ModuleScript",Children={},Properties={}}
+ay.Name="LRU"
+ay.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-cache/src/LRU.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -12243,12 +12243,12 @@ local function createLRU<T>(limit: number)
 end
 exports.createLRU = createLRU
 return exports ]]
-_aea7b946f147338237e0e9e1684f2310.Children["_88b5ba91171ea114f810ce4b2fbd5c63"] = _88b5ba91171ea114f810ce4b2fbd5c63
-local _88b5ba91171ea114f810ce4b2fbd5c63 = nil -- DEALLOCATE PLS :pray:
+ax.Children._88b5ba91171ea114f810ce4b2fbd5c63=ay
+local az
 
-local _7889371d09e9908d89037908d18f2cfb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7889371d09e9908d89037908d18f2cfb.Name = "ReactCacheOld"
-_7889371d09e9908d89037908d18f2cfb.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-cache/src/ReactCacheOld.js
+local aA={ClassName="ModuleScript",Children={},Properties={}}
+aA.Name="ReactCacheOld"
+aA.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-cache/src/ReactCacheOld.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -12580,16 +12580,16 @@ local function unstable_setGlobalCacheLimit(limit: number)
 end
 exports.unstable_setGlobalCacheLimit = unstable_setGlobalCacheLimit
 return exports ]]
-_aea7b946f147338237e0e9e1684f2310.Children["_7889371d09e9908d89037908d18f2cfb"] = _7889371d09e9908d89037908d18f2cfb
-local _7889371d09e9908d89037908d18f2cfb = nil -- DEALLOCATE PLS :pray:
+ax.Children._7889371d09e9908d89037908d18f2cfb=aA
+local aB
 
-local _fd041b8407b893d6649c901e39d93079 = { ClassName = "Folder", Children = {}, Properties = {} }
-_fd041b8407b893d6649c901e39d93079.Name = "__tests__"
-_aea7b946f147338237e0e9e1684f2310.Children["_fd041b8407b893d6649c901e39d93079"] = _fd041b8407b893d6649c901e39d93079
-local _fd041b8407b893d6649c901e39d93079 = nil -- DEALLOCATE PLS :pray:
-local _16719c0d1abadf88f91ca7970a8da1e9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_16719c0d1abadf88f91ca7970a8da1e9.Name = "ReactCacheOld-internal.spec"
-_16719c0d1abadf88f91ca7970a8da1e9.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-cache/src/__tests__/ReactCacheOld-test.internal.js
+local aC={ClassName="Folder",Children={},Properties={}}
+aC.Name="__tests__"
+ax.Children._fd041b8407b893d6649c901e39d93079=aC
+local aD
+local aE={ClassName="ModuleScript",Children={},Properties={}}
+aE.Name="ReactCacheOld-internal.spec"
+aE.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-cache/src/__tests__/ReactCacheOld-test.internal.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -13227,12 +13227,12 @@ describe("ReactCache", function()
 		)
 	end)
 end) ]]
-_fd041b8407b893d6649c901e39d93079.Children["_16719c0d1abadf88f91ca7970a8da1e9"] = _16719c0d1abadf88f91ca7970a8da1e9
-local _16719c0d1abadf88f91ca7970a8da1e9 = nil -- DEALLOCATE PLS :pray:
+aD.Children._16719c0d1abadf88f91ca7970a8da1e9=aE
+local aF
 
-local _0b95e1f34c1b1f333aea7895d0ad0928 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0b95e1f34c1b1f333aea7895d0ad0928.Name = "ReactDebugTools"
-_0b95e1f34c1b1f333aea7895d0ad0928.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/index.js
+local aG={ClassName="ModuleScript",Children={},Properties={}}
+aG.Name="ReactDebugTools"
+aG.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/index.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -13251,11 +13251,11 @@ export type HooksNode = reactDebugToolsModule.HooksNode
 export type HooksTree = reactDebugToolsModule.HooksTree
 return reactDebugToolsModule
 -- ROBLOX deviation END ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_0b95e1f34c1b1f333aea7895d0ad0928"] = _0b95e1f34c1b1f333aea7895d0ad0928
-local _0b95e1f34c1b1f333aea7895d0ad0928 = nil -- DEALLOCATE PLS :pray:
-local _bc316df264f5b2f4fd362ad463f82379 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_bc316df264f5b2f4fd362ad463f82379.Name = "ReactDebugHooks"
-_bc316df264f5b2f4fd362ad463f82379.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/src/ReactDebugHooks.js
+c.Children._0b95e1f34c1b1f333aea7895d0ad0928=aG
+local aH
+local aI={ClassName="ModuleScript",Children={},Properties={}}
+aI.Name="ReactDebugHooks"
+aI.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/src/ReactDebugHooks.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -14506,12 +14506,12 @@ local function inspectHooksOfFiber(fiber: Fiber, currentDispatcher: CurrentDispa
 end
 exports.inspectHooksOfFiber = inspectHooksOfFiber
 return exports ]]
-_0b95e1f34c1b1f333aea7895d0ad0928.Children["_bc316df264f5b2f4fd362ad463f82379"] = _bc316df264f5b2f4fd362ad463f82379
-local _bc316df264f5b2f4fd362ad463f82379 = nil -- DEALLOCATE PLS :pray:
+aH.Children._bc316df264f5b2f4fd362ad463f82379=aI
+local aJ
 
-local _663bfd87e734063a7a8e837734658e53 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_663bfd87e734063a7a8e837734658e53.Name = "ReactDebugTools"
-_663bfd87e734063a7a8e837734658e53.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/src/ReactDebugTools.js
+local aK={ClassName="ModuleScript",Children={},Properties={}}
+aK.Name="ReactDebugTools"
+aK.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/src/ReactDebugTools.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -14531,16 +14531,16 @@ local inspectHooksOfFiber = reactDebugHooksModule.inspectHooksOfFiber
 exports.inspectHooks = inspectHooks
 exports.inspectHooksOfFiber = inspectHooksOfFiber
 return exports ]]
-_0b95e1f34c1b1f333aea7895d0ad0928.Children["_663bfd87e734063a7a8e837734658e53"] = _663bfd87e734063a7a8e837734658e53
-local _663bfd87e734063a7a8e837734658e53 = nil -- DEALLOCATE PLS :pray:
+aH.Children._663bfd87e734063a7a8e837734658e53=aK
+local aL
 
-local _743fe0f10608f88e43c62d3b0bcf42fa = { ClassName = "Folder", Children = {}, Properties = {} }
-_743fe0f10608f88e43c62d3b0bcf42fa.Name = "__tests__"
-_0b95e1f34c1b1f333aea7895d0ad0928.Children["_743fe0f10608f88e43c62d3b0bcf42fa"] = _743fe0f10608f88e43c62d3b0bcf42fa
-local _743fe0f10608f88e43c62d3b0bcf42fa = nil -- DEALLOCATE PLS :pray:
-local _a2a05fcce9e0b469878d90b3fe67bb05 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a2a05fcce9e0b469878d90b3fe67bb05.Name = "ReactDevToolsHooksIntegration.spec"
-_a2a05fcce9e0b469878d90b3fe67bb05.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/src/__tests__/ReactDevToolsHooksIntegration-test.js
+local aM={ClassName="Folder",Children={},Properties={}}
+aM.Name="__tests__"
+aH.Children._743fe0f10608f88e43c62d3b0bcf42fa=aM
+local aN
+local aO={ClassName="ModuleScript",Children={},Properties={}}
+aO.Name="ReactDevToolsHooksIntegration.spec"
+aO.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/src/__tests__/ReactDevToolsHooksIntegration-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -15182,12 +15182,12 @@ describe("React hooks DevTools integration", function()
 		-- ROBLOX deviation END
 	end)
 end) ]]
-_743fe0f10608f88e43c62d3b0bcf42fa.Children["_a2a05fcce9e0b469878d90b3fe67bb05"] = _a2a05fcce9e0b469878d90b3fe67bb05
-local _a2a05fcce9e0b469878d90b3fe67bb05 = nil -- DEALLOCATE PLS :pray:
+aN.Children._a2a05fcce9e0b469878d90b3fe67bb05=aO
+local aP
 
-local _e3df571efe41ce7eba2fe91f7b869fdd = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e3df571efe41ce7eba2fe91f7b869fdd.Name = "ReactHooksInspection.spec"
-_e3df571efe41ce7eba2fe91f7b869fdd.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/src/__tests__/ReactHooksInspection-test.js
+local aQ={ClassName="ModuleScript",Children={},Properties={}}
+aQ.Name="ReactHooksInspection.spec"
+aQ.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/src/__tests__/ReactHooksInspection-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -15683,12 +15683,12 @@ describe("ReactHooksInspection", function()
 		end)
 	end)
 end) ]]
-_743fe0f10608f88e43c62d3b0bcf42fa.Children["_e3df571efe41ce7eba2fe91f7b869fdd"] = _e3df571efe41ce7eba2fe91f7b869fdd
-local _e3df571efe41ce7eba2fe91f7b869fdd = nil -- DEALLOCATE PLS :pray:
+aN.Children._e3df571efe41ce7eba2fe91f7b869fdd=aQ
+local aR
 
-local _441973d2732ac0e6936cdea45d34975e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_441973d2732ac0e6936cdea45d34975e.Name = "ReactHooksInspectionIntegration.spec"
-_441973d2732ac0e6936cdea45d34975e.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/src/__tests__/ReactHooksInspectionIntegration-test.js
+local aS={ClassName="ModuleScript",Children={},Properties={}}
+aS.Name="ReactHooksInspectionIntegration.spec"
+aS.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-debug-tools/src/__tests__/ReactHooksInspectionIntegration-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -16989,12 +16989,12 @@ describe("ReactHooksInspectionIntegration", function()
 	-- end
 	-- ROBLOX deviation END
 end) ]]
-_743fe0f10608f88e43c62d3b0bcf42fa.Children["_441973d2732ac0e6936cdea45d34975e"] = _441973d2732ac0e6936cdea45d34975e
-local _441973d2732ac0e6936cdea45d34975e = nil -- DEALLOCATE PLS :pray:
+aN.Children._441973d2732ac0e6936cdea45d34975e=aS
+local aT
 
-local _91010ef8ceac796cf03fdd01c35f367b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_91010ef8ceac796cf03fdd01c35f367b.Name = "ReactDevtoolsExtensions"
-_91010ef8ceac796cf03fdd01c35f367b.Properties.Source = [[ -- ROBLOX note: no upstream
+local aU={ClassName="ModuleScript",Children={},Properties={}}
+aU.Name="ReactDevtoolsExtensions"
+aU.Properties.Source=[[ -- ROBLOX note: no upstream
 -- ROBLOX note: The setup function adds the glue required for DeveloperTools to initialize the Roact devtools correctly
 local Packages = script.Parent
 
@@ -17045,15 +17045,15 @@ return {
 		}
 	end,
 } ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_91010ef8ceac796cf03fdd01c35f367b"] = _91010ef8ceac796cf03fdd01c35f367b
-local _91010ef8ceac796cf03fdd01c35f367b = nil -- DEALLOCATE PLS :pray:
-local _f76c244b5afa8403c974e27e8bd5dd1d = { ClassName = "Folder", Children = {}, Properties = {} }
-_f76c244b5afa8403c974e27e8bd5dd1d.Name = "__tests__"
-_91010ef8ceac796cf03fdd01c35f367b.Children["_f76c244b5afa8403c974e27e8bd5dd1d"] = _f76c244b5afa8403c974e27e8bd5dd1d
-local _f76c244b5afa8403c974e27e8bd5dd1d = nil -- DEALLOCATE PLS :pray:
-local _b28d9f71f9c1dfebde0580e61240a07d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b28d9f71f9c1dfebde0580e61240a07d.Name = "devtools-integration.roblox.spec"
-_b28d9f71f9c1dfebde0580e61240a07d.Properties.Source = [[ --\[\[
+c.Children._91010ef8ceac796cf03fdd01c35f367b=aU
+local aV
+local aW={ClassName="Folder",Children={},Properties={}}
+aW.Name="__tests__"
+aV.Children._f76c244b5afa8403c974e27e8bd5dd1d=aW
+local aX
+local aY={ClassName="ModuleScript",Children={},Properties={}}
+aY.Name="devtools-integration.roblox.spec"
+aY.Properties.Source=[[ --\[\[
 	This test is currently run manually to verify the DeveloperTools library integrates into roact-alignment
 \]\]
 type Function = (...any) -> any?
@@ -17174,12 +17174,12 @@ describe("Devtools Integration", function()
 		end
 	)
 end) ]]
-_f76c244b5afa8403c974e27e8bd5dd1d.Children["_b28d9f71f9c1dfebde0580e61240a07d"] = _b28d9f71f9c1dfebde0580e61240a07d
-local _b28d9f71f9c1dfebde0580e61240a07d = nil -- DEALLOCATE PLS :pray:
+aX.Children._b28d9f71f9c1dfebde0580e61240a07d=aY
+local aZ
 
-local _1a325d52ab198e2eb20bc185c5ad455d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1a325d52ab198e2eb20bc185c5ad455d.Name = "backend"
-_1a325d52ab198e2eb20bc185c5ad455d.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-devtools-extensions/src/backend.js
+local a_={ClassName="ModuleScript",Children={},Properties={}}
+a_.Name="backend"
+a_.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-devtools-extensions/src/backend.js
 local Packages = script.Parent.Parent
 local LuauPolyfill = require(Packages.LuauPolyfill)
 -- ROBLOX deviation START: not needed
@@ -17326,12 +17326,12 @@ return {
 	setup = setup,
 }
 -- ROBLOX deviation END ]]
-_91010ef8ceac796cf03fdd01c35f367b.Children["_1a325d52ab198e2eb20bc185c5ad455d"] = _1a325d52ab198e2eb20bc185c5ad455d
-local _1a325d52ab198e2eb20bc185c5ad455d = nil -- DEALLOCATE PLS :pray:
+aV.Children._1a325d52ab198e2eb20bc185c5ad455d=a_
+local a0
 
-local _c145c1dc3e1fb896862276ce0077c850 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c145c1dc3e1fb896862276ce0077c850.Name = "ReactDevtoolsShared"
-_c145c1dc3e1fb896862276ce0077c850.Properties.Source = [[ -- ROBLOX note: upstream doesn't have a root index.js, we may want to contribute a proper contract upstream
+local a1={ClassName="ModuleScript",Children={},Properties={}}
+a1.Name="ReactDevtoolsShared"
+a1.Properties.Source=[[ -- ROBLOX note: upstream doesn't have a root index.js, we may want to contribute a proper contract upstream
 return {
 	backend = require(script.backend),
 	bridge = require(script.bridge),
@@ -17340,19 +17340,19 @@ return {
 	hook = require(script.hook),
 	utils = require(script.utils),
 } ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_c145c1dc3e1fb896862276ce0077c850"] = _c145c1dc3e1fb896862276ce0077c850
-local _c145c1dc3e1fb896862276ce0077c850 = nil -- DEALLOCATE PLS :pray:
-local _f631d984ea6b3b025cff9584d2ddea37 = { ClassName = "Folder", Children = {}, Properties = {} }
-_f631d984ea6b3b025cff9584d2ddea37.Name = "__tests__"
-_c145c1dc3e1fb896862276ce0077c850.Children["_f631d984ea6b3b025cff9584d2ddea37"] = _f631d984ea6b3b025cff9584d2ddea37
-local _f631d984ea6b3b025cff9584d2ddea37 = nil -- DEALLOCATE PLS :pray:
-local _dc7d2a9427f88aa78e20c8ed3f9b97ad = { ClassName = "Folder", Children = {}, Properties = {} }
-_dc7d2a9427f88aa78e20c8ed3f9b97ad.Name = "__snapshots__"
-_f631d984ea6b3b025cff9584d2ddea37.Children["_dc7d2a9427f88aa78e20c8ed3f9b97ad"] = _dc7d2a9427f88aa78e20c8ed3f9b97ad
-local _dc7d2a9427f88aa78e20c8ed3f9b97ad = nil -- DEALLOCATE PLS :pray:
-local _d68e0db970028122410762c11e44db34 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d68e0db970028122410762c11e44db34.Name = "storeComponentFilters.spec.snap"
-_d68e0db970028122410762c11e44db34.Properties.Source = [[ -- Jest Roblox Snapshot v1, http://roblox.github.io/jest-roblox/snapshot-testing
+c.Children._c145c1dc3e1fb896862276ce0077c850=a1
+local a2
+local a3={ClassName="Folder",Children={},Properties={}}
+a3.Name="__tests__"
+a2.Children._f631d984ea6b3b025cff9584d2ddea37=a3
+local a4
+local a5={ClassName="Folder",Children={},Properties={}}
+a5.Name="__snapshots__"
+a4.Children._dc7d2a9427f88aa78e20c8ed3f9b97ad=a5
+local a6
+local a7={ClassName="ModuleScript",Children={},Properties={}}
+a7.Name="storeComponentFilters.spec.snap"
+a7.Properties.Source=[[ -- Jest Roblox Snapshot v1, http://roblox.github.io/jest-roblox/snapshot-testing
 local exports = {}
 exports[ [=[Store component filters should filter HOCs: 1: mount 1]=] ] = [=[
 
@@ -17506,12 +17506,12 @@ exports[ [=[Store component filters should support filtering by element type: 5:
 ]=]
 
 return exports ]]
-_dc7d2a9427f88aa78e20c8ed3f9b97ad.Children["_d68e0db970028122410762c11e44db34"] = _d68e0db970028122410762c11e44db34
-local _d68e0db970028122410762c11e44db34 = nil -- DEALLOCATE PLS :pray:
+a6.Children._d68e0db970028122410762c11e44db34=a7
+local a8
 
-local _6687124b565a1e039e58a3c44674d49a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6687124b565a1e039e58a3c44674d49a.Name = "bridge.spec"
-_6687124b565a1e039e58a3c44674d49a.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/bridge-test.js
+local a9={ClassName="ModuleScript",Children={},Properties={}}
+a9.Name="bridge.spec"
+a9.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/bridge-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -17573,12 +17573,12 @@ describe("bridge", function()
 		jestExpect(wall.send).never.toHaveBeenCalled()
 	end)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_6687124b565a1e039e58a3c44674d49a"] = _6687124b565a1e039e58a3c44674d49a
-local _6687124b565a1e039e58a3c44674d49a = nil -- DEALLOCATE PLS :pray:
+a4.Children._6687124b565a1e039e58a3c44674d49a=a9
+local ba
 
-local _ea89b31aa60bb99c77b374e78f8e346b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ea89b31aa60bb99c77b374e78f8e346b.Name = "console.spec"
-_ea89b31aa60bb99c77b374e78f8e346b.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/console-test.js
+local bb={ClassName="ModuleScript",Children={},Properties={}}
+bb.Name="console.spec"
+bb.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/console-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -18085,12 +18085,12 @@ describe("console", function()
 		)
 	end)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_ea89b31aa60bb99c77b374e78f8e346b"] = _ea89b31aa60bb99c77b374e78f8e346b
-local _ea89b31aa60bb99c77b374e78f8e346b = nil -- DEALLOCATE PLS :pray:
+a4.Children._ea89b31aa60bb99c77b374e78f8e346b=bb
+local bc
 
-local _acad89bb12cf0037458a3a23f10a8484 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_acad89bb12cf0037458a3a23f10a8484.Name = "events.spec"
-_acad89bb12cf0037458a3a23f10a8484.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/events-test.js
+local bd={ClassName="ModuleScript",Children={},Properties={}}
+bd.Name="events.spec"
+bd.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/events-test.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -18216,12 +18216,12 @@ describe("events", function()
 		end
 	)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_acad89bb12cf0037458a3a23f10a8484"] = _acad89bb12cf0037458a3a23f10a8484
-local _acad89bb12cf0037458a3a23f10a8484 = nil -- DEALLOCATE PLS :pray:
+a4.Children._acad89bb12cf0037458a3a23f10a8484=bd
+local be
 
-local _ed09a9104cf338a339b4b1b33c501c12 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ed09a9104cf338a339b4b1b33c501c12.Name = "profilerStore.spec"
-_ed09a9104cf338a339b4b1b33c501c12.Properties.Source = [[ --!strict
+local bf={ClassName="ModuleScript",Children={},Properties={}}
+bf.Name="profilerStore.spec"
+bf.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/profilerStore-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -18395,12 +18395,12 @@ xdescribe("ProfilerStore", function()
 		end)
 		--\]\]
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_ed09a9104cf338a339b4b1b33c501c12"] = _ed09a9104cf338a339b4b1b33c501c12
-local _ed09a9104cf338a339b4b1b33c501c12 = nil -- DEALLOCATE PLS :pray:
+a4.Children._ed09a9104cf338a339b4b1b33c501c12=bf
+local bg
 
-local _71ee1171e8962a8460d190eef51b6523 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_71ee1171e8962a8460d190eef51b6523.Name = "profilingCache.spec"
-_71ee1171e8962a8460d190eef51b6523.Properties.Source = [[ --!strict
+local bh={ClassName="ModuleScript",Children={},Properties={}}
+bh.Name="profilingCache.spec"
+bh.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/profilingCache-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -19338,12 +19338,12 @@ xdescribe("ProfilingCache", function()
 		jestExpect(container.textContent).toBe("About")
 	end)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_71ee1171e8962a8460d190eef51b6523"] = _71ee1171e8962a8460d190eef51b6523
-local _71ee1171e8962a8460d190eef51b6523 = nil -- DEALLOCATE PLS :pray:
+a4.Children._71ee1171e8962a8460d190eef51b6523=bh
+local bi
 
-local _9dde680e77332b384300416e6373ae9a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9dde680e77332b384300416e6373ae9a.Name = "profilingCharts.spec"
-_9dde680e77332b384300416e6373ae9a.Properties.Source = [[ --!strict
+local bj={ClassName="ModuleScript",Children={},Properties={}}
+bj.Name="profilingCharts.spec"
+bj.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/profilingCharts-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -19631,12 +19631,12 @@ xdescribe("profiling charts", function()
 		end)
 	end)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_9dde680e77332b384300416e6373ae9a"] = _9dde680e77332b384300416e6373ae9a
-local _9dde680e77332b384300416e6373ae9a = nil -- DEALLOCATE PLS :pray:
+a4.Children._9dde680e77332b384300416e6373ae9a=bj
+local bk
 
-local _0f675261aae583c162d55699fcfc4d85 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0f675261aae583c162d55699fcfc4d85.Name = "profilingCommitTreeBuilder.spec"
-_0f675261aae583c162d55699fcfc4d85.Properties.Source = [[ --!nonstrict
+local bl={ClassName="ModuleScript",Children={},Properties={}}
+bl.Name="profilingCommitTreeBuilder.spec"
+bl.Properties.Source=[[ --!nonstrict
 -- ROBLOX FIXME: Type '({| count: number |}) -> {ReactElement<{ key: number }, a>}' could not be converted into '((React_ElementProps<any>?, any) -> (Array<(Array<*CYCLE*> | React_Element<any> | boolean | number | string | t1)?> | React_Element<any> | boolean | number | string | t1)?) | LazyComponent<a, React_ElementProps<any>?> | ReactContext<any> | ReactProviderType<any> | React_ComponentType<React_ElementProps<any>?> | string where t1 = {| [string]: (boolean | number | string | t1 | {(*CYCLE* | boolean | number | string | t1 | {| key: (number | string)?, props: {| __source: {| fileName: string, lineNumber: number |}?, children: any?, key: (number | string)?, ref: (((any?) -> ()) | {| current: any? |})? |}?, ref: any, type: any |})?}... *TRUNCATED*'; none of the union options are compatible
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/profilingCOmmitTreeBuilder-test.js
 --\[\[*
@@ -19735,12 +19735,12 @@ xdescribe("commit tree", function()
 		end
 	end)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_0f675261aae583c162d55699fcfc4d85"] = _0f675261aae583c162d55699fcfc4d85
-local _0f675261aae583c162d55699fcfc4d85 = nil -- DEALLOCATE PLS :pray:
+a4.Children._0f675261aae583c162d55699fcfc4d85=bl
+local bm
 
-local _b2a7fc2c51ed0fc3b38b0e48effd74fc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b2a7fc2c51ed0fc3b38b0e48effd74fc.Name = "profilingUtils.spec"
-_b2a7fc2c51ed0fc3b38b0e48effd74fc.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/profilingUtils-test.js
+local bn={ClassName="ModuleScript",Children={},Properties={}}
+bn.Name="profilingUtils.spec"
+bn.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/profilingUtils-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -19771,12 +19771,12 @@ describe("profiling utils", function()
 		end).toThrow('Unsupported profiler export version "0"')
 	end)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_b2a7fc2c51ed0fc3b38b0e48effd74fc"] = _b2a7fc2c51ed0fc3b38b0e48effd74fc
-local _b2a7fc2c51ed0fc3b38b0e48effd74fc = nil -- DEALLOCATE PLS :pray:
+a4.Children._b2a7fc2c51ed0fc3b38b0e48effd74fc=bn
+local bo
 
-local _b379964cdec039269cdecfc6381383aa = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b379964cdec039269cdecfc6381383aa.Name = "setupTests"
-_b379964cdec039269cdecfc6381383aa.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/setupTests.js
+local bp={ClassName="ModuleScript",Children={},Properties={}}
+bp.Name="setupTests"
+bp.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/setupTests.js
 --\[\[**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -19872,12 +19872,12 @@ afterEach(function()
 	-- so that we don't disconnect the ReactCurrentDispatcher ref.
 	jest.resetModules()
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_b379964cdec039269cdecfc6381383aa"] = _b379964cdec039269cdecfc6381383aa
-local _b379964cdec039269cdecfc6381383aa = nil -- DEALLOCATE PLS :pray:
+a4.Children._b379964cdec039269cdecfc6381383aa=bp
+local bq
 
-local _367d842cb43f73512381b772fc9a0001 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_367d842cb43f73512381b772fc9a0001.Name = "store.spec"
-_367d842cb43f73512381b772fc9a0001.Properties.Source = [[ --!nonstrict
+local br={ClassName="ModuleScript",Children={},Properties={}}
+br.Name="store.spec"
+br.Properties.Source=[[ --!nonstrict
 -- ROBLOX FIXME: TypeError: Type '({+ count: number +}) -> Array<ReactElement<{ key: number }, a>>' could not be converted into '((React_ElementProps<any>?, any) -> (Array<(Array<*CYCLE*> | React_Element<any> | boolean | number | string | t1)?> | React_Element<any> | boolean | number | string | t1)?) | LazyComponent<a, React_ElementProps<any>?> | ReactContext<any> | ReactProviderType<any> | React_ComponentType<React_ElementProps<any>?> | string where t1 = {| [string]: (boolean | number | string | t1 | {(*CYCLE* | boolean | number | string | t1 | {| key: (number | string)?, props: {| __source: {| fileName: string, lineNumber: number |}?, children: any?, key: (number | string)?, ref: (((any?) -> ()) | {| current: any? |})? |}?, ref: any, type: any |})?}... *TRUNCATED*'; none of the union options are compatible
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/store-test.js
 --\[\[*
@@ -21489,12 +21489,12 @@ describe("Store", function()
       <Baz> [ForwardRef][withFoo][withBar\]\]==])
 	end)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_367d842cb43f73512381b772fc9a0001"] = _367d842cb43f73512381b772fc9a0001
-local _367d842cb43f73512381b772fc9a0001 = nil -- DEALLOCATE PLS :pray:
+a4.Children._367d842cb43f73512381b772fc9a0001=br
+local bs
 
-local _509c4cefba6f967c7294d81eb9463732 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_509c4cefba6f967c7294d81eb9463732.Name = "storeComponentFilters.spec"
-_509c4cefba6f967c7294d81eb9463732.Properties.Source = [[ --!strict
+local bt={ClassName="ModuleScript",Children={},Properties={}}
+bt.Name="storeComponentFilters.spec"
+bt.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/storeComponentFilters-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -21800,12 +21800,12 @@ describe("Store component filters", function()
 		end
 	)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_509c4cefba6f967c7294d81eb9463732"] = _509c4cefba6f967c7294d81eb9463732
-local _509c4cefba6f967c7294d81eb9463732 = nil -- DEALLOCATE PLS :pray:
+a4.Children._509c4cefba6f967c7294d81eb9463732=bt
+local bu
 
-local _585e517b20bf0dceec5ed027d6ed6742 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_585e517b20bf0dceec5ed027d6ed6742.Name = "storeOwners.spec"
-_585e517b20bf0dceec5ed027d6ed6742.Properties.Source = [[ --!strict
+local bv={ClassName="ModuleScript",Children={},Properties={}}
+bv.Name="storeOwners.spec"
+bv.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/storeOwners-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -22116,12 +22116,12 @@ describeIfDev("Store owners list", function()
 		)
 	end)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_585e517b20bf0dceec5ed027d6ed6742"] = _585e517b20bf0dceec5ed027d6ed6742
-local _585e517b20bf0dceec5ed027d6ed6742 = nil -- DEALLOCATE PLS :pray:
+a4.Children._585e517b20bf0dceec5ed027d6ed6742=bv
+local bw
 
-local _0212effe534455b8a00529dad55474c4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0212effe534455b8a00529dad55474c4.Name = "utils"
-_0212effe534455b8a00529dad55474c4.Properties.Source = [[ --!nonstrict
+local bx={ClassName="ModuleScript",Children={},Properties={}}
+bx.Name="utils"
+bx.Properties.Source=[[ --!nonstrict
 local HttpService = game:GetService("HttpService")
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/utils.js
 --\[\[*
@@ -22360,12 +22360,12 @@ exports.exportImportHelper = function(bridge: FrontendBridge, store: Store): ()
 end
 
 return exports ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_0212effe534455b8a00529dad55474c4"] = _0212effe534455b8a00529dad55474c4
-local _0212effe534455b8a00529dad55474c4 = nil -- DEALLOCATE PLS :pray:
+a4.Children._0212effe534455b8a00529dad55474c4=bx
+local by
 
-local _3110857fb15b605f6177aa5793728519 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3110857fb15b605f6177aa5793728519.Name = "utils.spec"
-_3110857fb15b605f6177aa5793728519.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/events-test.js
+local bz={ClassName="ModuleScript",Children={},Properties={}}
+bz.Name="utils.spec"
+bz.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/__tests__/events-test.js
 -- /*
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -22515,12 +22515,12 @@ describe("utils", function()
 		end)
 	end)
 end) ]]
-_f631d984ea6b3b025cff9584d2ddea37.Children["_3110857fb15b605f6177aa5793728519"] = _3110857fb15b605f6177aa5793728519
-local _3110857fb15b605f6177aa5793728519 = nil -- DEALLOCATE PLS :pray:
+a4.Children._3110857fb15b605f6177aa5793728519=bz
+local bA
 
-local _6d9c1a11ac02ae3fb25d3ab755472be7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6d9c1a11ac02ae3fb25d3ab755472be7.Name = "backend"
-_6d9c1a11ac02ae3fb25d3ab755472be7.Properties.Source = [[ --!strict
+local bB={ClassName="ModuleScript",Children={},Properties={}}
+bB.Name="backend"
+bB.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/index.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -22658,15 +22658,15 @@ return {
 		types = require(script.NativeStyleEditor.types),
 	},
 } ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_6d9c1a11ac02ae3fb25d3ab755472be7"] = _6d9c1a11ac02ae3fb25d3ab755472be7
-local _6d9c1a11ac02ae3fb25d3ab755472be7 = nil -- DEALLOCATE PLS :pray:
-local _604153e036ace5016a97426b4d994849 = { ClassName = "Folder", Children = {}, Properties = {} }
-_604153e036ace5016a97426b4d994849.Name = "NativeStyleEditor"
-_6d9c1a11ac02ae3fb25d3ab755472be7.Children["_604153e036ace5016a97426b4d994849"] = _604153e036ace5016a97426b4d994849
-local _604153e036ace5016a97426b4d994849 = nil -- DEALLOCATE PLS :pray:
-local _c9a50c59573ba32d2f4d21c9d6e73773 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c9a50c59573ba32d2f4d21c9d6e73773.Name = "types"
-_c9a50c59573ba32d2f4d21c9d6e73773.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/NativeStyleEditor/types.js
+a2.Children._6d9c1a11ac02ae3fb25d3ab755472be7=bB
+local bC
+local bD={ClassName="Folder",Children={},Properties={}}
+bD.Name="NativeStyleEditor"
+bC.Children._604153e036ace5016a97426b4d994849=bD
+local bE
+local bF={ClassName="ModuleScript",Children={},Properties={}}
+bF.Name="types"
+bF.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/NativeStyleEditor/types.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -22695,12 +22695,12 @@ export type Style = Object
 export type StyleAndLayout = { id: number, style: Style | nil, layout: Layout | nil }
 
 return {} ]]
-_604153e036ace5016a97426b4d994849.Children["_c9a50c59573ba32d2f4d21c9d6e73773"] = _c9a50c59573ba32d2f4d21c9d6e73773
-local _c9a50c59573ba32d2f4d21c9d6e73773 = nil -- DEALLOCATE PLS :pray:
+bE.Children._c9a50c59573ba32d2f4d21c9d6e73773=bF
+local bG
 
-local _108ce5bbb91436cb90ae459e5cfcc930 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_108ce5bbb91436cb90ae459e5cfcc930.Name = "ReactSymbols"
-_108ce5bbb91436cb90ae459e5cfcc930.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/ReactSymbols.js
+local bH={ClassName="ModuleScript",Children={},Properties={}}
+bH.Name="ReactSymbols"
+bH.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/ReactSymbols.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -22759,12 +22759,12 @@ exports.SUSPENSE_LIST_NUMBER = 0xead8
 exports.SUSPENSE_LIST_SYMBOL_STRING = "Symbol(react.suspense_list)"
 
 return exports ]]
-_6d9c1a11ac02ae3fb25d3ab755472be7.Children["_108ce5bbb91436cb90ae459e5cfcc930"] = _108ce5bbb91436cb90ae459e5cfcc930
-local _108ce5bbb91436cb90ae459e5cfcc930 = nil -- DEALLOCATE PLS :pray:
+bC.Children._108ce5bbb91436cb90ae459e5cfcc930=bH
+local bI
 
-local _857bd571625c556c8cd51c97441dca0c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_857bd571625c556c8cd51c97441dca0c.Name = "agent"
-_857bd571625c556c8cd51c97441dca0c.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/agent.js
+local bJ={ClassName="ModuleScript",Children={},Properties={}}
+bJ.Name="agent"
+bJ.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/agent.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -23617,12 +23617,12 @@ Agent._throttledPersistSelection = throttle(function(self, rendererID: number, i
 end, 1000)
 
 return Agent ]]
-_6d9c1a11ac02ae3fb25d3ab755472be7.Children["_857bd571625c556c8cd51c97441dca0c"] = _857bd571625c556c8cd51c97441dca0c
-local _857bd571625c556c8cd51c97441dca0c = nil -- DEALLOCATE PLS :pray:
+bC.Children._857bd571625c556c8cd51c97441dca0c=bJ
+local bK
 
-local _449464d528a4b375c119dbbc3b8a1f93 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_449464d528a4b375c119dbbc3b8a1f93.Name = "console"
-_449464d528a4b375c119dbbc3b8a1f93.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/console.js
+local bL={ClassName="ModuleScript",Children={},Properties={}}
+bL.Name="console"
+bL.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/console.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -23660,12 +23660,12 @@ end
 function exports.registerRenderer(_renderer: ReactRenderer): () end
 
 return exports ]]
-_6d9c1a11ac02ae3fb25d3ab755472be7.Children["_449464d528a4b375c119dbbc3b8a1f93"] = _449464d528a4b375c119dbbc3b8a1f93
-local _449464d528a4b375c119dbbc3b8a1f93 = nil -- DEALLOCATE PLS :pray:
+bC.Children._449464d528a4b375c119dbbc3b8a1f93=bL
+local bM
 
-local _a8ae9210f3b7e656f2d610acb3df649d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a8ae9210f3b7e656f2d610acb3df649d.Name = "renderer"
-_a8ae9210f3b7e656f2d610acb3df649d.Properties.Source = [[ --!strict
+local bN={ClassName="ModuleScript",Children={},Properties={}}
+bN.Name="renderer"
+bN.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/renderer.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -27223,12 +27223,12 @@ exports.attach = function(
 end
 
 return exports ]]
-_6d9c1a11ac02ae3fb25d3ab755472be7.Children["_a8ae9210f3b7e656f2d610acb3df649d"] = _a8ae9210f3b7e656f2d610acb3df649d
-local _a8ae9210f3b7e656f2d610acb3df649d = nil -- DEALLOCATE PLS :pray:
+bC.Children._a8ae9210f3b7e656f2d610acb3df649d=bN
+local bO
 
-local _3b3adbe1fff0e776461c1b20cc0a1b4d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3b3adbe1fff0e776461c1b20cc0a1b4d.Name = "types"
-_3b3adbe1fff0e776461c1b20cc0a1b4d.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/types.js
+local bP={ClassName="ModuleScript",Children={},Properties={}}
+bP.Name="types"
+bP.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/types.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -27624,12 +27624,12 @@ export type DevToolsHook = {
 }
 
 return exports ]]
-_6d9c1a11ac02ae3fb25d3ab755472be7.Children["_3b3adbe1fff0e776461c1b20cc0a1b4d"] = _3b3adbe1fff0e776461c1b20cc0a1b4d
-local _3b3adbe1fff0e776461c1b20cc0a1b4d = nil -- DEALLOCATE PLS :pray:
+bC.Children._3b3adbe1fff0e776461c1b20cc0a1b4d=bP
+local bQ
 
-local _4e27e9330c86991ceb1d65abfa06b763 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_4e27e9330c86991ceb1d65abfa06b763.Name = "utils"
-_4e27e9330c86991ceb1d65abfa06b763.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/utils.js
+local bR={ClassName="ModuleScript",Children={},Properties={}}
+bR.Name="utils"
+bR.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/backend/utils.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -27807,12 +27807,12 @@ exports.serializeToString = function(data: any): string
 end
 
 return exports ]]
-_6d9c1a11ac02ae3fb25d3ab755472be7.Children["_4e27e9330c86991ceb1d65abfa06b763"] = _4e27e9330c86991ceb1d65abfa06b763
-local _4e27e9330c86991ceb1d65abfa06b763 = nil -- DEALLOCATE PLS :pray:
+bC.Children._4e27e9330c86991ceb1d65abfa06b763=bR
+local bS
 
-local _56291a6bc6ba23096cf9a524da5b1123 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_56291a6bc6ba23096cf9a524da5b1123.Name = "bridge"
-_56291a6bc6ba23096cf9a524da5b1123.Properties.Source = [[ --!strict
+local bT={ClassName="ModuleScript",Children={},Properties={}}
+bT.Name="bridge"
+bT.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/bridge.js
 -- /*
 --  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -28210,19 +28210,19 @@ export type BackendBridge = Bridge<BackendEvents, FrontendEvents>
 export type FrontendBridge = Bridge<FrontendEvents, BackendEvents>
 
 return Bridge ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_56291a6bc6ba23096cf9a524da5b1123"] = _56291a6bc6ba23096cf9a524da5b1123
-local _56291a6bc6ba23096cf9a524da5b1123 = nil -- DEALLOCATE PLS :pray:
+a2.Children._56291a6bc6ba23096cf9a524da5b1123=bT
+local bU
 
-local _a2e42ab986f09234a026bef87daf3673 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a2e42ab986f09234a026bef87daf3673.Name = "clipboardjs.mock"
-_a2e42ab986f09234a026bef87daf3673.Properties.Source = [[ -- ROBLOX TODO: stub for clipboardjs, remove when we know how we'll handle its intent in a Roblox way
+local bV={ClassName="ModuleScript",Children={},Properties={}}
+bV.Name="clipboardjs.mock"
+bV.Properties.Source=[[ -- ROBLOX TODO: stub for clipboardjs, remove when we know how we'll handle its intent in a Roblox way
 return {} ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_a2e42ab986f09234a026bef87daf3673"] = _a2e42ab986f09234a026bef87daf3673
-local _a2e42ab986f09234a026bef87daf3673 = nil -- DEALLOCATE PLS :pray:
+a2.Children._a2e42ab986f09234a026bef87daf3673=bV
+local bW
 
-local _181b8146a5b769ba70c8c5ed9a8fac0d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_181b8146a5b769ba70c8c5ed9a8fac0d.Name = "constants"
-_181b8146a5b769ba70c8c5ed9a8fac0d.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/constants.js
+local bX={ClassName="ModuleScript",Children={},Properties={}}
+bX.Name="constants"
+bX.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/constants.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -28285,12 +28285,12 @@ exports.COMFORTABLE_LINE_HEIGHT = COMFORTABLE_LINE_HEIGHT
 exports.COMPACT_LINE_HEIGHT = COMPACT_LINE_HEIGHT
 
 return exports ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_181b8146a5b769ba70c8c5ed9a8fac0d"] = _181b8146a5b769ba70c8c5ed9a8fac0d
-local _181b8146a5b769ba70c8c5ed9a8fac0d = nil -- DEALLOCATE PLS :pray:
+a2.Children._181b8146a5b769ba70c8c5ed9a8fac0d=bX
+local bY
 
-local _843273de1009291191f7d0f13e3d9d0a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_843273de1009291191f7d0f13e3d9d0a.Name = "devtools"
-_843273de1009291191f7d0f13e3d9d0a.Properties.Source = [[ return {
+local bZ={ClassName="ModuleScript",Children={},Properties={}}
+bZ.Name="devtools"
+bZ.Properties.Source=[[ return {
 	utils = require(script.utils),
 	store = require(script.store),
 	cache = require(script.cache),
@@ -28302,11 +28302,11 @@ _843273de1009291191f7d0f13e3d9d0a.Properties.Source = [[ return {
 		},
 	},
 } ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_843273de1009291191f7d0f13e3d9d0a"] = _843273de1009291191f7d0f13e3d9d0a
-local _843273de1009291191f7d0f13e3d9d0a = nil -- DEALLOCATE PLS :pray:
-local _188ccab8f5e0b9267a1c6be41aec5aa1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_188ccab8f5e0b9267a1c6be41aec5aa1.Name = "ProfilerStore"
-_188ccab8f5e0b9267a1c6be41aec5aa1.Properties.Source = [[ --!strict
+a2.Children._843273de1009291191f7d0f13e3d9d0a=bZ
+local b_
+local b0={ClassName="ModuleScript",Children={},Properties={}}
+b0.Name="ProfilerStore"
+b0.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -28625,12 +28625,12 @@ function ProfilerStore:stopProfiling(): (...any?)
 end
 
 return ProfilerStore ]]
-_843273de1009291191f7d0f13e3d9d0a.Children["_188ccab8f5e0b9267a1c6be41aec5aa1"] = _188ccab8f5e0b9267a1c6be41aec5aa1
-local _188ccab8f5e0b9267a1c6be41aec5aa1 = nil -- DEALLOCATE PLS :pray:
+b_.Children._188ccab8f5e0b9267a1c6be41aec5aa1=b0
+local b1
 
-local _96c3c06ffe6b6ddf2a5433adbbe470d5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_96c3c06ffe6b6ddf2a5433adbbe470d5.Name = "ProfilingCache"
-_96c3c06ffe6b6ddf2a5433adbbe470d5.Properties.Source = [[ --!strict
+local b2={ClassName="ModuleScript",Children={},Properties={}}
+b2.Name="ProfilingCache"
+b2.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -28763,12 +28763,12 @@ function ProfilingCache:invalidate()
 end
 
 return ProfilingCache ]]
-_843273de1009291191f7d0f13e3d9d0a.Children["_96c3c06ffe6b6ddf2a5433adbbe470d5"] = _96c3c06ffe6b6ddf2a5433adbbe470d5
-local _96c3c06ffe6b6ddf2a5433adbbe470d5 = nil -- DEALLOCATE PLS :pray:
+b_.Children._96c3c06ffe6b6ddf2a5433adbbe470d5=b2
+local b3
 
-local _b3b58d7aa804071ec6403518d008c007 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b3b58d7aa804071ec6403518d008c007.Name = "cache"
-_b3b58d7aa804071ec6403518d008c007.Properties.Source = [[ --!strict
+local b4={ClassName="ModuleScript",Children={},Properties={}}
+b4.Name="cache"
+b4.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/devtools/cache.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -28988,12 +28988,12 @@ exports.invalidateResources = function(): ()
 end
 
 return exports ]]
-_843273de1009291191f7d0f13e3d9d0a.Children["_b3b58d7aa804071ec6403518d008c007"] = _b3b58d7aa804071ec6403518d008c007
-local _b3b58d7aa804071ec6403518d008c007 = nil -- DEALLOCATE PLS :pray:
+b_.Children._b3b58d7aa804071ec6403518d008c007=b4
+local b5
 
-local _2e256b7a7ed1d244df18c57840ac299c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2e256b7a7ed1d244df18c57840ac299c.Name = "store"
-_2e256b7a7ed1d244df18c57840ac299c.Properties.Source = [[ --!strict
+local b6={ClassName="ModuleScript",Children={},Properties={}}
+b6.Name="store"
+b6.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/devtools/store.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -30141,12 +30141,12 @@ function Store:onBridgeUnsupportedRendererVersion(): ()
 end
 
 return Store ]]
-_843273de1009291191f7d0f13e3d9d0a.Children["_2e256b7a7ed1d244df18c57840ac299c"] = _2e256b7a7ed1d244df18c57840ac299c
-local _2e256b7a7ed1d244df18c57840ac299c = nil -- DEALLOCATE PLS :pray:
+b_.Children._2e256b7a7ed1d244df18c57840ac299c=b6
+local b7
 
-local _dd512e17e9cb81e5eb54790a716c2bf1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_dd512e17e9cb81e5eb54790a716c2bf1.Name = "types"
-_dd512e17e9cb81e5eb54790a716c2bf1.Properties.Source = [[ --!strict
+local b8={ClassName="ModuleScript",Children={},Properties={}}
+b8.Name="types"
+b8.Properties.Source=[[ --!strict
 local Packages = script.Parent.Parent.Parent
 
 local LuauPolyfill = require(Packages.LuauPolyfill)
@@ -30377,12 +30377,12 @@ export type ProfilerStore = EventEmitter<{
 }
 
 return true ]]
-_843273de1009291191f7d0f13e3d9d0a.Children["_dd512e17e9cb81e5eb54790a716c2bf1"] = _dd512e17e9cb81e5eb54790a716c2bf1
-local _dd512e17e9cb81e5eb54790a716c2bf1 = nil -- DEALLOCATE PLS :pray:
+b_.Children._dd512e17e9cb81e5eb54790a716c2bf1=b8
+local b9
 
-local _eee0bdd1e56c216aec5b856d6718866d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_eee0bdd1e56c216aec5b856d6718866d.Name = "utils"
-_eee0bdd1e56c216aec5b856d6718866d.Properties.Source = [[ --!strict
+local ca={ClassName="ModuleScript",Children={},Properties={}}
+ca.Name="utils"
+ca.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/devtools/utils.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -30547,20 +30547,20 @@ exports.smartStringify = function(value)
 end
 
 return exports ]]
-_843273de1009291191f7d0f13e3d9d0a.Children["_eee0bdd1e56c216aec5b856d6718866d"] = _eee0bdd1e56c216aec5b856d6718866d
-local _eee0bdd1e56c216aec5b856d6718866d = nil -- DEALLOCATE PLS :pray:
+b_.Children._eee0bdd1e56c216aec5b856d6718866d=ca
+local cb
 
-local _7020d19e0f70ce3822ebc6fb0eb23d15 = { ClassName = "Folder", Children = {}, Properties = {} }
-_7020d19e0f70ce3822ebc6fb0eb23d15.Name = "views"
-_843273de1009291191f7d0f13e3d9d0a.Children["_7020d19e0f70ce3822ebc6fb0eb23d15"] = _7020d19e0f70ce3822ebc6fb0eb23d15
-local _7020d19e0f70ce3822ebc6fb0eb23d15 = nil -- DEALLOCATE PLS :pray:
-local _8b7c26d04f1aff99f9c8ba32efb12d3b = { ClassName = "Folder", Children = {}, Properties = {} }
-_8b7c26d04f1aff99f9c8ba32efb12d3b.Name = "Components"
-_7020d19e0f70ce3822ebc6fb0eb23d15.Children["_8b7c26d04f1aff99f9c8ba32efb12d3b"] = _8b7c26d04f1aff99f9c8ba32efb12d3b
-local _8b7c26d04f1aff99f9c8ba32efb12d3b = nil -- DEALLOCATE PLS :pray:
-local _e2902e0ca0104a1114044971735b701c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e2902e0ca0104a1114044971735b701c.Name = "types"
-_e2902e0ca0104a1114044971735b701c.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/devtools/views/Components/types.js
+local cc={ClassName="Folder",Children={},Properties={}}
+cc.Name="views"
+b_.Children._7020d19e0f70ce3822ebc6fb0eb23d15=cc
+local cd
+local ce={ClassName="Folder",Children={},Properties={}}
+ce.Name="Components"
+cd.Children._8b7c26d04f1aff99f9c8ba32efb12d3b=ce
+local cf
+local cg={ClassName="ModuleScript",Children={},Properties={}}
+cg.Name="types"
+cg.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/devtools/views/Components/types.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -30682,16 +30682,16 @@ export type DehydratedData = {
 }
 
 return {} ]]
-_8b7c26d04f1aff99f9c8ba32efb12d3b.Children["_e2902e0ca0104a1114044971735b701c"] = _e2902e0ca0104a1114044971735b701c
-local _e2902e0ca0104a1114044971735b701c = nil -- DEALLOCATE PLS :pray:
+cf.Children._e2902e0ca0104a1114044971735b701c=cg
+local ch
 
-local _ebbcc0a80a8a69f7bd5ede273b0e3a7d = { ClassName = "Folder", Children = {}, Properties = {} }
-_ebbcc0a80a8a69f7bd5ede273b0e3a7d.Name = "Profiler"
-_7020d19e0f70ce3822ebc6fb0eb23d15.Children["_ebbcc0a80a8a69f7bd5ede273b0e3a7d"] = _ebbcc0a80a8a69f7bd5ede273b0e3a7d
-local _ebbcc0a80a8a69f7bd5ede273b0e3a7d = nil -- DEALLOCATE PLS :pray:
-local _f492b2b7c138024e60d56b3e949fcf26 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f492b2b7c138024e60d56b3e949fcf26.Name = "CommitTreeBuilder"
-_f492b2b7c138024e60d56b3e949fcf26.Properties.Source = [[ --!strict
+local ci={ClassName="Folder",Children={},Properties={}}
+ci.Name="Profiler"
+cd.Children._ebbcc0a80a8a69f7bd5ede273b0e3a7d=ci
+local cj
+local ck={ClassName="ModuleScript",Children={},Properties={}}
+ck.Name="CommitTreeBuilder"
+ck.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -31071,12 +31071,12 @@ end
 exports.invalidateCommitTrees = invalidateCommitTrees -- DEBUG
 
 return exports ]]
-_ebbcc0a80a8a69f7bd5ede273b0e3a7d.Children["_f492b2b7c138024e60d56b3e949fcf26"] = _f492b2b7c138024e60d56b3e949fcf26
-local _f492b2b7c138024e60d56b3e949fcf26 = nil -- DEALLOCATE PLS :pray:
+cj.Children._f492b2b7c138024e60d56b3e949fcf26=ck
+local cl
 
-local _037d5e8644df77270de12b5f29f46be9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_037d5e8644df77270de12b5f29f46be9.Name = "FlamegraphChartBuilder"
-_037d5e8644df77270de12b5f29f46be9.Properties.Source = [[ --!strict
+local cm={ClassName="ModuleScript",Children={},Properties={}}
+cm.Name="FlamegraphChartBuilder"
+cm.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -31293,12 +31293,12 @@ local function invalidateChartData(): any
 end
 exports.invalidateChartData = invalidateChartData
 return exports ]]
-_ebbcc0a80a8a69f7bd5ede273b0e3a7d.Children["_037d5e8644df77270de12b5f29f46be9"] = _037d5e8644df77270de12b5f29f46be9
-local _037d5e8644df77270de12b5f29f46be9 = nil -- DEALLOCATE PLS :pray:
+cj.Children._037d5e8644df77270de12b5f29f46be9=cm
+local cn
 
-local _0807f41962c8cc8b629e7ca7817a9d37 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0807f41962c8cc8b629e7ca7817a9d37.Name = "InteractionsChartBuilder"
-_0807f41962c8cc8b629e7ca7817a9d37.Properties.Source = [[ --!strict
+local co={ClassName="ModuleScript",Children={},Properties={}}
+co.Name="InteractionsChartBuilder"
+co.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -31363,12 +31363,12 @@ local function invalidateChartData(): any?
 end
 exports.invalidateChartData = invalidateChartData
 return exports ]]
-_ebbcc0a80a8a69f7bd5ede273b0e3a7d.Children["_0807f41962c8cc8b629e7ca7817a9d37"] = _0807f41962c8cc8b629e7ca7817a9d37
-local _0807f41962c8cc8b629e7ca7817a9d37 = nil -- DEALLOCATE PLS :pray:
+cj.Children._0807f41962c8cc8b629e7ca7817a9d37=co
+local cp
 
-local _c82da4c8d71e9755c4d4879dab788c24 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c82da4c8d71e9755c4d4879dab788c24.Name = "RankedChartBuilder"
-_c82da4c8d71e9755c4d4879dab788c24.Properties.Source = [[ --!strict
+local cq={ClassName="ModuleScript",Children={},Properties={}}
+cq.Name="RankedChartBuilder"
+cq.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -31479,12 +31479,12 @@ local function invalidateChartData(): any?
 end
 exports.invalidateChartData = invalidateChartData
 return exports ]]
-_ebbcc0a80a8a69f7bd5ede273b0e3a7d.Children["_c82da4c8d71e9755c4d4879dab788c24"] = _c82da4c8d71e9755c4d4879dab788c24
-local _c82da4c8d71e9755c4d4879dab788c24 = nil -- DEALLOCATE PLS :pray:
+cj.Children._c82da4c8d71e9755c4d4879dab788c24=cq
+local cr
 
-local _5956511115308cf9385c11b142f0100d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5956511115308cf9385c11b142f0100d.Name = "types"
-_5956511115308cf9385c11b142f0100d.Properties.Source = [[ --!strict
+local cs={ClassName="ModuleScript",Children={},Properties={}}
+cs.Name="types"
+cs.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/devtools/views/Profiler/types.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -31635,12 +31635,12 @@ export type ProfilingDataExport = {
 }
 
 return exports ]]
-_ebbcc0a80a8a69f7bd5ede273b0e3a7d.Children["_5956511115308cf9385c11b142f0100d"] = _5956511115308cf9385c11b142f0100d
-local _5956511115308cf9385c11b142f0100d = nil -- DEALLOCATE PLS :pray:
+cj.Children._5956511115308cf9385c11b142f0100d=cs
+local ct
 
-local _4eb5426c3ed914a4286d869df6b907b6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_4eb5426c3ed914a4286d869df6b907b6.Name = "utils"
-_4eb5426c3ed914a4286d869df6b907b6.Properties.Source = [[ --!strict
+local cu={ClassName="ModuleScript",Children={},Properties={}}
+cu.Name="utils"
+cu.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -31928,12 +31928,12 @@ local function scale(
 end
 exports.scale = scale
 return exports ]]
-_ebbcc0a80a8a69f7bd5ede273b0e3a7d.Children["_4eb5426c3ed914a4286d869df6b907b6"] = _4eb5426c3ed914a4286d869df6b907b6
-local _4eb5426c3ed914a4286d869df6b907b6 = nil -- DEALLOCATE PLS :pray:
+cj.Children._4eb5426c3ed914a4286d869df6b907b6=cu
+local cv
 
-local _86a35a78a8b087befb5dbb1fb0eb41f2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_86a35a78a8b087befb5dbb1fb0eb41f2.Name = "events"
-_86a35a78a8b087befb5dbb1fb0eb41f2.Properties.Source = [[ --!strict
+local cw={ClassName="ModuleScript",Children={},Properties={}}
+cw.Name="events"
+cw.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/events.js
 -- /*
 --  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -32042,12 +32042,12 @@ function EventEmitter:removeListener(event: string, listener: Function): ()
 end
 
 return EventEmitter ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_86a35a78a8b087befb5dbb1fb0eb41f2"] = _86a35a78a8b087befb5dbb1fb0eb41f2
-local _86a35a78a8b087befb5dbb1fb0eb41f2 = nil -- DEALLOCATE PLS :pray:
+a2.Children._86a35a78a8b087befb5dbb1fb0eb41f2=cw
+local cx
 
-local _de7451381e2271e5f262a1aaf8e62042 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_de7451381e2271e5f262a1aaf8e62042.Name = "hook"
-_de7451381e2271e5f262a1aaf8e62042.Properties.Source = [[ --!strict
+local cy={ClassName="ModuleScript",Children={},Properties={}}
+cy.Name="hook"
+cy.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://raw.githubusercontent.com/facebook/react/v17.0.1/packages/react-devtools-shared/src/hook.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -32252,12 +32252,12 @@ exports.installHook = function(target: any): DevToolsHook | nil
 end
 
 return exports ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_de7451381e2271e5f262a1aaf8e62042"] = _de7451381e2271e5f262a1aaf8e62042
-local _de7451381e2271e5f262a1aaf8e62042 = nil -- DEALLOCATE PLS :pray:
+a2.Children._de7451381e2271e5f262a1aaf8e62042=cy
+local cz
 
-local _07cece602a78471295499119bae562f6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_07cece602a78471295499119bae562f6.Name = "hydration"
-_07cece602a78471295499119bae562f6.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/hydration.js
+local cA={ClassName="ModuleScript",Children={},Properties={}}
+cA.Name="hydration"
+cA.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/hydration.js
 -- /*
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -32654,21 +32654,21 @@ exports.hydrate = function(
 end
 
 return exports ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_07cece602a78471295499119bae562f6"] = _07cece602a78471295499119bae562f6
-local _07cece602a78471295499119bae562f6 = nil -- DEALLOCATE PLS :pray:
+a2.Children._07cece602a78471295499119bae562f6=cA
+local cB
 
-local _6199ed4211350cc4c2b38b49e30b2ae4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6199ed4211350cc4c2b38b49e30b2ae4.Name = "jest.config"
-_6199ed4211350cc4c2b38b49e30b2ae4.Properties.Source = [[ return {
+local cC={ClassName="ModuleScript",Children={},Properties={}}
+cC.Name="jest.config"
+cC.Properties.Source=[[ return {
 	setupFilesAfterEnv = { script.Parent.__tests__.setupTests },
 	testMatch = { "**/*.(spec|test)" },
 } ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_6199ed4211350cc4c2b38b49e30b2ae4"] = _6199ed4211350cc4c2b38b49e30b2ae4
-local _6199ed4211350cc4c2b38b49e30b2ae4 = nil -- DEALLOCATE PLS :pray:
+a2.Children._6199ed4211350cc4c2b38b49e30b2ae4=cC
+local cD
 
-local _9866d67c5b97053915159c86654bf80c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9866d67c5b97053915159c86654bf80c.Name = "storage"
-_9866d67c5b97053915159c86654bf80c.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/storage.js
+local cE={ClassName="ModuleScript",Children={},Properties={}}
+cE.Name="storage"
+cE.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/storage.js
 -- /*
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -32710,12 +32710,12 @@ exports.sessionStorageSetItem = function(key: string, value: any): ()
 end
 
 return exports ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_9866d67c5b97053915159c86654bf80c"] = _9866d67c5b97053915159c86654bf80c
-local _9866d67c5b97053915159c86654bf80c = nil -- DEALLOCATE PLS :pray:
+a2.Children._9866d67c5b97053915159c86654bf80c=cE
+local cF
 
-local _f29ad8e921690ca207d5fab38fc17378 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f29ad8e921690ca207d5fab38fc17378.Name = "types"
-_f29ad8e921690ca207d5fab38fc17378.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/types.js
+local cG={ClassName="ModuleScript",Children={},Properties={}}
+cG.Name="types"
+cG.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/types.js
 -- /*
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -32803,12 +32803,12 @@ export type ComponentFilter =
 	| RegExpComponentFilter
 
 return exports ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_f29ad8e921690ca207d5fab38fc17378"] = _f29ad8e921690ca207d5fab38fc17378
-local _f29ad8e921690ca207d5fab38fc17378 = nil -- DEALLOCATE PLS :pray:
+a2.Children._f29ad8e921690ca207d5fab38fc17378=cG
+local cH
 
-local _fc3467a75354eeecb2f8320f4ba78bbf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_fc3467a75354eeecb2f8320f4ba78bbf.Name = "utils"
-_fc3467a75354eeecb2f8320f4ba78bbf.Properties.Source = [[ --!strict
+local cI={ClassName="ModuleScript",Children={},Properties={}}
+cI.Name="utils"
+cI.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.1/packages/react-devtools-shared/src/utils.js
 -- /*
 --  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -33552,12 +33552,12 @@ function exports.formatDataForPreview(data: Object, showFormattedValue: boolean)
 end
 
 return exports ]]
-_c145c1dc3e1fb896862276ce0077c850.Children["_fc3467a75354eeecb2f8320f4ba78bbf"] = _fc3467a75354eeecb2f8320f4ba78bbf
-local _fc3467a75354eeecb2f8320f4ba78bbf = nil -- DEALLOCATE PLS :pray:
+a2.Children._fc3467a75354eeecb2f8320f4ba78bbf=cI
+local cJ
 
-local _d9122407f70de17e8124db2bfcc67804 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d9122407f70de17e8124db2bfcc67804.Name = "ReactIs"
-_d9122407f70de17e8124db2bfcc67804.Properties.Source = [[ --!strict
+local cK={ClassName="ModuleScript",Children={},Properties={}}
+cK.Name="ReactIs"
+cK.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-is/src/ReactIs.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -33805,15 +33805,15 @@ exports.isBinding = function(object: any)
 end
 -- ROBLOX deviation END
 return exports ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_d9122407f70de17e8124db2bfcc67804"] = _d9122407f70de17e8124db2bfcc67804
-local _d9122407f70de17e8124db2bfcc67804 = nil -- DEALLOCATE PLS :pray:
-local _e5ea8630d57e69e14c2f851d53148e55 = { ClassName = "Folder", Children = {}, Properties = {} }
-_e5ea8630d57e69e14c2f851d53148e55.Name = "__tests__"
-_d9122407f70de17e8124db2bfcc67804.Children["_e5ea8630d57e69e14c2f851d53148e55"] = _e5ea8630d57e69e14c2f851d53148e55
-local _e5ea8630d57e69e14c2f851d53148e55 = nil -- DEALLOCATE PLS :pray:
-local _e593e3e21511ac154286cf61bf81bf22 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e593e3e21511ac154286cf61bf81bf22.Name = "ReactIs.spec"
-_e593e3e21511ac154286cf61bf81bf22.Properties.Source = [[ --!strict
+c.Children._d9122407f70de17e8124db2bfcc67804=cK
+local cL
+local cM={ClassName="Folder",Children={},Properties={}}
+cM.Name="__tests__"
+cL.Children._e5ea8630d57e69e14c2f851d53148e55=cM
+local cN
+local cO={ClassName="ModuleScript",Children={},Properties={}}
+cO.Name="ReactIs.spec"
+cO.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-is/src/__tests__/ReactIs-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -34128,12 +34128,12 @@ describe("ReactIs", function()
 	end)
 	-- ROBLOX deviation END
 end) ]]
-_e5ea8630d57e69e14c2f851d53148e55.Children["_e593e3e21511ac154286cf61bf81bf22"] = _e593e3e21511ac154286cf61bf81bf22
-local _e593e3e21511ac154286cf61bf81bf22 = nil -- DEALLOCATE PLS :pray:
+cN.Children._e593e3e21511ac154286cf61bf81bf22=cO
+local cP
 
-local _d5058d3c6150a42d74b8d20446b4d52a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d5058d3c6150a42d74b8d20446b4d52a.Name = "ReactNoopRenderer"
-_d5058d3c6150a42d74b8d20446b4d52a.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/e7b255341b059b4e2a109847395d0d0ba2633999/packages/react-noop-renderer/src/index.js
+local cQ={ClassName="ModuleScript",Children={},Properties={}}
+cQ.Name="ReactNoopRenderer"
+cQ.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/e7b255341b059b4e2a109847395d0d0ba2633999/packages/react-noop-renderer/src/index.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -34145,11 +34145,11 @@ _d5058d3c6150a42d74b8d20446b4d52a.Properties.Source = [[ -- ROBLOX upstream: htt
 
 --!strict
 return require(script.ReactNoop) ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_d5058d3c6150a42d74b8d20446b4d52a"] = _d5058d3c6150a42d74b8d20446b4d52a
-local _d5058d3c6150a42d74b8d20446b4d52a = nil -- DEALLOCATE PLS :pray:
-local _f89c7b470362ed98dacbab8f1166d5ae = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f89c7b470362ed98dacbab8f1166d5ae.Name = "ReactNoop"
-_f89c7b470362ed98dacbab8f1166d5ae.Properties.Source = [[ --!strict
+c.Children._d5058d3c6150a42d74b8d20446b4d52a=cQ
+local cR
+local cS={ClassName="ModuleScript",Children={},Properties={}}
+cS.Name="ReactNoop"
+cS.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/faa697f4f9afe9f1c98e315b2a9e70f5a74a7a74/packages/react-noop-renderer/src/ReactNoop.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -34209,12 +34209,12 @@ return {
 	-- TODO: Remove this after callers migrate to alternatives.
 	unstable_runWithPriority = NoopRenderer.unstable_runWithPriority,
 } ]]
-_d5058d3c6150a42d74b8d20446b4d52a.Children["_f89c7b470362ed98dacbab8f1166d5ae"] = _f89c7b470362ed98dacbab8f1166d5ae
-local _f89c7b470362ed98dacbab8f1166d5ae = nil -- DEALLOCATE PLS :pray:
+cR.Children._f89c7b470362ed98dacbab8f1166d5ae=cS
+local cT
 
-local _35c4deb83c987fc18d747cb55adba755 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_35c4deb83c987fc18d747cb55adba755.Name = "createReactNoop"
-_35c4deb83c987fc18d747cb55adba755.Properties.Source = [[ --!nonstrict
+local cU={ClassName="ModuleScript",Children={},Properties={}}
+cU.Name="createReactNoop"
+cU.Properties.Source=[[ --!nonstrict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/e7b255341b059b4e2a109847395d0d0ba2633999/packages/react-noop-renderer/src/createReactNoop.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -35498,12 +35498,12 @@ local function createReactNoop(reconciler, useMutation: boolean)
 end
 
 return createReactNoop ]]
-_d5058d3c6150a42d74b8d20446b4d52a.Children["_35c4deb83c987fc18d747cb55adba755"] = _35c4deb83c987fc18d747cb55adba755
-local _35c4deb83c987fc18d747cb55adba755 = nil -- DEALLOCATE PLS :pray:
+cR.Children._35c4deb83c987fc18d747cb55adba755=cU
+local cV
 
-local _2ad11420b2b47d55efad72cd20849561 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2ad11420b2b47d55efad72cd20849561.Name = "ReactReconciler"
-_2ad11420b2b47d55efad72cd20849561.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/43363e2795393a00fd77312a16d6b80e626c29de/packages/react-reconciler/src/index.js
+local cW={ClassName="ModuleScript",Children={},Properties={}}
+cW.Name="ReactReconciler"
+cW.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/43363e2795393a00fd77312a16d6b80e626c29de/packages/react-reconciler/src/index.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -35540,11 +35540,11 @@ local function initialize(config): { [string]: any }
 end
 
 return initialize ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_2ad11420b2b47d55efad72cd20849561"] = _2ad11420b2b47d55efad72cd20849561
-local _2ad11420b2b47d55efad72cd20849561 = nil -- DEALLOCATE PLS :pray:
-local _42a58db5c4debef977ffce199ea65d13 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_42a58db5c4debef977ffce199ea65d13.Name = "DebugTracing"
-_42a58db5c4debef977ffce199ea65d13.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/43363e2795393a00fd77312a16d6b80e626c29de/packages/react-reconciler/src/DebugTracing.js
+c.Children._2ad11420b2b47d55efad72cd20849561=cW
+local cX
+local cY={ClassName="ModuleScript",Children={},Properties={}}
+cY.Name="DebugTracing"
+cY.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/43363e2795393a00fd77312a16d6b80e626c29de/packages/react-reconciler/src/DebugTracing.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -35829,12 +35829,12 @@ local function logStateUpdateScheduled(
 end
 exports.logStateUpdateScheduled = logStateUpdateScheduled
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_42a58db5c4debef977ffce199ea65d13"] = _42a58db5c4debef977ffce199ea65d13
-local _42a58db5c4debef977ffce199ea65d13 = nil -- DEALLOCATE PLS :pray:
+cX.Children._42a58db5c4debef977ffce199ea65d13=cY
+local cZ
 
-local _eb5300887b627c326040c1e71e3e4941 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_eb5300887b627c326040c1e71e3e4941.Name = "MaxInts"
-_eb5300887b627c326040c1e71e3e4941.Properties.Source = [[ --!strict
+local c_={ClassName="ModuleScript",Children={},Properties={}}
+c_.Name="MaxInts"
+c_.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/c5d2fc7127654e43de59fff865b74765a103c4a5/packages/react-reconciler/src/MaxInts.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -35849,12 +35849,12 @@ _eb5300887b627c326040c1e71e3e4941.Properties.Source = [[ --!strict
 -- // Math.pow(2, 30) - 1
 -- // 0b111111111111111111111111111111
 return { MAX_SIGNED_31_BIT_INT = 1073741823 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_eb5300887b627c326040c1e71e3e4941"] = _eb5300887b627c326040c1e71e3e4941
-local _eb5300887b627c326040c1e71e3e4941 = nil -- DEALLOCATE PLS :pray:
+cX.Children._eb5300887b627c326040c1e71e3e4941=c_
+local c0
 
-local _73c0a209151ba0189501061233ba6a30 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_73c0a209151ba0189501061233ba6a30.Name = "ReactCapturedValue"
-_73c0a209151ba0189501061233ba6a30.Properties.Source = [[ --!strict
+local c1={ClassName="ModuleScript",Children={},Properties={}}
+c1.Name="ReactCapturedValue"
+c1.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react-reconciler/src/ReactCapturedValue.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -35890,12 +35890,12 @@ exports.createCapturedValue = function<T>(value: T, source: Fiber | nil): Captur
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_73c0a209151ba0189501061233ba6a30"] = _73c0a209151ba0189501061233ba6a30
-local _73c0a209151ba0189501061233ba6a30 = nil -- DEALLOCATE PLS :pray:
+cX.Children._73c0a209151ba0189501061233ba6a30=c1
+local c2
 
-local _cdc75000bee274e5c6de3eb923d5ec15 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_cdc75000bee274e5c6de3eb923d5ec15.Name = "ReactChildFiber.new"
-_cdc75000bee274e5c6de3eb923d5ec15.Properties.Source = [[ --!strict
+local c3={ClassName="ModuleScript",Children={},Properties={}}
+c3.Name="ReactChildFiber.new"
+c3.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-reconciler/src/ReactChildFiber.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -37558,12 +37558,12 @@ exports.resetChildFibers = function(workInProgress: Fiber, lanes: Lanes): ()
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_cdc75000bee274e5c6de3eb923d5ec15"] = _cdc75000bee274e5c6de3eb923d5ec15
-local _cdc75000bee274e5c6de3eb923d5ec15 = nil -- DEALLOCATE PLS :pray:
+cX.Children._cdc75000bee274e5c6de3eb923d5ec15=c3
+local c4
 
-local _e4ca5bc99642512790586bc4c2e34757 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e4ca5bc99642512790586bc4c2e34757.Name = "ReactCurrentFiber"
-_e4ca5bc99642512790586bc4c2e34757.Properties.Source = [[ --!strict
+local c5={ClassName="ModuleScript",Children={},Properties={}}
+c5.Name="ReactCurrentFiber"
+c5.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/b0cb137bcbd3a11d8eff3c2229cd6b8379d29785/packages/react-reconciler/src/ReactCurrentFiber.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -37658,12 +37658,12 @@ exports.getIsRendering = function(): boolean
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_e4ca5bc99642512790586bc4c2e34757"] = _e4ca5bc99642512790586bc4c2e34757
-local _e4ca5bc99642512790586bc4c2e34757 = nil -- DEALLOCATE PLS :pray:
+cX.Children._e4ca5bc99642512790586bc4c2e34757=c5
+local c6
 
-local _a8bbc8fe1c42df665ff612cf5e338ebe = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a8bbc8fe1c42df665ff612cf5e338ebe.Name = "ReactFiber.new"
-_a8bbc8fe1c42df665ff612cf5e338ebe.Properties.Source = [[ --!strict
+local c7={ClassName="ModuleScript",Children={},Properties={}}
+c7.Name="ReactFiber.new"
+c7.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react-reconciler/src/ReactFiber.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -38683,12 +38683,12 @@ return {
 	createFiberFromPortal = createFiberFromPortal,
 	assignFiberPropertiesInDEV = assignFiberPropertiesInDEV,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_a8bbc8fe1c42df665ff612cf5e338ebe"] = _a8bbc8fe1c42df665ff612cf5e338ebe
-local _a8bbc8fe1c42df665ff612cf5e338ebe = nil -- DEALLOCATE PLS :pray:
+cX.Children._a8bbc8fe1c42df665ff612cf5e338ebe=c7
+local c8
 
-local _5c733b7bc446d36ed9773d5a72e70e8d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5c733b7bc446d36ed9773d5a72e70e8d.Name = "ReactFiberBeginWork.new"
-_5c733b7bc446d36ed9773d5a72e70e8d.Properties.Source = [[ --!strict
+local c9={ClassName="ModuleScript",Children={},Properties={}}
+c9.Name="ReactFiberBeginWork.new"
+c9.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/1faf9e3dd5d6492f3607d5c721055819e4106bc6/packages/react-reconciler/src/ReactFiberBeginWork.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -42324,12 +42324,12 @@ end
 exports.beginWork = beginWork
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_5c733b7bc446d36ed9773d5a72e70e8d"] = _5c733b7bc446d36ed9773d5a72e70e8d
-local _5c733b7bc446d36ed9773d5a72e70e8d = nil -- DEALLOCATE PLS :pray:
+cX.Children._5c733b7bc446d36ed9773d5a72e70e8d=c9
+local da
 
-local _c0b6de2dca7c257c39bf5b48590b008f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c0b6de2dca7c257c39bf5b48590b008f.Name = "ReactFiberClassComponent.new"
-_c0b6de2dca7c257c39bf5b48590b008f.Properties.Source = [[ --!strict
+local db={ClassName="ModuleScript",Children={},Properties={}}
+db.Name="ReactFiberClassComponent.new"
+db.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/c63741fb3daef6c1e8746cbe7d7b07ecb281a9fd/packages/react-reconciler/src/ReactFiberClassComponent.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -43760,12 +43760,12 @@ return {
 	-- deviation: this should be safe to export, since it gets assigned only once
 	emptyRefsObject = emptyRefsObject,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_c0b6de2dca7c257c39bf5b48590b008f"] = _c0b6de2dca7c257c39bf5b48590b008f
-local _c0b6de2dca7c257c39bf5b48590b008f = nil -- DEALLOCATE PLS :pray:
+cX.Children._c0b6de2dca7c257c39bf5b48590b008f=db
+local dc
 
-local _277150e7c17e0263da5e22496cacc73c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_277150e7c17e0263da5e22496cacc73c.Name = "ReactFiberCommitWork.new"
-_277150e7c17e0263da5e22496cacc73c.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/7f08e908b10a58cda902611378ec053003d371ed/packages/react-reconciler/src/ReactFiberCommitWork.new.js
+local dd={ClassName="ModuleScript",Children={},Properties={}}
+dd.Name="ReactFiberCommitWork.new"
+dd.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/7f08e908b10a58cda902611378ec053003d371ed/packages/react-reconciler/src/ReactFiberCommitWork.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -46103,12 +46103,12 @@ return {
 	isSuspenseBoundaryBeingHidden = isSuspenseBoundaryBeingHidden,
 	recursivelyCommitLayoutEffects = recursivelyCommitLayoutEffects,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_277150e7c17e0263da5e22496cacc73c"] = _277150e7c17e0263da5e22496cacc73c
-local _277150e7c17e0263da5e22496cacc73c = nil -- DEALLOCATE PLS :pray:
+cX.Children._277150e7c17e0263da5e22496cacc73c=dd
+local de
 
-local _410737c30628dffff0053af7f74a38f6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_410737c30628dffff0053af7f74a38f6.Name = "ReactFiberCompleteWork.new"
-_410737c30628dffff0053af7f74a38f6.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/87c023b1c1b00d6776b7031f6e105913ead355da/packages/react-reconciler/src/ReactFiberCompleteWork.new.js
+local df={ClassName="ModuleScript",Children={},Properties={}}
+df.Name="ReactFiberCompleteWork.new"
+df.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/87c023b1c1b00d6776b7031f6e105913ead355da/packages/react-reconciler/src/ReactFiberCompleteWork.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -47725,12 +47725,12 @@ end
 return {
 	completeWork = completeWork,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_410737c30628dffff0053af7f74a38f6"] = _410737c30628dffff0053af7f74a38f6
-local _410737c30628dffff0053af7f74a38f6 = nil -- DEALLOCATE PLS :pray:
+cX.Children._410737c30628dffff0053af7f74a38f6=df
+local dg
 
-local _e2790d20451dba3943da0470fbb41ce7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e2790d20451dba3943da0470fbb41ce7.Name = "ReactFiberComponentStack"
-_e2790d20451dba3943da0470fbb41ce7.Properties.Source = [[ --!strict
+local dh={ClassName="ModuleScript",Children={},Properties={}}
+dh.Name="ReactFiberComponentStack"
+dh.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/72d00ab623502983ebd7ac0756cf2787df109811/packages/react-reconciler/src/ReactFiberComponentStack.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -47834,12 +47834,12 @@ return {
 		return result :: string
 	end,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_e2790d20451dba3943da0470fbb41ce7"] = _e2790d20451dba3943da0470fbb41ce7
-local _e2790d20451dba3943da0470fbb41ce7 = nil -- DEALLOCATE PLS :pray:
+cX.Children._e2790d20451dba3943da0470fbb41ce7=dh
+local di
 
-local _689f3a2f07b806f476e9aaf38bedfab4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_689f3a2f07b806f476e9aaf38bedfab4.Name = "ReactFiberContext.new"
-_689f3a2f07b806f476e9aaf38bedfab4.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/a724a3b578dce77d427bef313102a4d0e978d9b4/packages/react-reconciler/src/ReactFiberContext.new.js
+local dj={ClassName="ModuleScript",Children={},Properties={}}
+dj.Name="ReactFiberContext.new"
+dj.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/a724a3b578dce77d427bef313102a4d0e978d9b4/packages/react-reconciler/src/ReactFiberContext.new.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -48237,12 +48237,12 @@ return {
 	invalidateContextProvider = invalidateContextProvider,
 	findCurrentUnmaskedContext = findCurrentUnmaskedContext,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_689f3a2f07b806f476e9aaf38bedfab4"] = _689f3a2f07b806f476e9aaf38bedfab4
-local _689f3a2f07b806f476e9aaf38bedfab4 = nil -- DEALLOCATE PLS :pray:
+cX.Children._689f3a2f07b806f476e9aaf38bedfab4=dj
+local dk
 
-local _ba91dd66e983627da6dd37468ba2ccc1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ba91dd66e983627da6dd37468ba2ccc1.Name = "ReactFiberDevToolsHook.new"
-_ba91dd66e983627da6dd37468ba2ccc1.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-reconciler/src/ReactFiberDevToolsHook.new.js
+local dl={ClassName="ModuleScript",Children={},Properties={}}
+dl.Name="ReactFiberDevToolsHook.new"
+dl.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-reconciler/src/ReactFiberDevToolsHook.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -48411,12 +48411,12 @@ exports.onCommitUnmount = function(fiber: Fiber)
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_ba91dd66e983627da6dd37468ba2ccc1"] = _ba91dd66e983627da6dd37468ba2ccc1
-local _ba91dd66e983627da6dd37468ba2ccc1 = nil -- DEALLOCATE PLS :pray:
+cX.Children._ba91dd66e983627da6dd37468ba2ccc1=dl
+local dm
 
-local _a61a042eecfe7dcd3acfad0ef3c3cd70 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a61a042eecfe7dcd3acfad0ef3c3cd70.Name = "ReactFiberErrorDialog"
-_a61a042eecfe7dcd3acfad0ef3c3cd70.Properties.Source = [[ --!strict
+local dn={ClassName="ModuleScript",Children={},Properties={}}
+dn.Name="ReactFiberErrorDialog"
+dn.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react-reconciler/src/ReactFiberErrorDialog.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -48438,12 +48438,12 @@ exports.showErrorDialog = function(boundary, errorInfo): boolean
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_a61a042eecfe7dcd3acfad0ef3c3cd70"] = _a61a042eecfe7dcd3acfad0ef3c3cd70
-local _a61a042eecfe7dcd3acfad0ef3c3cd70 = nil -- DEALLOCATE PLS :pray:
+cX.Children._a61a042eecfe7dcd3acfad0ef3c3cd70=dn
+local dp
 
-local _af657014a7f7ebd3d11032c11a1a1adb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_af657014a7f7ebd3d11032c11a1a1adb.Name = "ReactFiberErrorLogger"
-_af657014a7f7ebd3d11032c11a1a1adb.Properties.Source = [[ --!strict
+local dq={ClassName="ModuleScript",Children={},Properties={}}
+dq.Name="ReactFiberErrorLogger"
+dq.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react-reconciler/src/ReactFiberErrorLogger.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -48575,12 +48575,12 @@ exports.logCapturedError = function(boundary: Fiber, errorInfo: CapturedValue<an
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_af657014a7f7ebd3d11032c11a1a1adb"] = _af657014a7f7ebd3d11032c11a1a1adb
-local _af657014a7f7ebd3d11032c11a1a1adb = nil -- DEALLOCATE PLS :pray:
+cX.Children._af657014a7f7ebd3d11032c11a1a1adb=dq
+local dr
 
-local _bd7fe010de1258d082f87d3e477f9c4a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_bd7fe010de1258d082f87d3e477f9c4a.Name = "ReactFiberFlags"
-_bd7fe010de1258d082f87d3e477f9c4a.Properties.Source = [[ --!strict
+local ds={ClassName="ModuleScript",Children={},Properties={}}
+ds.Name="ReactFiberFlags"
+ds.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/37cb732c59863297e48f69ac1f6e2ba1aa1886f0/packages/react-reconciler/src/ReactFiberFlags.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -48679,12 +48679,12 @@ exports.MountPassiveDev = --\[\[              \]\]
 	0b100000000000000000
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_bd7fe010de1258d082f87d3e477f9c4a"] = _bd7fe010de1258d082f87d3e477f9c4a
-local _bd7fe010de1258d082f87d3e477f9c4a = nil -- DEALLOCATE PLS :pray:
+cX.Children._bd7fe010de1258d082f87d3e477f9c4a=ds
+local dt
 
-local _5417917487ef82fa0f38a782772cdc93 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5417917487ef82fa0f38a782772cdc93.Name = "ReactFiberHooks.new"
-_5417917487ef82fa0f38a782772cdc93.Properties.Source = [[ --!strict
+local du={ClassName="ModuleScript",Children={},Properties={}}
+du.Name="ReactFiberHooks.new"
+du.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/43363e2795393a00fd77312a16d6b80e626c29de/packages/react-reconciler/src/ReactFiberHooks.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -51904,12 +51904,12 @@ end
 exports.renderWithHooks = renderWithHooks
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_5417917487ef82fa0f38a782772cdc93"] = _5417917487ef82fa0f38a782772cdc93
-local _5417917487ef82fa0f38a782772cdc93 = nil -- DEALLOCATE PLS :pray:
+cX.Children._5417917487ef82fa0f38a782772cdc93=du
+local dv
 
-local _5c5671ce4caf5100686023a552a143f0 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5c5671ce4caf5100686023a552a143f0.Name = "ReactFiberHostConfig"
-_5c5671ce4caf5100686023a552a143f0.Properties.Source = [[ --!strict
+local dw={ClassName="ModuleScript",Children={},Properties={}}
+dw.Name="ReactFiberHostConfig"
+dw.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/9ac42dd074c42b66ecc0334b75200b1d2989f892/packages/react-reconciler/src/ReactFiberHostConfig.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -51957,12 +51957,12 @@ return exports
 -- -- deviation: FIXME (roblox): is there a way to configure luau to account for this module
 -- -- being shimmed?
 -- error('This module must be shimmed by a specific renderer.') ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_5c5671ce4caf5100686023a552a143f0"] = _5c5671ce4caf5100686023a552a143f0
-local _5c5671ce4caf5100686023a552a143f0 = nil -- DEALLOCATE PLS :pray:
+cX.Children._5c5671ce4caf5100686023a552a143f0=dw
+local dx
 
-local _711e805962e495c33b53381473e2d81a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_711e805962e495c33b53381473e2d81a.Name = "ReactFiberHostContext.new"
-_711e805962e495c33b53381473e2d81a.Properties.Source = [[ --!strict
+local dy={ClassName="ModuleScript",Children={},Properties={}}
+dy.Name="ReactFiberHostContext.new"
+dy.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/17f582e0453b808860be59ed3437c6a426ae52de/packages/react-reconciler/src/ReactFiberHostContext.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -52088,12 +52088,12 @@ return {
 	pushHostContainer = pushHostContainer,
 	pushHostContext = pushHostContext,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_711e805962e495c33b53381473e2d81a"] = _711e805962e495c33b53381473e2d81a
-local _711e805962e495c33b53381473e2d81a = nil -- DEALLOCATE PLS :pray:
+cX.Children._711e805962e495c33b53381473e2d81a=dy
+local dz
 
-local _4633a3d8ecd1df28cf42cdb56342ef0d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_4633a3d8ecd1df28cf42cdb56342ef0d.Name = "ReactFiberHotReloading.new"
-_4633a3d8ecd1df28cf42cdb56342ef0d.Properties.Source = [[ --!strict
+local dA={ClassName="ModuleScript",Children={},Properties={}}
+dA.Name="ReactFiberHotReloading.new"
+dA.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/6edaf6f764f23043f0cd1c2da355b42f641afd8b/packages/react-reconciler/src/ReactFiberHotReloading.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -52593,12 +52593,12 @@ end
 -- end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_4633a3d8ecd1df28cf42cdb56342ef0d"] = _4633a3d8ecd1df28cf42cdb56342ef0d
-local _4633a3d8ecd1df28cf42cdb56342ef0d = nil -- DEALLOCATE PLS :pray:
+cX.Children._4633a3d8ecd1df28cf42cdb56342ef0d=dA
+local dB
 
-local _0de089bb5bfc7f97e9c52e6cae1beb5f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0de089bb5bfc7f97e9c52e6cae1beb5f.Name = "ReactFiberHydrationContext.new"
-_0de089bb5bfc7f97e9c52e6cae1beb5f.Properties.Source = [[ --!strict
+local dC={ClassName="ModuleScript",Children={},Properties={}}
+dC.Name="ReactFiberHydrationContext.new"
+dC.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-reconciler/src/ReactFiberHydrationContext.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -53119,12 +53119,12 @@ return {
 	prepareToHydrateHostSuspenseInstance = prepareToHydrateHostSuspenseInstance,
 	popHydrationState = popHydrationState,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_0de089bb5bfc7f97e9c52e6cae1beb5f"] = _0de089bb5bfc7f97e9c52e6cae1beb5f
-local _0de089bb5bfc7f97e9c52e6cae1beb5f = nil -- DEALLOCATE PLS :pray:
+cX.Children._0de089bb5bfc7f97e9c52e6cae1beb5f=dC
+local dD
 
-local _42fa8f47378d605342103b3c997d34fa = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_42fa8f47378d605342103b3c997d34fa.Name = "ReactFiberLane"
-_42fa8f47378d605342103b3c997d34fa.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/6f62abb58ae46d9c88525635f1790487285666e6/packages/react-reconciler/src/ReactFiberLane.js
+local dE={ClassName="ModuleScript",Children={},Properties={}}
+dE.Name="ReactFiberLane"
+dE.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/6f62abb58ae46d9c88525635f1790487285666e6/packages/react-reconciler/src/ReactFiberLane.js
 --!strict
 --\[\[
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -54085,12 +54085,12 @@ end
 exports.getBumpedLaneForHydration = getBumpedLaneForHydration
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_42fa8f47378d605342103b3c997d34fa"] = _42fa8f47378d605342103b3c997d34fa
-local _42fa8f47378d605342103b3c997d34fa = nil -- DEALLOCATE PLS :pray:
+cX.Children._42fa8f47378d605342103b3c997d34fa=dE
+local dF
 
-local _12c3cc7bbdef35f4ec21e0fea3c06277 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_12c3cc7bbdef35f4ec21e0fea3c06277.Name = "ReactFiberLazyComponent.new"
-_12c3cc7bbdef35f4ec21e0fea3c06277.Properties.Source = [[ --!strict
+local dG={ClassName="ModuleScript",Children={},Properties={}}
+dG.Name="ReactFiberLazyComponent.new"
+dG.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/17f582e0453b808860be59ed3437c6a426ae52de/packages/react-reconciler/src/ReactFiberLazyComponent.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -54123,12 +54123,12 @@ end
 return {
 	resolveDefaultProps = resolveDefaultProps,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_12c3cc7bbdef35f4ec21e0fea3c06277"] = _12c3cc7bbdef35f4ec21e0fea3c06277
-local _12c3cc7bbdef35f4ec21e0fea3c06277 = nil -- DEALLOCATE PLS :pray:
+cX.Children._12c3cc7bbdef35f4ec21e0fea3c06277=dG
+local dH
 
-local _6c47e0e0abf3198855bdc0e3c2e98a54 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6c47e0e0abf3198855bdc0e3c2e98a54.Name = "ReactFiberNewContext.new"
-_6c47e0e0abf3198855bdc0e3c2e98a54.Properties.Source = [[ --!strict
+local dI={ClassName="ModuleScript",Children={},Properties={}}
+dI.Name="ReactFiberNewContext.new"
+dI.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/1eaafc9ade46ba708b2361b324dd907d019e3939/packages/react-reconciler/src/ReactFiberNewContext.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -54556,12 +54556,12 @@ exports.readContext =
 	end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_6c47e0e0abf3198855bdc0e3c2e98a54"] = _6c47e0e0abf3198855bdc0e3c2e98a54
-local _6c47e0e0abf3198855bdc0e3c2e98a54 = nil -- DEALLOCATE PLS :pray:
+cX.Children._6c47e0e0abf3198855bdc0e3c2e98a54=dI
+local dJ
 
-local _1d6ed3a0de038ed37280ae9a6d4536aa = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1d6ed3a0de038ed37280ae9a6d4536aa.Name = "ReactFiberOffscreenComponent"
-_1d6ed3a0de038ed37280ae9a6d4536aa.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/1faf9e3dd5d6492f3607d5c721055819e4106bc6/packages/react-reconciler/src/ReactFiberOffscreenComponent.js
+local dK={ClassName="ModuleScript",Children={},Properties={}}
+dK.Name="ReactFiberOffscreenComponent"
+dK.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/1faf9e3dd5d6492f3607d5c721055819e4106bc6/packages/react-reconciler/src/ReactFiberOffscreenComponent.js
 --!strict
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -54600,12 +54600,12 @@ export type OffscreenState = {
 }
 
 return {} ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_1d6ed3a0de038ed37280ae9a6d4536aa"] = _1d6ed3a0de038ed37280ae9a6d4536aa
-local _1d6ed3a0de038ed37280ae9a6d4536aa = nil -- DEALLOCATE PLS :pray:
+cX.Children._1d6ed3a0de038ed37280ae9a6d4536aa=dK
+local dL
 
-local _577bcdfbea1c8712e98bd2c682c20265 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_577bcdfbea1c8712e98bd2c682c20265.Name = "ReactFiberReconciler"
-_577bcdfbea1c8712e98bd2c682c20265.Properties.Source = [[ --!strict
+local dM={ClassName="ModuleScript",Children={},Properties={}}
+dM.Name="ReactFiberReconciler"
+dM.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/faa697f4f9afe9f1c98e315b2a9e70f5a74a7a74/packages/react-reconciler/src/ReactFiberReconciler.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -54618,12 +54618,12 @@ _577bcdfbea1c8712e98bd2c682c20265.Properties.Source = [[ --!strict
 
 -- deviation: old version of reconciler not ported
 return require(script.Parent["ReactFiberReconciler.new"]) ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_577bcdfbea1c8712e98bd2c682c20265"] = _577bcdfbea1c8712e98bd2c682c20265
-local _577bcdfbea1c8712e98bd2c682c20265 = nil -- DEALLOCATE PLS :pray:
+cX.Children._577bcdfbea1c8712e98bd2c682c20265=dM
+local dN
 
-local _1d617d5e8451792b104ce20e4f01d52e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1d617d5e8451792b104ce20e4f01d52e.Name = "ReactFiberReconciler.new"
-_1d617d5e8451792b104ce20e4f01d52e.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/50d9451f320a9aaf94304209193562cc385567d8/packages/react-reconciler/src/ReactFiberReconciler.new.js
+local dO={ClassName="ModuleScript",Children={},Properties={}}
+dO.Name="ReactFiberReconciler.new"
+dO.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/50d9451f320a9aaf94304209193562cc385567d8/packages/react-reconciler/src/ReactFiberReconciler.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -55449,12 +55449,12 @@ exports.injectIntoDevTools = function(devToolsConfig: DevToolsConfig): boolean
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_1d617d5e8451792b104ce20e4f01d52e"] = _1d617d5e8451792b104ce20e4f01d52e
-local _1d617d5e8451792b104ce20e4f01d52e = nil -- DEALLOCATE PLS :pray:
+cX.Children._1d617d5e8451792b104ce20e4f01d52e=dO
+local dP
 
-local _f2dff71254a2fc66709251604b6f5f24 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f2dff71254a2fc66709251604b6f5f24.Name = "ReactFiberRoot.new"
-_f2dff71254a2fc66709251604b6f5f24.Properties.Source = [[ --!strict
+local dQ={ClassName="ModuleScript",Children={},Properties={}}
+dQ.Name="ReactFiberRoot.new"
+dQ.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/96ac799eace5d989de3b4f80e6414e94a08ff77a/packages/react-reconciler/src/ReactFiberRoot.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -55580,12 +55580,12 @@ exports.createFiberRoot = function(
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_f2dff71254a2fc66709251604b6f5f24"] = _f2dff71254a2fc66709251604b6f5f24
-local _f2dff71254a2fc66709251604b6f5f24 = nil -- DEALLOCATE PLS :pray:
+cX.Children._f2dff71254a2fc66709251604b6f5f24=dQ
+local dR
 
-local _f12863ed1d1bfe74e40cb7cdf5fc9608 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f12863ed1d1bfe74e40cb7cdf5fc9608.Name = "ReactFiberSchedulerPriorities.roblox"
-_f12863ed1d1bfe74e40cb7cdf5fc9608.Properties.Source = [[ --!strict
+local dS={ClassName="ModuleScript",Children={},Properties={}}
+dS.Name="ReactFiberSchedulerPriorities.roblox"
+dS.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/d17086c7c813402a550d15a2f56dc43f1dbd1735/packages/react-reconciler/src/SchedulerWithReactIntegration.new.js
 --\[\[
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -55617,12 +55617,12 @@ local exports: { [string]: ReactPriorityLevel } = {
 }
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_f12863ed1d1bfe74e40cb7cdf5fc9608"] = _f12863ed1d1bfe74e40cb7cdf5fc9608
-local _f12863ed1d1bfe74e40cb7cdf5fc9608 = nil -- DEALLOCATE PLS :pray:
+cX.Children._f12863ed1d1bfe74e40cb7cdf5fc9608=dS
+local dT
 
-local _85db494f3dae6ebdf32d68198c0e211f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_85db494f3dae6ebdf32d68198c0e211f.Name = "ReactFiberStack.new"
-_85db494f3dae6ebdf32d68198c0e211f.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/17f582e0453b808860be59ed3437c6a426ae52de/packages/react-reconciler/src/ReactFiberStack.new.js
+local dU={ClassName="ModuleScript",Children={},Properties={}}
+dU.Name="ReactFiberStack.new"
+dU.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/17f582e0453b808860be59ed3437c6a426ae52de/packages/react-reconciler/src/ReactFiberStack.new.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -55741,12 +55741,12 @@ return {
 	checkThatStackIsEmpty = checkThatStackIsEmpty,
 	resetStackAfterFatalErrorInDev = resetStackAfterFatalErrorInDev,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_85db494f3dae6ebdf32d68198c0e211f"] = _85db494f3dae6ebdf32d68198c0e211f
-local _85db494f3dae6ebdf32d68198c0e211f = nil -- DEALLOCATE PLS :pray:
+cX.Children._85db494f3dae6ebdf32d68198c0e211f=dU
+local dV
 
-local _a1fa44f28899eab9f4bfdcf3615ee797 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a1fa44f28899eab9f4bfdcf3615ee797.Name = "ReactFiberSuspenseComponent.new"
-_a1fa44f28899eab9f4bfdcf3615ee797.Properties.Source = [[ --!strict
+local dW={ClassName="ModuleScript",Children={},Properties={}}
+dW.Name="ReactFiberSuspenseComponent.new"
+dW.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/1faf9e3dd5d6492f3607d5c721055819e4106bc6/packages/react-reconciler/src/ReactFiberSuspenseComponent.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -55907,12 +55907,12 @@ exports.findFirstSuspended = function(row: Fiber): Fiber?
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_a1fa44f28899eab9f4bfdcf3615ee797"] = _a1fa44f28899eab9f4bfdcf3615ee797
-local _a1fa44f28899eab9f4bfdcf3615ee797 = nil -- DEALLOCATE PLS :pray:
+cX.Children._a1fa44f28899eab9f4bfdcf3615ee797=dW
+local dX
 
-local _92f42ca2bec3e75ffaf9f0ed919ac21c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_92f42ca2bec3e75ffaf9f0ed919ac21c.Name = "ReactFiberSuspenseContext.new"
-_92f42ca2bec3e75ffaf9f0ed919ac21c.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/17f582e0453b808860be59ed3437c6a426ae52de/packages/react-reconciler/src/ReactFiberSuspenseContext.new.js
+local dY={ClassName="ModuleScript",Children={},Properties={}}
+dY.Name="ReactFiberSuspenseContext.new"
+dY.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/17f582e0453b808860be59ed3437c6a426ae52de/packages/react-reconciler/src/ReactFiberSuspenseContext.new.js
 --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/17f582e0453b808860be59ed3437c6a426ae52de/packages/react-reconciler/src/ReactFiberSuspenseContext.new.js
 --\[\[*
@@ -56009,12 +56009,12 @@ function exports.popSuspenseContext(fiber: Fiber)
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_92f42ca2bec3e75ffaf9f0ed919ac21c"] = _92f42ca2bec3e75ffaf9f0ed919ac21c
-local _92f42ca2bec3e75ffaf9f0ed919ac21c = nil -- DEALLOCATE PLS :pray:
+cX.Children._92f42ca2bec3e75ffaf9f0ed919ac21c=dY
+local dZ
 
-local _30ae798505095a72357acebedbc30f21 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_30ae798505095a72357acebedbc30f21.Name = "ReactFiberThrow.new"
-_30ae798505095a72357acebedbc30f21.Properties.Source = [[ --!strict
+local d_={ClassName="ModuleScript",Children={},Properties={}}
+d_.Name="ReactFiberThrow.new"
+d_.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-reconciler/src/ReactFiberThrow.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -56503,12 +56503,12 @@ return {
 	createRootErrorUpdate = createRootErrorUpdate,
 	createClassErrorUpdate = createClassErrorUpdate,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_30ae798505095a72357acebedbc30f21"] = _30ae798505095a72357acebedbc30f21
-local _30ae798505095a72357acebedbc30f21 = nil -- DEALLOCATE PLS :pray:
+cX.Children._30ae798505095a72357acebedbc30f21=d_
+local d0
 
-local _990a864f1332a806868a7fce18643e51 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_990a864f1332a806868a7fce18643e51.Name = "ReactFiberTransition"
-_990a864f1332a806868a7fce18643e51.Properties.Source = [[ --!strict
+local d1={ClassName="ModuleScript",Children={},Properties={}}
+d1.Name="ReactFiberTransition"
+d1.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/ddd1faa1972b614dfbfae205f2aa4a6c0b39a759/packages/react-reconciler/src/ReactFiberTransition.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -56531,12 +56531,12 @@ return {
 		return ReactCurrentBatchConfig.transition
 	end,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_990a864f1332a806868a7fce18643e51"] = _990a864f1332a806868a7fce18643e51
-local _990a864f1332a806868a7fce18643e51 = nil -- DEALLOCATE PLS :pray:
+cX.Children._990a864f1332a806868a7fce18643e51=d1
+local d2
 
-local _94673b580e8de4bd6c416009e66fb113 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_94673b580e8de4bd6c416009e66fb113.Name = "ReactFiberTreeReflection"
-_94673b580e8de4bd6c416009e66fb113.Properties.Source = [[ --!nonstrict
+local d3={ClassName="ModuleScript",Children={},Properties={}}
+d3.Name="ReactFiberTreeReflection"
+d3.Properties.Source=[[ --!nonstrict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-reconciler/src/ReactFiberTreeReflection.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -56918,12 +56918,12 @@ exports.doesFiberContain = function(parentFiber: Fiber, childFiber: Fiber): bool
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_94673b580e8de4bd6c416009e66fb113"] = _94673b580e8de4bd6c416009e66fb113
-local _94673b580e8de4bd6c416009e66fb113 = nil -- DEALLOCATE PLS :pray:
+cX.Children._94673b580e8de4bd6c416009e66fb113=d3
+local d4
 
-local _8c92e6f087277f5f22344c739d2dd5d4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_8c92e6f087277f5f22344c739d2dd5d4.Name = "ReactFiberUnwindWork.new"
-_8c92e6f087277f5f22344c739d2dd5d4.Properties.Source = [[ --!strict
+local d5={ClassName="ModuleScript",Children={},Properties={}}
+d5.Name="ReactFiberUnwindWork.new"
+d5.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-reconciler/src/ReactFiberUnwindWork.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -57115,12 +57115,12 @@ return {
 	unwindWork = unwindWork,
 	unwindInterruptedWork = unwindInterruptedWork,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_8c92e6f087277f5f22344c739d2dd5d4"] = _8c92e6f087277f5f22344c739d2dd5d4
-local _8c92e6f087277f5f22344c739d2dd5d4 = nil -- DEALLOCATE PLS :pray:
+cX.Children._8c92e6f087277f5f22344c739d2dd5d4=d5
+local d6
 
-local _16d9f6f65c8f3c841a8dba2cd6f4a303 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_16d9f6f65c8f3c841a8dba2cd6f4a303.Name = "ReactFiberWorkInProgress"
-_16d9f6f65c8f3c841a8dba2cd6f4a303.Properties.Source = [[ --!strict
+local d7={ClassName="ModuleScript",Children={},Properties={}}
+d7.Name="ReactFiberWorkInProgress"
+d7.Properties.Source=[[ --!strict
 -- ROBLOX deviation: this is an extraction of a single state field
 -- (and associated mutation/getters) from ReactFiberWorkLooop.new
 -- which allows us to break dependency cycles involving that module
@@ -57158,12 +57158,12 @@ exports.markSkippedUpdateLanes = function(lane: Lane | Lanes): ()
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_16d9f6f65c8f3c841a8dba2cd6f4a303"] = _16d9f6f65c8f3c841a8dba2cd6f4a303
-local _16d9f6f65c8f3c841a8dba2cd6f4a303 = nil -- DEALLOCATE PLS :pray:
+cX.Children._16d9f6f65c8f3c841a8dba2cd6f4a303=d7
+local d8
 
-local _4f3c15f2fbb4f53ea363ee8451e2a3e5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_4f3c15f2fbb4f53ea363ee8451e2a3e5.Name = "ReactFiberWorkLoop.new"
-_4f3c15f2fbb4f53ea363ee8451e2a3e5.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react-reconciler/src/ReactFiberWorkLoop.new.js
+local d9={ClassName="ModuleScript",Children={},Properties={}}
+d9.Name="ReactFiberWorkLoop.new"
+d9.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react-reconciler/src/ReactFiberWorkLoop.new.js
 --!nonstrict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -61237,12 +61237,12 @@ mod.detachFiberAfterEffects = function(fiber: Fiber)
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_4f3c15f2fbb4f53ea363ee8451e2a3e5"] = _4f3c15f2fbb4f53ea363ee8451e2a3e5
-local _4f3c15f2fbb4f53ea363ee8451e2a3e5 = nil -- DEALLOCATE PLS :pray:
+cX.Children._4f3c15f2fbb4f53ea363ee8451e2a3e5=d9
+local ea
 
-local _0925b4aa23e0f0a2af16bd8dec6f259e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0925b4aa23e0f0a2af16bd8dec6f259e.Name = "ReactHookEffectTags"
-_0925b4aa23e0f0a2af16bd8dec6f259e.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-reconciler/src/ReactHookEffectTags.js
+local eb={ClassName="ModuleScript",Children={},Properties={}}
+eb.Name="ReactHookEffectTags"
+eb.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-reconciler/src/ReactHookEffectTags.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -61269,12 +61269,12 @@ return {
 	--\[\[   \]\]
 	Passive = 0b100,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_0925b4aa23e0f0a2af16bd8dec6f259e"] = _0925b4aa23e0f0a2af16bd8dec6f259e
-local _0925b4aa23e0f0a2af16bd8dec6f259e = nil -- DEALLOCATE PLS :pray:
+cX.Children._0925b4aa23e0f0a2af16bd8dec6f259e=eb
+local ec
 
-local _971621cd9facd1b2bf7da2a8cf20a680 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_971621cd9facd1b2bf7da2a8cf20a680.Name = "ReactInternalTypes"
-_971621cd9facd1b2bf7da2a8cf20a680.Properties.Source = [[ --!strict
+local ed={ClassName="ModuleScript",Children={},Properties={}}
+ed.Name="ReactInternalTypes"
+ed.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/7baf9d4128d41903de125527b50285ea9862cf9a/packages/react-reconciler/src/ReactInternalTypes.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -61639,12 +61639,12 @@ export type Dispatcher = Shared.Dispatcher
 
 -- deviation: Return something so that the module system is happy
 return {} ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_971621cd9facd1b2bf7da2a8cf20a680"] = _971621cd9facd1b2bf7da2a8cf20a680
-local _971621cd9facd1b2bf7da2a8cf20a680 = nil -- DEALLOCATE PLS :pray:
+cX.Children._971621cd9facd1b2bf7da2a8cf20a680=ed
+local ee
 
-local _e09ae797b6571bf46d540bbd22d428e7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e09ae797b6571bf46d540bbd22d428e7.Name = "ReactMutableSource.new"
-_e09ae797b6571bf46d540bbd22d428e7.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/142d4f1c00c66f3d728177082dbc027fd6335115/packages/react-reconciler/src/ReactMutableSource.new.js
+local ef={ClassName="ModuleScript",Children={},Properties={}}
+ef.Name="ReactMutableSource.new"
+ef.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/142d4f1c00c66f3d728177082dbc027fd6335115/packages/react-reconciler/src/ReactMutableSource.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -61760,12 +61760,12 @@ exports.registerMutableSourceForHydration =
 	end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_e09ae797b6571bf46d540bbd22d428e7"] = _e09ae797b6571bf46d540bbd22d428e7
-local _e09ae797b6571bf46d540bbd22d428e7 = nil -- DEALLOCATE PLS :pray:
+cX.Children._e09ae797b6571bf46d540bbd22d428e7=ef
+local eg
 
-local _d503afc387ba8b33c420dd8e95b38ca5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d503afc387ba8b33c420dd8e95b38ca5.Name = "ReactPortal"
-_d503afc387ba8b33c420dd8e95b38ca5.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/142d4f1c00c66f3d728177082dbc027fd6335115/packages/react-reconciler/src/ReactPortal.js
+local eh={ClassName="ModuleScript",Children={},Properties={}}
+eh.Name="ReactPortal"
+eh.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/142d4f1c00c66f3d728177082dbc027fd6335115/packages/react-reconciler/src/ReactPortal.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -61806,12 +61806,12 @@ end
 return {
 	createPortal = createPortal,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_d503afc387ba8b33c420dd8e95b38ca5"] = _d503afc387ba8b33c420dd8e95b38ca5
-local _d503afc387ba8b33c420dd8e95b38ca5 = nil -- DEALLOCATE PLS :pray:
+cX.Children._d503afc387ba8b33c420dd8e95b38ca5=eh
+local ei
 
-local _a723c07c7213bfc560c5664cb3a989ca = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a723c07c7213bfc560c5664cb3a989ca.Name = "ReactProfilerTimer.new"
-_a723c07c7213bfc560c5664cb3a989ca.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/142d4f1c00c66f3d728177082dbc027fd6335115/packages/react-reconciler/src/ReactProfilerTimer.new.js
+local ej={ClassName="ModuleScript",Children={},Properties={}}
+ej.Name="ReactProfilerTimer.new"
+ej.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/142d4f1c00c66f3d728177082dbc027fd6335115/packages/react-reconciler/src/ReactProfilerTimer.new.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -61990,12 +61990,12 @@ return {
 	stopProfilerTimerIfRunningAndRecordDelta = stopProfilerTimerIfRunningAndRecordDelta,
 	transferActualDuration = transferActualDuration,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_a723c07c7213bfc560c5664cb3a989ca"] = _a723c07c7213bfc560c5664cb3a989ca
-local _a723c07c7213bfc560c5664cb3a989ca = nil -- DEALLOCATE PLS :pray:
+cX.Children._a723c07c7213bfc560c5664cb3a989ca=ej
+local ek
 
-local _3f99abf24dc43c7f7bddf1c009ed9d26 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3f99abf24dc43c7f7bddf1c009ed9d26.Name = "ReactRootTags"
-_3f99abf24dc43c7f7bddf1c009ed9d26.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/c5d2fc7127654e43de59fff865b74765a103c4a5/packages/react-reconciler/src/ReactRootTags.js
+local el={ClassName="ModuleScript",Children={},Properties={}}
+el.Name="ReactRootTags"
+el.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/c5d2fc7127654e43de59fff865b74765a103c4a5/packages/react-reconciler/src/ReactRootTags.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -62013,12 +62013,12 @@ return {
 	BlockingRoot = 1,
 	ConcurrentRoot = 2,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_3f99abf24dc43c7f7bddf1c009ed9d26"] = _3f99abf24dc43c7f7bddf1c009ed9d26
-local _3f99abf24dc43c7f7bddf1c009ed9d26 = nil -- DEALLOCATE PLS :pray:
+cX.Children._3f99abf24dc43c7f7bddf1c009ed9d26=el
+local em
 
-local _ea87c010b2df636d23f39cef9f003f44 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ea87c010b2df636d23f39cef9f003f44.Name = "ReactStrictModeWarnings.new"
-_ea87c010b2df636d23f39cef9f003f44.Properties.Source = [[ --!strict
+local en={ClassName="ModuleScript",Children={},Properties={}}
+en.Name="ReactStrictModeWarnings.new"
+en.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react-reconciler/src/ReactStrictModeWarnings.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -62406,12 +62406,12 @@ if _G.__DEV__ then
 end
 
 return ReactStrictModeWarnings ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_ea87c010b2df636d23f39cef9f003f44"] = _ea87c010b2df636d23f39cef9f003f44
-local _ea87c010b2df636d23f39cef9f003f44 = nil -- DEALLOCATE PLS :pray:
+cX.Children._ea87c010b2df636d23f39cef9f003f44=en
+local eo
 
-local _578599d49bc1bc1e43ea18807bb74926 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_578599d49bc1bc1e43ea18807bb74926.Name = "ReactTestSelectors"
-_578599d49bc1bc1e43ea18807bb74926.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/3cde22a84e246fc5361f038bf0c23405b2572c22/packages/react-reconciler/src/ReactTestSelectors.js
+local ep={ClassName="ModuleScript",Children={},Properties={}}
+ep.Name="ReactTestSelectors"
+ep.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/3cde22a84e246fc5361f038bf0c23405b2572c22/packages/react-reconciler/src/ReactTestSelectors.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -62988,12 +62988,12 @@ export type ObserveVisibleRectsCallback = (
 -- end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_578599d49bc1bc1e43ea18807bb74926"] = _578599d49bc1bc1e43ea18807bb74926
-local _578599d49bc1bc1e43ea18807bb74926 = nil -- DEALLOCATE PLS :pray:
+cX.Children._578599d49bc1bc1e43ea18807bb74926=ep
+local eq
 
-local _7356b5c76b4b3df8c1cafa5ceda62e76 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7356b5c76b4b3df8c1cafa5ceda62e76.Name = "ReactTypeOfMode"
-_7356b5c76b4b3df8c1cafa5ceda62e76.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/22dc2e42bdc00d87fc19c5e75fc7c0b3fdcdc572/packages/react-reconciler/src/ReactTypeOfMode.js
+local er={ClassName="ModuleScript",Children={},Properties={}}
+er.Name="ReactTypeOfMode"
+er.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/22dc2e42bdc00d87fc19c5e75fc7c0b3fdcdc572/packages/react-reconciler/src/ReactTypeOfMode.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -63016,12 +63016,12 @@ return {
 	ProfileMode = 0b01000,
 	DebugTracingMode = 0b10000,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_7356b5c76b4b3df8c1cafa5ceda62e76"] = _7356b5c76b4b3df8c1cafa5ceda62e76
-local _7356b5c76b4b3df8c1cafa5ceda62e76 = nil -- DEALLOCATE PLS :pray:
+cX.Children._7356b5c76b4b3df8c1cafa5ceda62e76=er
+local es
 
-local _8335ff9d80ccabfbcc57ce52f67c4d9c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_8335ff9d80ccabfbcc57ce52f67c4d9c.Name = "ReactUpdateQueue.new"
-_8335ff9d80ccabfbcc57ce52f67c4d9c.Properties.Source = [[ --!strict
+local et={ClassName="ModuleScript",Children={},Properties={}}
+et.Name="ReactUpdateQueue.new"
+et.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-reconciler/src/ReactUpdateQueue.new.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -63761,12 +63761,12 @@ end
 exports.commitUpdateQueue = commitUpdateQueue
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_8335ff9d80ccabfbcc57ce52f67c4d9c"] = _8335ff9d80ccabfbcc57ce52f67c4d9c
-local _8335ff9d80ccabfbcc57ce52f67c4d9c = nil -- DEALLOCATE PLS :pray:
+cX.Children._8335ff9d80ccabfbcc57ce52f67c4d9c=et
+local eu
 
-local _716811f0c0ff684a8e545bfef18b299c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_716811f0c0ff684a8e545bfef18b299c.Name = "ReactWorkTags"
-_716811f0c0ff684a8e545bfef18b299c.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react-reconciler/src/ReactWorkTags.js
+local ev={ClassName="ModuleScript",Children={},Properties={}}
+ev.Name="ReactWorkTags"
+ev.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react-reconciler/src/ReactWorkTags.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -63806,12 +63806,12 @@ return {
 	OffscreenComponent = 23,
 	LegacyHiddenComponent = 24,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_716811f0c0ff684a8e545bfef18b299c"] = _716811f0c0ff684a8e545bfef18b299c
-local _716811f0c0ff684a8e545bfef18b299c = nil -- DEALLOCATE PLS :pray:
+cX.Children._716811f0c0ff684a8e545bfef18b299c=ev
+local ew
 
-local _8cb955f3d1be07a883c30b95e6104839 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_8cb955f3d1be07a883c30b95e6104839.Name = "SchedulerWithReactIntegration.new"
-_8cb955f3d1be07a883c30b95e6104839.Properties.Source = [[ --!strict
+local ex={ClassName="ModuleScript",Children={},Properties={}}
+ex.Name="SchedulerWithReactIntegration.new"
+ex.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/d17086c7c813402a550d15a2f56dc43f1dbd1735/packages/react-reconciler/src/SchedulerWithReactIntegration.new.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -64169,12 +64169,12 @@ return {
 	requestPaint = requestPaint,
 	shouldYield = shouldYield,
 } ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_8cb955f3d1be07a883c30b95e6104839"] = _8cb955f3d1be07a883c30b95e6104839
-local _8cb955f3d1be07a883c30b95e6104839 = nil -- DEALLOCATE PLS :pray:
+cX.Children._8cb955f3d1be07a883c30b95e6104839=ex
+local ey
 
-local _d197ec48686201c37f2f8423b3b2aa8c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d197ec48686201c37f2f8423b3b2aa8c.Name = "SchedulingProfiler"
-_d197ec48686201c37f2f8423b3b2aa8c.Properties.Source = [[ --!strict
+local ez={ClassName="ModuleScript",Children={},Properties={}}
+ez.Name="SchedulingProfiler"
+ez.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/react-reconciler/src/SchedulingProfiler.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -64371,16 +64371,16 @@ exports.markStateUpdateScheduled = function(fiber: Fiber, lane: Lane): ()
 end
 
 return exports ]]
-_2ad11420b2b47d55efad72cd20849561.Children["_d197ec48686201c37f2f8423b3b2aa8c"] = _d197ec48686201c37f2f8423b3b2aa8c
-local _d197ec48686201c37f2f8423b3b2aa8c = nil -- DEALLOCATE PLS :pray:
+cX.Children._d197ec48686201c37f2f8423b3b2aa8c=ez
+local eA
 
-local _456270010f2b3b88f95c29067fb9a3c4 = { ClassName = "Folder", Children = {}, Properties = {} }
-_456270010f2b3b88f95c29067fb9a3c4.Name = "__tests__"
-_2ad11420b2b47d55efad72cd20849561.Children["_456270010f2b3b88f95c29067fb9a3c4"] = _456270010f2b3b88f95c29067fb9a3c4
-local _456270010f2b3b88f95c29067fb9a3c4 = nil -- DEALLOCATE PLS :pray:
-local _d105a20f93531a93699c093d0b79ead5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d105a20f93531a93699c093d0b79ead5.Name = "DebugTracing-test.internal.spec"
-_d105a20f93531a93699c093d0b79ead5.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/8af27aeedbc6b00bc2ef49729fc84f116c70a27c/packages/react-reconciler/src/__tests__/DebugTracing-test.internal.js
+local eB={ClassName="Folder",Children={},Properties={}}
+eB.Name="__tests__"
+cX.Children._456270010f2b3b88f95c29067fb9a3c4=eB
+local eC
+local eD={ClassName="ModuleScript",Children={},Properties={}}
+eD.Name="DebugTracing-test.internal.spec"
+eD.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/8af27aeedbc6b00bc2ef49729fc84f116c70a27c/packages/react-reconciler/src/__tests__/DebugTracing-test.internal.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -64911,12 +64911,12 @@ describe("DebugTracing", function()
 		end
 	)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_d105a20f93531a93699c093d0b79ead5"] = _d105a20f93531a93699c093d0b79ead5
-local _d105a20f93531a93699c093d0b79ead5 = nil -- DEALLOCATE PLS :pray:
+eC.Children._d105a20f93531a93699c093d0b79ead5=eD
+local eE
 
-local _2397b6e1f9d1cc6b67a11e651e236ef1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2397b6e1f9d1cc6b67a11e651e236ef1.Name = "ReactClassSetStateCallback.spec"
-_2397b6e1f9d1cc6b67a11e651e236ef1.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d7dce572c7453737a685e791e7afcbc7e2b2fe16/packages/react-reconciler/src/__tests__/ReactClassSetStateCallback-test.js
+local eF={ClassName="ModuleScript",Children={},Properties={}}
+eF.Name="ReactClassSetStateCallback.spec"
+eF.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d7dce572c7453737a685e791e7afcbc7e2b2fe16/packages/react-reconciler/src/__tests__/ReactClassSetStateCallback-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -64989,12 +64989,12 @@ it(
 		jestExpect(Scheduler).toHaveYielded({ 2, "Callback 2", 2, "Callback 1" })
 	end
 ) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_2397b6e1f9d1cc6b67a11e651e236ef1"] = _2397b6e1f9d1cc6b67a11e651e236ef1
-local _2397b6e1f9d1cc6b67a11e651e236ef1 = nil -- DEALLOCATE PLS :pray:
+eC.Children._2397b6e1f9d1cc6b67a11e651e236ef1=eF
+local eG
 
-local _7b3a1523a9c897d91b351a3c72fbb20b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7b3a1523a9c897d91b351a3c72fbb20b.Name = "ReactComponentLifeCycle.roblox.spec"
-_7b3a1523a9c897d91b351a3c72fbb20b.Properties.Source = [[ -- Copy of ReactComponentLifeCycle.spec.lua that instead tests old Roact lifecycle method names (which we'll support temporarily)
+local eH={ClassName="ModuleScript",Children={},Properties={}}
+eH.Name="ReactComponentLifeCycle.roblox.spec"
+eH.Properties.Source=[[ -- Copy of ReactComponentLifeCycle.spec.lua that instead tests old Roact lifecycle method names (which we'll support temporarily)
 
 --\[\[
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -65859,12 +65859,12 @@ describe("Naming conventions", function()
 	testWithComponentKind("Component")
 	testWithComponentKind("PureComponent")
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_7b3a1523a9c897d91b351a3c72fbb20b"] = _7b3a1523a9c897d91b351a3c72fbb20b
-local _7b3a1523a9c897d91b351a3c72fbb20b = nil -- DEALLOCATE PLS :pray:
+eC.Children._7b3a1523a9c897d91b351a3c72fbb20b=eH
+local eI
 
-local _44988b54e8ad947299d211b746fa6037 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_44988b54e8ad947299d211b746fa6037.Name = "ReactComponentLifeCycle.spec"
-_44988b54e8ad947299d211b746fa6037.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/8e5adfbd7e605bda9c5e96c10e015b3dc0df688e/packages/react-dom/src/__tests__/ReactComponentLifeCycle-test.js
+local eJ={ClassName="ModuleScript",Children={},Properties={}}
+eJ.Name="ReactComponentLifeCycle.spec"
+eJ.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/8e5adfbd7e605bda9c5e96c10e015b3dc0df688e/packages/react-dom/src/__tests__/ReactComponentLifeCycle-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -67609,12 +67609,12 @@ end)
 --       )
 --     })
 --   }) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_44988b54e8ad947299d211b746fa6037"] = _44988b54e8ad947299d211b746fa6037
-local _44988b54e8ad947299d211b746fa6037 = nil -- DEALLOCATE PLS :pray:
+eC.Children._44988b54e8ad947299d211b746fa6037=eJ
+local eK
 
-local _7a81c6ac2b742e9ca5bcc2bb7490afc3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7a81c6ac2b742e9ca5bcc2bb7490afc3.Name = "ReactErrorBoundaries-internal.spec"
-_7a81c6ac2b742e9ca5bcc2bb7490afc3.Properties.Source = [[ -- Upstream = https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-dom/src/__tests__/ReactErrorBoundaries-test.internal.js
+local eL={ClassName="ModuleScript",Children={},Properties={}}
+eL.Name="ReactErrorBoundaries-internal.spec"
+eL.Properties.Source=[[ -- Upstream = https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-dom/src/__tests__/ReactErrorBoundaries-test.internal.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
 --  * This source code is licensed under the MIT license found in the
@@ -70514,12 +70514,12 @@ describe("ReactErrorBoundaries", function()
 		})
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_7a81c6ac2b742e9ca5bcc2bb7490afc3"] = _7a81c6ac2b742e9ca5bcc2bb7490afc3
-local _7a81c6ac2b742e9ca5bcc2bb7490afc3 = nil -- DEALLOCATE PLS :pray:
+eC.Children._7a81c6ac2b742e9ca5bcc2bb7490afc3=eL
+local eM
 
-local _1bc6b9a60a4bd1e62784cb034d35a1ae = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1bc6b9a60a4bd1e62784cb034d35a1ae.Name = "ReactFiberComponentStack.roblox.spec"
-_1bc6b9a60a4bd1e62784cb034d35a1ae.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local eN={ClassName="ModuleScript",Children={},Properties={}}
+eN.Name="ReactFiberComponentStack.roblox.spec"
+eN.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 local LuauPolyfill = require(Packages.LuauPolyfill)
 local Error = LuauPolyfill.Error
 local JestGlobals = require(Packages.Dev.JestGlobals)
@@ -70589,12 +70589,12 @@ describe("ReactFiberComponentStack", function()
 		end
 	)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_1bc6b9a60a4bd1e62784cb034d35a1ae"] = _1bc6b9a60a4bd1e62784cb034d35a1ae
-local _1bc6b9a60a4bd1e62784cb034d35a1ae = nil -- DEALLOCATE PLS :pray:
+eC.Children._1bc6b9a60a4bd1e62784cb034d35a1ae=eN
+local eO
 
-local _41ba882ca1bb1151c9ed7877fa4e6a42 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_41ba882ca1bb1151c9ed7877fa4e6a42.Name = "ReactFiberContext-internal.spec"
-_41ba882ca1bb1151c9ed7877fa4e6a42.Properties.Source = [[ -- awaiting pull request: https://github.com/facebook/react/pull/20155
+local eP={ClassName="ModuleScript",Children={},Properties={}}
+eP.Name="ReactFiberContext-internal.spec"
+eP.Properties.Source=[[ -- awaiting pull request: https://github.com/facebook/react/pull/20155
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -70651,12 +70651,12 @@ describe("Context stack", function()
 		end).toThrow("Expected to have an instance by this point.")
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_41ba882ca1bb1151c9ed7877fa4e6a42"] = _41ba882ca1bb1151c9ed7877fa4e6a42
-local _41ba882ca1bb1151c9ed7877fa4e6a42 = nil -- DEALLOCATE PLS :pray:
+eC.Children._41ba882ca1bb1151c9ed7877fa4e6a42=eP
+local eQ
 
-local _9c8cffb6762654f7edeaf09429f891b2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9c8cffb6762654f7edeaf09429f891b2.Name = "ReactFiberDevToolsHook-internal.spec"
-_9c8cffb6762654f7edeaf09429f891b2.Properties.Source = [[ -- awaiting pull request: https://github.com/facebook/react/pull/20155
+local eR={ClassName="ModuleScript",Children={},Properties={}}
+eR.Name="ReactFiberDevToolsHook-internal.spec"
+eR.Properties.Source=[[ -- awaiting pull request: https://github.com/facebook/react/pull/20155
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -70755,12 +70755,12 @@ describe("DevTools hook detection", function()
 	end)
 	-- ROBLOX deviation END
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_9c8cffb6762654f7edeaf09429f891b2"] = _9c8cffb6762654f7edeaf09429f891b2
-local _9c8cffb6762654f7edeaf09429f891b2 = nil -- DEALLOCATE PLS :pray:
+eC.Children._9c8cffb6762654f7edeaf09429f891b2=eR
+local eS
 
-local _ad10fae37230cd7832897066aadc03e2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ad10fae37230cd7832897066aadc03e2.Name = "ReactFiberHostContext-internal.spec"
-_ad10fae37230cd7832897066aadc03e2.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/ea2af878cc3fb139b0e08cf9bc4b2f4178429d69/packages/react-reconciler/src/__tests__/ReactFiberHostContext-test.internal.js
+local eT={ClassName="ModuleScript",Children={},Properties={}}
+eT.Name="ReactFiberHostContext-internal.spec"
+eT.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/ea2af878cc3fb139b0e08cf9bc4b2f4178429d69/packages/react-reconciler/src/__tests__/ReactFiberHostContext-test.internal.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -70895,12 +70895,12 @@ describe("ReactFiberHostContext", function()
 		)
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_ad10fae37230cd7832897066aadc03e2"] = _ad10fae37230cd7832897066aadc03e2
-local _ad10fae37230cd7832897066aadc03e2 = nil -- DEALLOCATE PLS :pray:
+eC.Children._ad10fae37230cd7832897066aadc03e2=eT
+local eU
 
-local _36c8df4f46265b8cbc6086cb47fe1cb8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_36c8df4f46265b8cbc6086cb47fe1cb8.Name = "ReactFiberLane.roblox.spec"
-_36c8df4f46265b8cbc6086cb47fe1cb8.Properties.Source = [[ -- awaiting pull request: https://github.com/facebook/react/pull/20155
+local eV={ClassName="ModuleScript",Children={},Properties={}}
+eV.Name="ReactFiberLane.roblox.spec"
+eV.Properties.Source=[[ -- awaiting pull request: https://github.com/facebook/react/pull/20155
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -71288,12 +71288,12 @@ describe("higherLanePriority", function()
 		)
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_36c8df4f46265b8cbc6086cb47fe1cb8"] = _36c8df4f46265b8cbc6086cb47fe1cb8
-local _36c8df4f46265b8cbc6086cb47fe1cb8 = nil -- DEALLOCATE PLS :pray:
+eC.Children._36c8df4f46265b8cbc6086cb47fe1cb8=eV
+local eW
 
-local _3b43b676f1ed9c693c1dc11749a887ef = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3b43b676f1ed9c693c1dc11749a887ef.Name = "ReactFiberRoot.roblox.spec"
-_3b43b676f1ed9c693c1dc11749a887ef.Properties.Source = [[ -- awaiting pull request: https://github.com/facebook/react/pull/20155
+local eX={ClassName="ModuleScript",Children={},Properties={}}
+eX.Name="ReactFiberRoot.roblox.spec"
+eX.Properties.Source=[[ -- awaiting pull request: https://github.com/facebook/react/pull/20155
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -71328,12 +71328,12 @@ it("should properly initialize a fiber created with createFiberRoot", function()
 	jestExpect(fiberRoot.current).toBeDefined()
 	jestExpect(fiberRoot.current.updateQueue).toBeDefined()
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_3b43b676f1ed9c693c1dc11749a887ef"] = _3b43b676f1ed9c693c1dc11749a887ef
-local _3b43b676f1ed9c693c1dc11749a887ef = nil -- DEALLOCATE PLS :pray:
+eC.Children._3b43b676f1ed9c693c1dc11749a887ef=eX
+local eY
 
-local _6206ed711a9b0730f6ee031e1dd8713c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6206ed711a9b0730f6ee031e1dd8713c.Name = "ReactFiberStack-test.roblox.spec"
-_6206ed711a9b0730f6ee031e1dd8713c.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local eZ={ClassName="ModuleScript",Children={},Properties={}}
+eZ.Name="ReactFiberStack-test.roblox.spec"
+eZ.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local jestExpect = JestGlobals.expect
 local describe = JestGlobals.describe
@@ -71399,12 +71399,12 @@ describe("ReactFiberStack", function()
 		)
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_6206ed711a9b0730f6ee031e1dd8713c"] = _6206ed711a9b0730f6ee031e1dd8713c
-local _6206ed711a9b0730f6ee031e1dd8713c = nil -- DEALLOCATE PLS :pray:
+eC.Children._6206ed711a9b0730f6ee031e1dd8713c=eZ
+local e_
 
-local _5b07e76a240a50f0b6280c34b7aaa057 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5b07e76a240a50f0b6280c34b7aaa057.Name = "ReactFiberSuspenseComponent.roblox.spec"
-_5b07e76a240a50f0b6280c34b7aaa057.Properties.Source = [[ local Reconciler = script.Parent.Parent
+local e0={ClassName="ModuleScript",Children={},Properties={}}
+e0.Name="ReactFiberSuspenseComponent.roblox.spec"
+e0.Properties.Source=[[ local Reconciler = script.Parent.Parent
 local Packages = script.Parent.Parent.Parent
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local jestExpect = JestGlobals.expect
@@ -71494,12 +71494,12 @@ describe("ReactFiberSuspenseComponent", function()
 		end)
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_5b07e76a240a50f0b6280c34b7aaa057"] = _5b07e76a240a50f0b6280c34b7aaa057
-local _5b07e76a240a50f0b6280c34b7aaa057 = nil -- DEALLOCATE PLS :pray:
+eC.Children._5b07e76a240a50f0b6280c34b7aaa057=e0
+local e1
 
-local _c65acb0fc569e19567b3334696654a58 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c65acb0fc569e19567b3334696654a58.Name = "ReactFiberSuspenseContext.roblox.spec"
-_c65acb0fc569e19567b3334696654a58.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local e2={ClassName="ModuleScript",Children={},Properties={}}
+e2.Name="ReactFiberSuspenseContext.roblox.spec"
+e2.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local jestExpect = JestGlobals.expect
 local jest = JestGlobals.jest
@@ -71560,12 +71560,12 @@ describe("ReactFiberSuspenseContext", function()
 		end)
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_c65acb0fc569e19567b3334696654a58"] = _c65acb0fc569e19567b3334696654a58
-local _c65acb0fc569e19567b3334696654a58 = nil -- DEALLOCATE PLS :pray:
+eC.Children._c65acb0fc569e19567b3334696654a58=e2
+local e3
 
-local _e331cf8104ed0714a435ffff4a6a6876 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e331cf8104ed0714a435ffff4a6a6876.Name = "ReactFiberTreeReflection.roblox.spec"
-_e331cf8104ed0714a435ffff4a6a6876.Properties.Source = [[ local Reconciler = script.Parent.Parent
+local e4={ClassName="ModuleScript",Children={},Properties={}}
+e4.Name="ReactFiberTreeReflection.roblox.spec"
+e4.Properties.Source=[[ local Reconciler = script.Parent.Parent
 local Packages = script.Parent.Parent.Parent
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local jestExpect = JestGlobals.expect
@@ -71992,12 +71992,12 @@ describe("ReactFiberTreeReflection", function()
 		end)
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_e331cf8104ed0714a435ffff4a6a6876"] = _e331cf8104ed0714a435ffff4a6a6876
-local _e331cf8104ed0714a435ffff4a6a6876 = nil -- DEALLOCATE PLS :pray:
+eC.Children._e331cf8104ed0714a435ffff4a6a6876=e4
+local e5
 
-local _f8f84c00f810eec6893cda6466f77cd6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f8f84c00f810eec6893cda6466f77cd6.Name = "ReactHooks-internal.spec"
-_f8f84c00f810eec6893cda6466f77cd6.Properties.Source = [[ --!strict
+local e6={ClassName="ModuleScript",Children={},Properties={}}
+e6.Name="ReactHooks-internal.spec"
+e6.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactHooks-test.internal.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -73945,12 +73945,12 @@ describe("ReactHooks", function()
 		jestExpect(root).toMatchRenderedOutput("Error!")
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_f8f84c00f810eec6893cda6466f77cd6"] = _f8f84c00f810eec6893cda6466f77cd6
-local _f8f84c00f810eec6893cda6466f77cd6 = nil -- DEALLOCATE PLS :pray:
+eC.Children._f8f84c00f810eec6893cda6466f77cd6=e6
+local e7
 
-local _413d64539a9781f212eeee6a9bb7eb3b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_413d64539a9781f212eeee6a9bb7eb3b.Name = "ReactHooksWithNoopRenderer.spec"
-_413d64539a9781f212eeee6a9bb7eb3b.Properties.Source = [[ --!strict
+local e8={ClassName="ModuleScript",Children={},Properties={}}
+e8.Name="ReactHooksWithNoopRenderer.spec"
+e8.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/99cae887f3a8bde760a111516d254c1225242edf/packages/react-reconciler/src/__tests__/ReactHooksWithNoopRenderer-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -78964,12 +78964,12 @@ it("effect dependencies are persisted after a render phase update", function()
 
 	jestExpect(Scheduler).toHaveYielded({ "Render: 0" })
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_413d64539a9781f212eeee6a9bb7eb3b"] = _413d64539a9781f212eeee6a9bb7eb3b
-local _413d64539a9781f212eeee6a9bb7eb3b = nil -- DEALLOCATE PLS :pray:
+eC.Children._413d64539a9781f212eeee6a9bb7eb3b=e8
+local e9
 
-local _468d98032f638eec753482ce1a965ca4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_468d98032f638eec753482ce1a965ca4.Name = "ReactIdentity.spec"
-_468d98032f638eec753482ce1a965ca4.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-dom/src/__tests__/ReactIdentity-test.js
+local fa={ClassName="ModuleScript",Children={},Properties={}}
+fa.Name="ReactIdentity.spec"
+fa.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/v17.0.2/packages/react-dom/src/__tests__/ReactIdentity-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -79437,12 +79437,12 @@ it("should not allow implicit and explicit keys to collide", function()
 		Scheduler.unstable_flushAllWithoutAsserting()
 	end).never.toThrow()
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_468d98032f638eec753482ce1a965ca4"] = _468d98032f638eec753482ce1a965ca4
-local _468d98032f638eec753482ce1a965ca4 = nil -- DEALLOCATE PLS :pray:
+eC.Children._468d98032f638eec753482ce1a965ca4=fa
+local fb
 
-local _2a85f7cb8e41796ac1dba3ffe5120a81 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2a85f7cb8e41796ac1dba3ffe5120a81.Name = "ReactIncremental.spec"
-_2a85f7cb8e41796ac1dba3ffe5120a81.Properties.Source = [[ --!strict
+local fc={ClassName="ModuleScript",Children={},Properties={}}
+fc.Name="ReactIncremental.spec"
+fc.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactIncremental-test.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -82778,12 +82778,12 @@ describe("ReactIncremental", function()
 	--     Scheduler = require('scheduler')
 	-- end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_2a85f7cb8e41796ac1dba3ffe5120a81"] = _2a85f7cb8e41796ac1dba3ffe5120a81
-local _2a85f7cb8e41796ac1dba3ffe5120a81 = nil -- DEALLOCATE PLS :pray:
+eC.Children._2a85f7cb8e41796ac1dba3ffe5120a81=fc
+local fd
 
-local _88c2715627750c1b40866979e212c7ab = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_88c2715627750c1b40866979e212c7ab.Name = "ReactIncrementalErrorReplay.spec"
-_88c2715627750c1b40866979e212c7ab.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactIncrementalErrorReplay-test.js
+local fe={ClassName="ModuleScript",Children={},Properties={}}
+fe.Name="ReactIncrementalErrorReplay.spec"
+fe.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactIncrementalErrorReplay-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -82839,12 +82839,12 @@ it("should ignore error if it doesn't throw on retry", function()
 	ReactNoop.render(React.createElement(App))
 	jestExpect(Scheduler).toFlushWithoutYielding()
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_88c2715627750c1b40866979e212c7ab"] = _88c2715627750c1b40866979e212c7ab
-local _88c2715627750c1b40866979e212c7ab = nil -- DEALLOCATE PLS :pray:
+eC.Children._88c2715627750c1b40866979e212c7ab=fe
+local ff
 
-local _0a1ae98ae22c336161a295e4b665aad4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0a1ae98ae22c336161a295e4b665aad4.Name = "ReactIncrementalReflection.spec"
-_0a1ae98ae22c336161a295e4b665aad4.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactIncrementalReflection-test.js
+local fg={ClassName="ModuleScript",Children={},Properties={}}
+fg.Name="ReactIncrementalReflection.spec"
+fg.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactIncrementalReflection-test.js
 -- * Copyright (c) Facebook, Inc. and its affiliates.
 -- *
 -- * This source code is licensed under the MIT license found in the
@@ -83254,12 +83254,12 @@ describe("ReactIncrementalReflection", function()
 		})
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_0a1ae98ae22c336161a295e4b665aad4"] = _0a1ae98ae22c336161a295e4b665aad4
-local _0a1ae98ae22c336161a295e4b665aad4 = nil -- DEALLOCATE PLS :pray:
+eC.Children._0a1ae98ae22c336161a295e4b665aad4=fg
+local fh
 
-local _0bb38de5cbd8e1c6ddb026b3ad497908 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0bb38de5cbd8e1c6ddb026b3ad497908.Name = "ReactIncrementalScheduling.spec"
-_0bb38de5cbd8e1c6ddb026b3ad497908.Properties.Source = [[ --\[\[*
+local fi={ClassName="ModuleScript",Children={},Properties={}}
+fi.Name="ReactIncrementalScheduling.spec"
+fi.Properties.Source=[[ --\[\[*
  * Upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactIncrementalScheduling-test.js
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -83813,12 +83813,12 @@ describe("ReactIncrementalScheduling", function()
 		)
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_0bb38de5cbd8e1c6ddb026b3ad497908"] = _0bb38de5cbd8e1c6ddb026b3ad497908
-local _0bb38de5cbd8e1c6ddb026b3ad497908 = nil -- DEALLOCATE PLS :pray:
+eC.Children._0bb38de5cbd8e1c6ddb026b3ad497908=fi
+local fj
 
-local _85c9ad090580195ee5ab6f7a6d26f99f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_85c9ad090580195ee5ab6f7a6d26f99f.Name = "ReactIncrementalSideEffects.spec"
-_85c9ad090580195ee5ab6f7a6d26f99f.Properties.Source = [[ --\[\[*
+local fk={ClassName="ModuleScript",Children={},Properties={}}
+fk.Name="ReactIncrementalSideEffects.spec"
+fk.Properties.Source=[[ --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -85131,12 +85131,12 @@ describe("ReactIncrementalSideEffects", function()
 	--         expect(fooInstance.refs.bar.test).toEqual('test')
 	--     })
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_85c9ad090580195ee5ab6f7a6d26f99f"] = _85c9ad090580195ee5ab6f7a6d26f99f
-local _85c9ad090580195ee5ab6f7a6d26f99f = nil -- DEALLOCATE PLS :pray:
+eC.Children._85c9ad090580195ee5ab6f7a6d26f99f=fk
+local fl
 
-local _9a628e3dd4e95192c8ce555f2a73e90c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9a628e3dd4e95192c8ce555f2a73e90c.Name = "ReactIncrementalUpdates.spec"
-_9a628e3dd4e95192c8ce555f2a73e90c.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactIncrementalUpdates-test.js
+local fm={ClassName="ModuleScript",Children={},Properties={}}
+fm.Name="ReactIncrementalUpdates.spec"
+fm.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactIncrementalUpdates-test.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
 --  * This source code is licensed under the MIT license found in the
@@ -86083,12 +86083,12 @@ describe("ReactIncrementalUpdates", function()
 		end
 	)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_9a628e3dd4e95192c8ce555f2a73e90c"] = _9a628e3dd4e95192c8ce555f2a73e90c
-local _9a628e3dd4e95192c8ce555f2a73e90c = nil -- DEALLOCATE PLS :pray:
+eC.Children._9a628e3dd4e95192c8ce555f2a73e90c=fm
+local fn
 
-local _6e9a52b7b25eee502b6e4692e06c0eb7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6e9a52b7b25eee502b6e4692e06c0eb7.Name = "ReactIncrementalUpdatesMinimalism.spec"
-_6e9a52b7b25eee502b6e4692e06c0eb7.Properties.Source = [[ -- Upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactIncrementalUpdatesMinimalism-test.js
+local fo={ClassName="ModuleScript",Children={},Properties={}}
+fo.Name="ReactIncrementalUpdatesMinimalism.spec"
+fo.Properties.Source=[[ -- Upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactIncrementalUpdatesMinimalism-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -86253,12 +86253,12 @@ describe("ReactIncrementalUpdatesMinimalism", function()
 		})
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_6e9a52b7b25eee502b6e4692e06c0eb7"] = _6e9a52b7b25eee502b6e4692e06c0eb7
-local _6e9a52b7b25eee502b6e4692e06c0eb7 = nil -- DEALLOCATE PLS :pray:
+eC.Children._6e9a52b7b25eee502b6e4692e06c0eb7=fo
+local fp
 
-local _56535943568907e3ed1d11d16a780fb5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_56535943568907e3ed1d11d16a780fb5.Name = "ReactLazy-internal.spec"
-_56535943568907e3ed1d11d16a780fb5.Properties.Source = [[ -- local PropTypes
+local fq={ClassName="ModuleScript",Children={},Properties={}}
+fq.Name="ReactLazy-internal.spec"
+fq.Properties.Source=[[ -- local PropTypes
 local React
 local ReactTestRenderer
 local Scheduler
@@ -87909,12 +87909,12 @@ describe("ReactLazy", function()
 	--     end)
 	-- end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_56535943568907e3ed1d11d16a780fb5"] = _56535943568907e3ed1d11d16a780fb5
-local _56535943568907e3ed1d11d16a780fb5 = nil -- DEALLOCATE PLS :pray:
+eC.Children._56535943568907e3ed1d11d16a780fb5=fq
+local fr
 
-local _5084bb65489633676b817e3c40c03d0c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5084bb65489633676b817e3c40c03d0c.Name = "ReactNewContext.spec"
-_5084bb65489633676b817e3c40c03d0c.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/8e5adfbd7e605bda9c5e96c10e015b3dc0df688e/packages/react-reconciler/src/__tests__/ReactNewContext-test.js
+local fs={ClassName="ModuleScript",Children={},Properties={}}
+fs.Name="ReactNewContext.spec"
+fs.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/8e5adfbd7e605bda9c5e96c10e015b3dc0df688e/packages/react-reconciler/src/__tests__/ReactNewContext-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -89670,12 +89670,12 @@ end)
 
 -- ROBLOX deviation: we don't implement this property at all
 -- it('should warn with an error message when using nested context consumers in DEV', () => { ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_5084bb65489633676b817e3c40c03d0c"] = _5084bb65489633676b817e3c40c03d0c
-local _5084bb65489633676b817e3c40c03d0c = nil -- DEALLOCATE PLS :pray:
+eC.Children._5084bb65489633676b817e3c40c03d0c=fs
+local ft
 
-local _a9bc765240671ec0507630c3463cea53 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a9bc765240671ec0507630c3463cea53.Name = "ReactNoopRendererAct.spec"
-_a9bc765240671ec0507630c3463cea53.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d17086c7c813402a550d15a2f56dc43f1dbd1735/packages/react-reconciler/src/__tests__/ReactNoopRendererAct-test.js
+local fu={ClassName="ModuleScript",Children={},Properties={}}
+fu.Name="ReactNoopRendererAct.spec"
+fu.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d17086c7c813402a550d15a2f56dc43f1dbd1735/packages/react-reconciler/src/__tests__/ReactNoopRendererAct-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -89746,12 +89746,12 @@ it("should work with async/await", function()
 	jestExpect(Scheduler).toFlushWithoutYielding()
 	jestExpect(ReactNoop.getChildren()).toEqual({ { text = "1", hidden = false } })
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_a9bc765240671ec0507630c3463cea53"] = _a9bc765240671ec0507630c3463cea53
-local _a9bc765240671ec0507630c3463cea53 = nil -- DEALLOCATE PLS :pray:
+eC.Children._a9bc765240671ec0507630c3463cea53=fu
+local fv
 
-local _f2cf9d9ad3d239d3e8bb936732196d28 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f2cf9d9ad3d239d3e8bb936732196d28.Name = "ReactSuspense-internal.spec"
-_f2cf9d9ad3d239d3e8bb936732196d28.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactSuspense-test.internal.js
+local fw={ClassName="ModuleScript",Children={},Properties={}}
+fw.Name="ReactSuspense-internal.spec"
+fw.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/ReactSuspense-test.internal.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
 --  * This source code is licensed under the MIT license found in the
@@ -91981,12 +91981,12 @@ describe("ReactSuspense", function()
 	--     end)
 	-- end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_f2cf9d9ad3d239d3e8bb936732196d28"] = _f2cf9d9ad3d239d3e8bb936732196d28
-local _f2cf9d9ad3d239d3e8bb936732196d28 = nil -- DEALLOCATE PLS :pray:
+eC.Children._f2cf9d9ad3d239d3e8bb936732196d28=fw
+local fx
 
-local _f99737ecb569cfa627dcab5cd4b63b8a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f99737ecb569cfa627dcab5cd4b63b8a.Name = "ReactTopLevelFragment.spec"
-_f99737ecb569cfa627dcab5cd4b63b8a.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/69060e1da6061af845162dcf6854a5d9af28350a/packages/react-reconciler/src/__tests__/ReactTopLevelFragment-test.js
+local fy={ClassName="ModuleScript",Children={},Properties={}}
+fy.Name="ReactTopLevelFragment.spec"
+fy.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/69060e1da6061af845162dcf6854a5d9af28350a/packages/react-reconciler/src/__tests__/ReactTopLevelFragment-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -92225,12 +92225,12 @@ it("should preserve state in a reorder", function()
 
 	jestExpect(instanceB).toBe(instanceA)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_f99737ecb569cfa627dcab5cd4b63b8a"] = _f99737ecb569cfa627dcab5cd4b63b8a
-local _f99737ecb569cfa627dcab5cd4b63b8a = nil -- DEALLOCATE PLS :pray:
+eC.Children._f99737ecb569cfa627dcab5cd4b63b8a=fy
+local fz
 
-local _2013dd2d16ec7fa8be0bbfabd3e37e24 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2013dd2d16ec7fa8be0bbfabd3e37e24.Name = "ReactTopLevelText.spec"
-_2013dd2d16ec7fa8be0bbfabd3e37e24.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/69060e1da6061af845162dcf6854a5d9af28350a/packages/react-reconciler/src/__tests__/ReactTopLevelText-test.js
+local fA={ClassName="ModuleScript",Children={},Properties={}}
+fA.Name="ReactTopLevelText.spec"
+fA.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/69060e1da6061af845162dcf6854a5d9af28350a/packages/react-reconciler/src/__tests__/ReactTopLevelText-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -92285,12 +92285,12 @@ describe("ReactTopLevelText", function()
 		jestExpect(ReactNoop).toMatchRenderedOutput("10")
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_2013dd2d16ec7fa8be0bbfabd3e37e24"] = _2013dd2d16ec7fa8be0bbfabd3e37e24
-local _2013dd2d16ec7fa8be0bbfabd3e37e24 = nil -- DEALLOCATE PLS :pray:
+eC.Children._2013dd2d16ec7fa8be0bbfabd3e37e24=fA
+local fB
 
-local _0723cf70d059620f92a8e150f0b3216d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0723cf70d059620f92a8e150f0b3216d.Name = "ReactUpdateQueue.roblox.spec"
-_0723cf70d059620f92a8e150f0b3216d.Properties.Source = [[ --\[\[*
+local fC={ClassName="ModuleScript",Children={},Properties={}}
+fC.Name="ReactUpdateQueue.roblox.spec"
+fC.Properties.Source=[[ --\[\[*
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
 \]\]
@@ -92461,12 +92461,12 @@ describe("enqueueCapturedUpdate", function()
 		jestExpect(workInProgress.updateQueue.lastBaseUpdate).toEqual(update)
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_0723cf70d059620f92a8e150f0b3216d"] = _0723cf70d059620f92a8e150f0b3216d
-local _0723cf70d059620f92a8e150f0b3216d = nil -- DEALLOCATE PLS :pray:
+eC.Children._0723cf70d059620f92a8e150f0b3216d=fC
+local fD
 
-local _f3fe2bdd889b3847a6cd2255baa92421 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f3fe2bdd889b3847a6cd2255baa92421.Name = "ReactUseRef.roblox.spec"
-_f3fe2bdd889b3847a6cd2255baa92421.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local fE={ClassName="ModuleScript",Children={},Properties={}}
+fE.Name="ReactUseRef.roblox.spec"
+fE.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 local React
 local ReactRoblox
 local Scheduler
@@ -92635,12 +92635,12 @@ describe("useRef", function()
 		root:unmount()
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_f3fe2bdd889b3847a6cd2255baa92421"] = _f3fe2bdd889b3847a6cd2255baa92421
-local _f3fe2bdd889b3847a6cd2255baa92421 = nil -- DEALLOCATE PLS :pray:
+eC.Children._f3fe2bdd889b3847a6cd2255baa92421=fE
+local fF
 
-local _91cd5b187cf588e3ce49b29231c5187e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_91cd5b187cf588e3ce49b29231c5187e.Name = "SchedulingProfiler-internal.spec"
-_91cd5b187cf588e3ce49b29231c5187e.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/8af27aeedbc6b00bc2ef49729fc84f116c70a27c/packages/react-reconciler/src/__tests__/SchedulingProfiler-test.internal.js
+local fG={ClassName="ModuleScript",Children={},Properties={}}
+fG.Name="SchedulingProfiler-internal.spec"
+fG.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/8af27aeedbc6b00bc2ef49729fc84f116c70a27c/packages/react-reconciler/src/__tests__/SchedulingProfiler-test.internal.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -93251,12 +93251,12 @@ describe("SchedulingProfiler", function()
 		-- )
 	end)
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_91cd5b187cf588e3ce49b29231c5187e"] = _91cd5b187cf588e3ce49b29231c5187e
-local _91cd5b187cf588e3ce49b29231c5187e = nil -- DEALLOCATE PLS :pray:
+eC.Children._91cd5b187cf588e3ce49b29231c5187e=fG
+local fH
 
-local _ba0500bc9505c67567d1949ff5c65927 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ba0500bc9505c67567d1949ff5c65927.Name = "useMutableSource-internal.spec"
-_ba0500bc9505c67567d1949ff5c65927.Properties.Source = [[ -- Upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/useMutableSource-test.internal.js
+local fI={ClassName="ModuleScript",Children={},Properties={}}
+fI.Name="useMutableSource-internal.spec"
+fI.Properties.Source=[[ -- Upstream: https://github.com/facebook/react/blob/d13f5b9538e48f74f7c571ef3cde652ca887cca0/packages/react-reconciler/src/__tests__/useMutableSource-test.internal.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
 --  * This source code is licensed under the MIT license found in the
@@ -95578,16 +95578,16 @@ describe("useMutableSource", function()
 		end)
 	end
 end) ]]
-_456270010f2b3b88f95c29067fb9a3c4.Children["_ba0500bc9505c67567d1949ff5c65927"] = _ba0500bc9505c67567d1949ff5c65927
-local _ba0500bc9505c67567d1949ff5c65927 = nil -- DEALLOCATE PLS :pray:
+eC.Children._ba0500bc9505c67567d1949ff5c65927=fI
+local fJ
 
-local _0a1fbb01f1f87415d22b1f313fca1a99 = { ClassName = "Folder", Children = {}, Properties = {} }
-_0a1fbb01f1f87415d22b1f313fca1a99.Name = "forks"
-_2ad11420b2b47d55efad72cd20849561.Children["_0a1fbb01f1f87415d22b1f313fca1a99"] = _0a1fbb01f1f87415d22b1f313fca1a99
-local _0a1fbb01f1f87415d22b1f313fca1a99 = nil -- DEALLOCATE PLS :pray:
-local _998caa1e2efad607ca61c62362008fc3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_998caa1e2efad607ca61c62362008fc3.Name = "ReactFiberHostConfig.test"
-_998caa1e2efad607ca61c62362008fc3.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/b87aabdfe1b7461e7331abb3601d9e6bb27544bc/packages/react-reconciler/src/forks/ReactFiberHostConfig.test.js
+local fK={ClassName="Folder",Children={},Properties={}}
+fK.Name="forks"
+cX.Children._0a1fbb01f1f87415d22b1f313fca1a99=fK
+local fL
+local fM={ClassName="ModuleScript",Children={},Properties={}}
+fM.Name="ReactFiberHostConfig.test"
+fM.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/b87aabdfe1b7461e7331abb3601d9e6bb27544bc/packages/react-reconciler/src/forks/ReactFiberHostConfig.test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -95600,12 +95600,12 @@ _998caa1e2efad607ca61c62362008fc3.Properties.Source = [[ -- ROBLOX upstream: htt
 local Packages = script.Parent.Parent.Parent
 
 return require(Packages.Dev.ReactTestRenderer) ]]
-_0a1fbb01f1f87415d22b1f313fca1a99.Children["_998caa1e2efad607ca61c62362008fc3"] = _998caa1e2efad607ca61c62362008fc3
-local _998caa1e2efad607ca61c62362008fc3 = nil -- DEALLOCATE PLS :pray:
+fL.Children._998caa1e2efad607ca61c62362008fc3=fM
+local fN
 
-local _27edc362b0f37fe1967e342c69b398d9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_27edc362b0f37fe1967e342c69b398d9.Name = "ReactRoblox"
-_27edc362b0f37fe1967e342c69b398d9.Properties.Source = [[ --!strict
+local fO={ClassName="ModuleScript",Children={},Properties={}}
+fO.Name="ReactRoblox"
+fO.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/efd8f6442d1aa7c4566fe812cba03e7e83aaccc3/packages/react-native-renderer/index.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -95619,11 +95619,11 @@ _27edc362b0f37fe1967e342c69b398d9.Properties.Source = [[ --!strict
 local HostTypes = require(script.client["ReactRobloxHostTypes.roblox"])
 export type RootType = HostTypes.RootType
 return require(script.client.ReactRoblox) ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_27edc362b0f37fe1967e342c69b398d9"] = _27edc362b0f37fe1967e342c69b398d9
-local _27edc362b0f37fe1967e342c69b398d9 = nil -- DEALLOCATE PLS :pray:
-local _a6c6f4b7c3fabed66a4be5e1c4ef9672 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a6c6f4b7c3fabed66a4be5e1c4ef9672.Name = "ReactReconciler.roblox"
-_a6c6f4b7c3fabed66a4be5e1c4ef9672.Properties.Source = [[ --!strict
+c.Children._27edc362b0f37fe1967e342c69b398d9=fO
+local fP
+local fQ={ClassName="ModuleScript",Children={},Properties={}}
+fQ.Name="ReactReconciler.roblox"
+fQ.Properties.Source=[[ --!strict
 -- ROBLOX deviation: Initializes the reconciler with this package's host
 -- config and returns the resulting module
 
@@ -95633,16 +95633,16 @@ local initializeReconciler = require(Packages.ReactReconciler)
 local ReactRobloxHostConfig = require(script.Parent.client.ReactRobloxHostConfig)
 
 return initializeReconciler(ReactRobloxHostConfig) ]]
-_27edc362b0f37fe1967e342c69b398d9.Children["_a6c6f4b7c3fabed66a4be5e1c4ef9672"] = _a6c6f4b7c3fabed66a4be5e1c4ef9672
-local _a6c6f4b7c3fabed66a4be5e1c4ef9672 = nil -- DEALLOCATE PLS :pray:
+fP.Children._a6c6f4b7c3fabed66a4be5e1c4ef9672=fQ
+local fR
 
-local _f9ff67a23f97fd97242dbf58db086150 = { ClassName = "Folder", Children = {}, Properties = {} }
-_f9ff67a23f97fd97242dbf58db086150.Name = "client"
-_27edc362b0f37fe1967e342c69b398d9.Children["_f9ff67a23f97fd97242dbf58db086150"] = _f9ff67a23f97fd97242dbf58db086150
-local _f9ff67a23f97fd97242dbf58db086150 = nil -- DEALLOCATE PLS :pray:
-local _e1f949aa9a91b7b1449a7b531beae2f6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e1f949aa9a91b7b1449a7b531beae2f6.Name = "ReactRoblox"
-_e1f949aa9a91b7b1449a7b531beae2f6.Properties.Source = [[ --!strict
+local fS={ClassName="Folder",Children={},Properties={}}
+fS.Name="client"
+fP.Children._f9ff67a23f97fd97242dbf58db086150=fS
+local fT
+local fU={ClassName="ModuleScript",Children={},Properties={}}
+fU.Name="ReactRoblox"
+fU.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/8e5adfbd7e605bda9c5e96c10e015b3dc0df688e/packages/react-dom/src/client/ReactDOM.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -95951,12 +95951,12 @@ if _G.__DEV__ then
 end
 
 return exports ]]
-_f9ff67a23f97fd97242dbf58db086150.Children["_e1f949aa9a91b7b1449a7b531beae2f6"] = _e1f949aa9a91b7b1449a7b531beae2f6
-local _e1f949aa9a91b7b1449a7b531beae2f6 = nil -- DEALLOCATE PLS :pray:
+fT.Children._e1f949aa9a91b7b1449a7b531beae2f6=fU
+local fV
 
-local _fcc979aca5618d90f742d526a31cd6a4 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_fcc979aca5618d90f742d526a31cd6a4.Name = "ReactRobloxComponent"
-_fcc979aca5618d90f742d526a31cd6a4.Properties.Source = [[ --!strict
+local fW={ClassName="ModuleScript",Children={},Properties={}}
+fW.Name="ReactRobloxComponent"
+fW.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/8e5adfbd7e605bda9c5e96c10e015b3dc0df688e/packages/react-dom/src/client/ReactDOMComponent.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -96202,12 +96202,12 @@ exports.updateProperties = RobloxComponentProps.updateProperties
 exports.cleanupHostComponent = RobloxComponentProps.cleanupHostComponent
 
 return exports ]]
-_f9ff67a23f97fd97242dbf58db086150.Children["_fcc979aca5618d90f742d526a31cd6a4"] = _fcc979aca5618d90f742d526a31cd6a4
-local _fcc979aca5618d90f742d526a31cd6a4 = nil -- DEALLOCATE PLS :pray:
+fT.Children._fcc979aca5618d90f742d526a31cd6a4=fW
+local fX
 
-local _7ea9035315e325708d1b49954d02d5a0 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7ea9035315e325708d1b49954d02d5a0.Name = "ReactRobloxComponentTree"
-_7ea9035315e325708d1b49954d02d5a0.Properties.Source = [[ --!strict
+local fY={ClassName="ModuleScript",Children={},Properties={}}
+fY.Name="ReactRobloxComponentTree"
+fY.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/8e5adfbd7e605bda9c5e96c10e015b3dc0df688e/packages/react-dom/src/client/ReactDOMComponentTree.js
 -- ROBLOX upstream: https://github.com/facebook/react/blob/efd8f6442d1aa7c4566fe812cba03e7e83aaccc3/packages/react-native-renderer/src/ReactNativeComponentTree.js
 --\[\[*
@@ -96503,12 +96503,12 @@ end
 -- end
 
 return exports ]]
-_f9ff67a23f97fd97242dbf58db086150.Children["_7ea9035315e325708d1b49954d02d5a0"] = _7ea9035315e325708d1b49954d02d5a0
-local _7ea9035315e325708d1b49954d02d5a0 = nil -- DEALLOCATE PLS :pray:
+fT.Children._7ea9035315e325708d1b49954d02d5a0=fY
+local fZ
 
-local _0dea315b987f2e9187ebe2de7835ef7c = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0dea315b987f2e9187ebe2de7835ef7c.Name = "ReactRobloxHostConfig"
-_0dea315b987f2e9187ebe2de7835ef7c.Properties.Source = [[ --!strict
+local f_={ClassName="ModuleScript",Children={},Properties={}}
+f_.Name="ReactRobloxHostConfig"
+f_.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/8e5adfbd7e605bda9c5e96c10e015b3dc0df688e/packages/react-dom/src/client/ReactDOMHostConfig.js
 -- ROBLOX upstream: https://github.com/facebook/react/blob/efd8f6442d1aa7c4566fe812cba03e7e83aaccc3/packages/react-native-renderer/src/ReactNativeHostConfig.js
 --\[\[*
@@ -97868,12 +97868,12 @@ end
 -- end
 
 return exports ]]
-_f9ff67a23f97fd97242dbf58db086150.Children["_0dea315b987f2e9187ebe2de7835ef7c"] = _0dea315b987f2e9187ebe2de7835ef7c
-local _0dea315b987f2e9187ebe2de7835ef7c = nil -- DEALLOCATE PLS :pray:
+fT.Children._0dea315b987f2e9187ebe2de7835ef7c=f_
+local f0
 
-local _695e07b66ae759f1049b44da7016fddc = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_695e07b66ae759f1049b44da7016fddc.Name = "ReactRobloxHostTypes.roblox"
-_695e07b66ae759f1049b44da7016fddc.Properties.Source = [[ --!strict
+local f1={ClassName="ModuleScript",Children={},Properties={}}
+f1.Name="ReactRobloxHostTypes.roblox"
+f1.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/8e5adfbd7e605bda9c5e96c10e015b3dc0df688e/packages/react-dom/src/client/ReactDOMHostConfig.js
 -- ROBLOX upstream: https://github.com/facebook/react/blob/efd8f6442d1aa7c4566fe812cba03e7e83aaccc3/packages/react-native-renderer/src/ReactNativeHostConfig.js
 --\[\[*
@@ -97969,12 +97969,12 @@ export type RootOptions = {
 }
 
 return {} ]]
-_f9ff67a23f97fd97242dbf58db086150.Children["_695e07b66ae759f1049b44da7016fddc"] = _695e07b66ae759f1049b44da7016fddc
-local _695e07b66ae759f1049b44da7016fddc = nil -- DEALLOCATE PLS :pray:
+fT.Children._695e07b66ae759f1049b44da7016fddc=f1
+local f2
 
-local _aadc8457246217633cbda15f2d823111 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_aadc8457246217633cbda15f2d823111.Name = "ReactRobloxRoot"
-_aadc8457246217633cbda15f2d823111.Properties.Source = [[ --!strict
+local f3={ClassName="ModuleScript",Children={},Properties={}}
+f3.Name="ReactRobloxRoot"
+f3.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/8e5adfbd7e605bda9c5e96c10e015b3dc0df688e/packages/react-dom/src/client/ReactDOMRoot.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -98229,16 +98229,16 @@ function warnIfReactDOMContainerInDEV(container)
 end
 
 return exports ]]
-_f9ff67a23f97fd97242dbf58db086150.Children["_aadc8457246217633cbda15f2d823111"] = _aadc8457246217633cbda15f2d823111
-local _aadc8457246217633cbda15f2d823111 = nil -- DEALLOCATE PLS :pray:
+fT.Children._aadc8457246217633cbda15f2d823111=f3
+local f4
 
-local _c6e19edaa184f95f04a8663de3d8b89f = { ClassName = "Folder", Children = {}, Properties = {} }
-_c6e19edaa184f95f04a8663de3d8b89f.Name = "__tests__"
-_f9ff67a23f97fd97242dbf58db086150.Children["_c6e19edaa184f95f04a8663de3d8b89f"] = _c6e19edaa184f95f04a8663de3d8b89f
-local _c6e19edaa184f95f04a8663de3d8b89f = nil -- DEALLOCATE PLS :pray:
-local _54e34900fe999b8116d9b2ac1dd83751 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_54e34900fe999b8116d9b2ac1dd83751.Name = "PropAssignmentErrors.roblox.spec"
-_54e34900fe999b8116d9b2ac1dd83751.Properties.Source = [[ local Packages = script.Parent.Parent.Parent.Parent
+local f5={ClassName="Folder",Children={},Properties={}}
+f5.Name="__tests__"
+fT.Children._c6e19edaa184f95f04a8663de3d8b89f=f5
+local f6
+local f7={ClassName="ModuleScript",Children={},Properties={}}
+f7.Name="PropAssignmentErrors.roblox.spec"
+f7.Properties.Source=[[ local Packages = script.Parent.Parent.Parent.Parent
 
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local jestExpect = JestGlobals.expect
@@ -98320,12 +98320,12 @@ it("should provide a useful error when a binding update fails", function()
 		)
 	end).toThrow()
 end) ]]
-_c6e19edaa184f95f04a8663de3d8b89f.Children["_54e34900fe999b8116d9b2ac1dd83751"] = _54e34900fe999b8116d9b2ac1dd83751
-local _54e34900fe999b8116d9b2ac1dd83751 = nil -- DEALLOCATE PLS :pray:
+f6.Children._54e34900fe999b8116d9b2ac1dd83751=f7
+local f8
 
-local _a5a0346c11d2fabe10b1afe15e6a9aee = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a5a0346c11d2fabe10b1afe15e6a9aee.Name = "ReactRobloxBindings.roblox.spec"
-_a5a0346c11d2fabe10b1afe15e6a9aee.Properties.Source = [[ --\[\[
+local f9={ClassName="ModuleScript",Children={},Properties={}}
+f9.Name="ReactRobloxBindings.roblox.spec"
+f9.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -98601,12 +98601,12 @@ describe("useBinding hook", function()
 		jestExpect(parent.Label.Text).toBe("Salutation: sup")
 	end)
 end) ]]
-_c6e19edaa184f95f04a8663de3d8b89f.Children["_a5a0346c11d2fabe10b1afe15e6a9aee"] = _a5a0346c11d2fabe10b1afe15e6a9aee
-local _a5a0346c11d2fabe10b1afe15e6a9aee = nil -- DEALLOCATE PLS :pray:
+f6.Children._a5a0346c11d2fabe10b1afe15e6a9aee=f9
+local ga
 
-local _6e26bfb07ed9a955ba229041700422c8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6e26bfb07ed9a955ba229041700422c8.Name = "ReactRobloxComponentTree.roblox.spec"
-_6e26bfb07ed9a955ba229041700422c8.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react-dom/src/__tests__/ReactDOMComponentTree-test.js
+local gb={ClassName="ModuleScript",Children={},Properties={}}
+gb.Name="ReactRobloxComponentTree.roblox.spec"
+gb.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react-dom/src/__tests__/ReactDOMComponentTree-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -98690,12 +98690,12 @@ it("getClosestInstanceFromNode should return portaled instances", function()
 	)
 	jestExpect(portal3Label.memoizedProps.Text).toEqual("portal3[0]")
 end) ]]
-_c6e19edaa184f95f04a8663de3d8b89f.Children["_6e26bfb07ed9a955ba229041700422c8"] = _6e26bfb07ed9a955ba229041700422c8
-local _6e26bfb07ed9a955ba229041700422c8 = nil -- DEALLOCATE PLS :pray:
+f6.Children._6e26bfb07ed9a955ba229041700422c8=gb
+local gc
 
-local _3e6c84affde831b74ed2aeeb1112b665 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3e6c84affde831b74ed2aeeb1112b665.Name = "ReactRobloxFiber.spec"
-_3e6c84affde831b74ed2aeeb1112b665.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react-dom/src/__tests__/ReactDOMFiber-test.js
+local gd={ClassName="ModuleScript",Children={},Properties={}}
+gd.Name="ReactRobloxFiber.spec"
+gd.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react-dom/src/__tests__/ReactDOMFiber-test.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -100264,12 +100264,12 @@ end)
 
 --   expect(container.textContent).toBe('new')
 -- }) ]]
-_c6e19edaa184f95f04a8663de3d8b89f.Children["_3e6c84affde831b74ed2aeeb1112b665"] = _3e6c84affde831b74ed2aeeb1112b665
-local _3e6c84affde831b74ed2aeeb1112b665 = nil -- DEALLOCATE PLS :pray:
+f6.Children._3e6c84affde831b74ed2aeeb1112b665=gd
+local ge
 
-local _61dc8b7a925bf1bba19020fd1394d86f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_61dc8b7a925bf1bba19020fd1394d86f.Name = "RobloxRenderer.roblox.spec"
-_61dc8b7a925bf1bba19020fd1394d86f.Properties.Source = [[ local Packages = script.Parent.Parent.Parent.Parent
+local gf={ClassName="ModuleScript",Children={},Properties={}}
+gf.Name="RobloxRenderer.roblox.spec"
+gf.Properties.Source=[[ local Packages = script.Parent.Parent.Parent.Parent
 
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local jestExpect = JestGlobals.expect
@@ -101311,16 +101311,16 @@ end)
 -- 		})
 -- 	end)
 -- end) ]]
-_c6e19edaa184f95f04a8663de3d8b89f.Children["_61dc8b7a925bf1bba19020fd1394d86f"] = _61dc8b7a925bf1bba19020fd1394d86f
-local _61dc8b7a925bf1bba19020fd1394d86f = nil -- DEALLOCATE PLS :pray:
+f6.Children._61dc8b7a925bf1bba19020fd1394d86f=gf
+local gg
 
-local _dc3cb628e151e3c47ea9c06f36854f75 = { ClassName = "Folder", Children = {}, Properties = {} }
-_dc3cb628e151e3c47ea9c06f36854f75.Name = "roblox"
-_f9ff67a23f97fd97242dbf58db086150.Children["_dc3cb628e151e3c47ea9c06f36854f75"] = _dc3cb628e151e3c47ea9c06f36854f75
-local _dc3cb628e151e3c47ea9c06f36854f75 = nil -- DEALLOCATE PLS :pray:
-local _54989d642f15de732463a6b4a83e9f3b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_54989d642f15de732463a6b4a83e9f3b.Name = "RobloxComponentProps"
-_54989d642f15de732463a6b4a83e9f3b.Properties.Source = [[ --\[\[
+local gh={ClassName="Folder",Children={},Properties={}}
+gh.Name="roblox"
+fT.Children._dc3cb628e151e3c47ea9c06f36854f75=gh
+local gi
+local gj={ClassName="ModuleScript",Children={},Properties={}}
+gj.Name="RobloxComponentProps"
+gj.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -101658,12 +101658,12 @@ return {
 	_instanceToEventManager = instanceToEventManager,
 	_instanceToBindings = instanceToBindings,
 } ]]
-_dc3cb628e151e3c47ea9c06f36854f75.Children["_54989d642f15de732463a6b4a83e9f3b"] = _54989d642f15de732463a6b4a83e9f3b
-local _54989d642f15de732463a6b4a83e9f3b = nil -- DEALLOCATE PLS :pray:
+gi.Children._54989d642f15de732463a6b4a83e9f3b=gj
+local gk
 
-local _9e57556a108233e4178cbf1205f30fce = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9e57556a108233e4178cbf1205f30fce.Name = "SingleEventManager"
-_9e57556a108233e4178cbf1205f30fce.Properties.Source = [[ -- ROBLOX upstream: https://github.com/Roblox/roact/blob/b2ba9cf4c219c2654e6572219a68d0bf1b541418/src/SingleEventManager.lua
+local gl={ClassName="ModuleScript",Children={},Properties={}}
+gl.Name="SingleEventManager"
+gl.Properties.Source=[[ -- ROBLOX upstream: https://github.com/Roblox/roact/blob/b2ba9cf4c219c2654e6572219a68d0bf1b541418/src/SingleEventManager.lua
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the Apache License, Version 2.0 (the "License");
@@ -101838,16 +101838,16 @@ function SingleEventManager:resume()
 end
 
 return SingleEventManager ]]
-_dc3cb628e151e3c47ea9c06f36854f75.Children["_9e57556a108233e4178cbf1205f30fce"] = _9e57556a108233e4178cbf1205f30fce
-local _9e57556a108233e4178cbf1205f30fce = nil -- DEALLOCATE PLS :pray:
+gi.Children._9e57556a108233e4178cbf1205f30fce=gl
+local gm
 
-local _2fb26c1c1fc1e664b92e40714864881e = { ClassName = "Folder", Children = {}, Properties = {} }
-_2fb26c1c1fc1e664b92e40714864881e.Name = "__tests__"
-_dc3cb628e151e3c47ea9c06f36854f75.Children["_2fb26c1c1fc1e664b92e40714864881e"] = _2fb26c1c1fc1e664b92e40714864881e
-local _2fb26c1c1fc1e664b92e40714864881e = nil -- DEALLOCATE PLS :pray:
-local _06e8402f87e6466aa5970d222b412ed8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_06e8402f87e6466aa5970d222b412ed8.Name = "RobloxComponentProps.roblox.spec"
-_06e8402f87e6466aa5970d222b412ed8.Properties.Source = [[ local React
+local gn={ClassName="Folder",Children={},Properties={}}
+gn.Name="__tests__"
+gi.Children._2fb26c1c1fc1e664b92e40714864881e=gn
+local go
+local gp={ClassName="ModuleScript",Children={},Properties={}}
+gp.Name="RobloxComponentProps.roblox.spec"
+gp.Properties.Source=[[ local React
 local ReactRoblox
 local Scheduler
 local RobloxComponentProps
@@ -102013,12 +102013,12 @@ it("should clear instanceToEventManager map of unmounted descendents", function(
 
 	jestExpect(getSizeOfMap(RobloxComponentProps._instanceToEventManager)).toBe(0)
 end) ]]
-_2fb26c1c1fc1e664b92e40714864881e.Children["_06e8402f87e6466aa5970d222b412ed8"] = _06e8402f87e6466aa5970d222b412ed8
-local _06e8402f87e6466aa5970d222b412ed8 = nil -- DEALLOCATE PLS :pray:
+go.Children._06e8402f87e6466aa5970d222b412ed8=gp
+local gq
 
-local _b0a3943cd069148c62d4ae215535045d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b0a3943cd069148c62d4ae215535045d.Name = "SingleEventManager.spec"
-_b0a3943cd069148c62d4ae215535045d.Properties.Source = [[ -- ROBLOX upstream: https://github.com/Roblox/roact/blob/b2ba9cf4c219c2654e6572219a68d0bf1b541418/src/SingleEventManager.spec.lua
+local gr={ClassName="ModuleScript",Children={},Properties={}}
+gr.Name="SingleEventManager.spec"
+gr.Properties.Source=[[ -- ROBLOX upstream: https://github.com/Roblox/roact/blob/b2ba9cf4c219c2654e6572219a68d0bf1b541418/src/SingleEventManager.spec.lua
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the Apache License, Version 2.0 (the "License");
@@ -102329,12 +102329,12 @@ describe("connectPropertyChange", function()
 		end).toThrow()
 	end)
 end) ]]
-_2fb26c1c1fc1e664b92e40714864881e.Children["_b0a3943cd069148c62d4ae215535045d"] = _b0a3943cd069148c62d4ae215535045d
-local _b0a3943cd069148c62d4ae215535045d = nil -- DEALLOCATE PLS :pray:
+go.Children._b0a3943cd069148c62d4ae215535045d=gr
+local gs
 
-local _af0923efb11edcf37012193cf529f918 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_af0923efb11edcf37012193cf529f918.Name = "Tagging.spec"
-_af0923efb11edcf37012193cf529f918.Properties.Source = [[ --!strict
+local gt={ClassName="ModuleScript",Children={},Properties={}}
+gt.Name="Tagging.spec"
+gt.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -102687,12 +102687,12 @@ it("should warn when assigning tags to unrooted instances", function()
 	-- only gets populated when the orphaned root is added to the DataModel
 	jestExpect(CollectionService:GetTagged("tag1")).toEqual({})
 end) ]]
-_2fb26c1c1fc1e664b92e40714864881e.Children["_af0923efb11edcf37012193cf529f918"] = _af0923efb11edcf37012193cf529f918
-local _af0923efb11edcf37012193cf529f918 = nil -- DEALLOCATE PLS :pray:
+go.Children._af0923efb11edcf37012193cf529f918=gt
+local gu
 
-local _19ca56da70522b974dbc9b9fbfad9c33 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_19ca56da70522b974dbc9b9fbfad9c33.Name = "getDefaultInstanceProperty.spec"
-_19ca56da70522b974dbc9b9fbfad9c33.Properties.Source = [[ -- ROBLOX upstream: https://github.com/Roblox/roact/blob/b2ba9cf4c219c2654e6572219a68d0bf1b541418/src/getDefaultInstanceProperty.spec.lua
+local gv={ClassName="ModuleScript",Children={},Properties={}}
+gv.Name="getDefaultInstanceProperty.spec"
+gv.Properties.Source=[[ -- ROBLOX upstream: https://github.com/Roblox/roact/blob/b2ba9cf4c219c2654e6572219a68d0bf1b541418/src/getDefaultInstanceProperty.spec.lua
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the Apache License, Version 2.0 (the "License");
@@ -102744,12 +102744,12 @@ it("should get bool default values", function()
 
 	jestExpect(defaultValue).toBe(false)
 end) ]]
-_2fb26c1c1fc1e664b92e40714864881e.Children["_19ca56da70522b974dbc9b9fbfad9c33"] = _19ca56da70522b974dbc9b9fbfad9c33
-local _19ca56da70522b974dbc9b9fbfad9c33 = nil -- DEALLOCATE PLS :pray:
+go.Children._19ca56da70522b974dbc9b9fbfad9c33=gv
+local gw
 
-local _dadba852cf69da220dc55c66d83f1f52 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_dadba852cf69da220dc55c66d83f1f52.Name = "waitForEvents"
-_dadba852cf69da220dc55c66d83f1f52.Properties.Source = [[ --!strict
+local gx={ClassName="ModuleScript",Children={},Properties={}}
+gx.Name="waitForEvents"
+gx.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -102770,12 +102770,12 @@ return function()
 	task.defer(coroutine.running())
 	coroutine.yield()
 end ]]
-_2fb26c1c1fc1e664b92e40714864881e.Children["_dadba852cf69da220dc55c66d83f1f52"] = _dadba852cf69da220dc55c66d83f1f52
-local _dadba852cf69da220dc55c66d83f1f52 = nil -- DEALLOCATE PLS :pray:
+go.Children._dadba852cf69da220dc55c66d83f1f52=gx
+local gy
 
-local _000b3181ef446f3c15275b6d755590e5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_000b3181ef446f3c15275b6d755590e5.Name = "getDefaultInstanceProperty"
-_000b3181ef446f3c15275b6d755590e5.Properties.Source = [[ -- ROBLOX upstream: https://github.com/Roblox/roact/blob/b2ba9cf4c219c2654e6572219a68d0bf1b541418/src/getDefaultInstanceProperty.lua
+local gz={ClassName="ModuleScript",Children={},Properties={}}
+gz.Name="getDefaultInstanceProperty"
+gz.Properties.Source=[[ -- ROBLOX upstream: https://github.com/Roblox/roact/blob/b2ba9cf4c219c2654e6572219a68d0bf1b541418/src/getDefaultInstanceProperty.lua
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the Apache License, Version 2.0 (the "License");
@@ -102848,12 +102848,12 @@ local function getDefaultInstanceProperty(className, propertyName)
 end
 
 return getDefaultInstanceProperty ]]
-_dc3cb628e151e3c47ea9c06f36854f75.Children["_000b3181ef446f3c15275b6d755590e5"] = _000b3181ef446f3c15275b6d755590e5
-local _000b3181ef446f3c15275b6d755590e5 = nil -- DEALLOCATE PLS :pray:
+gi.Children._000b3181ef446f3c15275b6d755590e5=gz
+local gA
 
-local _091bb85f1926347272befeb3bd96644b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_091bb85f1926347272befeb3bd96644b.Name = "ReactShallowRenderer"
-_091bb85f1926347272befeb3bd96644b.Properties.Source = [[ --\[\[*
+local gB={ClassName="ModuleScript",Children={},Properties={}}
+gB.Name="ReactShallowRenderer"
+gB.Properties.Source=[[ --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -103771,15 +103771,15 @@ function getMaskedContext(contextTypes, unmaskedContext)
 end
 
 return ReactShallowRenderer ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_091bb85f1926347272befeb3bd96644b"] = _091bb85f1926347272befeb3bd96644b
-local _091bb85f1926347272befeb3bd96644b = nil -- DEALLOCATE PLS :pray:
-local _1b7fb6d2fa3a59b89792e2b8e08e988b = { ClassName = "Folder", Children = {}, Properties = {} }
-_1b7fb6d2fa3a59b89792e2b8e08e988b.Name = "__tests__"
-_091bb85f1926347272befeb3bd96644b.Children["_1b7fb6d2fa3a59b89792e2b8e08e988b"] = _1b7fb6d2fa3a59b89792e2b8e08e988b
-local _1b7fb6d2fa3a59b89792e2b8e08e988b = nil -- DEALLOCATE PLS :pray:
-local _029dc78901903ffd2bde4ac7f8e1bacf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_029dc78901903ffd2bde4ac7f8e1bacf.Name = "ReactShallowRenderer.spec"
-_029dc78901903ffd2bde4ac7f8e1bacf.Properties.Source = [[ --\[\[*
+c.Children._091bb85f1926347272befeb3bd96644b=gB
+local gC
+local gD={ClassName="Folder",Children={},Properties={}}
+gD.Name="__tests__"
+gC.Children._1b7fb6d2fa3a59b89792e2b8e08e988b=gD
+local gE
+local gF={ClassName="ModuleScript",Children={},Properties={}}
+gF.Name="ReactShallowRenderer.spec"
+gF.Properties.Source=[[ --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -105629,12 +105629,12 @@ it("should local you change class type", function()
 	shallowRenderer:render(React.createElement(Bar, { prop = "bar2" }))
 	jestExpect(shallowRenderer:getRenderOutput().props.children).toEqual("Bar bar2")
 end) ]]
-_1b7fb6d2fa3a59b89792e2b8e08e988b.Children["_029dc78901903ffd2bde4ac7f8e1bacf"] = _029dc78901903ffd2bde4ac7f8e1bacf
-local _029dc78901903ffd2bde4ac7f8e1bacf = nil -- DEALLOCATE PLS :pray:
+gE.Children._029dc78901903ffd2bde4ac7f8e1bacf=gF
+local gG
 
-local _329e4f33815957518ce1b18da21d411e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_329e4f33815957518ce1b18da21d411e.Name = "ReactShallowRendererHooks.spec"
-_329e4f33815957518ce1b18da21d411e.Properties.Source = [[ --\[\[*
+local gH={ClassName="ModuleScript",Children={},Properties={}}
+gH.Name="ReactShallowRendererHooks.spec"
+gH.Properties.Source=[[ --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -106192,12 +106192,12 @@ describe("ReactShallowRenderer with hooks", function()
 		jestExpect(result).toEqual(5)
 	end)
 end) ]]
-_1b7fb6d2fa3a59b89792e2b8e08e988b.Children["_329e4f33815957518ce1b18da21d411e"] = _329e4f33815957518ce1b18da21d411e
-local _329e4f33815957518ce1b18da21d411e = nil -- DEALLOCATE PLS :pray:
+gE.Children._329e4f33815957518ce1b18da21d411e=gH
+local gI
 
-local _9cee958ac4b864b5ca08df4a58ea4acf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9cee958ac4b864b5ca08df4a58ea4acf.Name = "ReactTestRenderer"
-_9cee958ac4b864b5ca08df4a58ea4acf.Properties.Source = [[ --!strict
+local gJ={ClassName="ModuleScript",Children={},Properties={}}
+gJ.Name="ReactTestRenderer"
+gJ.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react-test-renderer/src/index.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -106208,11 +106208,11 @@ _9cee958ac4b864b5ca08df4a58ea4acf.Properties.Source = [[ --!strict
  * @emails react-core
  \]\]
 return require(script.ReactTestRenderer) ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_9cee958ac4b864b5ca08df4a58ea4acf"] = _9cee958ac4b864b5ca08df4a58ea4acf
-local _9cee958ac4b864b5ca08df4a58ea4acf = nil -- DEALLOCATE PLS :pray:
-local _c1f4630fbc7103efe2d58241b2cea7e0 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c1f4630fbc7103efe2d58241b2cea7e0.Name = "ReactTestHostConfig"
-_c1f4630fbc7103efe2d58241b2cea7e0.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react-test-renderer/src/ReactTestHostConfig.js
+c.Children._9cee958ac4b864b5ca08df4a58ea4acf=gJ
+local gK
+local gL={ClassName="ModuleScript",Children={},Properties={}}
+gL.Name="ReactTestHostConfig"
+gL.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/react-test-renderer/src/ReactTestHostConfig.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -106645,12 +106645,12 @@ exports.getInstanceFromScope = function(scopeInstance: Object): Object?
 end
 
 return exports ]]
-_9cee958ac4b864b5ca08df4a58ea4acf.Children["_c1f4630fbc7103efe2d58241b2cea7e0"] = _c1f4630fbc7103efe2d58241b2cea7e0
-local _c1f4630fbc7103efe2d58241b2cea7e0 = nil -- DEALLOCATE PLS :pray:
+gK.Children._c1f4630fbc7103efe2d58241b2cea7e0=gL
+local gM
 
-local _9b3909d0432570b9d24fcaa0abf4e0b1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_9b3909d0432570b9d24fcaa0abf4e0b1.Name = "ReactTestRenderer"
-_9b3909d0432570b9d24fcaa0abf4e0b1.Properties.Source = [[ --!nonstrict
+local gN={ClassName="ModuleScript",Children={},Properties={}}
+gN.Name="ReactTestRenderer"
+gN.Properties.Source=[[ --!nonstrict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-test-renderer/src/ReactTestRenderer.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -107470,16 +107470,16 @@ return {
 	act = act,
 	unstable_concurrentAct = unstable_concurrentAct,
 } ]]
-_9cee958ac4b864b5ca08df4a58ea4acf.Children["_9b3909d0432570b9d24fcaa0abf4e0b1"] = _9b3909d0432570b9d24fcaa0abf4e0b1
-local _9b3909d0432570b9d24fcaa0abf4e0b1 = nil -- DEALLOCATE PLS :pray:
+gK.Children._9b3909d0432570b9d24fcaa0abf4e0b1=gN
+local gO
 
-local _5fee5ffb94272285636ae67543044488 = { ClassName = "Folder", Children = {}, Properties = {} }
-_5fee5ffb94272285636ae67543044488.Name = "__tests__"
-_9cee958ac4b864b5ca08df4a58ea4acf.Children["_5fee5ffb94272285636ae67543044488"] = _5fee5ffb94272285636ae67543044488
-local _5fee5ffb94272285636ae67543044488 = nil -- DEALLOCATE PLS :pray:
-local _04238b784ed8e138043a4627719b71e1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_04238b784ed8e138043a4627719b71e1.Name = "ReactTestRenderer-internal.spec"
-_04238b784ed8e138043a4627719b71e1.Properties.Source = [[ -- Upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-test-renderer/src/__tests__/ReactTestRenderer-test.internal.js
+local gP={ClassName="Folder",Children={},Properties={}}
+gP.Name="__tests__"
+gK.Children._5fee5ffb94272285636ae67543044488=gP
+local gQ
+local gR={ClassName="ModuleScript",Children={},Properties={}}
+gR.Name="ReactTestRenderer-internal.spec"
+gR.Properties.Source=[[ -- Upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-test-renderer/src/__tests__/ReactTestRenderer-test.internal.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
 --  * This source code is licensed under the MIT license found in the
@@ -108858,12 +108858,12 @@ describe("ReactTestRenderer", function()
 		end
 	)
 end) ]]
-_5fee5ffb94272285636ae67543044488.Children["_04238b784ed8e138043a4627719b71e1"] = _04238b784ed8e138043a4627719b71e1
-local _04238b784ed8e138043a4627719b71e1 = nil -- DEALLOCATE PLS :pray:
+gQ.Children._04238b784ed8e138043a4627719b71e1=gR
+local gS
 
-local _317b52c98ec9e486841b9fa9fd45e633 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_317b52c98ec9e486841b9fa9fd45e633.Name = "ReactTestRenderer.spec"
-_317b52c98ec9e486841b9fa9fd45e633.Properties.Source = [[ --\[\[*
+local gT={ClassName="ModuleScript",Children={},Properties={}}
+gT.Name="ReactTestRenderer.spec"
+gT.Properties.Source=[[ --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -108985,12 +108985,12 @@ describe("ReactTestRenderer", function()
 	--   })
 	-- })
 end) ]]
-_5fee5ffb94272285636ae67543044488.Children["_317b52c98ec9e486841b9fa9fd45e633"] = _317b52c98ec9e486841b9fa9fd45e633
-local _317b52c98ec9e486841b9fa9fd45e633 = nil -- DEALLOCATE PLS :pray:
+gQ.Children._317b52c98ec9e486841b9fa9fd45e633=gT
+local gU
 
-local _f5911530c95b354b9b1b06a4f34a9b32 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f5911530c95b354b9b1b06a4f34a9b32.Name = "ReactTestRendererAct.spec"
-_f5911530c95b354b9b1b06a4f34a9b32.Properties.Source = [[ local React
+local gV={ClassName="ModuleScript",Children={},Properties={}}
+gV.Name="ReactTestRendererAct.spec"
+gV.Properties.Source=[[ local React
 local ReactTestRenderer
 local Scheduler
 local act
@@ -109143,12 +109143,12 @@ describe("ReactTestRenderer.act()", function()
 		end)
 	end)
 end) ]]
-_5fee5ffb94272285636ae67543044488.Children["_f5911530c95b354b9b1b06a4f34a9b32"] = _f5911530c95b354b9b1b06a4f34a9b32
-local _f5911530c95b354b9b1b06a4f34a9b32 = nil -- DEALLOCATE PLS :pray:
+gQ.Children._f5911530c95b354b9b1b06a4f34a9b32=gV
+local gW
 
-local _bd385f5cceda4138f3d923a332575d4e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_bd385f5cceda4138f3d923a332575d4e.Name = "ReactTestRendererMockPropMarkers.roblox.spec"
-_bd385f5cceda4138f3d923a332575d4e.Properties.Source = [[ -- Upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-test-renderer/src/__tests__/ReactTestRenderer-test.internal.js
+local gX={ClassName="ModuleScript",Children={},Properties={}}
+gX.Name="ReactTestRendererMockPropMarkers.roblox.spec"
+gX.Properties.Source=[[ -- Upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-test-renderer/src/__tests__/ReactTestRenderer-test.internal.js
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
 --  * This source code is licensed under the MIT license found in the
@@ -109312,12 +109312,12 @@ describe("ReactTestRenderer", function()
 		jestExpect(#bazInstances).toEqual(0)
 	end)
 end) ]]
-_5fee5ffb94272285636ae67543044488.Children["_bd385f5cceda4138f3d923a332575d4e"] = _bd385f5cceda4138f3d923a332575d4e
-local _bd385f5cceda4138f3d923a332575d4e = nil -- DEALLOCATE PLS :pray:
+gQ.Children._bd385f5cceda4138f3d923a332575d4e=gX
+local gY
 
-local _7db1203e11f54f984a5a961df66965e6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7db1203e11f54f984a5a961df66965e6.Name = "ReactTestRendererTraversal.spec"
-_7db1203e11f54f984a5a961df66965e6.Properties.Source = [[ -- Upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-test-renderer/src/__tests__/ReactTestRendererTraversal-test.js
+local gZ={ClassName="ModuleScript",Children={},Properties={}}
+gZ.Name="ReactTestRendererTraversal.spec"
+gZ.Properties.Source=[[ -- Upstream: https://github.com/facebook/react/blob/16654436039dd8f16a63928e71081c7745872e8f/packages/react-test-renderer/src/__tests__/ReactTestRendererTraversal-test.js
 --!strict
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -109722,12 +109722,12 @@ describe("ReactTestRendererTraversal", function()
 		).toEqual(2)
 	end)
 end) ]]
-_5fee5ffb94272285636ae67543044488.Children["_7db1203e11f54f984a5a961df66965e6"] = _7db1203e11f54f984a5a961df66965e6
-local _7db1203e11f54f984a5a961df66965e6 = nil -- DEALLOCATE PLS :pray:
+gQ.Children._7db1203e11f54f984a5a961df66965e6=gZ
+local g_
 
-local _080830ab1ff9b14ed9fa833882adba39 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_080830ab1ff9b14ed9fa833882adba39.Name = "RobloxComponentProps.roblox.spec"
-_080830ab1ff9b14ed9fa833882adba39.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local g0={ClassName="ModuleScript",Children={},Properties={}}
+g0.Name="RobloxComponentProps.roblox.spec"
+g0.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 
 local RobloxComponentProps
 local setInitialTags
@@ -109895,16 +109895,16 @@ describe("TestRenderer Tag Support", function()
 		})
 	end)
 end) ]]
-_5fee5ffb94272285636ae67543044488.Children["_080830ab1ff9b14ed9fa833882adba39"] = _080830ab1ff9b14ed9fa833882adba39
-local _080830ab1ff9b14ed9fa833882adba39 = nil -- DEALLOCATE PLS :pray:
+gQ.Children._080830ab1ff9b14ed9fa833882adba39=g0
+local g1
 
-local _d8f96df3d16ef98ea9d021ef1270c1c8 = { ClassName = "Folder", Children = {}, Properties = {} }
-_d8f96df3d16ef98ea9d021ef1270c1c8.Name = "roblox"
-_9cee958ac4b864b5ca08df4a58ea4acf.Children["_d8f96df3d16ef98ea9d021ef1270c1c8"] = _d8f96df3d16ef98ea9d021ef1270c1c8
-local _d8f96df3d16ef98ea9d021ef1270c1c8 = nil -- DEALLOCATE PLS :pray:
-local _45055f99b1b5263bc91135f4849cac11 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_45055f99b1b5263bc91135f4849cac11.Name = "RobloxComponentProps"
-_45055f99b1b5263bc91135f4849cac11.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local g2={ClassName="Folder",Children={},Properties={}}
+g2.Name="roblox"
+gK.Children._d8f96df3d16ef98ea9d021ef1270c1c8=g2
+local g3
+local g4={ClassName="ModuleScript",Children={},Properties={}}
+g4.Name="RobloxComponentProps"
+g4.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 
 local Shared = require(Packages.Shared)
 local LuauPolyfill = require(Packages.LuauPolyfill)
@@ -110011,12 +110011,12 @@ local exports = {
 }
 
 return exports ]]
-_d8f96df3d16ef98ea9d021ef1270c1c8.Children["_45055f99b1b5263bc91135f4849cac11"] = _45055f99b1b5263bc91135f4849cac11
-local _45055f99b1b5263bc91135f4849cac11 = nil -- DEALLOCATE PLS :pray:
+g3.Children._45055f99b1b5263bc91135f4849cac11=g4
+local g5
 
-local _8e5b90eeec4b70beb4b84c5c6344136f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_8e5b90eeec4b70beb4b84c5c6344136f.Name = "RoactCompat"
-_8e5b90eeec4b70beb4b84c5c6344136f.Properties.Source = [[ --!strict
+local g6={ClassName="ModuleScript",Children={},Properties={}}
+g6.Name="RoactCompat"
+g6.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -110082,11 +110082,11 @@ return {
 
 	act = ReactRoblox.act,
 } ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_8e5b90eeec4b70beb4b84c5c6344136f"] = _8e5b90eeec4b70beb4b84c5c6344136f
-local _8e5b90eeec4b70beb4b84c5c6344136f = nil -- DEALLOCATE PLS :pray:
-local _d635a9d429a2c25409ef326b8eff2cd5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d635a9d429a2c25409ef326b8eff2cd5.Name = "Portal"
-_d635a9d429a2c25409ef326b8eff2cd5.Properties.Source = [[ --!strict
+c.Children._8e5b90eeec4b70beb4b84c5c6344136f=g6
+local g7
+local g8={ClassName="ModuleScript",Children={},Properties={}}
+g8.Name="Portal"
+g8.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -110115,12 +110115,12 @@ local function PortalComponent(props)
 end
 
 return PortalComponent ]]
-_8e5b90eeec4b70beb4b84c5c6344136f.Children["_d635a9d429a2c25409ef326b8eff2cd5"] = _d635a9d429a2c25409ef326b8eff2cd5
-local _d635a9d429a2c25409ef326b8eff2cd5 = nil -- DEALLOCATE PLS :pray:
+g7.Children._d635a9d429a2c25409ef326b8eff2cd5=g8
+local g9
 
-local _e481bbc383257f38905e890e1798873d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e481bbc383257f38905e890e1798873d.Name = "RoactTree"
-_e481bbc383257f38905e890e1798873d.Properties.Source = [[ --!strict
+local ha={ClassName="ModuleScript",Children={},Properties={}}
+ha.Name="RoactTree"
+ha.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -110261,16 +110261,16 @@ return {
 	update = update,
 	unmount = unmount,
 } ]]
-_8e5b90eeec4b70beb4b84c5c6344136f.Children["_e481bbc383257f38905e890e1798873d"] = _e481bbc383257f38905e890e1798873d
-local _e481bbc383257f38905e890e1798873d = nil -- DEALLOCATE PLS :pray:
+g7.Children._e481bbc383257f38905e890e1798873d=ha
+local hb
 
-local _023bc6385e62336f096ea0069a49cb79 = { ClassName = "Folder", Children = {}, Properties = {} }
-_023bc6385e62336f096ea0069a49cb79.Name = "__tests__"
-_8e5b90eeec4b70beb4b84c5c6344136f.Children["_023bc6385e62336f096ea0069a49cb79"] = _023bc6385e62336f096ea0069a49cb79
-local _023bc6385e62336f096ea0069a49cb79 = nil -- DEALLOCATE PLS :pray:
-local _293cf784afc36c8ad7eaff908d8b1e90 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_293cf784afc36c8ad7eaff908d8b1e90.Name = "RoactCompatibility.spec"
-_293cf784afc36c8ad7eaff908d8b1e90.Properties.Source = [[ --\[\[
+local hc={ClassName="Folder",Children={},Properties={}}
+hc.Name="__tests__"
+g7.Children._023bc6385e62336f096ea0069a49cb79=hc
+local hd
+local he={ClassName="ModuleScript",Children={},Properties={}}
+he.Name="RoactCompatibility.spec"
+he.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -110559,12 +110559,12 @@ describe("ChildArray Keys", function()
 		jestExpect(thirdChild.Text).toEqual("three")
 	end)
 end) ]]
-_023bc6385e62336f096ea0069a49cb79.Children["_293cf784afc36c8ad7eaff908d8b1e90"] = _293cf784afc36c8ad7eaff908d8b1e90
-local _293cf784afc36c8ad7eaff908d8b1e90 = nil -- DEALLOCATE PLS :pray:
+hd.Children._293cf784afc36c8ad7eaff908d8b1e90=he
+local hf
 
-local _237a9546b81eedfdf9bea309355b5140 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_237a9546b81eedfdf9bea309355b5140.Name = "RoactRecursiveLayoutPcallDepth.spec"
-_237a9546b81eedfdf9bea309355b5140.Properties.Source = [[ --!strict
+local hg={ClassName="ModuleScript",Children={},Properties={}}
+hg.Name="RoactRecursiveLayoutPcallDepth.spec"
+hg.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -110642,12 +110642,12 @@ describe("pcall depth", function()
 		jestExpect(#children).toBe(1)
 	end)
 end) ]]
-_023bc6385e62336f096ea0069a49cb79.Children["_237a9546b81eedfdf9bea309355b5140"] = _237a9546b81eedfdf9bea309355b5140
-local _237a9546b81eedfdf9bea309355b5140 = nil -- DEALLOCATE PLS :pray:
+hd.Children._237a9546b81eedfdf9bea309355b5140=hg
+local hh
 
-local _2bd4dbaec2e92eb2b5a4a89f79ce4f2f = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2bd4dbaec2e92eb2b5a4a89f79ce4f2f.Name = "RoactTree.spec"
-_2bd4dbaec2e92eb2b5a4a89f79ce4f2f.Properties.Source = [[ --\[\[
+local hi={ClassName="ModuleScript",Children={},Properties={}}
+hi.Name="RoactTree.spec"
+hi.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -110817,12 +110817,12 @@ describe("Legacy root", function()
 		RoactCompat.unmount(tree)
 	end)
 end) ]]
-_023bc6385e62336f096ea0069a49cb79.Children["_2bd4dbaec2e92eb2b5a4a89f79ce4f2f"] = _2bd4dbaec2e92eb2b5a4a89f79ce4f2f
-local _2bd4dbaec2e92eb2b5a4a89f79ce4f2f = nil -- DEALLOCATE PLS :pray:
+hd.Children._2bd4dbaec2e92eb2b5a4a89f79ce4f2f=hi
+local hj
 
-local _14220cb3d262642f6347854c94add5ee = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_14220cb3d262642f6347854c94add5ee.Name = "act.spec"
-_14220cb3d262642f6347854c94add5ee.Properties.Source = [[ --\[\[
+local hk={ClassName="ModuleScript",Children={},Properties={}}
+hk.Name="act.spec"
+hk.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -110917,12 +110917,12 @@ describe("test mode", function()
 		_G.__ROACT_17_MOCK_SCHEDULER__ = prevMockScheduler
 	end)
 end) ]]
-_023bc6385e62336f096ea0069a49cb79.Children["_14220cb3d262642f6347854c94add5ee"] = _14220cb3d262642f6347854c94add5ee
-local _14220cb3d262642f6347854c94add5ee = nil -- DEALLOCATE PLS :pray:
+hd.Children._14220cb3d262642f6347854c94add5ee=hk
+local hl
 
-local _f942b50c15f123a428918d1f5bc027bd = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f942b50c15f123a428918d1f5bc027bd.Name = "warnOnce.spec"
-_f942b50c15f123a428918d1f5bc027bd.Properties.Source = [[ --!strict
+local hm={ClassName="ModuleScript",Children={},Properties={}}
+hm.Name="warnOnce.spec"
+hm.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -110965,12 +110965,12 @@ it("warns exactly once", function()
 		warnOnce("oldAPI", "Foo")
 	end).toWarnDev({})
 end) ]]
-_023bc6385e62336f096ea0069a49cb79.Children["_f942b50c15f123a428918d1f5bc027bd"] = _f942b50c15f123a428918d1f5bc027bd
-local _f942b50c15f123a428918d1f5bc027bd = nil -- DEALLOCATE PLS :pray:
+hd.Children._f942b50c15f123a428918d1f5bc027bd=hm
+local hn
 
-local _3507a8773311f51164154a254d7eebd8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3507a8773311f51164154a254d7eebd8.Name = "createFragment"
-_3507a8773311f51164154a254d7eebd8.Properties.Source = [[ --!strict
+local ho={ClassName="ModuleScript",Children={},Properties={}}
+ho.Name="createFragment"
+ho.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -110999,12 +110999,12 @@ return function(elements)
 	end
 	return React.createElement(React.Fragment, nil, elements)
 end ]]
-_8e5b90eeec4b70beb4b84c5c6344136f.Children["_3507a8773311f51164154a254d7eebd8"] = _3507a8773311f51164154a254d7eebd8
-local _3507a8773311f51164154a254d7eebd8 = nil -- DEALLOCATE PLS :pray:
+g7.Children._3507a8773311f51164154a254d7eebd8=ho
+local hp
 
-local _2a74813ba9326db696179198e2824064 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2a74813ba9326db696179198e2824064.Name = "oneChild"
-_2a74813ba9326db696179198e2824064.Properties.Source = [[ -- ROBLOX upstream: https://github.com/Roblox/roact/blob/master/src/oneChild.lua
+local hq={ClassName="ModuleScript",Children={},Properties={}}
+hq.Name="oneChild"
+hq.Properties.Source=[[ -- ROBLOX upstream: https://github.com/Roblox/roact/blob/master/src/oneChild.lua
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the Apache License, Version 2.0 (the "License");
@@ -111056,12 +111056,12 @@ local function oneChild(children)
 end
 
 return oneChild ]]
-_8e5b90eeec4b70beb4b84c5c6344136f.Children["_2a74813ba9326db696179198e2824064"] = _2a74813ba9326db696179198e2824064
-local _2a74813ba9326db696179198e2824064 = nil -- DEALLOCATE PLS :pray:
+g7.Children._2a74813ba9326db696179198e2824064=hq
+local hr
 
-local _02e8457cc91b10736412ea2e4f744edf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_02e8457cc91b10736412ea2e4f744edf.Name = "setGlobalConfig"
-_02e8457cc91b10736412ea2e4f744edf.Properties.Source = [[ --!strict
+local hs={ClassName="ModuleScript",Children={},Properties={}}
+hs.Name="setGlobalConfig"
+hs.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -111090,12 +111090,12 @@ return function(_config)
 	end
 	-- No equivalent behavior can be applied here
 end ]]
-_8e5b90eeec4b70beb4b84c5c6344136f.Children["_02e8457cc91b10736412ea2e4f744edf"] = _02e8457cc91b10736412ea2e4f744edf
-local _02e8457cc91b10736412ea2e4f744edf = nil -- DEALLOCATE PLS :pray:
+g7.Children._02e8457cc91b10736412ea2e4f744edf=hs
+local ht
 
-local _3001c964c76e5c742b832a14f4120b54 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3001c964c76e5c742b832a14f4120b54.Name = "warnOnce"
-_3001c964c76e5c742b832a14f4120b54.Properties.Source = [[ --!strict
+local hu={ClassName="ModuleScript",Children={},Properties={}}
+hu.Name="warnOnce"
+hu.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -111129,12 +111129,12 @@ local function warnOnce(name: string, message: string)
 end
 
 return warnOnce ]]
-_8e5b90eeec4b70beb4b84c5c6344136f.Children["_3001c964c76e5c742b832a14f4120b54"] = _3001c964c76e5c742b832a14f4120b54
-local _3001c964c76e5c742b832a14f4120b54 = nil -- DEALLOCATE PLS :pray:
+g7.Children._3001c964c76e5c742b832a14f4120b54=hu
+local hv
 
-local _4ee41f372a3b678914df790af875b785 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_4ee41f372a3b678914df790af875b785.Name = "Scheduler"
-_4ee41f372a3b678914df790af875b785.Properties.Source = [[ --!strict
+local hw={ClassName="ModuleScript",Children={},Properties={}}
+hw.Name="Scheduler"
+hw.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/efd8f6442d1aa7c4566fe812cba03e7e83aaccc3/packages/scheduler/index.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -111213,11 +111213,11 @@ for k, v in TracingSubscriptions :: any do
 end
 
 return exports ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_4ee41f372a3b678914df790af875b785"] = _4ee41f372a3b678914df790af875b785
-local _4ee41f372a3b678914df790af875b785 = nil -- DEALLOCATE PLS :pray:
-local _c9680b481fe99f91cd643d913e4f24d5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c9680b481fe99f91cd643d913e4f24d5.Name = "Scheduler"
-_c9680b481fe99f91cd643d913e4f24d5.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/Scheduler.js
+c.Children._4ee41f372a3b678914df790af875b785=hw
+local hx
+local hy={ClassName="ModuleScript",Children={},Properties={}}
+hy.Name="Scheduler"
+hy.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/Scheduler.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
 *
@@ -111803,12 +111803,12 @@ return function(hostConfig)
 		end)(),
 	}
 end ]]
-_4ee41f372a3b678914df790af875b785.Children["_c9680b481fe99f91cd643d913e4f24d5"] = _c9680b481fe99f91cd643d913e4f24d5
-local _c9680b481fe99f91cd643d913e4f24d5 = nil -- DEALLOCATE PLS :pray:
+hx.Children._c9680b481fe99f91cd643d913e4f24d5=hy
+local hz
 
-local _12834140f7b2388aae294d79bd769439 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_12834140f7b2388aae294d79bd769439.Name = "SchedulerFeatureFlags"
-_12834140f7b2388aae294d79bd769439.Properties.Source = [[ --!strict
+local hA={ClassName="ModuleScript",Children={},Properties={}}
+hA.Name="SchedulerFeatureFlags"
+hA.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/SchedulerFeatureFlags.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -111823,12 +111823,12 @@ return {
 	enableIsInputPending = false,
 	enableProfiling = _G.__PROFILE__,
 } ]]
-_4ee41f372a3b678914df790af875b785.Children["_12834140f7b2388aae294d79bd769439"] = _12834140f7b2388aae294d79bd769439
-local _12834140f7b2388aae294d79bd769439 = nil -- DEALLOCATE PLS :pray:
+hx.Children._12834140f7b2388aae294d79bd769439=hA
+local hB
 
-local _ae2d0fbb5ec6ef9256662676f8c3bfea = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ae2d0fbb5ec6ef9256662676f8c3bfea.Name = "SchedulerHostConfig"
-_ae2d0fbb5ec6ef9256662676f8c3bfea.Properties.Source = [[ --!strict
+local hC={ClassName="ModuleScript",Children={},Properties={}}
+hC.Name="SchedulerHostConfig"
+hC.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/00748c53e183952696157088a858352cc77b0010/packages/scheduler/src/SchedulerHostConfig.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -111843,12 +111843,12 @@ _ae2d0fbb5ec6ef9256662676f8c3bfea.Properties.Source = [[ --!strict
 -- replaced via a bundler. In our case, we mock it explicitly when we need to
 -- mock it, and return the "default" here
 return require(script.Parent.forks["SchedulerHostConfig.default"]) ]]
-_4ee41f372a3b678914df790af875b785.Children["_ae2d0fbb5ec6ef9256662676f8c3bfea"] = _ae2d0fbb5ec6ef9256662676f8c3bfea
-local _ae2d0fbb5ec6ef9256662676f8c3bfea = nil -- DEALLOCATE PLS :pray:
+hx.Children._ae2d0fbb5ec6ef9256662676f8c3bfea=hC
+local hD
 
-local _347dd6019df63a391baf96951a50f56b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_347dd6019df63a391baf96951a50f56b.Name = "SchedulerMinHeap"
-_347dd6019df63a391baf96951a50f56b.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/e706721490e50d0bd6af2cd933dbf857fd8b61ed/packages/scheduler/src/SchedulerMinHeap.js
+local hE={ClassName="ModuleScript",Children={},Properties={}}
+hE.Name="SchedulerMinHeap"
+hE.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/e706721490e50d0bd6af2cd933dbf857fd8b61ed/packages/scheduler/src/SchedulerMinHeap.js
 --!strict
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -111954,12 +111954,12 @@ compare = function(a: Node, b: Node): number
 end
 
 return exports ]]
-_4ee41f372a3b678914df790af875b785.Children["_347dd6019df63a391baf96951a50f56b"] = _347dd6019df63a391baf96951a50f56b
-local _347dd6019df63a391baf96951a50f56b = nil -- DEALLOCATE PLS :pray:
+hx.Children._347dd6019df63a391baf96951a50f56b=hE
+local hF
 
-local _ce660bc4a92bb1fda5c8afe9e8787bc7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ce660bc4a92bb1fda5c8afe9e8787bc7.Name = "SchedulerPriorities"
-_ce660bc4a92bb1fda5c8afe9e8787bc7.Properties.Source = [[ --!strict
+local hG={ClassName="ModuleScript",Children={},Properties={}}
+hG.Name="SchedulerPriorities"
+hG.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/00748c53e183952696157088a858352cc77b0010/packages/scheduler/src/SchedulerHostConfig.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -111981,12 +111981,12 @@ return {
 	LowPriority = 4,
 	IdlePriority = 5,
 } ]]
-_4ee41f372a3b678914df790af875b785.Children["_ce660bc4a92bb1fda5c8afe9e8787bc7"] = _ce660bc4a92bb1fda5c8afe9e8787bc7
-local _ce660bc4a92bb1fda5c8afe9e8787bc7 = nil -- DEALLOCATE PLS :pray:
+hx.Children._ce660bc4a92bb1fda5c8afe9e8787bc7=hG
+local hH
 
-local _278842df89688a8ccacba7d8bb4be351 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_278842df89688a8ccacba7d8bb4be351.Name = "SchedulerProfiling"
-_278842df89688a8ccacba7d8bb4be351.Properties.Source = [[ --!strict
+local hI={ClassName="ModuleScript",Children={},Properties={}}
+hI.Name="SchedulerProfiling"
+hI.Properties.Source=[[ --!strict
 -- ROBLOX upstream https://github.com/facebook/react/blob/8af27aeedbc6b00bc2ef49729fc84f116c70a27c/packages/scheduler/src/SchedulerProfiling.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -112147,12 +112147,12 @@ exports.markSchedulerUnsuspended = function(ms: number)
 end
 
 return exports ]]
-_4ee41f372a3b678914df790af875b785.Children["_278842df89688a8ccacba7d8bb4be351"] = _278842df89688a8ccacba7d8bb4be351
-local _278842df89688a8ccacba7d8bb4be351 = nil -- DEALLOCATE PLS :pray:
+hx.Children._278842df89688a8ccacba7d8bb4be351=hI
+local hJ
 
-local _3a1f462ae16b54e3beacfe86162e51cf = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3a1f462ae16b54e3beacfe86162e51cf.Name = "Tracing"
-_3a1f462ae16b54e3beacfe86162e51cf.Properties.Source = [[ --!strict
+local hK={ClassName="ModuleScript",Children={},Properties={}}
+hK.Name="Tracing"
+hK.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/Tracing.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -112488,12 +112488,12 @@ exports.unstable_wrap = function(
 end
 
 return exports ]]
-_4ee41f372a3b678914df790af875b785.Children["_3a1f462ae16b54e3beacfe86162e51cf"] = _3a1f462ae16b54e3beacfe86162e51cf
-local _3a1f462ae16b54e3beacfe86162e51cf = nil -- DEALLOCATE PLS :pray:
+hx.Children._3a1f462ae16b54e3beacfe86162e51cf=hK
+local hL
 
-local _ec966d8463766b354f56ac15e1221483 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ec966d8463766b354f56ac15e1221483.Name = "TracingSubscriptions"
-_ec966d8463766b354f56ac15e1221483.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/TracingSubscriptions.js
+local hM={ClassName="ModuleScript",Children={},Properties={}}
+hM.Name="TracingSubscriptions"
+hM.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/TracingSubscriptions.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -112683,16 +112683,16 @@ function onWorkCanceled(interactions: Set<Interaction>, threadID: number): ()
 end
 
 return exports ]]
-_4ee41f372a3b678914df790af875b785.Children["_ec966d8463766b354f56ac15e1221483"] = _ec966d8463766b354f56ac15e1221483
-local _ec966d8463766b354f56ac15e1221483 = nil -- DEALLOCATE PLS :pray:
+hx.Children._ec966d8463766b354f56ac15e1221483=hM
+local hN
 
-local _dde47737a376fbe9cdb6082055cf51ab = { ClassName = "Folder", Children = {}, Properties = {} }
-_dde47737a376fbe9cdb6082055cf51ab.Name = "__tests__"
-_4ee41f372a3b678914df790af875b785.Children["_dde47737a376fbe9cdb6082055cf51ab"] = _dde47737a376fbe9cdb6082055cf51ab
-local _dde47737a376fbe9cdb6082055cf51ab = nil -- DEALLOCATE PLS :pray:
-local _f4087bb015ee0761b25febc804a5f800 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f4087bb015ee0761b25febc804a5f800.Name = "Scheduler.spec"
-_f4087bb015ee0761b25febc804a5f800.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/__tests__/Scheduler-test.js
+local hO={ClassName="Folder",Children={},Properties={}}
+hO.Name="__tests__"
+hx.Children._dde47737a376fbe9cdb6082055cf51ab=hO
+local hP
+local hQ={ClassName="ModuleScript",Children={},Properties={}}
+hQ.Name="Scheduler.spec"
+hQ.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/__tests__/Scheduler-test.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
 *
@@ -113498,12 +113498,12 @@ describe("delayed tasks", function()
 		jestExpect(Scheduler).toFlushAndThrow("Oops A")
 	end)
 end) ]]
-_dde47737a376fbe9cdb6082055cf51ab.Children["_f4087bb015ee0761b25febc804a5f800"] = _f4087bb015ee0761b25febc804a5f800
-local _f4087bb015ee0761b25febc804a5f800 = nil -- DEALLOCATE PLS :pray:
+hP.Children._f4087bb015ee0761b25febc804a5f800=hQ
+local hR
 
-local _c3eabaec439704d66c0eb84bb4c2e64d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c3eabaec439704d66c0eb84bb4c2e64d.Name = "SchedulerMinHeap.roblox.spec"
-_c3eabaec439704d66c0eb84bb4c2e64d.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local hS={ClassName="ModuleScript",Children={},Properties={}}
+hS.Name="SchedulerMinHeap.roblox.spec"
+hS.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local jestExpect = JestGlobals.expect
 local describe = JestGlobals.describe
@@ -113610,12 +113610,12 @@ describe("pop", function()
 		jestExpect(node.sortIndex).toBe(2)
 	end)
 end) ]]
-_dde47737a376fbe9cdb6082055cf51ab.Children["_c3eabaec439704d66c0eb84bb4c2e64d"] = _c3eabaec439704d66c0eb84bb4c2e64d
-local _c3eabaec439704d66c0eb84bb4c2e64d = nil -- DEALLOCATE PLS :pray:
+hP.Children._c3eabaec439704d66c0eb84bb4c2e64d=hS
+local hT
 
-local _abbd36db97b0c61eb4fed53d63065dee = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_abbd36db97b0c61eb4fed53d63065dee.Name = "SchedulerNoDOM.spec"
-_abbd36db97b0c61eb4fed53d63065dee.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/3e94bce765d355d74f6a60feb4addb6d196e3482/packages/scheduler/src/__tests__/SchedulerNoDOM-test.js
+local hU={ClassName="ModuleScript",Children={},Properties={}}
+hU.Name="SchedulerNoDOM.spec"
+hU.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/3e94bce765d355d74f6a60feb4addb6d196e3482/packages/scheduler/src/__tests__/SchedulerNoDOM-test.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
 *
@@ -113715,12 +113715,12 @@ it("handles errors", function()
 	end).toThrow("Oops C")
 	jestExpect(log).toEqual({ "B", "C" })
 end) ]]
-_dde47737a376fbe9cdb6082055cf51ab.Children["_abbd36db97b0c61eb4fed53d63065dee"] = _abbd36db97b0c61eb4fed53d63065dee
-local _abbd36db97b0c61eb4fed53d63065dee = nil -- DEALLOCATE PLS :pray:
+hP.Children._abbd36db97b0c61eb4fed53d63065dee=hU
+local hV
 
-local _173c678e7231ab536136b16725905855 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_173c678e7231ab536136b16725905855.Name = "SchedulerProfiling.spec"
-_173c678e7231ab536136b16725905855.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/8af27aeedbc6b00bc2ef49729fc84f116c70a27c/packages/scheduler/src/__tests__/SchedulerProfiling-test.js
+local hW={ClassName="ModuleScript",Children={},Properties={}}
+hW.Name="SchedulerProfiling.spec"
+hW.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/8af27aeedbc6b00bc2ef49729fc84f116c70a27c/packages/scheduler/src/__tests__/SchedulerProfiling-test.js
 --\[\[**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -114175,12 +114175,12 @@ Task 41000 [Normal]          │XXXXXXXXXXXXXXXXXXXX
 \]\])
 	end)
 end) ]]
-_dde47737a376fbe9cdb6082055cf51ab.Children["_173c678e7231ab536136b16725905855"] = _173c678e7231ab536136b16725905855
-local _173c678e7231ab536136b16725905855 = nil -- DEALLOCATE PLS :pray:
+hP.Children._173c678e7231ab536136b16725905855=hW
+local hX
 
-local _c824b88e8b597dc408bd439bc89cc647 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c824b88e8b597dc408bd439bc89cc647.Name = "Tracing-internal.spec"
-_c824b88e8b597dc408bd439bc89cc647.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/__tests__/Tracing-test.internal.js
+local hY={ClassName="ModuleScript",Children={},Properties={}}
+hY.Name="Tracing-internal.spec"
+hY.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/__tests__/Tracing-test.internal.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -114641,12 +114641,12 @@ describe("Tracing", function()
 		end)
 	end)
 end) ]]
-_dde47737a376fbe9cdb6082055cf51ab.Children["_c824b88e8b597dc408bd439bc89cc647"] = _c824b88e8b597dc408bd439bc89cc647
-local _c824b88e8b597dc408bd439bc89cc647 = nil -- DEALLOCATE PLS :pray:
+hP.Children._c824b88e8b597dc408bd439bc89cc647=hY
+local hZ
 
-local _98a8185f7035418311f0bb921ecc6975 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_98a8185f7035418311f0bb921ecc6975.Name = "Tracing.spec"
-_98a8185f7035418311f0bb921ecc6975.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/__tests__/Tracing-test.js
+local h_={ClassName="ModuleScript",Children={},Properties={}}
+h_.Name="Tracing.spec"
+h_.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/__tests__/Tracing-test.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -114717,12 +114717,12 @@ describe("Tracing", function()
 		jestExpect(done).toBe(true)
 	end)
 end) ]]
-_dde47737a376fbe9cdb6082055cf51ab.Children["_98a8185f7035418311f0bb921ecc6975"] = _98a8185f7035418311f0bb921ecc6975
-local _98a8185f7035418311f0bb921ecc6975 = nil -- DEALLOCATE PLS :pray:
+hP.Children._98a8185f7035418311f0bb921ecc6975=h_
+local h0
 
-local _69992dae6853132a74edaf7e8f12d8fb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_69992dae6853132a74edaf7e8f12d8fb.Name = "TracingSubscriptions-internal.spec"
-_69992dae6853132a74edaf7e8f12d8fb.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/__tests__/TracingSubscriptions-test.internal.js
+local h1={ClassName="ModuleScript",Children={},Properties={}}
+h1.Name="TracingSubscriptions-internal.spec"
+h1.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9abc2785cb070148d64fae81e523246b90b92016/packages/scheduler/src/__tests__/TracingSubscriptions-test.internal.js
 -- /**
 --  * Copyright (c) Facebook, Inc. and its affiliates.
 --  *
@@ -115300,16 +115300,16 @@ describe("TracingSubscriptions", function()
 		-- TODO
 	end)
 end) ]]
-_dde47737a376fbe9cdb6082055cf51ab.Children["_69992dae6853132a74edaf7e8f12d8fb"] = _69992dae6853132a74edaf7e8f12d8fb
-local _69992dae6853132a74edaf7e8f12d8fb = nil -- DEALLOCATE PLS :pray:
+hP.Children._69992dae6853132a74edaf7e8f12d8fb=h1
+local h2
 
-local _47c169bebecf50bb8b459389d45feba3 = { ClassName = "Folder", Children = {}, Properties = {} }
-_47c169bebecf50bb8b459389d45feba3.Name = "forks"
-_4ee41f372a3b678914df790af875b785.Children["_47c169bebecf50bb8b459389d45feba3"] = _47c169bebecf50bb8b459389d45feba3
-local _47c169bebecf50bb8b459389d45feba3 = nil -- DEALLOCATE PLS :pray:
-local _2b4e4933524b4bdc978be6393b015728 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2b4e4933524b4bdc978be6393b015728.Name = "SchedulerHostConfig.default"
-_2b4e4933524b4bdc978be6393b015728.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/5474a83e258b497584bed9df95de1d554bc53f89/packages/scheduler/src/forks/SchedulerHostConfig.default.js
+local h3={ClassName="Folder",Children={},Properties={}}
+h3.Name="forks"
+hx.Children._47c169bebecf50bb8b459389d45feba3=h3
+local h4
+local h5={ClassName="ModuleScript",Children={},Properties={}}
+h5.Name="SchedulerHostConfig.default"
+h5.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/5474a83e258b497584bed9df95de1d554bc53f89/packages/scheduler/src/forks/SchedulerHostConfig.default.js
 --!strict
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -115466,12 +115466,12 @@ return {
 	getCurrentTime = getCurrentTime,
 	forceFrameRate = forceFrameRate,
 } ]]
-_47c169bebecf50bb8b459389d45feba3.Children["_2b4e4933524b4bdc978be6393b015728"] = _2b4e4933524b4bdc978be6393b015728
-local _2b4e4933524b4bdc978be6393b015728 = nil -- DEALLOCATE PLS :pray:
+h4.Children._2b4e4933524b4bdc978be6393b015728=h5
+local h6
 
-local _e90b6127b2816f5e1a10bbe07d286605 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e90b6127b2816f5e1a10bbe07d286605.Name = "SchedulerHostConfig.mock"
-_e90b6127b2816f5e1a10bbe07d286605.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/5474a83e258b497584bed9df95de1d554bc53f89/packages/scheduler/src/forks/SchedulerHostConfig.mock.js
+local h7={ClassName="ModuleScript",Children={},Properties={}}
+h7.Name="SchedulerHostConfig.mock"
+h7.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/5474a83e258b497584bed9df95de1d554bc53f89/packages/scheduler/src/forks/SchedulerHostConfig.mock.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
 *
@@ -115746,12 +115746,12 @@ exports.requestPaint = function()
 end
 
 return exports ]]
-_47c169bebecf50bb8b459389d45feba3.Children["_e90b6127b2816f5e1a10bbe07d286605"] = _e90b6127b2816f5e1a10bbe07d286605
-local _e90b6127b2816f5e1a10bbe07d286605 = nil -- DEALLOCATE PLS :pray:
+h4.Children._e90b6127b2816f5e1a10bbe07d286605=h7
+local h8
 
-local _cedc2c5b66d387d02907bd51b7731782 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_cedc2c5b66d387d02907bd51b7731782.Name = "unstable_mock"
-_cedc2c5b66d387d02907bd51b7731782.Properties.Source = [[ --!strict
+local h9={ClassName="ModuleScript",Children={},Properties={}}
+h9.Name="unstable_mock"
+h9.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -115792,12 +115792,12 @@ exports.unstable_advanceTime = HostConfig.unstable_advanceTime
 exports.unstable_Profiling = Scheduler.unstable_Profiling
 
 return exports ]]
-_4ee41f372a3b678914df790af875b785.Children["_cedc2c5b66d387d02907bd51b7731782"] = _cedc2c5b66d387d02907bd51b7731782
-local _cedc2c5b66d387d02907bd51b7731782 = nil -- DEALLOCATE PLS :pray:
+hx.Children._cedc2c5b66d387d02907bd51b7731782=h9
+local ia
 
-local _54f71b4fd49dbd0ad28f64bf0315cfb7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Name = "Shared"
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Properties.Source = [[ --!strict
+local ib={ClassName="ModuleScript",Children={},Properties={}}
+ib.Name="Shared"
+ib.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -115935,11 +115935,11 @@ return {
 	Event = require(script.PropMarkers.Event),
 	Tag = require(script.PropMarkers.Tag),
 } ]]
-_3a3b759d2de5c9cef41f0ecb3ad132a3.Children["_54f71b4fd49dbd0ad28f64bf0315cfb7"] = _54f71b4fd49dbd0ad28f64bf0315cfb7
-local _54f71b4fd49dbd0ad28f64bf0315cfb7 = nil -- DEALLOCATE PLS :pray:
-local _0150d3655bc9cd15d4fdf1e7d5711177 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0150d3655bc9cd15d4fdf1e7d5711177.Name = "ConsolePatchingDev.roblox"
-_0150d3655bc9cd15d4fdf1e7d5711177.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/55cb0b7eeb0e539d89858b8ed69beabf7fe2fb46/packages/shared/checkPropTypes.js
+c.Children._54f71b4fd49dbd0ad28f64bf0315cfb7=ib
+local ic
+local id={ClassName="ModuleScript",Children={},Properties={}}
+id.Name="ConsolePatchingDev.roblox"
+id.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/55cb0b7eeb0e539d89858b8ed69beabf7fe2fb46/packages/shared/checkPropTypes.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -116026,12 +116026,12 @@ exports.reenableLogs = function()
 end
 
 return exports ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_0150d3655bc9cd15d4fdf1e7d5711177"] = _0150d3655bc9cd15d4fdf1e7d5711177
-local _0150d3655bc9cd15d4fdf1e7d5711177 = nil -- DEALLOCATE PLS :pray:
+ic.Children._0150d3655bc9cd15d4fdf1e7d5711177=id
+local ie
 
-local _a83bdf677db6560f99ac65364070094a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a83bdf677db6560f99ac65364070094a.Name = "ErrorHandling.roblox"
-_a83bdf677db6560f99ac65364070094a.Properties.Source = [[ --!strict
+local ig={ClassName="ModuleScript",Children={},Properties={}}
+ig.Name="ErrorHandling.roblox"
+ig.Properties.Source=[[ --!strict
 --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
@@ -116138,12 +116138,12 @@ return {
 	-- Used only by tests
 	__ERROR_DIVIDER = DIVIDER,
 } ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_a83bdf677db6560f99ac65364070094a"] = _a83bdf677db6560f99ac65364070094a
-local _a83bdf677db6560f99ac65364070094a = nil -- DEALLOCATE PLS :pray:
+ic.Children._a83bdf677db6560f99ac65364070094a=ig
+local ih
 
-local _30f395caafda507458d27af53d88cd21 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_30f395caafda507458d27af53d88cd21.Name = "ExecutionEnvironment"
-_30f395caafda507458d27af53d88cd21.Properties.Source = [[ --!strict
+local ii={ClassName="ModuleScript",Children={},Properties={}}
+ii.Name="ExecutionEnvironment"
+ii.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/55cb0b7eeb0e539d89858b8ed69beabf7fe2fb46/packages/shared/ExecutionEnvironment.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -116162,16 +116162,16 @@ exports.canUseDOM = function()
 end
 
 return exports ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_30f395caafda507458d27af53d88cd21"] = _30f395caafda507458d27af53d88cd21
-local _30f395caafda507458d27af53d88cd21 = nil -- DEALLOCATE PLS :pray:
+ic.Children._30f395caafda507458d27af53d88cd21=ii
+local ij
 
-local _be997bb88222716e3c158972608abaf0 = { ClassName = "Folder", Children = {}, Properties = {} }
-_be997bb88222716e3c158972608abaf0.Name = "PropMarkers"
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_be997bb88222716e3c158972608abaf0"] = _be997bb88222716e3c158972608abaf0
-local _be997bb88222716e3c158972608abaf0 = nil -- DEALLOCATE PLS :pray:
-local _f5989f3192b5335a66fa1aad3c540607 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f5989f3192b5335a66fa1aad3c540607.Name = "Change"
-_f5989f3192b5335a66fa1aad3c540607.Properties.Source = [[ --\[\[
+local ik={ClassName="Folder",Children={},Properties={}}
+ik.Name="PropMarkers"
+ic.Children._be997bb88222716e3c158972608abaf0=ik
+local il
+local im={ClassName="ModuleScript",Children={},Properties={}}
+im.Name="Change"
+im.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -116223,12 +116223,12 @@ setmetatable(Change, {
 })
 
 return Change ]]
-_be997bb88222716e3c158972608abaf0.Children["_f5989f3192b5335a66fa1aad3c540607"] = _f5989f3192b5335a66fa1aad3c540607
-local _f5989f3192b5335a66fa1aad3c540607 = nil -- DEALLOCATE PLS :pray:
+il.Children._f5989f3192b5335a66fa1aad3c540607=im
+local ip
 
-local _dc7c19bed137ed6c28a4e40acdc40ecd = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_dc7c19bed137ed6c28a4e40acdc40ecd.Name = "Event"
-_dc7c19bed137ed6c28a4e40acdc40ecd.Properties.Source = [[ --\[\[
+local iq={ClassName="ModuleScript",Children={},Properties={}}
+iq.Name="Event"
+iq.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -116283,12 +116283,12 @@ setmetatable(Event, {
 })
 
 return Event ]]
-_be997bb88222716e3c158972608abaf0.Children["_dc7c19bed137ed6c28a4e40acdc40ecd"] = _dc7c19bed137ed6c28a4e40acdc40ecd
-local _dc7c19bed137ed6c28a4e40acdc40ecd = nil -- DEALLOCATE PLS :pray:
+il.Children._dc7c19bed137ed6c28a4e40acdc40ecd=iq
+local ir
 
-local _d7b3b5bf16d5f557b7f4cf3859a77d5d = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d7b3b5bf16d5f557b7f4cf3859a77d5d.Name = "Tag"
-_d7b3b5bf16d5f557b7f4cf3859a77d5d.Properties.Source = [[ --\[\[
+local is={ClassName="ModuleScript",Children={},Properties={}}
+is.Name="Tag"
+is.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -116310,16 +116310,16 @@ local Symbol = require(script.Parent.Parent["Symbol.roblox"])
 local Tag = Symbol.named("RobloxTag")
 
 return Tag ]]
-_be997bb88222716e3c158972608abaf0.Children["_d7b3b5bf16d5f557b7f4cf3859a77d5d"] = _d7b3b5bf16d5f557b7f4cf3859a77d5d
-local _d7b3b5bf16d5f557b7f4cf3859a77d5d = nil -- DEALLOCATE PLS :pray:
+il.Children._d7b3b5bf16d5f557b7f4cf3859a77d5d=is
+local it
 
-local _fdfaafec916334456a9f0ae7adf8a30f = { ClassName = "Folder", Children = {}, Properties = {} }
-_fdfaafec916334456a9f0ae7adf8a30f.Name = "__tests__"
-_be997bb88222716e3c158972608abaf0.Children["_fdfaafec916334456a9f0ae7adf8a30f"] = _fdfaafec916334456a9f0ae7adf8a30f
-local _fdfaafec916334456a9f0ae7adf8a30f = nil -- DEALLOCATE PLS :pray:
-local _3b884723346285059223418a1b49e5ae = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_3b884723346285059223418a1b49e5ae.Name = "Change.spec"
-_3b884723346285059223418a1b49e5ae.Properties.Source = [[ --\[\[
+local iu={ClassName="Folder",Children={},Properties={}}
+iu.Name="__tests__"
+il.Children._fdfaafec916334456a9f0ae7adf8a30f=iu
+local iv
+local iw={ClassName="ModuleScript",Children={},Properties={}}
+iw.Name="Change.spec"
+iw.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -116355,12 +116355,12 @@ it("should yield the same object when indexed again", function()
 	jestExpect(a).toBe(b)
 	jestExpect(a).never.toBe(c)
 end) ]]
-_fdfaafec916334456a9f0ae7adf8a30f.Children["_3b884723346285059223418a1b49e5ae"] = _3b884723346285059223418a1b49e5ae
-local _3b884723346285059223418a1b49e5ae = nil -- DEALLOCATE PLS :pray:
+iv.Children._3b884723346285059223418a1b49e5ae=iw
+local ix
 
-local _6b18c91723b608715ea11115448d12c8 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6b18c91723b608715ea11115448d12c8.Name = "Event.spec"
-_6b18c91723b608715ea11115448d12c8.Properties.Source = [[ --\[\[
+local iy={ClassName="ModuleScript",Children={},Properties={}}
+iy.Name="Event.spec"
+iy.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -116396,12 +116396,12 @@ it("should yield the same object when indexed again", function()
 	jestExpect(a).toBe(b)
 	jestExpect(a).never.toBe(c)
 end) ]]
-_fdfaafec916334456a9f0ae7adf8a30f.Children["_6b18c91723b608715ea11115448d12c8"] = _6b18c91723b608715ea11115448d12c8
-local _6b18c91723b608715ea11115448d12c8 = nil -- DEALLOCATE PLS :pray:
+iv.Children._6b18c91723b608715ea11115448d12c8=iy
+local iz
 
-local _6065326b33d143e3b78bae407debeb84 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_6065326b33d143e3b78bae407debeb84.Name = "ReactComponentStackFrame"
-_6065326b33d143e3b78bae407debeb84.Properties.Source = [[ --!strict
+local iA={ClassName="ModuleScript",Children={},Properties={}}
+iA.Name="ReactComponentStackFrame"
+iA.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/56e9feead0f91075ba0a4f725c9e4e343bca1c67/packages/shared/ReactComponentStackFrame.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -116877,12 +116877,12 @@ return {
 	describeFunctionComponentFrame = describeFunctionComponentFrame,
 	describeUnknownElementTypeFrameInDEV = describeUnknownElementTypeFrameInDEV,
 } ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_6065326b33d143e3b78bae407debeb84"] = _6065326b33d143e3b78bae407debeb84
-local _6065326b33d143e3b78bae407debeb84 = nil -- DEALLOCATE PLS :pray:
+ic.Children._6065326b33d143e3b78bae407debeb84=iA
+local iB
 
-local _f4fd99b2ef25c98e8bc3b021036cb358 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f4fd99b2ef25c98e8bc3b021036cb358.Name = "ReactElementType"
-_f4fd99b2ef25c98e8bc3b021036cb358.Properties.Source = [[ --!strict
+local iC={ClassName="ModuleScript",Children={},Properties={}}
+iC.Name="ReactElementType"
+iC.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -116931,12 +116931,12 @@ export type ReactElement<P = Object, T = any> = {
 
 -- deviation: Return something so that the module system is happy
 return {} ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_f4fd99b2ef25c98e8bc3b021036cb358"] = _f4fd99b2ef25c98e8bc3b021036cb358
-local _f4fd99b2ef25c98e8bc3b021036cb358 = nil -- DEALLOCATE PLS :pray:
+ic.Children._f4fd99b2ef25c98e8bc3b021036cb358=iC
+local iD
 
-local _10f4a12d6c39f4bbe0430920f5cd0094 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_10f4a12d6c39f4bbe0430920f5cd0094.Name = "ReactErrorUtils"
-_10f4a12d6c39f4bbe0430920f5cd0094.Properties.Source = [[ --!strict
+local iE={ClassName="ModuleScript",Children={},Properties={}}
+iE.Name="ReactErrorUtils"
+iE.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/b87aabdfe1b7461e7331abb3601d9e6bb27544bc/packages/shared/ReactErrorUtils.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -117047,12 +117047,12 @@ end
 exports.clearCaughtError = clearCaughtError
 
 return exports ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_10f4a12d6c39f4bbe0430920f5cd0094"] = _10f4a12d6c39f4bbe0430920f5cd0094
-local _10f4a12d6c39f4bbe0430920f5cd0094 = nil -- DEALLOCATE PLS :pray:
+ic.Children._10f4a12d6c39f4bbe0430920f5cd0094=iE
+local iF
 
-local _2a4c4490522cce292b7955a6734885be = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2a4c4490522cce292b7955a6734885be.Name = "ReactFeatureFlags"
-_2a4c4490522cce292b7955a6734885be.Properties.Source = [[ --!strict
+local iG={ClassName="ModuleScript",Children={},Properties={}}
+iG.Name="ReactFeatureFlags"
+iG.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/ba82eea3837e4aaeb5a30b7827b664a8c2128d2e/packages/shared/ReactFeatureFlags.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -117197,12 +117197,12 @@ exports.enableEagerRootListeners = false
 
 exports.enableDoubleInvokingEffects = false
 return exports ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_2a4c4490522cce292b7955a6734885be"] = _2a4c4490522cce292b7955a6734885be
-local _2a4c4490522cce292b7955a6734885be = nil -- DEALLOCATE PLS :pray:
+ic.Children._2a4c4490522cce292b7955a6734885be=iG
+local iH
 
-local _7a8711d0a49618b7409c00f4d3cc215e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7a8711d0a49618b7409c00f4d3cc215e.Name = "ReactFiberHostConfig"
-_7a8711d0a49618b7409c00f4d3cc215e.Properties.Source = [[ --\[\[
+local iI={ClassName="ModuleScript",Children={},Properties={}}
+iI.Name="ReactFiberHostConfig"
+iI.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -117241,11 +117241,11 @@ return {
 	WithNoPersistence = require(script.WithNoPersistence),
 	WithNoTestSelectors = require(script.WithNoTestSelectors),
 } ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_7a8711d0a49618b7409c00f4d3cc215e"] = _7a8711d0a49618b7409c00f4d3cc215e
-local _7a8711d0a49618b7409c00f4d3cc215e = nil -- DEALLOCATE PLS :pray:
-local _0b05ba86639342239b3f9d95cb099a88 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0b05ba86639342239b3f9d95cb099a88.Name = "WithNoHydration"
-_0b05ba86639342239b3f9d95cb099a88.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/c5d2fc7127654e43de59fff865b74765a103c4a5/packages/react-reconciler/src/ReactFiberHostConfigWithNoHydration.js
+ic.Children._7a8711d0a49618b7409c00f4d3cc215e=iI
+local iJ
+local iK={ClassName="ModuleScript",Children={},Properties={}}
+iK.Name="WithNoHydration"
+iK.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/c5d2fc7127654e43de59fff865b74765a103c4a5/packages/react-reconciler/src/ReactFiberHostConfigWithNoHydration.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -117300,12 +117300,12 @@ return {
 	didNotFindHydratableTextInstance = shim,
 	didNotFindHydratableSuspenseInstance = shim,
 } ]]
-_7a8711d0a49618b7409c00f4d3cc215e.Children["_0b05ba86639342239b3f9d95cb099a88"] = _0b05ba86639342239b3f9d95cb099a88
-local _0b05ba86639342239b3f9d95cb099a88 = nil -- DEALLOCATE PLS :pray:
+iJ.Children._0b05ba86639342239b3f9d95cb099a88=iK
+local iL
 
-local _1e859b93b1538cbdb32c90553231d2ab = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1e859b93b1538cbdb32c90553231d2ab.Name = "WithNoPersistence"
-_1e859b93b1538cbdb32c90553231d2ab.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/c5d2fc7127654e43de59fff865b74765a103c4a5/packages/react-reconciler/src/ReactFiberHostConfigWithNoPersistence.js
+local iM={ClassName="ModuleScript",Children={},Properties={}}
+iM.Name="WithNoPersistence"
+iM.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/c5d2fc7127654e43de59fff865b74765a103c4a5/packages/react-reconciler/src/ReactFiberHostConfigWithNoPersistence.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -117341,12 +117341,12 @@ return {
 	cloneHiddenInstance = shim,
 	cloneHiddenTextInstance = shim,
 } ]]
-_7a8711d0a49618b7409c00f4d3cc215e.Children["_1e859b93b1538cbdb32c90553231d2ab"] = _1e859b93b1538cbdb32c90553231d2ab
-local _1e859b93b1538cbdb32c90553231d2ab = nil -- DEALLOCATE PLS :pray:
+iJ.Children._1e859b93b1538cbdb32c90553231d2ab=iM
+local iN
 
-local _a1e8a19c16cf2b605c007e2f6f45e7bb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a1e8a19c16cf2b605c007e2f6f45e7bb.Name = "WithNoTestSelectors"
-_a1e8a19c16cf2b605c007e2f6f45e7bb.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/3cde22a84e246fc5361f038bf0c23405b2572c22/packages/react-reconciler/src/ReactFiberHostConfigWithNoTestSelectors.js
+local iO={ClassName="ModuleScript",Children={},Properties={}}
+iO.Name="WithNoTestSelectors"
+iO.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/3cde22a84e246fc5361f038bf0c23405b2572c22/packages/react-reconciler/src/ReactFiberHostConfigWithNoTestSelectors.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -117381,12 +117381,12 @@ return {
 	setFocusIfFocusable = shim,
 	setupIntersectionObserver = shim,
 } ]]
-_7a8711d0a49618b7409c00f4d3cc215e.Children["_a1e8a19c16cf2b605c007e2f6f45e7bb"] = _a1e8a19c16cf2b605c007e2f6f45e7bb
-local _a1e8a19c16cf2b605c007e2f6f45e7bb = nil -- DEALLOCATE PLS :pray:
+iJ.Children._a1e8a19c16cf2b605c007e2f6f45e7bb=iO
+local iP
 
-local _d7f0a5e61609cc83b343e93599e5aa97 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_d7f0a5e61609cc83b343e93599e5aa97.Name = "ReactInstanceMap"
-_d7f0a5e61609cc83b343e93599e5aa97.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/2ba43edc2675380a0f2222f351475bf9d750c6a9/packages/shared/ReactInstanceMap.js
+local iQ={ClassName="ModuleScript",Children={},Properties={}}
+iQ.Name="ReactInstanceMap"
+iQ.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/2ba43edc2675380a0f2222f351475bf9d750c6a9/packages/shared/ReactInstanceMap.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -117506,12 +117506,12 @@ exports.set = function(key, value)
 end
 
 return exports ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_d7f0a5e61609cc83b343e93599e5aa97"] = _d7f0a5e61609cc83b343e93599e5aa97
-local _d7f0a5e61609cc83b343e93599e5aa97 = nil -- DEALLOCATE PLS :pray:
+ic.Children._d7f0a5e61609cc83b343e93599e5aa97=iQ
+local iR
 
-local _8b7c7df9c213d698d94942e3b90b0306 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_8b7c7df9c213d698d94942e3b90b0306.Name = "ReactSharedInternals"
-_8b7c7df9c213d698d94942e3b90b0306.Properties.Source = [[ --!strict
+local iS={ClassName="ModuleScript",Children={},Properties={}}
+iS.Name="ReactSharedInternals"
+iS.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/607148673b3156d051d1fed17cd49e83698dce54/packages/react/src/ReactSharedInternals.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -117571,11 +117571,11 @@ local ReactSharedInternals = {
 }
 
 return ReactSharedInternals ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_8b7c7df9c213d698d94942e3b90b0306"] = _8b7c7df9c213d698d94942e3b90b0306
-local _8b7c7df9c213d698d94942e3b90b0306 = nil -- DEALLOCATE PLS :pray:
-local _e43c47aec2a0dd808440d811dcd97f27 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e43c47aec2a0dd808440d811dcd97f27.Name = "IsSomeRendererActing"
-_e43c47aec2a0dd808440d811dcd97f27.Properties.Source = [[ --!strict
+ic.Children._8b7c7df9c213d698d94942e3b90b0306=iS
+local iT
+local iU={ClassName="ModuleScript",Children={},Properties={}}
+iU.Name="IsSomeRendererActing"
+iU.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/a457e02ae3a2d3903fcf8748380b1cc293a2445e/packages/react/src/IsSomeRendererActing.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -117594,12 +117594,12 @@ local IsSomeRendererActing = {
 	current = false,
 }
 return IsSomeRendererActing ]]
-_8b7c7df9c213d698d94942e3b90b0306.Children["_e43c47aec2a0dd808440d811dcd97f27"] = _e43c47aec2a0dd808440d811dcd97f27
-local _e43c47aec2a0dd808440d811dcd97f27 = nil -- DEALLOCATE PLS :pray:
+iT.Children._e43c47aec2a0dd808440d811dcd97f27=iU
+local iV
 
-local _5f24825c65b66fe1adb25c896fb22040 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5f24825c65b66fe1adb25c896fb22040.Name = "ReactCurrentBatchConfig"
-_5f24825c65b66fe1adb25c896fb22040.Properties.Source = [[ --!strict
+local iW={ClassName="ModuleScript",Children={},Properties={}}
+iW.Name="ReactCurrentBatchConfig"
+iW.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/92fcd46cc79bbf45df4ce86b0678dcef3b91078d/packages/react/src/ReactCurrentBatchConfig.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -117619,12 +117619,12 @@ local ReactCurrentBatchConfig = {
 }
 
 return ReactCurrentBatchConfig ]]
-_8b7c7df9c213d698d94942e3b90b0306.Children["_5f24825c65b66fe1adb25c896fb22040"] = _5f24825c65b66fe1adb25c896fb22040
-local _5f24825c65b66fe1adb25c896fb22040 = nil -- DEALLOCATE PLS :pray:
+iT.Children._5f24825c65b66fe1adb25c896fb22040=iW
+local iX
 
-local _f1cf8156948054b627409b7e080a25c3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f1cf8156948054b627409b7e080a25c3.Name = "ReactCurrentDispatcher"
-_f1cf8156948054b627409b7e080a25c3.Properties.Source = [[ --!strict
+local iY={ClassName="ModuleScript",Children={},Properties={}}
+iY.Name="ReactCurrentDispatcher"
+iY.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/376d5c1b5aa17724c5fea9412f8fcde14a7b23f1/packages/react/src/ReactCurrentDispatcher.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -117729,12 +117729,12 @@ local ReactCurrentDispatcher: { current: nil | Dispatcher } = {
 }
 
 return ReactCurrentDispatcher ]]
-_8b7c7df9c213d698d94942e3b90b0306.Children["_f1cf8156948054b627409b7e080a25c3"] = _f1cf8156948054b627409b7e080a25c3
-local _f1cf8156948054b627409b7e080a25c3 = nil -- DEALLOCATE PLS :pray:
+iT.Children._f1cf8156948054b627409b7e080a25c3=iY
+local iZ
 
-local _0fe5db5182bc13e1c1ea30352e5a7638 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0fe5db5182bc13e1c1ea30352e5a7638.Name = "ReactCurrentOwner"
-_0fe5db5182bc13e1c1ea30352e5a7638.Properties.Source = [[ --!strict
+local i_={ClassName="ModuleScript",Children={},Properties={}}
+i_.Name="ReactCurrentOwner"
+i_.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/376d5c1b5aa17724c5fea9412f8fcde14a7b23f1/packages/react/src/ReactCurrentOwner.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -117762,12 +117762,12 @@ local ReactCurrentOwner = {
 }
 
 return ReactCurrentOwner ]]
-_8b7c7df9c213d698d94942e3b90b0306.Children["_0fe5db5182bc13e1c1ea30352e5a7638"] = _0fe5db5182bc13e1c1ea30352e5a7638
-local _0fe5db5182bc13e1c1ea30352e5a7638 = nil -- DEALLOCATE PLS :pray:
+iT.Children._0fe5db5182bc13e1c1ea30352e5a7638=i_
+local i0
 
-local _31d663235786fc0efcd4b5ab0e71b0b6 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_31d663235786fc0efcd4b5ab0e71b0b6.Name = "ReactDebugCurrentFrame"
-_31d663235786fc0efcd4b5ab0e71b0b6.Properties.Source = [[ --!strict
+local i1={ClassName="ModuleScript",Children={},Properties={}}
+i1.Name="ReactDebugCurrentFrame"
+i1.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/98d410f5005988644d01c9ec79b7181c3dd6c847/packages/react/src/ReactDebugCurrentFrame.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -117818,12 +117818,12 @@ if _G.__DEV__ then
 end
 
 return ReactDebugCurrentFrame ]]
-_8b7c7df9c213d698d94942e3b90b0306.Children["_31d663235786fc0efcd4b5ab0e71b0b6"] = _31d663235786fc0efcd4b5ab0e71b0b6
-local _31d663235786fc0efcd4b5ab0e71b0b6 = nil -- DEALLOCATE PLS :pray:
+iT.Children._31d663235786fc0efcd4b5ab0e71b0b6=i1
+local i2
 
-local _b276b30a1295d90df3253f6a378157cb = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_b276b30a1295d90df3253f6a378157cb.Name = "ReactSymbols"
-_b276b30a1295d90df3253f6a378157cb.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/b61174fb7b09580c1ec2a8f55e73204b706d2935/packages/shared/ReactSymbols.js
+local i3={ClassName="ModuleScript",Children={},Properties={}}
+i3.Name="ReactSymbols"
+i3.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/b61174fb7b09580c1ec2a8f55e73204b706d2935/packages/shared/ReactSymbols.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -117934,12 +117934,12 @@ exports.getIteratorFn = function(maybeIterable): nil | (...any) -> Iterator<any>
 end
 
 return exports ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_b276b30a1295d90df3253f6a378157cb"] = _b276b30a1295d90df3253f6a378157cb
-local _b276b30a1295d90df3253f6a378157cb = nil -- DEALLOCATE PLS :pray:
+ic.Children._b276b30a1295d90df3253f6a378157cb=i3
+local i4
 
-local _a627dd0aba3630d41b560068b9685bd5 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a627dd0aba3630d41b560068b9685bd5.Name = "ReactTypes"
-_a627dd0aba3630d41b560068b9685bd5.Properties.Source = [[ --!strict
+local i5={ClassName="ModuleScript",Children={},Properties={}}
+i5.Name="ReactTypes"
+i5.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -118206,12 +118206,12 @@ export type Thenable<R> = {
 }
 
 return exports ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_a627dd0aba3630d41b560068b9685bd5"] = _a627dd0aba3630d41b560068b9685bd5
-local _a627dd0aba3630d41b560068b9685bd5 = nil -- DEALLOCATE PLS :pray:
+ic.Children._a627dd0aba3630d41b560068b9685bd5=i5
+local i6
 
-local _c9f36a7f7367f43587e5e932ce1fc1f1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c9f36a7f7367f43587e5e932ce1fc1f1.Name = "ReactVersion"
-_c9f36a7f7367f43587e5e932ce1fc1f1.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/a89854bc936668d325cac9a22e2ebfa128c7addf/packages/shared/ReactVersion.js
+local i7={ClassName="ModuleScript",Children={},Properties={}}
+i7.Name="ReactVersion"
+i7.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/a89854bc936668d325cac9a22e2ebfa128c7addf/packages/shared/ReactVersion.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -118222,12 +118222,12 @@ _c9f36a7f7367f43587e5e932ce1fc1f1.Properties.Source = [[ -- ROBLOX upstream: htt
 
 -- TODO: this is special because it gets imported during build.
 return "17.0.1" ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_c9f36a7f7367f43587e5e932ce1fc1f1"] = _c9f36a7f7367f43587e5e932ce1fc1f1
-local _c9f36a7f7367f43587e5e932ce1fc1f1 = nil -- DEALLOCATE PLS :pray:
+ic.Children._c9f36a7f7367f43587e5e932ce1fc1f1=i7
+local i8
 
-local _978f1bb5ef0f7b40ae1f1b69a1f55458 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_978f1bb5ef0f7b40ae1f1b69a1f55458.Name = "Symbol.roblox"
-_978f1bb5ef0f7b40ae1f1b69a1f55458.Properties.Source = [[ --\[\[
+local i9={ClassName="ModuleScript",Children={},Properties={}}
+i9.Name="Symbol.roblox"
+i9.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -118271,12 +118271,12 @@ function Symbol.named(name)
 end
 
 return Symbol ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_978f1bb5ef0f7b40ae1f1b69a1f55458"] = _978f1bb5ef0f7b40ae1f1b69a1f55458
-local _978f1bb5ef0f7b40ae1f1b69a1f55458 = nil -- DEALLOCATE PLS :pray:
+ic.Children._978f1bb5ef0f7b40ae1f1b69a1f55458=i9
+local ja
 
-local _c23eabfc3474929b2b33875db46cc9c1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_c23eabfc3474929b2b33875db46cc9c1.Name = "Type.roblox"
-_c23eabfc3474929b2b33875db46cc9c1.Properties.Source = [[ --\[\[
+local jb={ClassName="ModuleScript",Children={},Properties={}}
+jb.Name="Type.roblox"
+jb.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -118329,12 +118329,12 @@ getmetatable(Type).__tostring = function()
 end
 
 return Type ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_c23eabfc3474929b2b33875db46cc9c1"] = _c23eabfc3474929b2b33875db46cc9c1
-local _c23eabfc3474929b2b33875db46cc9c1 = nil -- DEALLOCATE PLS :pray:
+ic.Children._c23eabfc3474929b2b33875db46cc9c1=jb
+local jc
 
-local _daa61561c482386146be0333b9a46e1a = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_daa61561c482386146be0333b9a46e1a.Name = "UninitializedState.roblox"
-_daa61561c482386146be0333b9a46e1a.Properties.Source = [[ --\[\[
+local jd={ClassName="ModuleScript",Children={},Properties={}}
+jd.Name="UninitializedState.roblox"
+jd.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -118379,16 +118379,16 @@ setmetatable(UninitializedState, {
 })
 
 return UninitializedState ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_daa61561c482386146be0333b9a46e1a"] = _daa61561c482386146be0333b9a46e1a
-local _daa61561c482386146be0333b9a46e1a = nil -- DEALLOCATE PLS :pray:
+ic.Children._daa61561c482386146be0333b9a46e1a=jd
+local je
 
-local _de37e2df92367cbd47dcadc9a0eb3935 = { ClassName = "Folder", Children = {}, Properties = {} }
-_de37e2df92367cbd47dcadc9a0eb3935.Name = "__tests__"
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_de37e2df92367cbd47dcadc9a0eb3935"] = _de37e2df92367cbd47dcadc9a0eb3935
-local _de37e2df92367cbd47dcadc9a0eb3935 = nil -- DEALLOCATE PLS :pray:
-local _5035837fae17aced5f56b45af523ebd1 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_5035837fae17aced5f56b45af523ebd1.Name = "ErrorHandling.roblox.spec"
-_5035837fae17aced5f56b45af523ebd1.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local jf={ClassName="Folder",Children={},Properties={}}
+jf.Name="__tests__"
+ic.Children._de37e2df92367cbd47dcadc9a0eb3935=jf
+local jg
+local jh={ClassName="ModuleScript",Children={},Properties={}}
+jh.Name="ErrorHandling.roblox.spec"
+jh.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local jestExpect = JestGlobals.expect
@@ -118558,12 +118558,12 @@ describe("parseReactError", function()
 		jestExpect(rethrow).toContain(rethrowFrame)
 	end)
 end) ]]
-_de37e2df92367cbd47dcadc9a0eb3935.Children["_5035837fae17aced5f56b45af523ebd1"] = _5035837fae17aced5f56b45af523ebd1
-local _5035837fae17aced5f56b45af523ebd1 = nil -- DEALLOCATE PLS :pray:
+jg.Children._5035837fae17aced5f56b45af523ebd1=jh
+local ji
 
-local _1c753c0310ef88f13a9f6c9b3674c1f3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1c753c0310ef88f13a9f6c9b3674c1f3.Name = "ReactComponentStackFrame.roblox.spec"
-_1c753c0310ef88f13a9f6c9b3674c1f3.Properties.Source = [[ --!strict
+local jj={ClassName="ModuleScript",Children={},Properties={}}
+jj.Name="ReactComponentStackFrame.roblox.spec"
+jj.Properties.Source=[[ --!strict
 
 local Packages = script.Parent.Parent.Parent
 local LuauPolyfill = require(Packages.LuauPolyfill)
@@ -118836,12 +118836,12 @@ describe("DEV warning stack trace", function()
 		end
 	)
 end) ]]
-_de37e2df92367cbd47dcadc9a0eb3935.Children["_1c753c0310ef88f13a9f6c9b3674c1f3"] = _1c753c0310ef88f13a9f6c9b3674c1f3
-local _1c753c0310ef88f13a9f6c9b3674c1f3 = nil -- DEALLOCATE PLS :pray:
+jg.Children._1c753c0310ef88f13a9f6c9b3674c1f3=jj
+local jk
 
-local _f12f6ff004af1dd6329b703af837bb75 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_f12f6ff004af1dd6329b703af837bb75.Name = "ReactErrorProd-internal.spec"
-_f12f6ff004af1dd6329b703af837bb75.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9a5576f4d263ac5d7a9462a287d1524fda3355b8/packages/shared/__tests__/ReactErrorProd-test.internal.js
+local jl={ClassName="ModuleScript",Children={},Properties={}}
+jl.Name="ReactErrorProd-internal.spec"
+jl.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/9a5576f4d263ac5d7a9462a287d1524fda3355b8/packages/shared/__tests__/ReactErrorProd-test.internal.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -118887,12 +118887,12 @@ it("should throw with the correct number of `%s`s in the URL", function()
 			.. " for full errors and additional helpful warnings."
 	)
 end) ]]
-_de37e2df92367cbd47dcadc9a0eb3935.Children["_f12f6ff004af1dd6329b703af837bb75"] = _f12f6ff004af1dd6329b703af837bb75
-local _f12f6ff004af1dd6329b703af837bb75 = nil -- DEALLOCATE PLS :pray:
+jg.Children._f12f6ff004af1dd6329b703af837bb75=jl
+local jm
 
-local _34d9fef4ec82c781005f79f4c4d28a4b = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_34d9fef4ec82c781005f79f4c4d28a4b.Name = "ReactErrorUtils-internal.spec"
-_34d9fef4ec82c781005f79f4c4d28a4b.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/3e94bce765d355d74f6a60feb4addb6d196e3482/packages/shared/__tests__/ReactErrorUtils-test.internal.js
+local jn={ClassName="ModuleScript",Children={},Properties={}}
+jn.Name="ReactErrorUtils-internal.spec"
+jn.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/3e94bce765d355d74f6a60feb4addb6d196e3482/packages/shared/__tests__/ReactErrorUtils-test.internal.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -119073,12 +119073,12 @@ it("can be shimmed", function()
 	end).toThrow(err)
 	jestExpect(ops).toEqual({ "somearg" })
 end) ]]
-_de37e2df92367cbd47dcadc9a0eb3935.Children["_34d9fef4ec82c781005f79f4c4d28a4b"] = _34d9fef4ec82c781005f79f4c4d28a4b
-local _34d9fef4ec82c781005f79f4c4d28a4b = nil -- DEALLOCATE PLS :pray:
+jg.Children._34d9fef4ec82c781005f79f4c4d28a4b=jn
+local jo
 
-local _adfe5df69e6e2ad3db88b15e40c874b7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_adfe5df69e6e2ad3db88b15e40c874b7.Name = "ReactInstanceMap.roblox.spec"
-_adfe5df69e6e2ad3db88b15e40c874b7.Properties.Source = [[ -- ROBLOX deviation: we have a crash in production this deviant logic will help catch
+local jp={ClassName="ModuleScript",Children={},Properties={}}
+jp.Name="ReactInstanceMap.roblox.spec"
+jp.Properties.Source=[[ -- ROBLOX deviation: we have a crash in production this deviant logic will help catch
 -- ROBLOX TODO: make this only pass in __DEV__
 
 local Packages = script.Parent.Parent.Parent
@@ -119180,12 +119180,12 @@ describe("set", function()
 		)
 	end)
 end) ]]
-_de37e2df92367cbd47dcadc9a0eb3935.Children["_adfe5df69e6e2ad3db88b15e40c874b7"] = _adfe5df69e6e2ad3db88b15e40c874b7
-local _adfe5df69e6e2ad3db88b15e40c874b7 = nil -- DEALLOCATE PLS :pray:
+jg.Children._adfe5df69e6e2ad3db88b15e40c874b7=jp
+local jq
 
-local _62100177701d55e17a3197b423333703 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_62100177701d55e17a3197b423333703.Name = "ReactSymbols-internal.spec"
-_62100177701d55e17a3197b423333703.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/cdbfa6b5dd692220e5996ec453d46fc10aff046a/packages/shared/__tests__/ReactSymbols-test.internal.js
+local jr={ClassName="ModuleScript",Children={},Properties={}}
+jr.Name="ReactSymbols-internal.spec"
+jr.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/cdbfa6b5dd692220e5996ec453d46fc10aff046a/packages/shared/__tests__/ReactSymbols-test.internal.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -119255,12 +119255,12 @@ it("numeric values should be unique", function()
 	-- 	global.Symbol.for = originalSymbolFor;
 	-- }
 end) ]]
-_de37e2df92367cbd47dcadc9a0eb3935.Children["_62100177701d55e17a3197b423333703"] = _62100177701d55e17a3197b423333703
-local _62100177701d55e17a3197b423333703 = nil -- DEALLOCATE PLS :pray:
+jg.Children._62100177701d55e17a3197b423333703=jr
+local js
 
-local _da1a6b35170235a32ed85af856de45b0 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_da1a6b35170235a32ed85af856de45b0.Name = "checkPropTypes.roblox.spec"
-_da1a6b35170235a32ed85af856de45b0.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local jt={ClassName="ModuleScript",Children={},Properties={}}
+jt.Name="checkPropTypes.roblox.spec"
+jt.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 local React
 
 local ReactNoop
@@ -119555,12 +119555,12 @@ describe("tests propTypes and validateProps behavior", function()
 		end)
 	end)
 end) ]]
-_de37e2df92367cbd47dcadc9a0eb3935.Children["_da1a6b35170235a32ed85af856de45b0"] = _da1a6b35170235a32ed85af856de45b0
-local _da1a6b35170235a32ed85af856de45b0 = nil -- DEALLOCATE PLS :pray:
+jg.Children._da1a6b35170235a32ed85af856de45b0=jt
+local ju
 
-local _0fb33f2bd5a698d6c16042eed3004c48 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0fb33f2bd5a698d6c16042eed3004c48.Name = "getComponentName.roblox.spec"
-_0fb33f2bd5a698d6c16042eed3004c48.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local jv={ClassName="ModuleScript",Children={},Properties={}}
+jv.Name="getComponentName.roblox.spec"
+jv.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local beforeEach = JestGlobals.beforeEach
 local jestExpect = JestGlobals.expect
@@ -119609,12 +119609,12 @@ describe("Lazy components", function()
 		jestExpect(getComponentName(lazyAnonymous)).toBe(nil)
 	end)
 end) ]]
-_de37e2df92367cbd47dcadc9a0eb3935.Children["_0fb33f2bd5a698d6c16042eed3004c48"] = _0fb33f2bd5a698d6c16042eed3004c48
-local _0fb33f2bd5a698d6c16042eed3004c48 = nil -- DEALLOCATE PLS :pray:
+jg.Children._0fb33f2bd5a698d6c16042eed3004c48=jv
+local jw
 
-local _25bb261f51f1f5365ea9dec9a31d11a7 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_25bb261f51f1f5365ea9dec9a31d11a7.Name = "isValidElementType.roblox.spec"
-_25bb261f51f1f5365ea9dec9a31d11a7.Properties.Source = [[ local Packages = script.Parent.Parent.Parent
+local jx={ClassName="ModuleScript",Children={},Properties={}}
+jx.Name="isValidElementType.roblox.spec"
+jx.Properties.Source=[[ local Packages = script.Parent.Parent.Parent
 local JestGlobals = require(Packages.Dev.JestGlobals)
 local jestExpect = JestGlobals.expect
 local describe = JestGlobals.describe
@@ -119649,12 +119649,12 @@ describe("does not accept", function()
 		jestExpect(isValidElementType(element)).toBe(false)
 	end)
 end) ]]
-_de37e2df92367cbd47dcadc9a0eb3935.Children["_25bb261f51f1f5365ea9dec9a31d11a7"] = _25bb261f51f1f5365ea9dec9a31d11a7
-local _25bb261f51f1f5365ea9dec9a31d11a7 = nil -- DEALLOCATE PLS :pray:
+jg.Children._25bb261f51f1f5365ea9dec9a31d11a7=jx
+local jy
 
-local _a916a34c2148f898b4b84085fa0daca9 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_a916a34c2148f898b4b84085fa0daca9.Name = "checkPropTypes"
-_a916a34c2148f898b4b84085fa0daca9.Properties.Source = [[ --!strict
+local jz={ClassName="ModuleScript",Children={},Properties={}}
+jz.Name="checkPropTypes"
+jz.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/55cb0b7eeb0e539d89858b8ed69beabf7fe2fb46/packages/shared/checkPropTypes.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -119843,12 +119843,12 @@ local function checkPropTypes<P>(
 end
 
 return checkPropTypes ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_a916a34c2148f898b4b84085fa0daca9"] = _a916a34c2148f898b4b84085fa0daca9
-local _a916a34c2148f898b4b84085fa0daca9 = nil -- DEALLOCATE PLS :pray:
+ic.Children._a916a34c2148f898b4b84085fa0daca9=jz
+local jA
 
-local _4bda521022df8f1f565a8bff1e836fb2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_4bda521022df8f1f565a8bff1e836fb2.Name = "console"
-_4bda521022df8f1f565a8bff1e836fb2.Properties.Source = [[ --\[\[
+local jB={ClassName="ModuleScript",Children={},Properties={}}
+jB.Name="console"
+jB.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -119885,12 +119885,12 @@ if _G.__DEV__ then
 end
 
 return console ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_4bda521022df8f1f565a8bff1e836fb2"] = _4bda521022df8f1f565a8bff1e836fb2
-local _4bda521022df8f1f565a8bff1e836fb2 = nil -- DEALLOCATE PLS :pray:
+ic.Children._4bda521022df8f1f565a8bff1e836fb2=jB
+local jC
 
-local _1dbde5f0e93e1694fc1f866ae4a91b12 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1dbde5f0e93e1694fc1f866ae4a91b12.Name = "consoleWithStackDev"
-_1dbde5f0e93e1694fc1f866ae4a91b12.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/cb141681750c8221ac799074df09df2bb448c7a4/packages/shared/consoleWithStackDev.js
+local jD={ClassName="ModuleScript",Children={},Properties={}}
+jD.Name="consoleWithStackDev"
+jD.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/cb141681750c8221ac799074df09df2bb448c7a4/packages/shared/consoleWithStackDev.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
 *
@@ -119950,12 +119950,12 @@ function printWarning(level, format, args)
 end
 
 return exports ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_1dbde5f0e93e1694fc1f866ae4a91b12"] = _1dbde5f0e93e1694fc1f866ae4a91b12
-local _1dbde5f0e93e1694fc1f866ae4a91b12 = nil -- DEALLOCATE PLS :pray:
+ic.Children._1dbde5f0e93e1694fc1f866ae4a91b12=jD
+local jE
 
-local _74cc47f0f19819d2a1097c79bfb43669 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_74cc47f0f19819d2a1097c79bfb43669.Name = "enqueueTask.roblox"
-_74cc47f0f19819d2a1097c79bfb43669.Properties.Source = [[ --!strict
+local jF={ClassName="ModuleScript",Children={},Properties={}}
+jF.Name="enqueueTask.roblox"
+jF.Properties.Source=[[ --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -119972,12 +119972,12 @@ return function(task)
 	-- deviation: Replace with setImmediate once we create an equivalent polyfill
 	return setTimeout(task, 0)
 end ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_74cc47f0f19819d2a1097c79bfb43669"] = _74cc47f0f19819d2a1097c79bfb43669
-local _74cc47f0f19819d2a1097c79bfb43669 = nil -- DEALLOCATE PLS :pray:
+ic.Children._74cc47f0f19819d2a1097c79bfb43669=jF
+local jG
 
-local _0b61fa34b352a51d7e64bba9378ad38e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_0b61fa34b352a51d7e64bba9378ad38e.Name = "flowtypes.roblox"
-_0b61fa34b352a51d7e64bba9378ad38e.Properties.Source = [[ --\[\[
+local jH={ClassName="ModuleScript",Children={},Properties={}}
+jH.Name="flowtypes.roblox"
+jH.Properties.Source=[[ --\[\[
 	* Copyright (c) Roblox Corporation. All rights reserved.
 	* Licensed under the MIT License (the "License");
 	* you may not use this file except in compliance with the License.
@@ -120196,12 +120196,12 @@ export type React_Portal = any
 export type React_Key = string | number
 
 return {} ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_0b61fa34b352a51d7e64bba9378ad38e"] = _0b61fa34b352a51d7e64bba9378ad38e
-local _0b61fa34b352a51d7e64bba9378ad38e = nil -- DEALLOCATE PLS :pray:
+ic.Children._0b61fa34b352a51d7e64bba9378ad38e=jH
+local jI
 
-local _2ba5131ca67d8e385e9884d1f0e13ce2 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_2ba5131ca67d8e385e9884d1f0e13ce2.Name = "formatProdErrorMessage"
-_2ba5131ca67d8e385e9884d1f0e13ce2.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/75955bf1d7ff6c2c1f4052f4a84dd2ce6944c62e/packages/shared/formatProdErrorMessage.js
+local jJ={ClassName="ModuleScript",Children={},Properties={}}
+jJ.Name="formatProdErrorMessage"
+jJ.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/75955bf1d7ff6c2c1f4052f4a84dd2ce6944c62e/packages/shared/formatProdErrorMessage.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -120234,12 +120234,12 @@ local function formatProdErrorMessage(code, ...)
 end
 
 return formatProdErrorMessage ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_2ba5131ca67d8e385e9884d1f0e13ce2"] = _2ba5131ca67d8e385e9884d1f0e13ce2
-local _2ba5131ca67d8e385e9884d1f0e13ce2 = nil -- DEALLOCATE PLS :pray:
+ic.Children._2ba5131ca67d8e385e9884d1f0e13ce2=jJ
+local jK
 
-local _ec4c4492bda1840e8d459bf165e7f67e = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ec4c4492bda1840e8d459bf165e7f67e.Name = "getComponentName"
-_ec4c4492bda1840e8d459bf165e7f67e.Properties.Source = [[ --!strict
+local jL={ClassName="ModuleScript",Children={},Properties={}}
+jL.Name="getComponentName"
+jL.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/a774502e0ff2a82e3c0a3102534dbc3f1406e5ea/packages/shared/getComponentName.js
 --\[\[*
 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -120390,12 +120390,12 @@ local function getComponentName(type: any): string | nil
 end
 
 return getComponentName ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_ec4c4492bda1840e8d459bf165e7f67e"] = _ec4c4492bda1840e8d459bf165e7f67e
-local _ec4c4492bda1840e8d459bf165e7f67e = nil -- DEALLOCATE PLS :pray:
+ic.Children._ec4c4492bda1840e8d459bf165e7f67e=jL
+local jM
 
-local _014a9d2600e9e4e010d914450bb7a515 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_014a9d2600e9e4e010d914450bb7a515.Name = "invariant"
-_014a9d2600e9e4e010d914450bb7a515.Properties.Source = [[ --!strict
+local jN={ClassName="ModuleScript",Children={},Properties={}}
+jN.Name="invariant"
+jN.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/42c3c967d1e4ca4731b47866f2090bc34caa086c/packages/shared/invariant.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -120429,12 +120429,12 @@ local function invariant(condition, format, ...)
 end
 
 return invariant ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_014a9d2600e9e4e010d914450bb7a515"] = _014a9d2600e9e4e010d914450bb7a515
-local _014a9d2600e9e4e010d914450bb7a515 = nil -- DEALLOCATE PLS :pray:
+ic.Children._014a9d2600e9e4e010d914450bb7a515=jN
+local jO
 
-local _e5749b095fae5c1712b7fce54a8dbd12 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_e5749b095fae5c1712b7fce54a8dbd12.Name = "invokeGuardedCallbackImpl"
-_e5749b095fae5c1712b7fce54a8dbd12.Properties.Source = [[ --!strict
+local jP={ClassName="ModuleScript",Children={},Properties={}}
+jP.Name="invokeGuardedCallbackImpl"
+jP.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/702fad4b1b48ac8f626ed3f35e8f86f5ea728084/packages/shared/invokeGuardedCallbackImpl.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -120645,12 +120645,12 @@ if _G.__DEV__ then
 end
 
 return invokeGuardedCallbackImpl ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_e5749b095fae5c1712b7fce54a8dbd12"] = _e5749b095fae5c1712b7fce54a8dbd12
-local _e5749b095fae5c1712b7fce54a8dbd12 = nil -- DEALLOCATE PLS :pray:
+ic.Children._e5749b095fae5c1712b7fce54a8dbd12=jP
+local jQ
 
-local _ce37eedebdbab38fd0b817cd6ca4aafa = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_ce37eedebdbab38fd0b817cd6ca4aafa.Name = "isValidElementType"
-_ce37eedebdbab38fd0b817cd6ca4aafa.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/b61174fb7b09580c1ec2a8f55e73204b706d2935/packages/shared/isValidElementType.js
+local jR={ClassName="ModuleScript",Children={},Properties={}}
+jR.Name="isValidElementType"
+jR.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/b61174fb7b09580c1ec2a8f55e73204b706d2935/packages/shared/isValidElementType.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -120724,12 +120724,12 @@ return function(type)
 
 	return false
 end ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_ce37eedebdbab38fd0b817cd6ca4aafa"] = _ce37eedebdbab38fd0b817cd6ca4aafa
-local _ce37eedebdbab38fd0b817cd6ca4aafa = nil -- DEALLOCATE PLS :pray:
+ic.Children._ce37eedebdbab38fd0b817cd6ca4aafa=jR
+local jS
 
-local _1ae30607be2984211bf394bf85524721 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_1ae30607be2984211bf394bf85524721.Name = "objectIs"
-_1ae30607be2984211bf394bf85524721.Properties.Source = [[ --!strict
+local jT={ClassName="ModuleScript",Children={},Properties={}}
+jT.Name="objectIs"
+jT.Properties.Source=[[ --!strict
 -- ROBLOX upstream: https://github.com/facebook/react/blob/6faf6f5eb1705eef39a1d762d6ee381930f36775/packages/shared/objectIs.js
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -120752,12 +120752,12 @@ end
 local objectIs = is
 
 return objectIs ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_1ae30607be2984211bf394bf85524721"] = _1ae30607be2984211bf394bf85524721
-local _1ae30607be2984211bf394bf85524721 = nil -- DEALLOCATE PLS :pray:
+ic.Children._1ae30607be2984211bf394bf85524721=jT
+local jU
 
-local _7d2921b0986b56755cf2cc1f287de9d3 = { ClassName = "ModuleScript", Children = {}, Properties = {} }
-_7d2921b0986b56755cf2cc1f287de9d3.Name = "shallowEqual"
-_7d2921b0986b56755cf2cc1f287de9d3.Properties.Source = [[ -- ROBLOX upstream: https://github.com/facebook/react/blob/a9b035b0c2b8235405835beca0c4db2cc37f18d0/packages/shared/shallowEqual.js
+local jV={ClassName="ModuleScript",Children={},Properties={}}
+jV.Name="shallowEqual"
+jV.Properties.Source=[[ -- ROBLOX upstream: https://github.com/facebook/react/blob/a9b035b0c2b8235405835beca0c4db2cc37f18d0/packages/shared/shallowEqual.js
 --!strict
 --\[\[*
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -120806,34 +120806,34 @@ local function shallowEqual(objA, objB)
 end
 
 return shallowEqual ]]
-_54f71b4fd49dbd0ad28f64bf0315cfb7.Children["_7d2921b0986b56755cf2cc1f287de9d3"] = _7d2921b0986b56755cf2cc1f287de9d3
-local _7d2921b0986b56755cf2cc1f287de9d3 = nil -- DEALLOCATE PLS :pray:
-getfenv(0).rootTree = _9e3c7aedc18c985a2d67909866216e52
-getfenv(0).rootReferent = "_9e3c7aedc18c985a2d67909866216e52"
-type Runtime = {
-	getPatchedEnvironment: (script: LuaSourceContainer) -> (),
-	loadedModules: {
-		[string]: { any },
-	},
-	main: () -> (),
-	require: (script: ModuleScript) -> ...any,
-	runScript: (script: LuaSourceContainer) -> (),
+ic.Children._7d2921b0986b56755cf2cc1f287de9d3=jV
+local jW
+getfenv(0).rootTree=a
+getfenv(0).rootReferent="_9e3c7aedc18c985a2d67909866216e52"
+type Runtime= {
+getPatchedEnvironment:(script:LuaSourceContainer)->(),
+loadedModules:{
+[string]:{any }
+},
+main:()->(),
+require:(script:ModuleScript)->...any,
+runScript:(script:LuaSourceContainer)->()
 }
 
-local runtime: Runtime = {} :: any
+local jX:Runtime ={}::any
 if getfenv().__runtime then
-	runtime = getfenv().__runtime
+jX=getfenv().__runtime
 else
-	runtime.loadedModules = {}
+jX.loadedModules={}
 
-	local HttpService = game:GetService("HttpService")
-	local SharedTableRegistry = game:GetService("SharedTableRegistry")
-	local rootTree = getfenv(0).rootTree
-	local rootReferent = getfenv(0).rootReferent
-	local nilProtectedFolder = Instance.new("Folder")
-	nilProtectedFolder.Name = "nil-protected-instances"
-	nilProtectedFolder.Parent = nil
-	local constructorSource = [=[
+local jY=game:GetService"HttpService"
+local jZ=game:GetService"SharedTableRegistry"
+local j_=getfenv(0).rootTree
+local j0=getfenv(0).rootReferent
+local j1=Instance.new"Folder"
+j1.Name="nil-protected-instances"
+j1.Parent=nil
+local j2=[=[
 		local constructInstanceFromTree
 		constructInstanceFromTree = function(tree, rootReferent)
 			local sourceMap = {}
@@ -120893,35 +120893,35 @@ else
 
 		return constructInstanceFromTree
 	]=]
-	-- instance, referentsToInstances, instancesToTrees, sourceMap
-	type constructInstance = (
-		tree: {},
-		rootReferent: string
-	) -> (Instance, { [string]: Instance }, { [Instance]: string }, { [Instance]: string })
 
-	local constructInstanceFromTree: constructInstance = assert(loadstring(constructorSource))()
-	local start = os.clock()
+type constructInstance= (
+tree:{},
+rootReferent:string
+)->(Instance,{[string]:Instance },{[Instance]:string },{[Instance]:string })
 
-	local rtSource = HttpService:GetAsync(
-		"https://raw.githubusercontent.com/techs-sus/rojo-script/master/runtime/lua_sandbox.lua",
-		false
-	)
-	local rootModel, rootReferentsToInstances, rootInstancesToTrees, sourceMap =
-		constructInstanceFromTree(rootTree, rootReferent)
-	print(`rojo-script: took {os.clock() - start} seconds to construct instance from tree`)
+local j3:constructInstance =assert(loadstring(j2))()
+local j4=os.clock()
 
-	local function wrappedNS(source: Script | string, parent: Instance, ...)
-		if #({...}) ~= 0 then
-			error("expected 2 arguments, got " .. 2 + #({...}) .. " arguments")
-		end
-		if typeof(source) == "string" then
-			return getfenv().NS(source, parent)
-		elseif typeof(source) == "Instance" then
-			if source:IsA("LuaSourceContainer") then
-				-- prevent tampering with objects
-				local accessToken = HttpService:GenerateGUID(false)
-				local sourcePatch = string.format(
-					[[
+local j5=jY:GetAsync(
+"https://raw.githubusercontent.com/techs-sus/rojo-script/master/runtime/lua_sandbox.lua",
+false
+)
+local j6,j7,j8,j9=
+j3(j_,j0)
+print(`rojo-script: took {os.clock()-j4} seconds to construct instance from tree`)
+
+local function wrappedNS(ka:Script |string,kb:Instance,...)
+if#({...})~=0 then
+error("expected 2 arguments, got ".. 2+#({...}).." arguments")
+end
+if typeof(ka)=="string"then
+return getfenv().NS(ka,kb)
+elseif typeof(ka)=="Instance"then
+if ka:IsA"LuaSourceContainer"then
+
+local kc=jY:GenerateGUID(false)
+local kd=string.format(
+[[
 						--- rojo-script environment tampering ---
 						(function()
 							-- setup fake tree with a SharedTable
@@ -120958,122 +120958,122 @@ else
 						end)()
 						--- end rojo-script environment tampering ---\n
 					]],
-					accessToken,
-					constructorSource,
-					rtSource
-				)
-				SharedTableRegistry:SetSharedTable(
-					accessToken,
-					SharedTable.new({ tree = rootInstancesToTrees[source] })
-				)
-				local created: Script = getfenv().NS(sourcePatch .. sourceMap[source], nilProtectedFolder)
-				created.Parent = parent
-				return created
-			else
-				error("expected instance LuaSourceContainer" .. " but got " .. source.ClassName)
-			end
-		else
-			error("expected type string | LuaSourceContainer" .. " but got " .. typeof(source))
-		end
-	end
-
-	local function wrappedNLS(source: LocalScript | string, parent: Instance)
-		if typeof(source) == "string" then
-			return getfenv().NLS(source, parent)
-		elseif typeof(source) == "Instance" then
-			if source:IsA("LocalScript") then
-				-- transfer instances from source to new script
-				-- nil parent prevents execution for localscripts
-				local created = getfenv().NLS(sourceMap[source], nilProtectedFolder)
-				created.Disabled = true
-				-- we cant init on client because people parent remotes to locals
-				-- and i dont want to make a full instance sandbox
-				for _, v in source:Clone():GetChildren() do
-					v.Parent = created
-				end
-				-- run it
-				created.Disabled = false
-				created.Parent = parent
-				return created
-			else
-				error("expected class LocalScript" .. " but got " .. source.ClassName)
-			end
-		else
-			error("expected type string | LocalScript" .. " but got " .. typeof(source))
-		end
-	end
-
-	function runtime.getPatchedEnvironment(script)
-		local e
-		e = setmetatable({
-			script = script,
-			getfenv = function()
-				return e
-			end,
-			require = runtime.require,
-			NLS = wrappedNLS,
-			NS = wrappedNS,
-			__runtime = runtime,
-		}, {
-			__index = getfenv(0),
-			__metatable = "The metatable is locked",
-		})
-		return e
-	end
-
-	runtime.require = function(script): ...any
-		if runtime.loadedModules[script] then
-			return unpack(runtime.loadedModules[script])
-		end
-		if typeof(script) == "number" then
-			return require(script)
-		end
-		if not script:IsA("ModuleScript") then
-			return error("Instance is not a ModuleScript")
-		end
-		local source = sourceMap[script]
-		local environment = runtime.getPatchedEnvironment(script)
-		local fn: ((...any) -> ...any)?, e: string? = loadstring(source)
-		if not fn then
-			error("Error loading module, loadstring failed " .. if e then e else "(no error)")
-		else
-			setfenv(fn, environment)
-			local returns = { fn() }
-			if #returns ~= 1 then
-				error("The module did not return exactly one value, " .. script:GetFullName())
-			end
-
-			runtime.loadedModules[script] = returns
-			return unpack(runtime.loadedModules[script])
-		end
-	end
-
-	local function runScript(script: LuaSourceContainer)
-		local source = sourceMap[script]
-		local fn, e = loadstring(source)
-		local environment = runtime.getPatchedEnvironment(script)
-		if not fn then
-			error("Error running script, loadstring failed " .. if e then e else "(no error)")
-		end
-		setfenv(fn, environment)
-		coroutine.wrap(fn)()
-	end
-
-	function runtime.main()
-		-- this is still unsafe thanks to fake->real not being added yet
-		local safeContainer = Instance.new("Script")
-		safeContainer.Name = "Script"
-		rootModel.Parent = safeContainer
-		safeContainer.Parent = workspace
-		-- getchildren is impossible for rojo projects
-		for _, instance in rootModel:GetDescendants() do
-			if instance:IsA("Script") and not instance.Disabled then
-				runScript(instance)
-			end
-		end
-	end
-
-	runtime.runScript = runScript
+kc,
+j2,
+j5
+)
+jZ:SetSharedTable(
+kc,
+SharedTable.new{tree=j8[ka]}
+)
+local ke:Script =getfenv().NS(kd..j9[ka],j1)
+ke.Parent=kb
+return ke
+else
+error("expected instance LuaSourceContainer".." but got "..ka.ClassName)
+end
+else
+error("expected type string | LuaSourceContainer".." but got "..typeof(ka))
+end
 end
 
-runtime.main()
+local function wrappedNLS(ka:LocalScript |string,kb:Instance)
+if typeof(ka)=="string"then
+return getfenv().NLS(ka,kb)
+elseif typeof(ka)=="Instance"then
+if ka:IsA"LocalScript"then
+
+
+local kc=getfenv().NLS(j9[ka],j1)
+kc.Disabled=true
+
+
+for kd,ke in ka:Clone():GetChildren()do
+ke.Parent=kc
+end
+
+kc.Disabled=false
+kc.Parent=kb
+return kc
+else
+error("expected class LocalScript".." but got "..ka.ClassName)
+end
+else
+error("expected type string | LocalScript".." but got "..typeof(ka))
+end
+end
+
+function jX.getPatchedEnvironment(ka)
+local kb
+kb=setmetatable({
+script=ka,
+getfenv=function()
+return kb
+end,
+require=jX.require,
+NLS=wrappedNLS,
+NS=wrappedNS,
+__runtime=jX,
+},{
+__index=getfenv(0),
+__metatable="The metatable is locked",
+})
+return kb
+end
+
+jX.require=function(ka):...any
+if jX.loadedModules[ka]then
+return unpack(jX.loadedModules[ka])
+end
+if typeof(ka)=="number"then
+return require(ka)
+end
+if not ka:IsA"ModuleScript"then
+return error"Instance is not a ModuleScript"
+end
+local kb=j9[ka]
+local kc=jX.getPatchedEnvironment(ka)
+local kd:((...any)->...any)?,ke:string?=loadstring(kb)
+if not kd then
+error("Error loading module, loadstring failed "..if ke then ke else"(no error)")
+else
+setfenv(kd,kc)
+local kf={kd()}
+if#kf~=1 then
+error("The module did not return exactly one value, "..ka:GetFullName())
+end
+
+jX.loadedModules[ka]=kf
+return unpack(jX.loadedModules[ka])
+end
+end
+
+local function runScript(ka:LuaSourceContainer)
+local kb=j9[ka]
+local kc,kd=loadstring(kb)
+local ke=jX.getPatchedEnvironment(ka)
+if not kc then
+error("Error running script, loadstring failed "..if kd then kd else"(no error)")
+end
+setfenv(kc,ke)
+coroutine.wrap(kc)()
+end
+
+function jX.main()
+
+local ka=Instance.new"Script"
+ka.Name="Script"
+j6.Parent=ka
+ka.Parent=workspace
+
+for kb,kc in j6:GetDescendants()do
+if kc:IsA"Script"and not kc.Disabled then
+runScript(kc)
+end
+end
+end
+
+jX.runScript=runScript
+end
+
+jX.main()

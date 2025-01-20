@@ -6,8 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.72"
-clap = { version = "4.3.21", features = ["derive"] }
-rbx_binary = "0.7.1"
-rbx_dom_weak = "2.5.0"
-rbx_xml = "0.13.1"
+anyhow = "1"
+clap = { version = "4.5.4", features = ["derive"] }
+# darklua = { version = "0.13.0" }
+rbx_binary = "0.7.4"
+rbx_dom_weak = "2.7.0"
+rbx_xml = "0.13.3"

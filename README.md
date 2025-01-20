@@ -28,3 +28,9 @@ cargo run -- -f input.rbxm -o output.lua
 lua-sandbox runtime:
 
 - add modules to NLS (use fione + yueliang (possibly even a luau bytecode runner))
+
+##### Development notes
+
+- roblox compresses chunks using lz4 and zstd
+- binary.bin.zst = 266kb; roblox is 553kb
+- varstring not implemented
