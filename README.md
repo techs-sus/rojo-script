@@ -33,4 +33,3 @@ lua-sandbox runtime:
 
 - roblox compresses chunks using lz4 and zstd
 - binary.bin.zst = 266kb; roblox is 553kb
-- varstring not implemented
