@@ -1,10 +1,10 @@
-use anyhow::Context as _;
 use clap::{Parser, ValueEnum};
 use generator::generate_for_dom;
 use std::path::PathBuf;
 use std::{fs::File, io::BufReader};
 
 mod generator;
+mod spec;
 
 #[derive(Clone, ValueEnum, PartialEq)]
 enum Runtime {
@@ -27,24 +27,22 @@ struct Args {
 	runtime: Runtime,
 }
 
-fn main() -> Result<(), anyhow::Error> {
+fn main() {
 	let args = Args::parse();
 
-	let path = std::fs::canonicalize(args.file)?;
-	let file = BufReader::new(File::open(&path).context("Failed opening file")?);
+	let path = std::fs::canonicalize(args.file).expect("failed canonicalizing path");
+	let file = BufReader::new(File::open(&path).expect("Failed opening path"));
 	let extension = path
 		.extension()
-		.context("Invalid file")?
+		.expect("Invalid file")
 		.to_str()
-		.context("Failed osstr conversion")?;
+		.expect("Failed osstr conversion");
 
 	let model = match extension {
-		"rbxm" => rbx_binary::from_reader(file)?,
-		"rbxmx" => rbx_xml::from_reader_default(file)?,
+		"rbxm" => rbx_binary::from_reader(file).unwrap(),
+		"rbxmx" => rbx_xml::from_reader_default(file).unwrap(),
 		_ => panic!("invalid file extension"),
 	};
 
-	std::fs::write(args.output, generate_for_dom(&model))?;
-
-	Ok(())
+	std::fs::write(args.output, generate_for_dom(&model)).unwrap();
 }

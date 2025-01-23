@@ -1,1 +1,8 @@
 /target
+DevPackages
+
+place.rbxl
+place.rbxl.lock
+
+encoding/testRbxms/*.bin
+encoding/testRbxms/*.luau

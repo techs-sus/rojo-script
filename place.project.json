@@ -1,0 +1,15 @@
+{
+	"name": "Encoder",
+	"tree": {
+		"$className": "DataModel",
+		"ServerScriptService": {
+			"DevPackages": {
+				"$path": "DevPackages/"
+			},
+
+			"Decoder": {
+				"$path": "encoding"
+			}
+		}
+	}
+}

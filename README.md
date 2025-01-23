@@ -32,4 +32,4 @@ lua-sandbox runtime:
 ##### Development notes
 
 - roblox compresses chunks using lz4 and zstd
-- binary.bin.zst = 266kb; roblox is 553kb
+- react-lua-17-rel.bin.zst = 266kb; react-lua-17-rel.rbxm is 553kb

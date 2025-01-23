@@ -1,3 +1,4 @@
+use crate::spec::TypeId;
 use std::io::Write;
 
 use rbx_dom_weak::{
@@ -14,47 +15,6 @@ pub enum Mode {
 pub enum Runtime {
 	OpenSB,  // uses NewModuleScript, NewWorker, slight environment patching
 	Vanilla, // embeds Fiu and the generator compiles bytecode to make it compatible
-}
-
-#[repr(u8)]
-pub enum TypeId {
-	String = 0,
-	// [TypeId::Attribute][str_len][...str][TypeId::???][...]
-	Attribute = 1,
-	Axes = 2,
-	Bool = 3,
-	BrickColor = 4,
-	CFrame = 5,
-	Color3 = 6,
-	Color3uint8 = 7,
-	ColorSequence = 8,
-	Enum = 9,
-	Faces = 10,
-	Float32 = 11,
-	Float64 = 12,
-	Int32 = 13,
-	MaterialColors = 14,
-	NumberRange = 15,
-	NumberSequence = 16,
-	None = 17,
-	DefaultPhysicalProperties = 18,
-	CustomPhysicalProperties = 19,
-	Ray = 20,
-	Rect = 21,
-	Ref = 22,
-	Region3 = 23,
-	Region3int16 = 24,
-	SecurityCapabilities = 25,
-	BinaryString = 26,
-	Tags = 27,
-	UDim = 28,
-	UDim2 = 29,
-	Vector2 = 30,
-	Vector2int16 = 31,
-	Vector3 = 32,
-	Vector3int16 = 33,
-
-	Font = 34, // oops
 }
 
 mod write_string {
@@ -110,20 +70,32 @@ fn write_varstring<T: Write>(mut target: T, string: String) -> Result<(), std::i
 	Ok(())
 }
 
+fn write_nullstring<T: Write>(mut target: T, string: &str) {
+	target
+		.write_all(
+			&string
+				.chars()
+				.map(|c| (c as u8).to_le_bytes()[0])
+				.collect::<Vec<u8>>(),
+		)
+		.expect("failed writing characters");
+
+	target.write_all(&[0]).expect("failed writing null byte");
+}
+
 fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 	match variant {
 		// Attribute + String name -> Variant
 		Variant::Attributes(attributes) => {
+			target
+				.write_all(&[TypeId::Attributes as u8])
+				.expect("failed writing type id for Attributes");
+			target
+				.write_all(&(attributes.len() as u16).to_le_bytes())
+				.expect("failed writing attributes length");
 			for (attribute_name, attribute_variant) in attributes {
-				target
-					.write_all(&[TypeId::Attribute as u8])
-					.unwrap_or_else(|_| {
-						panic!("failed to write type id for attribute {attribute_name} for Attributes")
-					});
-
-				write_varstring(&mut target, attribute_name)
-					.expect("failed writing varstring for attribute for Attributes");
-				write_variant(&mut target, attribute_variant);
+				write_nullstring(&mut target, &attribute_name);
+				write_variant(target, attribute_variant);
 			}
 		}
 		Variant::Axes(axes) => {
@@ -477,9 +449,16 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 			target
 				.write_all(&[TypeId::Tags as u8])
 				.expect("failed to write tag id for Tags");
+			let encoded = tags.encode();
+			target
+				.write_all(&(encoded.len() as u16).to_le_bytes())
+				.expect("failed writing tag length");
 			target
 				.write_all(&tags.encode())
 				.expect("failed writing encoded tags for Tags");
+			target
+				.write_all(&[0])
+				.expect("failed writing encoded tags last null byte");
 		}
 		Variant::UDim(udim) => {
 			target
@@ -565,17 +544,9 @@ pub fn represent_instance(instance: &Instance, weak_dom: &WeakDom) -> Vec<u8> {
 	write_variant(&mut buffer, Variant::Ref(instance.parent()));
 
 	// Properties
+	buffer.extend((instance.properties.len() as u16).to_le_bytes());
 	for (property, value) in &instance.properties {
-		buffer.extend(
-			&property
-				.chars()
-				.map(|c| (c as u8).to_le_bytes()[0])
-				.collect::<Vec<u8>>(),
-		);
-
-		// Properties are guaranteed to not have a null byte inside of them.
-		buffer.push(0); // declare string over
-
+		write_nullstring(&mut buffer, property);
 		write_variant(&mut buffer, value.to_owned());
 	}
 
