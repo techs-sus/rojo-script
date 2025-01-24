@@ -7,7 +7,7 @@ for await (const file of glob.scan(".")) {
 	await $`cargo run -- -f ${file} -o ${file.replace(
 		".rbxm",
 		".bin"
-	)} -r lua-sandbox`.quiet();
+	)} -r lua-sandbox`;
 
 	const encodedBytes = Buffer.from(
 		await Bun.file(file.replace(".rbxm", ".bin")).arrayBuffer()

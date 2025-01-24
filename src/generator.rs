@@ -449,16 +449,13 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 			target
 				.write_all(&[TypeId::Tags as u8])
 				.expect("failed to write tag id for Tags");
-			let encoded = tags.encode();
 			target
-				.write_all(&(encoded.len() as u16).to_le_bytes())
+				.write_all(&(tags.len() as u16).to_le_bytes())
 				.expect("failed writing tag length");
-			target
-				.write_all(&tags.encode())
-				.expect("failed writing encoded tags for Tags");
-			target
-				.write_all(&[0])
-				.expect("failed writing encoded tags last null byte");
+
+			for tag in tags.iter() {
+				write_nullstring(&mut target, tag);
+			}
 		}
 		Variant::UDim(udim) => {
 			target

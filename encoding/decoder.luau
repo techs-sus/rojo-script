@@ -42,6 +42,35 @@ local TYPE_ID = table.freeze({
 	Font = 34,
 })
 
+-- thank you rojo developers: https://dom.rojo.space/binary.html#cframe (god bless)
+local CFRAME_ID_LOOKUP_TABLE = table.freeze({
+	[0x02] = CFrame.fromEulerAnglesYXZ(0, 0, 0),
+	[0x03] = CFrame.fromEulerAnglesYXZ(math.rad(90), 0, 0),
+	[0x05] = CFrame.fromEulerAnglesYXZ(0, math.rad(180), math.rad(180)),
+	[0x06] = CFrame.fromEulerAnglesYXZ(math.rad(-90), 0, 0),
+	[0x07] = CFrame.fromEulerAnglesYXZ(0, math.rad(180), math.rad(90)),
+	[0x09] = CFrame.fromEulerAnglesYXZ(0, math.rad(90), math.rad(90)),
+	[0x0a] = CFrame.fromEulerAnglesYXZ(0, 0, math.rad(90)),
+	[0x0c] = CFrame.fromEulerAnglesYXZ(0, math.rad(-90), math.rad(90)),
+	[0x0d] = CFrame.fromEulerAnglesYXZ(math.rad(-90), math.rad(-90), 0),
+	[0x0e] = CFrame.fromEulerAnglesYXZ(math.rad(0), math.rad(-90), 0),
+	[0x10] = CFrame.fromEulerAnglesYXZ(math.rad(90), math.rad(-90), 0),
+	[0x11] = CFrame.fromEulerAnglesYXZ(math.rad(0), math.rad(90), 180),
+
+	[0x14] = CFrame.fromEulerAnglesYXZ(0, math.rad(180), 0),
+	[0x15] = CFrame.fromEulerAnglesYXZ(math.rad(-90), math.rad(-180), 0),
+	[0x17] = CFrame.fromEulerAnglesYXZ(0, 0, math.rad(180)),
+	[0x18] = CFrame.fromEulerAnglesYXZ(math.rad(90), math.rad(180), 0),
+	[0x19] = CFrame.fromEulerAnglesYXZ(0, 0, math.rad(-90)),
+	[0x1b] = CFrame.fromEulerAnglesYXZ(0, math.rad(-90), math.rad(-90)),
+	[0x1c] = CFrame.fromEulerAnglesYXZ(0, math.rad(-180), math.rad(-90)),
+	[0x1e] = CFrame.fromEulerAnglesYXZ(0, math.rad(90), math.rad(-90)),
+	[0x1f] = CFrame.fromEulerAnglesYXZ(math.rad(90), math.rad(90), 0),
+	[0x20] = CFrame.fromEulerAnglesYXZ(0, math.rad(90), 0),
+	[0x22] = CFrame.fromEulerAnglesYXZ(math.rad(-90), math.rad(90), 0),
+	[0x23] = CFrame.fromEulerAnglesYXZ(0, math.rad(-90), math.rad(180)),
+})
+
 local NewScript: (code: string, parent: Instance?) -> Script = NewScript
 	or function(code, parent)
 		local script = Instance.new("Script")
@@ -153,25 +182,27 @@ local function decode(payloadBuffer: buffer)
 
 		[TYPE_ID.Tags] = function()
 			-- length of encoded array
-			-- this is untested
-			local length = buffer.readu16(payloadBuffer, loc)
-
-			if length == 0 then
-				loc += 3
-				return {}
-			end
-
+			local tagsLength = buffer.readu16(payloadBuffer, loc)
 			loc += 2
+
 			local tags = {}
 
-			local start = loc
-			while length > 0 do
-				if buffer.readu8(payloadBuffer, loc) == 0 then
-					table.insert(tags, buffer.readstring(payloadBuffer, start, loc - start))
-					start = loc
-					length -= 1
+			while tagsLength > 0 do
+				local start = loc
+				while true do
+					loc += 1
+					if buffer.readu8(payloadBuffer, loc) == 0 then
+						-- ensure we skip null byte
+						loc += 1
+						break
+					end
 				end
-				loc += 1
+
+				-- ensure we skip null byte in decoded tag
+				local tag = buffer.readstring(payloadBuffer, start, loc - start - 1)
+				table.insert(tags, tag)
+
+				tagsLength -= 1
 			end
 
 			return tags
@@ -183,24 +214,22 @@ local function decode(payloadBuffer: buffer)
 
 			local attributeMap: { [string]: any } = {}
 			while attributesLength > 0 do
-				local tmp = ""
-
+				local start = loc
 				while true do
-					local byte = buffer.readu8(payloadBuffer, loc)
-					if byte == 0 then
-						-- string finished
-						break
-					else
-						tmp ..= string.char(byte)
+					loc += 1
+					if buffer.readu8(payloadBuffer, loc) == 0 then
+						-- ensure we skip null byte
 						loc += 1
+						break
 					end
 				end
 
-				local attributeName = tmp
-				loc += 1
+				-- ensure null byte is skipped in attributeName
+				local attributeName = buffer.readstring(payloadBuffer, start, loc - start - 1)
+
 				attributeMap[attributeName] = nextVariant()
-				print(attributesLength)
-				print("attribute name", attributeName, attributeMap[attributeName])
+				-- print(attributesLength)
+				-- print("attribute name", attributeName, attributeMap[attributeName])
 
 				attributesLength -= 1
 			end
@@ -211,6 +240,161 @@ local function decode(payloadBuffer: buffer)
 		[TYPE_ID.SecurityCapabilities] = function()
 			-- skip
 			loc += 8
+		end,
+
+		[TYPE_ID.BrickColor] = function()
+			return BrickColor.new(VARIANT_DECODER[TYPE_ID.String]())
+		end,
+
+		[TYPE_ID.UDim] = function()
+			local offset, scale = buffer.readi32(payloadBuffer, loc), buffer.readf32(payloadBuffer, loc + 4)
+			loc += 8
+
+			return UDim.new(scale, offset)
+		end,
+
+		[TYPE_ID.UDim2] = function()
+			local xOffset, yOffset, xScale, yScale =
+				buffer.readi32(payloadBuffer, loc),
+				buffer.readi32(payloadBuffer, loc + 4),
+				buffer.readf32(payloadBuffer, loc + 8),
+				buffer.readf32(payloadBuffer, loc + 12)
+
+			loc += 16
+
+			return UDim2.new(xScale, xOffset, yScale, yOffset)
+		end,
+
+		[TYPE_ID.Vector2] = function()
+			local x, y = buffer.readf32(payloadBuffer, loc), buffer.readf32(payloadBuffer, loc + 4)
+			loc += 8
+
+			return Vector2.new(x, y)
+		end,
+
+		[TYPE_ID.Vector2int16] = function()
+			local x, y = buffer.readi16(payloadBuffer, loc), buffer.readi16(payloadBuffer, loc + 2)
+			loc += 4
+
+			return Vector2int16.new(x, y)
+		end,
+
+		[TYPE_ID.Vector3] = function()
+			local x, y, z =
+				buffer.readf32(payloadBuffer, loc),
+				buffer.readf32(payloadBuffer, loc + 4),
+				buffer.readf32(payloadBuffer, loc + 8)
+			loc += 12
+
+			return Vector3.new(x, y, z)
+		end,
+
+		[TYPE_ID.Vector3int16] = function()
+			local x, y, z =
+				buffer.readi16(payloadBuffer, loc),
+				buffer.readi16(payloadBuffer, loc + 2),
+				buffer.readi16(payloadBuffer, loc + 4)
+			loc += 6
+
+			return Vector3int16.new(x, y, z)
+		end,
+
+		[TYPE_ID.CFrame] = function()
+			local id = buffer.readu8(payloadBuffer, loc)
+			loc += 1
+
+			if id == 0 then
+				-- all data is encoded
+				local xx, xy, xz, yx, yy, yz, zx, zy, zz, positionX, positionY, positionZ =
+					buffer.readf32(payloadBuffer, loc),
+					buffer.readf32(payloadBuffer, loc + 4),
+					buffer.readf32(payloadBuffer, loc + 8),
+					buffer.readf32(payloadBuffer, loc + 12),
+					buffer.readf32(payloadBuffer, loc + 16),
+					buffer.readf32(payloadBuffer, loc + 20),
+					buffer.readf32(payloadBuffer, loc + 24),
+					buffer.readf32(payloadBuffer, loc + 28),
+					buffer.readf32(payloadBuffer, loc + 32),
+					buffer.readf32(payloadBuffer, loc + 36),
+					buffer.readf32(payloadBuffer, loc + 40),
+					buffer.readf32(payloadBuffer, loc + 44)
+
+				loc += 48
+
+				return CFrame.new(positionX, positionY, positionZ, xx, xy, xz, yx, yy, yz, zx, zy, zz)
+			else
+				local positionX, positionY, positionZ =
+					buffer.readf32(payloadBuffer, loc),
+					buffer.readf32(payloadBuffer, loc + 4),
+					buffer.readf32(payloadBuffer, loc + 8)
+				loc += 12
+
+				return CFrame.new(positionX, positionY, positionZ) * CFRAME_ID_LOOKUP_TABLE[id]
+			end
+		end,
+
+		[TYPE_ID.Color3] = function()
+			local r, g, b =
+				buffer.readf32(payloadBuffer, loc),
+				buffer.readf32(payloadBuffer, loc + 4),
+				buffer.readf32(payloadBuffer, loc + 8)
+
+			loc += 12
+			return Color3.new(r, g, b)
+		end,
+
+		[TYPE_ID.Color3uint8] = function()
+			local r, g, b =
+				buffer.readu8(payloadBuffer, loc),
+				buffer.readu8(payloadBuffer, loc + 1),
+				buffer.readu8(payloadBuffer, loc + 2)
+			loc += 3
+
+			return Color3.fromRGB(r, g, b)
+		end,
+
+		[TYPE_ID.Font] = function()
+			local family = VARIANT_DECODER[TYPE_ID.String]()
+			local weight = buffer.readu16(payloadBuffer, loc)
+			loc += 2
+			local style = buffer.readu8(payloadBuffer, loc)
+			loc += 1
+
+			local weightEnum: Enum.FontWeight
+
+			if weight == 100 then
+				weightEnum = Enum.FontWeight.Thin
+			elseif weight == 200 then
+				weightEnum = Enum.FontWeight.ExtraLight
+			elseif weight == 300 then
+				weightEnum = Enum.FontWeight.Light
+			elseif weight == 400 then
+				weightEnum = Enum.FontWeight.Regular
+			elseif weight == 500 then
+				weightEnum = Enum.FontWeight.Medium
+			elseif weight == 600 then
+				weightEnum = Enum.FontWeight.SemiBold
+			elseif weight == 700 then
+				weightEnum = Enum.FontWeight.Bold
+			elseif weight == 800 then
+				weightEnum = Enum.FontWeight.ExtraBold
+			elseif weight == 900 then
+				weightEnum = Enum.FontWeight.Heavy
+			else
+				error(`font weight {weight} is not supported or is invalid`)
+			end
+
+			local styleEnum: Enum.FontStyle
+
+			if style == 0 then
+				styleEnum = Enum.FontStyle.Normal
+			elseif style == 1 then
+				styleEnum = Enum.FontStyle.Italic
+			else
+				error(`font style {style} is not supported or is invalid`)
+			end
+
+			return Font.new(family, weightEnum, styleEnum)
 		end,
 	})
 
@@ -253,7 +437,8 @@ local function decode(payloadBuffer: buffer)
 				end
 			end
 
-			local propertyName = buffer.readstring(payloadBuffer, start, loc - start)
+			-- ensure null byte is skipped
+			local propertyName = buffer.readstring(payloadBuffer, start, loc - start - 1)
 			propertiesMap[propertyName] = nextVariant()
 			-- print(propertyName)
 			-- print(propertyName, propertiesMap[propertyName])
@@ -281,20 +466,20 @@ local function decode(payloadBuffer: buffer)
 			for attributeName, value in propertiesMap.Attributes do
 				instance:SetAttribute(attributeName, value)
 			end
+
+			propertiesMap.Attributes = nil
 		end
 
 		if propertiesMap.Tags then
 			for _, tag in propertiesMap.Tags do
 				instance:AddTag(tag)
 			end
+
+			propertiesMap.Tags = nil
 		end
 
 		for propertyName, propertyValue in propertiesMap do
 			-- TODO: add custom handlers
-			if propertyName == "Tags" or propertyName == "Attributes" then
-				continue
-			end
-
 			local success, error = pcall(function()
 				instance[propertyName] = propertyValue
 			end)
@@ -317,10 +502,10 @@ local function decode(payloadBuffer: buffer)
 	-- decode entire buffer
 	while true do
 		local decodedReferent = decodeInstance()
-		print(`decoded referent {decodedReferent}{if rootReferent == decodedReferent then " [root]" else ""}`)
+		-- print(`decoded referent {decodedReferent}{if rootReferent == decodedReferent then " [root]" else ""}`)
 
 		if buffer.len(payloadBuffer) == loc then
-			print("finished decoding payloadBuffer")
+			-- print("finished decoding payloadBuffer")
 			break
 		end
 	end
