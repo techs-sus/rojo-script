@@ -1,5 +1,6 @@
 {
 	"name": "Encoder",
+	"globIgnorePaths": ["encoding/testRbxms/*.rbxm", "encoding/testRbxms/*.bin"],
 	"tree": {
 		"$className": "DataModel",
 		"ServerScriptService": {

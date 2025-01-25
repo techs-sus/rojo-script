@@ -22,15 +22,18 @@ mod write_string {
 		($target:ident) => {
 			pub fn $target<T: ::std::io::Write>(
 				mut target: T,
-				string: String,
-			) -> Result<(), ::std::io::Error> {
-				target.write_all(&(string.len() as $target).to_le_bytes())?;
+				string: &str,
+			) -> Result<(), Box<dyn ::std::error::Error>> {
+				let len: $target = TryFrom::try_from(string.len())?;
+				target.write_all(&len.to_le_bytes())?;
 				target.write_all(
 					&string
 						.chars()
 						.map(|char| (char as u8).to_le_bytes()[0])
 						.collect::<Vec<u8>>(),
-				)
+				)?;
+
+				Ok(())
 			}
 		};
 	}
@@ -43,7 +46,10 @@ mod write_string {
 }
 
 /// NOTE: This function does not add any sort of type id.
-fn write_varstring<T: Write>(mut target: T, string: String) -> Result<(), std::io::Error> {
+fn write_varstring<T: Write>(
+	mut target: T,
+	string: &str,
+) -> Result<(), Box<dyn std::error::Error>> {
 	let len = string.len();
 	if len <= u8::MAX.into() {
 		target.write_all(&[1])?;
@@ -70,17 +76,20 @@ fn write_varstring<T: Write>(mut target: T, string: String) -> Result<(), std::i
 	Ok(())
 }
 
-fn write_nullstring<T: Write>(mut target: T, string: &str) {
-	target
-		.write_all(
-			&string
-				.chars()
-				.map(|c| (c as u8).to_le_bytes()[0])
-				.collect::<Vec<u8>>(),
-		)
-		.expect("failed writing characters");
+fn write_nullstring<T: Write>(
+	mut target: T,
+	string: &str,
+) -> Result<(), Box<dyn std::error::Error>> {
+	target.write_all(
+		&string
+			.chars()
+			.map(|c| (c as u8).to_le_bytes()[0])
+			.collect::<Vec<u8>>(),
+	)?;
 
-	target.write_all(&[0]).expect("failed writing null byte");
+	target.write_all(&[0])?;
+
+	Ok(())
 }
 
 fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
@@ -91,10 +100,15 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 				.write_all(&[TypeId::Attributes as u8])
 				.expect("failed writing type id for Attributes");
 			target
-				.write_all(&(attributes.len() as u16).to_le_bytes())
+				.write_all(
+					&u16::try_from(attributes.len())
+						.expect("failed truncating attributes length to u16")
+						.to_le_bytes(),
+				)
 				.expect("failed writing attributes length");
 			for (attribute_name, attribute_variant) in attributes {
-				write_nullstring(&mut target, &attribute_name);
+				write_nullstring(&mut target, &attribute_name)
+					.expect("failed writing attribute name as nullstring");
 				write_variant(target, attribute_variant);
 			}
 		}
@@ -110,7 +124,11 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 
 			let vector = binary_string.into_vec();
 			target
-				.write_all(&vector.len().to_le_bytes())
+				.write_all(
+					&u32::try_from(vector.len())
+						.expect("failed truncating BinaryString length to u64")
+						.to_le_bytes(),
+				)
 				.expect("failed writing byte length for BinaryString");
 			target
 				.write_all(&vector)
@@ -126,7 +144,8 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 			target
 				.write_all(&[TypeId::BrickColor as u8])
 				.expect("failed writing type id for BrickColor");
-			write_varstring(&mut target, name).expect("failed writing name for BrickColor");
+			write_nullstring(&mut target, &name)
+				.expect("failed writing name for BrickColor as nullstring");
 		}
 		Variant::CFrame(cframe) => {
 			target
@@ -255,7 +274,8 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 				.write_all(&[TypeId::Font as u8])
 				.expect("failed writing type id for Font");
 
-			write_varstring(&mut target, font.family).expect("failed writing family varstring for Font");
+			write_nullstring(&mut target, &font.family)
+				.expect("failed writing family for Font as nullstring");
 
 			target
 				.write_all(&font.weight.as_u16().to_le_bytes())
@@ -273,7 +293,10 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 				.write_all(&int.to_le_bytes())
 				.expect("failed writing bytes for Int32");
 		}
-		Variant::Int64(int) => write_variant(target, Variant::Int32(int as i32)),
+		Variant::Int64(int) => write_variant(
+			target,
+			Variant::Int32(i32::try_from(int).expect("failed truncating int64 to int32")),
+		),
 		Variant::MaterialColors(colors) => {
 			let bytes = colors.encode();
 			let mut target_bytes = Vec::with_capacity(bytes.len() + 1);
@@ -384,7 +407,7 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 				.expect("failed writing type id for Ref (referent)");
 
 			let string = format!("{referent}");
-			write_varstring(&mut target, string).expect("failed writing varstring for Ref");
+			write_nullstring(&mut target, &string).expect("failed writing nullstring for Ref");
 		}
 		Variant::Region3(region3) => {
 			target
@@ -443,18 +466,22 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 			target
 				.write_all(&[TypeId::String as u8])
 				.expect("failed to write type id for String");
-			write_varstring(&mut target, string).expect("failed writing varstring for String");
+			write_varstring(&mut target, &string).expect("failed writing varstring for String");
 		}
 		Variant::Tags(tags) => {
 			target
 				.write_all(&[TypeId::Tags as u8])
 				.expect("failed to write tag id for Tags");
 			target
-				.write_all(&(tags.len() as u16).to_le_bytes())
+				.write_all(
+					&u16::try_from(tags.len())
+						.expect("failed truncating tags length to u16")
+						.to_le_bytes(),
+				)
 				.expect("failed writing tag length");
 
 			for tag in tags.iter() {
-				write_nullstring(&mut target, tag);
+				write_nullstring(&mut target, tag).expect("failed writing tag as nullstring");
 			}
 		}
 		Variant::UDim(udim) => {
@@ -541,9 +568,13 @@ pub fn represent_instance(instance: &Instance, weak_dom: &WeakDom) -> Vec<u8> {
 	write_variant(&mut buffer, Variant::Ref(instance.parent()));
 
 	// Properties
-	buffer.extend((instance.properties.len() as u16).to_le_bytes());
+	buffer.extend(
+		(u16::try_from(instance.properties.len()).expect("failed truncating properties length to u16"))
+			.to_le_bytes(),
+	);
+
 	for (property, value) in &instance.properties {
-		write_nullstring(&mut buffer, property);
+		write_nullstring(&mut buffer, property).expect("failed writing property name as nullstring");
 		write_variant(&mut buffer, value.to_owned());
 	}
 

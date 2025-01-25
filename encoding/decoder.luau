@@ -110,6 +110,21 @@ local function decode(payloadBuffer: buffer)
 	local VARIANT_DECODER: { [number]: () -> any }
 	local nextVariant
 
+	local function nextNullstring(): string
+		local start = loc
+		while true do
+			loc += 1
+			if buffer.readu8(payloadBuffer, loc) == 0 then
+				-- ensure we skip null byte
+				loc += 1
+				break
+			end
+		end
+
+		-- ensure we skip null byte in decoded string
+		return buffer.readstring(payloadBuffer, start, loc - start - 1)
+	end
+
 	VARIANT_DECODER = table.freeze({
 		[TYPE_ID.String] = function()
 			local varstringMetadata = buffer.readu8(payloadBuffer, loc)
@@ -141,12 +156,19 @@ local function decode(payloadBuffer: buffer)
 			return buffer.readstring(payloadBuffer, loc - stringLength, stringLength)
 		end,
 
+		[TYPE_ID.BinaryString] = function()
+			local stringLength = buffer.readu32(payloadBuffer, loc)
+			loc += 4 + stringLength
+
+			return buffer.readstring(payloadBuffer, loc - stringLength, stringLength)
+		end,
+
 		[TYPE_ID.None] = function()
 			return nil
 		end,
 
 		[TYPE_ID.Ref] = function()
-			return VARIANT_DECODER[TYPE_ID.String]()
+			return nextNullstring()
 		end,
 
 		-- [TYPE_ID.Tags] = function(buf: buffer) end,
@@ -188,18 +210,7 @@ local function decode(payloadBuffer: buffer)
 			local tags = {}
 
 			while tagsLength > 0 do
-				local start = loc
-				while true do
-					loc += 1
-					if buffer.readu8(payloadBuffer, loc) == 0 then
-						-- ensure we skip null byte
-						loc += 1
-						break
-					end
-				end
-
-				-- ensure we skip null byte in decoded tag
-				local tag = buffer.readstring(payloadBuffer, start, loc - start - 1)
+				local tag = nextNullstring()
 				table.insert(tags, tag)
 
 				tagsLength -= 1
@@ -214,22 +225,9 @@ local function decode(payloadBuffer: buffer)
 
 			local attributeMap: { [string]: any } = {}
 			while attributesLength > 0 do
-				local start = loc
-				while true do
-					loc += 1
-					if buffer.readu8(payloadBuffer, loc) == 0 then
-						-- ensure we skip null byte
-						loc += 1
-						break
-					end
-				end
-
-				-- ensure null byte is skipped in attributeName
-				local attributeName = buffer.readstring(payloadBuffer, start, loc - start - 1)
-
+				local attributeName = nextNullstring()
 				attributeMap[attributeName] = nextVariant()
-				-- print(attributesLength)
-				-- print("attribute name", attributeName, attributeMap[attributeName])
+				-- print(attributeName, #attributeName, attributeMap[attributeName])
 
 				attributesLength -= 1
 			end
@@ -238,12 +236,12 @@ local function decode(payloadBuffer: buffer)
 		end,
 
 		[TYPE_ID.SecurityCapabilities] = function()
-			-- skip
+			-- TODO: is this even writable? until then, this is skipped
 			loc += 8
 		end,
 
 		[TYPE_ID.BrickColor] = function()
-			return BrickColor.new(VARIANT_DECODER[TYPE_ID.String]())
+			return BrickColor.new(nextNullstring() :: any)
 		end,
 
 		[TYPE_ID.UDim] = function()
@@ -354,7 +352,7 @@ local function decode(payloadBuffer: buffer)
 		end,
 
 		[TYPE_ID.Font] = function()
-			local family = VARIANT_DECODER[TYPE_ID.String]()
+			local family = nextNullstring()
 			local weight = buffer.readu16(payloadBuffer, loc)
 			loc += 2
 			local style = buffer.readu8(payloadBuffer, loc)
@@ -396,6 +394,25 @@ local function decode(payloadBuffer: buffer)
 
 			return Font.new(family, weightEnum, styleEnum)
 		end,
+
+		[TYPE_ID.NumberRange] = function()
+			local min, max = buffer.readf32(payloadBuffer, loc), buffer.readf32(payloadBuffer, loc + 4)
+			loc += 8
+
+			return NumberRange.new(min, max)
+		end,
+
+		[TYPE_ID.Rect] = function()
+			local minX, minY, maxX, maxY =
+				buffer.readf32(payloadBuffer, loc),
+				buffer.readf32(payloadBuffer, loc + 4),
+				buffer.readf32(payloadBuffer, loc + 8),
+				buffer.readf32(payloadBuffer, loc + 12)
+
+			loc += 16
+
+			return Rect.new(minX, minY, maxX, maxY)
+		end,
 	})
 
 	function nextVariant(expectedTypeIds: { number }?)
@@ -416,6 +433,10 @@ local function decode(payloadBuffer: buffer)
 	local rootReferent: string?
 	local referentTree: { [string]: Instance } = {}
 
+	-- late properties must be applied after the entire tree is decoded
+	-- index signature: latePropertyMap[ref][propertyName] = propertyValue
+	local latePropertiesMap: { [string]: { [string]: string } } = {}
+
 	local function decodeInstance()
 		local name: string = nextVariant({ TYPE_ID.String })
 		local className: string = nextVariant({ TYPE_ID.String })
@@ -427,19 +448,19 @@ local function decode(payloadBuffer: buffer)
 		loc += 2
 
 		while propertiesLength > 0 do
-			local start = loc
-			while true do
-				loc += 1
-				if buffer.readu8(payloadBuffer, loc) == 0 then
-					-- ensure we skip null byte
-					loc += 1
-					break
+			local propertyName = nextNullstring()
+
+			local isTypeIdReferent = buffer.readu8(payloadBuffer, loc) == TYPE_ID.Ref
+			if isTypeIdReferent then
+				if not latePropertiesMap[instanceReferent] then
+					latePropertiesMap[instanceReferent] = {}
 				end
+
+				latePropertiesMap[instanceReferent][propertyName] = nextVariant({ TYPE_ID.Ref })
+			else
+				propertiesMap[propertyName] = nextVariant()
 			end
 
-			-- ensure null byte is skipped
-			local propertyName = buffer.readstring(payloadBuffer, start, loc - start - 1)
-			propertiesMap[propertyName] = nextVariant()
 			-- print(propertyName)
 			-- print(propertyName, propertiesMap[propertyName])
 
@@ -485,7 +506,7 @@ local function decode(payloadBuffer: buffer)
 			end)
 
 			if not success then
-				warn(`failed setting property {propertyName} with value {propertyValue}; got error {error}`)
+				-- warn(`failed setting property {propertyName} with value {propertyValue}; got error {error}`)
 			end
 		end
 
@@ -510,6 +531,21 @@ local function decode(payloadBuffer: buffer)
 		end
 	end
 	assert(rootReferent, "no root referent in hierarchy")
+
+	for referent, propertyMap in latePropertiesMap do
+		-- late property handling (referent handling)
+		for propertyName, propertyValue in propertyMap do
+			local success, error = pcall(function()
+				referentTree[referent][propertyName] = referentTree[propertyValue]
+			end)
+
+			if not success then
+				warn(
+					`failed setting late property {propertyName} on referent {referent} with value {propertyValue}; got error {error}`
+				)
+			end
+		end
+	end
 
 	return referentTree[rootReferent]
 end

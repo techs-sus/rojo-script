@@ -12,13 +12,13 @@ local EXPECTED_ITEMS = table.freeze({
 	blud = UDim.new(777, 777),
 	blud2 = UDim2.new(777, 777, 777, 777),
 	bc0 = BrickColor.new("Medium stone grey"),
-	color0 = Color3.new(777, 777, 777),
+	color0 = Color3.fromRGB(777, 777, 777),
 	vector2 = Vector2.one * 777,
 	vector3 = Vector3.one * 777,
 	cframe = CFrame.new(777, 777, 777),
 	range = NumberRange.new(0, 0.5),
 	rect = Rect.new(777, 777, 777, 777),
-	font = Font.new("Source Sans Pro", Enum.FontWeight.Bold, Enum.FontStyle.Italic)
+	font = Font.fromName("SourceSansPro", Enum.FontWeight.Bold, Enum.FontStyle.Italic),
 })
 
 local test = JestGlobals.test
@@ -29,7 +29,7 @@ test("ensure Attributes are decoded correctly", function(_, done)
 	local script: Script = root:FindFirstChildWhichIsA("Script")
 
 	expect(script).toEqual(expect.anything())
-	expect(script:GetAttributes()).toEqual(expect.objectContaining(EXPECTED_ITEMS))
+	expect(script:GetAttributes()).toMatchObject(EXPECTED_ITEMS)
 
 	done()
 end)

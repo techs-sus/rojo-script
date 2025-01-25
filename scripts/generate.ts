@@ -1,16 +1,20 @@
 import { Glob, $ } from "bun";
 
+await $`cargo build`;
+
+const platformBinary =
+	process.platform === "win32"
+		? "./target/debug/rojo-script.exe"
+		: "./target/debug/rojo-script";
+
 const glob = new Glob("encoding/testRbxms/*.rbxm");
 
-// Scans the current working directory and each of its sub-directories recursively
 for await (const file of glob.scan(".")) {
-	await $`cargo run -- -f ${file} -o ${file.replace(
-		".rbxm",
-		".bin"
-	)} -r lua-sandbox`;
+	const binFilePath = (file as string).replace(".rbxm", ".bin");
+	await $`${platformBinary} -f ${file} -o ${binFilePath} -r lua-sandbox`;
 
 	const encodedBytes = Buffer.from(
-		await Bun.file(file.replace(".rbxm", ".bin")).arrayBuffer()
+		await Bun.file(binFilePath).arrayBuffer()
 	).toString("base64");
 
 	await Bun.write(
