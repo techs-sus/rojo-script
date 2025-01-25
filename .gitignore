@@ -4,5 +4,7 @@ DevPackages
 place.rbxl
 place.rbxl.lock
 
+sourcemap.json
+
 encoding/testRbxms/*.bin
 encoding/testRbxms/*.luau

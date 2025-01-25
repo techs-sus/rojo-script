@@ -6,11 +6,6 @@ use std::{fs::File, io::BufReader};
 mod generator;
 mod spec;
 
-#[derive(Clone, ValueEnum, PartialEq)]
-enum Runtime {
-	LuaSandbox,
-}
-
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
 struct Args {
@@ -21,10 +16,6 @@ struct Args {
 	/// Output lua file
 	#[arg(short, long)]
 	output: PathBuf,
-
-	/// Which runtime should be used
-	#[arg(short, long)]
-	runtime: Runtime,
 }
 
 fn main() {

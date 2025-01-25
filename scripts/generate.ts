@@ -11,7 +11,7 @@ const glob = new Glob("encoding/testRbxms/*.rbxm");
 
 for await (const file of glob.scan(".")) {
 	const binFilePath = (file as string).replace(".rbxm", ".bin");
-	await $`${platformBinary} -f ${file} -o ${binFilePath} -r lua-sandbox`;
+	await $`${platformBinary} -f ${file} -o ${binFilePath}`;
 
 	const encodedBytes = Buffer.from(
 		await Bun.file(binFilePath).arrayBuffer()

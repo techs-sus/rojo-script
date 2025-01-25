@@ -6,17 +6,6 @@ use rbx_dom_weak::{
 	Instance, WeakDom,
 };
 
-#[derive(Clone, Debug)]
-pub enum Mode {
-	Binary,
-}
-
-#[derive(Clone, Debug)]
-pub enum Runtime {
-	OpenSB,  // uses NewModuleScript, NewWorker, slight environment patching
-	Vanilla, // embeds Fiu and the generator compiles bytecode to make it compatible
-}
-
 mod write_string {
 	macro_rules! generate_write_string {
 		($target:ident) => {

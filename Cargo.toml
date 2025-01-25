@@ -7,7 +7,6 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.5", features = ["derive"] }
-# darklua = { version = "0.13.0" }
 rbx_binary = "0.7.7"
 rbx_dom_weak = "2.9.0"
 rbx_xml = "0.13.5"
