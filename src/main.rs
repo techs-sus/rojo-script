@@ -1,4 +1,4 @@
-use clap::{Parser, ValueEnum};
+use clap::Parser;
 use generator::generate_for_dom;
 use std::path::PathBuf;
 use std::{fs::File, io::BufReader};
@@ -9,11 +9,11 @@ mod spec;
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-	/// Input model file (rojo output)
+	/// Input model file (.rbxm, .rbxmx)
 	#[arg(short, long)]
 	file: PathBuf,
 
-	/// Output lua file
+	/// Output binary file
 	#[arg(short, long)]
 	output: PathBuf,
 }
