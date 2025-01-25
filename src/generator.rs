@@ -212,6 +212,14 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 				.write_all(&[TypeId::ColorSequence as u8])
 				.expect("failed writing type id for ColorSequence");
 
+			target
+				.write_all(
+					&u16::try_from(sequence.keypoints.len())
+						.expect("failed truncating colorsequence length to u16")
+						.to_le_bytes(),
+				)
+				.expect("failed writing colorsequence length");
+
 			for keypoint in sequence.keypoints {
 				let color = keypoint.color;
 
@@ -308,6 +316,14 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 			target
 				.write_all(&[TypeId::NumberSequence as u8])
 				.expect("failed writing type id for NumberSequence");
+
+			target
+				.write_all(
+					&u16::try_from(sequence.keypoints.len())
+						.expect("failed truncating number sequence length to u16")
+						.to_le_bytes(),
+				)
+				.expect("failed writing number sequence length");
 
 			for keypoint in sequence.keypoints {
 				target

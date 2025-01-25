@@ -1,7 +1,7 @@
 --!native
 --!optimize 2
 
--- TODO: Actually parse output from generator.rs
+-- TODO: Ensure decoded output is sane and correct
 
 local TYPE_ID = table.freeze({
 	String = 0,
@@ -236,7 +236,7 @@ local function decode(payloadBuffer: buffer)
 		end,
 
 		[TYPE_ID.SecurityCapabilities] = function()
-			-- TODO: is this even writable? until then, this is skipped
+			-- SKIP: SecurityCapabilities is not writable in scripts
 			loc += 8
 		end,
 
@@ -412,6 +412,150 @@ local function decode(payloadBuffer: buffer)
 			loc += 16
 
 			return Rect.new(minX, minY, maxX, maxY)
+		end,
+
+		[TYPE_ID.Axes] = function()
+			local byte = buffer.readu8(payloadBuffer, loc)
+			loc += 1
+			-- bitflags
+			-- const X = 1;
+			-- const Y = 2;
+			-- const Z = 4;
+			local x = if bit32.extract(byte, 0, 1) == 1 then Enum.Axis.X else nil
+			local y = if bit32.extract(byte, 1, 1) == 1 then Enum.Axis.Y else nil
+			local z = if bit32.extract(byte, 2, 1) == 1 then Enum.Axis.Z else nil
+
+			return Axes.new(x, y, z)
+		end,
+
+		[TYPE_ID.Faces] = function()
+			-- TODO: Add tests for faces
+
+			local byte = buffer.readu8(payloadBuffer, loc)
+			loc += 1
+			-- bitflags
+			-- const RIGHT = 1;
+			-- const TOP = 2;
+			-- const BACK = 4;
+			-- const LEFT = 8;
+			-- const BOTTOM = 16;
+			-- const FRONT = 32;
+			local right = if bit32.extract(byte, 0, 1) == 1 then Enum.NormalId.Right else nil
+			local top = if bit32.extract(byte, 1, 1) == 1 then Enum.NormalId.Top else nil
+			local back = if bit32.extract(byte, 2, 1) == 1 then Enum.NormalId.Back else nil
+			local left = if bit32.extract(byte, 3, 1) == 1 then Enum.NormalId.Left else nil
+			local bottom = if bit32.extract(byte, 4, 1) == 1 then Enum.NormalId.Bottom else nil
+			local front = if bit32.extract(byte, 5, 1) == 1 then Enum.NormalId.Front else nil
+
+			return Faces.new(right, top, back, left, bottom, front)
+		end,
+
+		[TYPE_ID.Region3] = function()
+			-- We cannot test this: there are no properties to test this for.
+			local minX, minY, minZ, maxX, maxY, maxZ =
+				buffer.readf32(payloadBuffer, loc),
+				buffer.readf32(payloadBuffer, loc + 4),
+				buffer.readf32(payloadBuffer, loc + 8),
+				buffer.readf32(payloadBuffer, loc + 12),
+				buffer.readf32(payloadBuffer, loc + 16),
+				buffer.readf32(payloadBuffer, loc + 20)
+
+			loc += 24
+
+			return Region3.new(Vector3.new(minX, minY, minZ), Vector3.new(maxX, maxY, maxZ))
+		end,
+
+		[TYPE_ID.Region3int16] = function()
+			-- Tests cannot be implemented for the same reason as Region3
+			local minX, minY, minZ, maxX, maxY, maxZ =
+				buffer.readi16(payloadBuffer, loc),
+				buffer.readi16(payloadBuffer, loc + 2),
+				buffer.readi16(payloadBuffer, loc + 4),
+				buffer.readi16(payloadBuffer, loc + 6),
+				buffer.readi16(payloadBuffer, loc + 8),
+				buffer.readi16(payloadBuffer, loc + 10)
+
+			loc += 12
+			return Region3int16.new(Vector3int16.new(minX, minY, minZ), Vector3int16.new(maxX, maxY, maxZ))
+		end,
+
+		[TYPE_ID.NumberSequence] = function()
+			local numberSequenceLength = buffer.readu16(payloadBuffer, loc)
+			loc += 2
+
+			local keypoints: { NumberSequenceKeypoint } = {}
+
+			while numberSequenceLength > 0 do
+				local envelope, time, value =
+					buffer.readf32(payloadBuffer, loc),
+					buffer.readf32(payloadBuffer, loc + 4),
+					buffer.readf32(payloadBuffer, loc + 8)
+				loc += 12
+
+				table.insert(keypoints, NumberSequenceKeypoint.new(time, value, envelope))
+
+				numberSequenceLength -= 1
+			end
+
+			return NumberSequence.new(keypoints)
+		end,
+
+		[TYPE_ID.Ray] = function()
+			local directionX, directionY, directionZ, originX, originY, originZ =
+				buffer.readf32(payloadBuffer, loc),
+				buffer.readf32(payloadBuffer, loc + 4),
+				buffer.readf32(payloadBuffer, loc + 8),
+				buffer.readf32(payloadBuffer, loc + 12),
+				buffer.readf32(payloadBuffer, loc + 16),
+				buffer.readf32(payloadBuffer, loc + 20)
+
+			loc += 24
+
+			return Ray.new(Vector3.new(originX, originY, originZ), Vector3.new(directionX, directionY, directionZ))
+		end,
+
+		[TYPE_ID.MaterialColors] = function()
+			-- SKIP: Terrain.MaterialColors is not writable by scripts + we could use :SetMaterialColor(), but theres no reason to support that
+			loc += 69
+		end,
+
+		[TYPE_ID.ColorSequence] = function()
+			local keypointsLength = buffer.readu16(payloadBuffer, loc)
+			loc += 2
+
+			local keypoints: { ColorSequenceKeypoint } = {}
+
+			while keypointsLength > 0 do
+				local time, r, g, b =
+					buffer.readf32(payloadBuffer, loc),
+					buffer.readf32(payloadBuffer, loc + 4),
+					buffer.readf32(payloadBuffer, loc + 8),
+					buffer.readf32(payloadBuffer, loc + 12)
+
+				table.insert(keypoints, ColorSequenceKeypoint.new(time, Color3.new(r, g, b)))
+
+				loc += 16
+				keypointsLength -= 1
+			end
+
+			return ColorSequence.new(keypoints)
+		end,
+
+		[TYPE_ID.DefaultPhysicalProperties] = function()
+			-- SKIP: DefaultPhysicalProperties does not translate to Luau without a material
+			return nil
+		end,
+
+		[TYPE_ID.CustomPhysicalProperties] = function()
+			local density, elasticity, elasticityWeight, friction, frictionWeight =
+				buffer.readf32(payloadBuffer, loc),
+				buffer.readf32(payloadBuffer, loc + 4),
+				buffer.readf32(payloadBuffer, loc + 8),
+				buffer.readf32(payloadBuffer, loc + 12),
+				buffer.readf32(payloadBuffer, loc + 16)
+
+			loc += 20
+			return PhysicalProperties.new(density, friction, elasticity, frictionWeight, elasticityWeight)
 		end,
 	})
 

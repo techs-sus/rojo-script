@@ -4,6 +4,21 @@ local Decoder = require(ServerScriptService.Decoder.decoder)
 
 local scriptWithAttributes = require(ServerScriptService.Decoder.testRbxms.scriptWithAttributes)
 
+--[[
+Variants in this test:
+String
+Bool,
+Float32/Float64/Number,
+UDim/UDim2,
+BrickColor,
+Color3,
+Vector2/Vector3,
+CFrame,
+NumberRange,
+Rect,
+Font
+]]
+
 local EXPECTED_ITEMS = table.freeze({
 	foo = "bar",
 	bar = true,
