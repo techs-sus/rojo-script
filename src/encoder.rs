@@ -564,7 +564,7 @@ fn write_variant(mut target: &mut Vec<u8>, variant: Variant) {
 	}
 }
 
-pub fn represent_instance(instance: &Instance, weak_dom: &WeakDom) -> Vec<u8> {
+pub fn encode_instance(instance: &Instance, weak_dom: &WeakDom) -> Vec<u8> {
 	let mut buffer = Vec::new();
 
 	write_variant(&mut buffer, Variant::String(instance.name.clone()));
@@ -589,12 +589,12 @@ pub fn represent_instance(instance: &Instance, weak_dom: &WeakDom) -> Vec<u8> {
 			.get_by_ref(child.to_owned())
 			.expect("referent must exist");
 
-		buffer.extend(represent_instance(child_instance, weak_dom));
+		buffer.extend(encode_instance(child_instance, weak_dom));
 	}
 
 	buffer
 }
 
-pub fn generate_for_dom(weak_dom: &WeakDom) -> Vec<u8> {
-	represent_instance(weak_dom.root(), weak_dom)
+pub fn encode_dom(weak_dom: &WeakDom) -> Vec<u8> {
+	encode_instance(weak_dom.root(), weak_dom)
 }

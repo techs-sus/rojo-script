@@ -14,8 +14,8 @@ git clone https://github.com/techs-sus/rojo-script
 cd rojo-script
 
 # replace input.rbxm with your input
-# and replace output.lua with whatever you want the output to be
-cargo run -- -f input.rbxm -o output.lua
+# and replace output.bin with whatever you want the output to be
+cargo run -- -f input.rbxm -o output.bin
 ```
 
 ### Notes for end users
@@ -25,7 +25,11 @@ cargo run -- -f input.rbxm -o output.lua
 
 #### TODO list
 
-lua-sandbox runtime:
+general:
+
+- fully implement specialized decoder generation
+
+opensb runtime:
 
 - add modules to NLS (use fione + yueliang (possibly even a luau bytecode runner))
 
@@ -33,3 +37,4 @@ lua-sandbox runtime:
 
 - roblox compresses chunks using lz4 and zstd
 - react-lua-17-rel.bin.zst = 266kb; react-lua-17-rel.rbxm is 553kb
+- only OpenSB and Roblox Studio are supported

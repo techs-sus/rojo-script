@@ -1,9 +1,9 @@
 use clap::Parser;
-use generator::generate_for_dom;
+use encoder::encode_dom;
 use std::path::PathBuf;
 use std::{fs::File, io::BufReader};
 
-mod generator;
+mod encoder;
 mod spec;
 
 #[derive(Parser)]
@@ -35,5 +35,7 @@ fn main() {
 		_ => panic!("invalid file extension"),
 	};
 
-	std::fs::write(args.output, generate_for_dom(&model)).unwrap();
+	println!("{}", spec::generate_full_decoder());
+
+	std::fs::write(args.output, encode_dom(&model)).unwrap();
 }
