@@ -1,0 +1,10 @@
+{
+	"name": "rojo-script",
+	"scripts": {
+		"generate": "bun run scripts/generate.ts",
+		"tests": "bun run scripts/runTests.ts"
+	},
+	"dependencies": {
+		"@oneidentity/zstd-js": "^1.0.3"
+	}
+}

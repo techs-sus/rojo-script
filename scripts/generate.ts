@@ -1,5 +1,7 @@
 import { Glob, $ } from "bun";
+import { ZstdInit, ZstdStream } from "@oneidentity/zstd-js";
 
+await ZstdInit();
 await $`cargo build`;
 
 const platformBinary =
@@ -8,17 +10,19 @@ const platformBinary =
 		: "./target/debug/rojo-script";
 
 const glob = new Glob("encoding/testRbxms/*.rbxm");
+const fileExtensionRegex = /\.[^.]+$/;
 
 for await (const file of glob.scan(".")) {
-	const binFilePath = (file as string).replace(".rbxm", ".bin");
+	const binFilePath = file.replace(fileExtensionRegex, ".bin");
 	await $`${platformBinary} -f ${file} -o ${binFilePath}`;
 
 	const encodedBytes = Buffer.from(
-		await Bun.file(binFilePath).arrayBuffer()
+		ZstdStream.compress(await Bun.file(binFilePath).bytes(), 22),
+		"utf8"
 	).toString("base64");
 
 	await Bun.write(
-		file.replace(".rbxm", ".luau"),
-		`return game:GetService("HttpService"):JSONDecode([[{"m":null,"t":"buffer","base64":"${encodedBytes}"}]]) :: buffer`
+		file.replace(fileExtensionRegex, ".luau"),
+		`return game:GetService("HttpService"):JSONDecode([[{"m":null,"t":"buffer","zbase64":"${encodedBytes}"}]]) :: buffer`
 	);
 }

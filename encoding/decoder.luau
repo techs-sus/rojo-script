@@ -171,7 +171,6 @@ local function decode(payloadBuffer: buffer)
 			return nextNullstring()
 		end,
 
-		-- [TYPE_ID.Tags] = function(buf: buffer) end,
 		[TYPE_ID.Enum] = function()
 			local enumInternal = buffer.readu32(payloadBuffer, loc)
 			loc += 4
