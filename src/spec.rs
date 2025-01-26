@@ -1,4 +1,7 @@
+use base64::{prelude::BASE64_STANDARD, Engine};
 use rbx_dom_weak::{types::Variant, WeakDom};
+
+use crate::encoder;
 
 // https://veykril.github.io/tlborm/decl-macros/building-blocks/counting.html
 macro_rules! count_tt {
@@ -549,8 +552,8 @@ decode_type_id! {
 	"#,
 }
 
-const TEMPLATE_LUAU: &'static str = include_str!("./template.luau");
-const CFRAME_LOOKUP_TABLE: &'static str = r#"-- thank you rojo developers: https://dom.rojo.space/binary.html#cframe (god bless)
+const TEMPLATE_LUAU: &str = include_str!("./template.luau");
+const CFRAME_LOOKUP_TABLE: &str = r#"-- thank you rojo developers: https://dom.rojo.space/binary.html#cframe (god bless)
 local CFRAME_ID_LOOKUP_TABLE = table.freeze({
 	[0x02] = CFrame.fromEulerAnglesYXZ(0, 0, 0),
 	[0x03] = CFrame.fromEulerAnglesYXZ(math.rad(90), 0, 0),
@@ -579,7 +582,7 @@ local CFRAME_ID_LOOKUP_TABLE = table.freeze({
 	[0x23] = CFrame.fromEulerAnglesYXZ(0, math.rad(-90), math.rad(180)),
 })"#;
 
-const NEW_SCRIPT_SOURCE: &'static str = r#"local NewScript: (code: string, parent: Instance?) -> Script = NewScript
+const NEW_SCRIPT_SOURCE: &str = r#"local NewScript: (code: string, parent: Instance?) -> Script = NewScript
 	or function(code, parent)
 		local script = Instance.new("Script")
 		script.Source = code
@@ -588,7 +591,7 @@ const NEW_SCRIPT_SOURCE: &'static str = r#"local NewScript: (code: string, paren
 		return script
 	end"#;
 
-const NEW_LOCAL_SCRIPT_SOURCE: &'static str = r#"local NewLocalScript: (code: string, parent: Instance?) -> LocalScript = NewLocalScript
+const NEW_LOCAL_SCRIPT_SOURCE: &str = r#"local NewLocalScript: (code: string, parent: Instance?) -> LocalScript = NewLocalScript
 	or function(code, parent)
 		local script = Instance.new("LocalScript")
 		script.Source = code
@@ -597,7 +600,7 @@ const NEW_LOCAL_SCRIPT_SOURCE: &'static str = r#"local NewLocalScript: (code: st
 		return script
 	end"#;
 
-const NEW_MODULE_SCRIPT_SOURCE: &'static str = r#"local NewModuleScript: (code: string, parent: Instance?) -> ModuleScript = NewModuleScript
+const NEW_MODULE_SCRIPT_SOURCE: &str = r#"local NewModuleScript: (code: string, parent: Instance?) -> ModuleScript = NewModuleScript
 	or function(code, parent)
 		local script = Instance.new("ModuleScript")
 		script.Source = code
@@ -627,43 +630,32 @@ pub fn generate_with_options(
 	}
 
 	TEMPLATE_LUAU
-		.replace("--!generate TYPE_ID", &get_luau_for_type_ids(&type_ids))
+		.replace("--!generate TYPE_ID", &get_luau_for_type_ids(type_ids))
 		.replace(
 			"--!generate CFRAME_ID_LOOKUP_TABLE",
-			match cframe_lookup_required {
-				false => "-- cframe lookup table not required",
-				true => CFRAME_LOOKUP_TABLE,
-			},
+			if cframe_lookup_required { CFRAME_LOOKUP_TABLE } else { "-- cframe lookup table not required" },
 		)
 		.replace(
 			"--!generate NewScript",
-			match new_script_required {
-				false => "-- NewScript not required",
-				true => NEW_SCRIPT_SOURCE,
-			},
+			if new_script_required { NEW_SCRIPT_SOURCE } else { "-- NewScript not required" },
 		)
 		.replace(
 			"--!generate NewLocalScript",
-			match new_local_script_required {
-				false => "-- NewLocalScript not required",
-				true => NEW_LOCAL_SCRIPT_SOURCE,
-			},
+			if new_local_script_required {
+				NEW_LOCAL_SCRIPT_SOURCE}
+				else {"-- NewLocalScript not required"}
 		)
 		.replace(
 			"--!generate NewModuleScript",
-			match new_module_script_required {
-				false => "-- NewModuleScript not required",
-				true => NEW_MODULE_SCRIPT_SOURCE,
-			},
+			if new_module_script_required {
+				NEW_MODULE_SCRIPT_SOURCE
+			} else {"-- NewModuleScript not required"}
 		)
 		.replace(
 			"--!generate VARIANT_DECODER",
-			&get_luau_variant_decoder_for_ids(&type_ids),
-		).replace("--!generate SpecializedInstanceCreator", &format!("if className == \"DataModel\" then\ninstance = Instance.new(\"Model\")\n{}\nelse\ninstance = Instance.new(className)\nend", generated_elseif_clauses))
-		.replace("--!generate nilParentedInstance", match new_script_required || new_local_script_required || new_module_script_required {
-			true => "local nilParentedInstance = Instance.new(\"Folder\", nil)",
-			false => ""
-		})
+			&get_luau_variant_decoder_for_ids(type_ids),
+		).replace("--!generate SpecializedInstanceCreator", &format!("if className == \"DataModel\" then\ninstance = Instance.new(\"Model\")\n{generated_elseif_clauses}\nelse\ninstance = Instance.new(className)\nend"))
+		.replace("--!generate nilParentedInstance", if new_script_required || new_local_script_required || new_module_script_required { "local nilParentedInstance = Instance.new(\"Folder\", nil)" } else { "" })
 }
 
 pub fn generate_full_decoder() -> String {
@@ -686,7 +678,7 @@ pub fn generate_specialized_decoder_for_dom(weak_dom: &WeakDom) -> String {
 			_ => {}
 		}
 
-		for (_name, variant) in &descendant.properties {
+		for variant in descendant.properties.values() {
 			let type_id = variant_to_type_id(variant);
 			if !type_ids.iter().any(|id| *id == type_id) {
 				type_ids.push(type_id);
@@ -703,4 +695,65 @@ pub fn generate_specialized_decoder_for_dom(weak_dom: &WeakDom) -> String {
 		new_local_script_required,
 		new_module_script_required,
 	)
+}
+
+fn zstd_compress(stream: &Vec<u8>) -> Vec<u8> {
+	let mut out_bytes = Vec::new();
+
+	let mut encoder = zstd::Encoder::new(&mut out_bytes, 22).unwrap();
+	encoder.include_checksum(true).unwrap();
+	encoder.include_contentsize(true).unwrap();
+	encoder
+		.set_pledged_src_size(Some(stream.len() as u64))
+		.unwrap();
+
+	std::io::copy(&mut stream.as_slice(), &mut encoder).unwrap();
+
+	encoder.finish().unwrap();
+
+	out_bytes
+}
+
+fn internal_create_script(weak_dom: &WeakDom) -> String {
+	let mut output = String::new();
+
+	output.push_str("local payloadBuffer: buffer = game:GetService(\"HttpService\"):JSONDecode([[{\"m\":null,\"t\":\"buffer\",\"zbase64\":\"");
+	output.push_str(&BASE64_STANDARD.encode(zstd_compress(&encoder::encode_dom(weak_dom))));
+	output.push_str("\"}]])\n");
+
+	// embed decoder
+	output.push_str("local decode = (function()\n");
+	output.push_str(&generate_specialized_decoder_for_dom(weak_dom));
+	output.push_str("\nend)()\n");
+
+	output
+}
+
+pub fn generate_embeddable_script(weak_dom: &WeakDom) -> String {
+	let mut output = internal_create_script(weak_dom);
+	output.push_str("return decode(payloadBuffer):GetChildren()[1]\n");
+
+	output
+}
+
+pub fn generate_full_script(weak_dom: &WeakDom) -> String {
+	// ensure that the generated script will be requiring a ModuleScript
+	{
+		let children = weak_dom.root().children();
+		assert!(children.len() == 1, "root must have one child");
+
+		let root_first_child = weak_dom.get_by_ref(children[0]).unwrap();
+
+		assert!(
+			root_first_child.class == "ModuleScript",
+			"DataModel's first child should be a module script"
+		);
+	}
+
+	let mut output = internal_create_script(weak_dom);
+
+	// require the root ModuleScript
+	output.push_str("return require(decode(payloadBuffer):GetChildren()[1])\n");
+
+	output
 }
