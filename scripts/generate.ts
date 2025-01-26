@@ -9,12 +9,14 @@ const platformBinary =
 		? "./target/debug/rojo-script.exe"
 		: "./target/debug/rojo-script";
 
+await $`${platformBinary} generate-full-decoder encoding/decoder.luau`;
+
 const glob = new Glob("encoding/testRbxms/*.rbxm");
 const fileExtensionRegex = /\.[^.]+$/;
 
 for await (const file of glob.scan(".")) {
 	const binFilePath = file.replace(fileExtensionRegex, ".bin");
-	await $`${platformBinary} -f ${file} -o ${binFilePath}`;
+	await $`${platformBinary} encode --file ${file} --output ${binFilePath}`;
 
 	const encodedBytes = Buffer.from(
 		ZstdStream.compress(await Bun.file(binFilePath).bytes(), 22),

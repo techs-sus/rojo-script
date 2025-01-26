@@ -25,16 +25,11 @@ cargo run -- -f input.rbxm -o output.bin
 
 #### TODO list
 
-general:
-
-- fully implement specialized decoder generation
-
-opensb runtime:
-
-- add modules to NLS (use fione + yueliang (possibly even a luau bytecode runner))
+- allow users to generate one script which embeds a specialized decoder (already implemented) and a zstd buffer (as used in scripts/generate.ts); that script will decode the payloadBuffer and then require `return require(decode(payloadBuffer):FindFirstChildOfClass("ModuleScript"))` to allow for code execution in OpenSB / Roblox Studio
 
 ##### Development notes
 
 - roblox compresses chunks using lz4 and zstd
-- react-lua-17-rel.bin.zst = 266kb; react-lua-17-rel.rbxm is 553kb
+- react-lua-17-rel.bin.zst = 266kb; react-lua-17-rel.rbxm is 553kb; (we won by 287kb)
+- attributes_and_tags.bin.zst = 26kb; attributes_and_tags.rbxm = 15kb; (we lost by 11kb)
 - only OpenSB and Roblox Studio are supported
