@@ -98,13 +98,8 @@ local NewModuleScript: (code: string, parent: Instance?) -> ModuleScript = NewMo
 		return script
 	end
 
-local nilParentedInstance = Instance.new("Folder", nil)
-
 local function decode(payloadBuffer: buffer)
-	if nilParentedInstance.Parent ~= nil then
-		pcall(game.Destroy, nilParentedInstance)
-		nilParentedInstance = Instance.new("Folder", nil)
-	end
+	local nilParentedInstance = Instance.new("Folder", nil)
 
 	local loc = 0
 	local VARIANT_DECODER: { [number]: () -> any }
@@ -428,8 +423,6 @@ local function decode(payloadBuffer: buffer)
 		end,
 
 		[TYPE_ID.Faces] = function()
-			-- TODO: Add tests for faces
-
 			local byte = buffer.readu8(payloadBuffer, loc)
 			loc += 1
 			-- bitflags
