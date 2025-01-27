@@ -91,7 +91,7 @@ else
 	local start = os.clock()
 
 	local rtSource = HttpService:GetAsync(
-		"https://raw.githubusercontent.com/techs-sus/rojo-script/master/runtime/lua_sandbox.lua",
+		"https://raw.githubusercontent.com/techs-sus/azalea/master/runtime/lua_sandbox.lua",
 		false
 	)
 	local rootModel, rootReferentsToInstances, rootInstancesToTrees, sourceMap =
@@ -99,8 +99,8 @@ else
 	print(`rojo-script: took {os.clock() - start} seconds to construct instance from tree`)
 
 	local function wrappedNS(source: Script | string, parent: Instance, ...)
-		if #({...}) ~= 0 then
-			error("expected 2 arguments, got " .. 2 + #({...}) .. " arguments")
+		if #{ ... } ~= 0 then
+			error("expected 2 arguments, got " .. 2 + #{ ... } .. " arguments")
 		end
 		if typeof(source) == "string" then
 			return getfenv().NS(source, parent)

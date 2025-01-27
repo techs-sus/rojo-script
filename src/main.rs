@@ -1,4 +1,5 @@
 use clap::{Parser, Subcommand};
+use darklua_core::Resources;
 use encoder::encode_dom;
 use rbx_dom_weak::WeakDom;
 use std::path::PathBuf;
@@ -19,9 +20,17 @@ enum Command {
 		#[arg(short, long)]
 		output: PathBuf,
 
-		/// Optional output location for a specialized decoder designed for the input model.
+		/// Optional output location for a specialized decoder designed for the input model
 		#[arg(short, long)]
 		specialized_decoder: Option<PathBuf>,
+
+		/// Uses stylua_lib to format the specialized decoder
+		#[arg(short, long, default_value_t = false)]
+		format: bool,
+
+		/// Uses darklua_core to minify the specialized decoder
+		#[arg(short, long, default_value_t = false)]
+		minify: bool,
 	},
 
 	/// Fully encodes a model file into a singular Roblox script.
@@ -33,9 +42,17 @@ enum Command {
 		/// Output luau file
 		#[arg(short, long)]
 		output: PathBuf,
+
+		/// Uses stylua_lib to format
+		#[arg(short, long, default_value_t = false)]
+		format: bool,
+
+		/// Uses darklua_core to minify
+		#[arg(short, long, default_value_t = false)]
+		minify: bool,
 	},
 
-	/// Fully encodes a model file into an embeddable script, with optional formatting available.
+	/// Fully encodes a model file into an embeddable script, with optional formatting and minification available.
 	GenerateEmbeddableScript {
 		/// Input model file (.rbxm, .rbxmx)
 		#[arg(short, long)]
@@ -45,12 +62,27 @@ enum Command {
 		#[arg(short, long)]
 		output: PathBuf,
 
+		/// Uses stylua_lib to format
 		#[arg(short, long, default_value_t = false)]
 		format: bool,
+
+		/// Uses darklua_core to minify
+		#[arg(short, long, default_value_t = false)]
+		minify: bool,
 	},
 
-	/// Generates the full decoder, formats it via stylua_lib, and outputs it into a file.
-	GenerateFullDecoder { output: PathBuf },
+	/// Generates the full decoder into a file, with optional formatting and minification available.
+	GenerateFullDecoder {
+		output: PathBuf,
+
+		/// Uses stylua_lib to format
+		#[arg(short, long, default_value_t = false)]
+		format: bool,
+
+		/// Uses darklua_core to minify
+		#[arg(short, long, default_value_t = false)]
+		minify: bool,
+	},
 }
 
 #[derive(Parser)]
@@ -88,6 +120,43 @@ pub fn get_stylua_config() -> stylua_lib::Config {
 	config
 }
 
+pub fn minify_with_darklua(input: PathBuf) {
+	let options = darklua_core::Options::new(&input)
+		.with_output(input)
+		.with_generator_override(darklua_core::GeneratorParameters::Dense {
+			column_span: usize::MAX - 16,
+		})
+		.with_configuration(darklua_core::Configuration::default());
+
+	darklua_core::process(&Resources::from_file_system(), options).unwrap();
+}
+
+fn write_to_luau_file(output: PathBuf, source: String, format: bool, minify: bool) {
+	match (format, minify) {
+		(true, false) => {
+			// format
+			std::fs::write(
+				output,
+				stylua_lib::format_code(
+					&source,
+					get_stylua_config(),
+					None,
+					stylua_lib::OutputVerification::None,
+				)
+				.unwrap(),
+			)
+			.unwrap();
+		}
+		(false, true) => {
+			// minify
+			std::fs::write(&output, source).unwrap();
+			minify_with_darklua(output);
+		}
+		(true, true) => panic!("formatting and minifying at the same time is not supported"),
+		(false, false) => std::fs::write(output, source).unwrap(),
+	}
+}
+
 fn main() {
 	let args = Args::parse();
 
@@ -96,61 +165,60 @@ fn main() {
 			input,
 			output,
 			specialized_decoder,
+			format,
+			minify,
 		} => {
 			let dom = read_dom_from_path(input);
 
 			std::fs::write(output, encode_dom(&dom)).unwrap();
 
 			if let Some(output) = specialized_decoder {
-				std::fs::write(output, spec::generate_specialized_decoder_for_dom(&dom)).unwrap();
+				write_to_luau_file(
+					output,
+					spec::generate_specialized_decoder_for_dom(&dom),
+					format,
+					minify,
+				);
 			}
 		}
 
-		Command::GenerateFullDecoder { output } => {
-			let config = get_stylua_config();
-
-			std::fs::write(
-				output,
-				stylua_lib::format_code(
-					&spec::generate_full_decoder(),
-					config,
-					None,
-					stylua_lib::OutputVerification::None,
-				)
-				.unwrap(),
-			)
-			.unwrap();
+		Command::GenerateFullDecoder {
+			output,
+			format,
+			minify,
+		} => {
+			write_to_luau_file(output, spec::generate_full_decoder(), format, minify);
 		}
 
-		Command::GenerateFullScript { input, output } => {
+		Command::GenerateFullScript {
+			input,
+			output,
+			format,
+			minify,
+		} => {
 			let weak_dom = read_dom_from_path(input);
 
-			std::fs::write(output, spec::generate_full_script(&weak_dom)).unwrap();
+			write_to_luau_file(
+				output,
+				spec::generate_full_script(&weak_dom),
+				format,
+				minify,
+			);
 		}
 
 		Command::GenerateEmbeddableScript {
 			input,
 			output,
 			format,
+			minify,
 		} => {
 			let weak_dom = read_dom_from_path(input);
-			let embeddable = spec::generate_embeddable_script(&weak_dom);
-
-			if format {
-				std::fs::write(
-					output,
-					stylua_lib::format_code(
-						&embeddable,
-						get_stylua_config(),
-						None,
-						stylua_lib::OutputVerification::None,
-					)
-					.unwrap(),
-				)
-				.unwrap();
-			} else {
-				std::fs::write(output, embeddable).unwrap();
-			}
+			write_to_luau_file(
+				output,
+				spec::generate_embeddable_script(&weak_dom),
+				format,
+				minify,
+			);
 		}
 	}
 }

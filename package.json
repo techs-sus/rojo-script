@@ -1,5 +1,5 @@
 {
-	"name": "rojo-script",
+	"name": "azalea",
 	"scripts": {
 		"generate": "bun run scripts/generate.ts",
 		"tests": "bun run scripts/runTests.ts",

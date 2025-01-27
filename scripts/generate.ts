@@ -6,17 +6,17 @@ await $`cargo build`;
 
 const platformBinary =
 	process.platform === "win32"
-		? "./target/debug/rojo-script.exe"
-		: "./target/debug/rojo-script";
+		? "./target/debug/azalea.exe"
+		: "./target/debug/azalea";
 
-await $`${platformBinary} generate-full-decoder encoding/decoder.luau`;
+await $`${platformBinary} generate-full-decoder encoding/decoder.luau -f`;
 
 const glob = new Glob("encoding/testRbxms/*.rbxm");
 const fileExtensionRegex = /\.[^.]+$/;
 
 for await (const file of glob.scan(".")) {
 	const binFilePath = file.replace(fileExtensionRegex, ".bin");
-	await $`${platformBinary} encode --file ${file} --output ${binFilePath}`;
+	await $`${platformBinary} encode --input ${file} --output ${binFilePath}`;
 
 	const encodedBytes = Buffer.from(
 		ZstdStream.compress(await Bun.file(binFilePath).bytes(), 22),

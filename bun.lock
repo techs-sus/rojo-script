@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "rojo-script",
+      "name": "azalea",
       "dependencies": {
         "@oneidentity/zstd-js": "^1.0.3",
       },

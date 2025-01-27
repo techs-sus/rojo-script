@@ -1,5 +1,5 @@
 [package]
-name = "rojo-script"
+name = "azalea"
 version = "0.1.0"
 edition = "2021"
 
@@ -14,6 +14,7 @@ stylua = { version = "2.0.2", features = ["luau"] }
 
 zstd = "0.13.2"
 base64 = "0.22.1"
+darklua = "0.15.0"
 
 # full-moon should be compiled to release optimisations in debug mode due to stack overflows
 [profile.dev.package.full_moon]
