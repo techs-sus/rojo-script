@@ -1,5 +1,5 @@
 {
-	"name": "Encoder",
+	"name": "azalea-test-suite",
 	"globIgnorePaths": ["encoding/testRbxms/*.rbxm", "encoding/testRbxms/*.bin"],
 	"tree": {
 		"$className": "DataModel",
