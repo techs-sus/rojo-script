@@ -85,11 +85,11 @@
         "wallySource": "wallySource"
       },
       "locked": {
-        "lastModified": 1738423698,
-        "narHash": "sha256-gNtPRQpFPwBJh8z/bnZLFCZCi8fNBC2TmvpoTG2aIZ8=",
+        "lastModified": 1738427593,
+        "narHash": "sha256-oixdmV7RRtURrGHLBOmWsaKqjBUomb4OuzBZsXunIq4=",
         "owner": "techs-sus",
         "repo": "wally-nix",
-        "rev": "b8cb17833d18753636769c049f68b4ca848f4ea9",
+        "rev": "0112125510d8706707cf586a27345733a6e42b1e",
         "type": "github"
       },
       "original": {
