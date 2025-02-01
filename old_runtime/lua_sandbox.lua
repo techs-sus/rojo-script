@@ -90,10 +90,8 @@ else
 	local constructInstanceFromTree: constructInstance = assert(loadstring(constructorSource))()
 	local start = os.clock()
 
-	local rtSource = HttpService:GetAsync(
-		"https://raw.githubusercontent.com/techs-sus/azalea/master/runtime/lua_sandbox.lua",
-		false
-	)
+	local rtSource =
+		HttpService:GetAsync("https://raw.githubusercontent.com/techs-sus/azalea/master/runtime/lua_sandbox.lua", false)
 	local rootModel, rootReferentsToInstances, rootInstancesToTrees, sourceMap =
 		constructInstanceFromTree(rootTree, rootReferent)
 	print(`rojo-script: took {os.clock() - start} seconds to construct instance from tree`)
@@ -133,7 +131,7 @@ else
 								constructInstanceFromTree(rootTree, rootReferent)
 							rootModel.Parent = nil
 							script = rootModel
-							
+
 							-- TODO: Sandbox a "real" script that will appear to the outside world
 							-- "real" script will not accept any changes
 
@@ -150,10 +148,7 @@ else
 					constructorSource,
 					rtSource
 				)
-				SharedTableRegistry:SetSharedTable(
-					accessToken,
-					SharedTable.new({ tree = rootInstancesToTrees[source] })
-				)
+				SharedTableRegistry:SetSharedTable(accessToken, SharedTable.new({ tree = rootInstancesToTrees[source] }))
 				local created: Script = getfenv().NS(sourcePatch .. sourceMap[source], nilProtectedFolder)
 				created.Parent = parent
 				return created

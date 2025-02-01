@@ -228,9 +228,7 @@ local function decode(payloadBuffer: buffer)
 		end,
 		[TYPE_ID.Color3uint8] = function()
 			local r, g, b =
-				buffer.readu8(payloadBuffer, loc),
-				buffer.readu8(payloadBuffer, loc + 1),
-				buffer.readu8(payloadBuffer, loc + 2)
+				buffer.readu8(payloadBuffer, loc), buffer.readu8(payloadBuffer, loc + 1), buffer.readu8(payloadBuffer, loc + 2)
 			loc += 3
 
 			return Color3.fromRGB(r, g, b)
