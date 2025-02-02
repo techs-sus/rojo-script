@@ -1,6 +1,6 @@
 # azalea
 
-azalea is an **_EXPERIMENTAL_** software suite designed to manipulate Roblox model files into a custom format, for decoding within restricted Roblox environments such as [OpenSB](https://github.com/Open-SB/OpenSB).
+Azalea is an **_EXPERIMENTAL_** software suite designed to manipulate Roblox model files for use within restricted Roblox environments such as [OpenSB](https://github.com/Open-SB/OpenSB).
 
 azalea is **_freely_** available to **_you, the consumer_** under the Apache 2.0 license.
 
@@ -31,8 +31,17 @@ cargo run -- generate-embeddable-script -i input.rbxm -o output.luau -m
 
 ### Development notes
 
-- roblox compresses chunks using lz4 and zstd
-- below i used zstd level 22
+flake provides:
+
+- a formatter usable with `nix flake fmt` (formats the entire flake)
+- a devshell usable with `nix develop`
+
+format details:
+
+- roblox compresses chunks using lz4 and zstd, azalea's format is chunkless
+- currently OpenSB and Roblox Studio are **offically** supported
+
+format efficency when azalea is compressed at zstd level 22:
+
 - react-lua-17-rel.bin.zst = 266kb; react-lua-17-rel.rbxm is 553kb; (we won by 287kb)
-- attributes_and_tags.bin.zst = 26kb; attributes_and_tags.rbxm = 15kb; (we lost by 11kb)
-- only OpenSB and Roblox Studio are supported
+- attributes_and_tags.bin.zst = 26kb; attributes_and_tags.rbxm = 15kb; (we lost by 11kb, probably because roblox can use lz4)
