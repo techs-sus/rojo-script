@@ -24,6 +24,15 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+
+		run-in-cloud = {
+			url = "github:techs-sus/run-in-cloud";
+			inputs = {
+				nixpkgs.follows = "nixpkgs";
+				flake-utils.follows = "flake-utils";
+				rust-overlay.follows = "rust-overlay";
+			};
+		};
   };
 
   outputs =
@@ -33,6 +42,7 @@
       rust-overlay,
       flake-utils,
       wally-nix,
+			run-in-cloud,
       ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem (
@@ -43,6 +53,7 @@
           inherit system overlays;
         };
         wally = wally-nix.packages.${system}.default;
+				run-in-cloud-pkg = run-in-cloud.packages.${system}.default;
       in
       {
         devShells.default = pkgs.mkShell {
@@ -59,8 +70,8 @@
             pkgs.bun
             pkgs.rojo
 
-            # TODO: how would run-in-roblox work?
             wally
+						run-in-cloud-pkg # a run-in-roblox replacement
           ];
 
           shellHook = "";

@@ -4,6 +4,10 @@
 	"tree": {
 		"$className": "DataModel",
 		"ServerScriptService": {
+			"$properties": {
+				"LoadStringEnabled": true
+			},
+
 			"DevPackages": {
 				"$path": "DevPackages/"
 			},

@@ -38,8 +38,35 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
+        "run-in-cloud": "run-in-cloud",
         "rust-overlay": "rust-overlay",
         "wally-nix": "wally-nix"
+      }
+    },
+    "run-in-cloud": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": [
+          "rust-overlay"
+        ]
+      },
+      "locked": {
+        "lastModified": 1738533137,
+        "narHash": "sha256-htaY/yZvkdP9Za4NEHyCN9hrX0Hkre6EP0NMkq4hrt4=",
+        "owner": "techs-sus",
+        "repo": "run-in-cloud",
+        "rev": "e6ee7a86b883274238a8ff5f3e096388037e90b2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "techs-sus",
+        "repo": "run-in-cloud",
+        "type": "github"
       }
     },
     "rust-overlay": {

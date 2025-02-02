@@ -37,6 +37,11 @@ flake provides:
 - a devshell usable with `nix develop`
 - a package usable in your flake via `azalea.packages.${system}.default`
 
+bun is used for:
+
+- generating required files for tests via `bun run generate`
+- running tests via `bun run tests`; you need either [`run-in-roblox`](https://github.com/rojo-rbx/run-in-roblox) (preferred) or [`run-in-cloud`](https://github.com/techs-sus/run-in-cloud)
+
 format details:
 
 - roblox compresses chunks using lz4 and zstd, azalea's format is chunkless
