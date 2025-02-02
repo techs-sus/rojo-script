@@ -34,7 +34,7 @@
       flake-utils,
       wally-nix,
       ...
-    }:
+    }@inputs:
     flake-utils.lib.eachDefaultSystem (
       system:
       let
@@ -67,6 +67,10 @@
         };
 
         formatter = pkgs.nixfmt-rfc-style;
+        packages.default = pkgs.callPackage ./. {
+          inherit inputs;
+          inherit pkgs;
+        };
       }
     );
 }

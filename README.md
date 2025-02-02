@@ -35,6 +35,7 @@ flake provides:
 
 - a formatter usable with `nix flake fmt` (formats the entire flake)
 - a devshell usable with `nix develop`
+- a package usable in your flake via `azalea.packages.${system}.default`
 
 format details:
 
