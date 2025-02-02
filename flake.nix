@@ -1,5 +1,5 @@
 {
-  description = "a development shell which provides an environment containing rust, bun, and rojo";
+  description = "a flake which contains a devshell, package, and formatter";
 
   # binary cache for wally-nix (needs to be in the root flake too)
   nixConfig = {
