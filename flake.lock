@@ -56,11 +56,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738533137,
-        "narHash": "sha256-htaY/yZvkdP9Za4NEHyCN9hrX0Hkre6EP0NMkq4hrt4=",
+        "lastModified": 1738547242,
+        "narHash": "sha256-P49eGFewG+aFjtkptO1IraJFbuh1NdZlJ0LIke+RS6k=",
         "owner": "techs-sus",
         "repo": "run-in-cloud",
-        "rev": "e6ee7a86b883274238a8ff5f3e096388037e90b2",
+        "rev": "259e62ff4f43dd6c4be2728da65e06e825120db1",
         "type": "github"
       },
       "original": {
