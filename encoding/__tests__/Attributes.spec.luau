@@ -6,17 +6,17 @@ local scriptWithAttributes = require(ServerScriptService.Decoder.testRbxms.scrip
 
 --[[
 Variants in this test:
-String
-Bool,
-Float32/Float64/Number,
-UDim/UDim2,
-BrickColor,
-Color3,
-Vector2/Vector3,
-CFrame,
-NumberRange,
-Rect,
-Font
+- String
+- Bool,
+- Float32/Float64/Number,
+- UDim/UDim2,
+- BrickColor,
+- Color3,
+- Vector2/Vector3,
+- CFrame,
+- NumberRange,
+- Rect,
+- Font
 ]]
 
 local EXPECTED_ITEMS = table.freeze({
@@ -41,9 +41,13 @@ local expect = JestGlobals.expect
 
 test("ensure Attributes are decoded correctly", function(_, done)
 	local root = Decoder(scriptWithAttributes)
+	expect(root).toEqual(expect.anything())
+
 	local script: Script = root:FindFirstChildWhichIsA("Script")
 
 	expect(script).toEqual(expect.anything())
+	expect(script.ClassName).toEqual("Script")
+
 	expect(script:GetAttributes()).toMatchObject(EXPECTED_ITEMS)
 
 	done()

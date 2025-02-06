@@ -5,11 +5,9 @@ local Decoder = require(ServerScriptService.Decoder.decoder)
 local helloWorldStringValue = require(ServerScriptService.Decoder.testRbxms.helloWorldStringValue)
 
 local test = JestGlobals.test
-local expect = JestGlobals.expect
+local expectedValueHelper = require(script.Parent.expectedValueHelper)(JestGlobals.expect)
 
-test('ensure StringValue [value = "hello, world!"] is decoded correctly', function(_, done)
-	local root = Decoder(helloWorldStringValue)
-	expect(root:FindFirstChildWhichIsA("StringValue").Value).toBe("hello, world!")
-
-	done()
-end)
+test(
+	'ensure StringValue [value = "hello, world!"] is decoded correctly',
+	expectedValueHelper(helloWorldStringValue, "StringValue", "hello, world!")
+)

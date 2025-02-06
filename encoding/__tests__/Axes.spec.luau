@@ -15,7 +15,6 @@ local EXPECTED_STATES = table.freeze({
 
 local test = JestGlobals.test
 local expect = JestGlobals.expect
-local describe = JestGlobals.describe
 
 local root = Decoder(allPossibleAxesValues)
 local rootFolder: Folder = root:FindFirstChildWhichIsA("Folder")

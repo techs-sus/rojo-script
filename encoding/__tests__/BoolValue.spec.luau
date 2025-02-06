@@ -6,18 +6,7 @@ local boolValueTrue = require(ServerScriptService.Decoder.testRbxms.boolValueTru
 local boolValueFalse = require(ServerScriptService.Decoder.testRbxms.boolValueFalse)
 
 local test = JestGlobals.test
-local expect = JestGlobals.expect
+local expectedValueHelper = require(script.Parent.expectedValueHelper)(JestGlobals.expect)
 
-test("ensure BoolValue [value = false] is decoded correctly", function(_, done)
-	local root = Decoder(boolValueFalse)
-	expect(root:FindFirstChildWhichIsA("BoolValue").Value).toBe(false)
-
-	done()
-end)
-
-test("ensure BoolValue [value = true] is decoded correctly", function(_, done)
-	local root = Decoder(boolValueTrue)
-	expect(root:FindFirstChildWhichIsA("BoolValue").Value).toBe(true)
-
-	done()
-end)
+test("ensure BoolValue [value = false] is decoded correctly", expectedValueHelper(boolValueFalse, "BoolValue", false))
+test("ensure BoolValue [value = true] is decoded correctly", expectedValueHelper(boolValueTrue, "BoolValue", true))

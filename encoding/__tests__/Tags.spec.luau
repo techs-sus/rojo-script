@@ -33,6 +33,8 @@ local expect = JestGlobals.expect
 
 test("ensure Tags are decoded correctly", function(_, done)
 	local root = Decoder(scriptTaggedWithAllLuaKeywords)
+	expect(root).toEqual(expect.anything())
+
 	local script: Script = root:FindFirstChildWhichIsA("Script")
 
 	expect(script).toEqual(expect.anything())
