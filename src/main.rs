@@ -137,7 +137,7 @@ fn write_to_luau_file<T: AsRef<Path>>(output: T, source: String, format: bool, m
 		}
 		(false, true) => {
 			// minify
-			std::fs::write(&output.as_ref(), source).unwrap();
+			std::fs::write(output.as_ref(), source).unwrap();
 			minify_with_darklua(output.as_ref().to_path_buf());
 		}
 		(true, true) => panic!("formatting and minifying at the same time is not supported"),
@@ -157,15 +157,15 @@ enum CommandType {
 impl Command {
 	fn command_type(&self) -> CommandType {
 		match self {
-			Command::Encode {
+			Self::Encode {
 				specialized_decoder,
 				..
 			} => CommandType::Encode {
 				specialized_decoder: specialized_decoder.to_owned(),
 			},
-			Command::GenerateFullScript { .. } => CommandType::GenerateFullScript,
-			Command::GenerateEmbeddableScript { .. } => CommandType::GenerateEmbeddableScript,
-			Command::GenerateFullDecoder { .. } => CommandType::GenerateFullDecoder,
+			Self::GenerateFullScript { .. } => CommandType::GenerateFullScript,
+			Self::GenerateEmbeddableScript { .. } => CommandType::GenerateEmbeddableScript,
+			Self::GenerateFullDecoder { .. } => CommandType::GenerateFullDecoder,
 		}
 	}
 }
@@ -243,7 +243,7 @@ fn main() {
 				if let Some(ref output) = specialized_decoder {
 					write_to_luau_file(
 						if is_single_file {
-							output.to_path_buf()
+							output.to_owned()
 						} else {
 							let file = format!(
 								"{}.decoder.luau",

@@ -749,7 +749,7 @@ pub fn generate_full_script(weak_dom: &WeakDom) -> String {
 			root_first_child.class == "ModuleScript",
 			"DataModel's first child should be a module script"
 		);
-	}
+	};
 
 	let mut output = internal_create_script(weak_dom);
 
