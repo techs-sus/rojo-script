@@ -2,7 +2,7 @@ use clap::{Parser, Subcommand};
 use darklua_core::Resources;
 use encoder::encode_dom;
 use rbx_dom_weak::WeakDom;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::{fs::File, io::BufReader};
 
 mod encoder;
@@ -12,89 +12,77 @@ mod spec;
 enum Command {
 	/// Encode a model file into the custom binary format.
 	Encode {
-		/// Input model file (.rbxm, .rbxmx)
-		#[arg(short, long)]
-		input: PathBuf,
+		#[clap(flatten)]
+		options: GenerateOptions,
 
-		/// Output binary file
-		#[arg(short, long)]
-		output: PathBuf,
-
-		/// Optional output location for a specialized decoder designed for the input model
+		/// Optional output location for a specialized decoder designed for the input model(s)
 		#[arg(short, long)]
 		specialized_decoder: Option<PathBuf>,
-
-		/// Uses stylua_lib to format the specialized decoder
-		#[arg(short, long, default_value_t = false)]
-		format: bool,
-
-		/// Uses darklua_core to minify the specialized decoder
-		#[arg(short, long, default_value_t = false)]
-		minify: bool,
 	},
 
 	/// Fully encodes a model file into a singular Roblox script.
 	GenerateFullScript {
-		/// Input model file (.rbxm, .rbxmx)
-		#[arg(short, long)]
-		input: PathBuf,
-
-		/// Output luau file
-		#[arg(short, long)]
-		output: PathBuf,
-
-		/// Uses stylua_lib to format
-		#[arg(short, long, default_value_t = false)]
-		format: bool,
-
-		/// Uses darklua_core to minify
-		#[arg(short, long, default_value_t = false)]
-		minify: bool,
+		#[clap(flatten)]
+		options: GenerateOptions,
 	},
 
 	/// Fully encodes a model file into an embeddable script, with optional formatting and minification available.
 	GenerateEmbeddableScript {
-		/// Input model file (.rbxm, .rbxmx)
-		#[arg(short, long)]
-		input: PathBuf,
-
-		/// Output luau file
-		#[arg(short, long)]
-		output: PathBuf,
-
-		/// Uses stylua_lib to format
-		#[arg(short, long, default_value_t = false)]
-		format: bool,
-
-		/// Uses darklua_core to minify
-		#[arg(short, long, default_value_t = false)]
-		minify: bool,
+		#[clap(flatten)]
+		options: GenerateOptions,
 	},
 
 	/// Generates the full decoder into a file, with optional formatting and minification available.
-	GenerateFullDecoder {
-		output: PathBuf,
+	GenerateFullDecoder { output: PathBuf },
+}
 
-		/// Uses stylua_lib to format
-		#[arg(short, long, default_value_t = false)]
-		format: bool,
+#[derive(clap::Args)]
+struct GenerateOptions {
+	/// Input model file(s) (.rbxm, .rbxmx)
+	#[arg(short, long = "input", num_args = 1..)]
+	inputs: Vec<PathBuf>,
 
-		/// Uses darklua_core to minify
-		#[arg(short, long, default_value_t = false)]
-		minify: bool,
-	},
+	/// Output luau file / directory
+	#[arg(short, long)]
+	output: PathBuf,
+}
+
+#[derive(clap::Args)]
+struct GlobalOptions {
+	/// Uses stylua_lib to format
+	#[arg(
+		short,
+		long,
+		default_value_t = false,
+		global = true,
+		conflicts_with = "minify"
+	)]
+	format: bool,
+
+	/// Uses darklua_core to minify
+	#[arg(
+		short,
+		long,
+		default_value_t = false,
+		global = true,
+		conflicts_with = "format"
+	)]
+	minify: bool,
 }
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
 struct Args {
+	#[clap(flatten)]
+	global_options: GlobalOptions,
+
 	#[command(subcommand)]
 	command: Command,
 }
 
 #[must_use]
-pub fn read_dom_from_path(path: PathBuf) -> WeakDom {
-	let path = std::fs::canonicalize(path).expect("failed canonicalizing path");
+pub fn read_dom_from_path<T: AsRef<Path>>(path: T) -> WeakDom {
+	let path = std::fs::canonicalize(path.as_ref()).expect("failed canonicalizing path");
 	let file = BufReader::new(File::open(&path).expect("Failed opening path"));
 	let extension = path
 		.extension()
@@ -131,12 +119,12 @@ pub fn minify_with_darklua(input: PathBuf) {
 	darklua_core::process(&Resources::from_file_system(), options).unwrap();
 }
 
-fn write_to_luau_file(output: PathBuf, source: String, format: bool, minify: bool) {
+fn write_to_luau_file<T: AsRef<Path>>(output: T, source: String, format: bool, minify: bool) {
 	match (format, minify) {
 		(true, false) => {
 			// format
 			std::fs::write(
-				output,
+				output.as_ref(),
 				stylua_lib::format_code(
 					&source,
 					get_stylua_config(),
@@ -149,76 +137,160 @@ fn write_to_luau_file(output: PathBuf, source: String, format: bool, minify: boo
 		}
 		(false, true) => {
 			// minify
-			std::fs::write(&output, source).unwrap();
-			minify_with_darklua(output);
+			std::fs::write(&output.as_ref(), source).unwrap();
+			minify_with_darklua(output.as_ref().to_path_buf());
 		}
 		(true, true) => panic!("formatting and minifying at the same time is not supported"),
 		(false, false) => std::fs::write(output, source).unwrap(),
 	}
 }
 
+enum CommandType {
+	Encode {
+		specialized_decoder: Option<PathBuf>,
+	},
+	GenerateFullScript,
+	GenerateEmbeddableScript,
+	GenerateFullDecoder,
+}
+
+impl Command {
+	fn command_type(&self) -> CommandType {
+		match self {
+			Command::Encode {
+				specialized_decoder,
+				..
+			} => CommandType::Encode {
+				specialized_decoder: specialized_decoder.to_owned(),
+			},
+			Command::GenerateFullScript { .. } => CommandType::GenerateFullScript,
+			Command::GenerateEmbeddableScript { .. } => CommandType::GenerateEmbeddableScript,
+			Command::GenerateFullDecoder { .. } => CommandType::GenerateFullDecoder,
+		}
+	}
+}
+
 fn main() {
-	let args = Args::parse();
+	let args = Args::parse_from(wild::args());
+	let (format, minify) = (args.global_options.format, args.global_options.minify);
 
+	// Vec<(input, output)>
+	let mut inputs = vec![];
+
+	let file_extension = match &args.command {
+		Command::Encode { .. } => "bin",
+		Command::GenerateFullScript { .. } | Command::GenerateEmbeddableScript { .. } => "luau",
+		Command::GenerateFullDecoder { .. } => "",
+	};
+
+	let command_type = args.command.command_type();
+	let is_single_file = inputs.len() == 1;
+
+	// ensure single input -> single file, and multiple inputs -> single directory
 	match args.command {
-		Command::Encode {
-			input,
-			output,
+		// commands which can take multiple inputs
+		Command::Encode { options, .. }
+		| Command::GenerateFullScript { options }
+		| Command::GenerateEmbeddableScript { options } => {
+			let metadata =
+				std::fs::metadata(&options.output).expect("failed reading metadata of output path");
+
+			inputs.reserve_exact(inputs.len());
+
+			if is_single_file {
+				assert!(
+					metadata.is_file(),
+					"output path is directory, but only a single input was specified"
+				);
+
+				inputs.push((options.inputs.into_iter().next().unwrap(), options.output));
+			} else {
+				assert!(
+					metadata.is_dir(),
+					"output path is not a directory, but multiple inputs were passed"
+				);
+
+				for input in options.inputs {
+					let file = format!(
+						"{}.{file_extension}",
+						input
+							.file_stem()
+							.expect("input doesn't have a file name")
+							.to_str()
+							.expect("input file name is not valid utf-8")
+					);
+
+					inputs.push((input, options.output.join(file)));
+				}
+			}
+		}
+
+		// only one output, exit here
+		Command::GenerateFullDecoder { output } => {
+			write_to_luau_file(output, spec::generate_full_decoder(), format, minify);
+			std::process::exit(0);
+		}
+	};
+
+	match command_type {
+		CommandType::Encode {
 			specialized_decoder,
-			format,
-			minify,
 		} => {
-			let dom = read_dom_from_path(input);
+			for (input, output) in inputs {
+				let weak_dom = read_dom_from_path(&input);
+				std::fs::write(output, encode_dom(&weak_dom)).unwrap();
 
-			std::fs::write(output, encode_dom(&dom)).unwrap();
+				if let Some(ref output) = specialized_decoder {
+					write_to_luau_file(
+						if is_single_file {
+							output.to_path_buf()
+						} else {
+							let file = format!(
+								"{}.decoder.luau",
+								input
+									.file_stem()
+									.expect("input doesn't have a file name")
+									.to_str()
+									.expect("input file name is not valid utf-8")
+							);
+							output.join(file)
+						},
+						spec::generate_specialized_decoder_for_dom(&weak_dom),
+						format,
+						minify,
+					);
+				}
+			}
+		}
 
-			if let Some(output) = specialized_decoder {
+		CommandType::GenerateFullScript => {
+			for (input, output) in inputs {
+				let weak_dom = read_dom_from_path(&input);
+
 				write_to_luau_file(
 					output,
-					spec::generate_specialized_decoder_for_dom(&dom),
+					spec::generate_full_script(&weak_dom),
 					format,
 					minify,
 				);
 			}
 		}
 
-		Command::GenerateFullDecoder {
-			output,
-			format,
-			minify,
-		} => {
-			write_to_luau_file(output, spec::generate_full_decoder(), format, minify);
+		CommandType::GenerateEmbeddableScript => {
+			for (input, output) in inputs {
+				let weak_dom = read_dom_from_path(&input);
+				write_to_luau_file(
+					output,
+					spec::generate_embeddable_script(&weak_dom),
+					format,
+					minify,
+				);
+			}
 		}
 
-		Command::GenerateFullScript {
-			input,
-			output,
-			format,
-			minify,
-		} => {
-			let weak_dom = read_dom_from_path(input);
-
-			write_to_luau_file(
-				output,
-				spec::generate_full_script(&weak_dom),
-				format,
-				minify,
-			);
-		}
-
-		Command::GenerateEmbeddableScript {
-			input,
-			output,
-			format,
-			minify,
-		} => {
-			let weak_dom = read_dom_from_path(input);
-			write_to_luau_file(
-				output,
-				spec::generate_embeddable_script(&weak_dom),
-				format,
-				minify,
-			);
+		CommandType::GenerateFullDecoder => {
+			// this was already handled
+			unreachable!()
 		}
 	}
 }

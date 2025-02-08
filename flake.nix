@@ -69,6 +69,7 @@
           packages = [
             pkgs.bun
             pkgs.rojo
+						pkgs.hyperfine
 
             wally
 						run-in-cloud-pkg # a run-in-roblox replacement
